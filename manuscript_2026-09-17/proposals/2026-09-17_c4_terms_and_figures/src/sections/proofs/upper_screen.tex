@@ -1,0 +1,801 @@
+\subsection{\texorpdfstring{\textcolor{red}{Steps 1--3: }}{Steps 1--3: }Preprocessing and exact low-degree certification}
+\label{app:upper-proof-screen}
+
+We first establish the residual Markov and tail certificates, then prove the
+fresh-color success bound and the low-degree screen contract.
+\textcolor{red}{These certify the vocabulary banks from
+\AlgoBlockNamedRef{preprocess}, the fresh colors from
+\AlgoBlockNamedRef{draft}, and the rows returned by
+\AlgoBlockNamedRef{screen}.}
+
+The next lemma derives the residual Markov property from
+\cref{main:eq:forest-factorization}.
+Recall from \eqref{app:eq:history} that
+$\ResidualPositions=\PositionSet\setminus G$ and
+$\ResidualForest=\TargetForest[\ResidualPositions]$.
+\textcolor{red}{Its row identity is used in \AlgoBlockNamedRef{probes},
+and its component independence justifies \AlgoBlockNamedRef{centroid}.}
+
+\begin{lemma}[Residual Markov property]
+\label{app:lem:residual-markov}
+Fix a history $\History=(G,x_G)$.  Conditional on $X_G=x_G$, the variables in
+distinct connected components of $\ResidualForest$ are independent.  Moreover,
+fix $j\in\ResidualPositions$ and the values of all residual neighbors of $j$.
+The exact conditional row of $X_j$ is unchanged if any residual nonneighbor is
+revealed, masked, changed, or marginalized.
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Factor the conditional law over residual components.}
+Recall the forest factorization \eqref{app:eq:S0}:
+$\TargetLaw(x)=\prod_{u\in\TargetRoots}\PosMarginal{u}(x_u)
+ \prod_{j\notin\TargetRoots}\EndpointKernel{\ParentOf{j}}{j}
+ (x_j\mid x_{\ParentOf{j}})$.
+Here $\TargetRoots$ and $\ParentOf{\cdot}$ are the original reference roots
+and parent map.  Substitute the fixed committed values $x_G$.
+For each connected component $T$ of $\ResidualForest$, identified with
+its vertex set, define
+\[
+\begin{aligned}
+ g_T(x_T):={}&
+ \prod_{u\in\TargetRoots\cap T}\PosMarginal{u}(x_u)
+ &&\text{roots in }T\\
+ &{}\times
+ \prod_{\substack{j\in T\setminus\TargetRoots\\\ParentOf{j}\in T}}
+ \EndpointKernel{\ParentOf{j}}{j}(x_j\mid x_{\ParentOf{j}})
+ &&\text{edges within }T\\
+ &{}\times
+ \prod_{\substack{j\in T\setminus\TargetRoots\\\ParentOf{j}\in G}}
+ \EndpointKernel{\ParentOf{j}}{j}(x_j\mid x_{\ParentOf{j}})
+ &&\text{edges }G\to T\\
+ &{}\times
+ \prod_{\substack{j\in G\setminus\TargetRoots\\\ParentOf{j}\in T}}
+ \EndpointKernel{\ParentOf{j}}{j}(x_j\mid x_{\ParentOf{j}})
+ &&\text{edges }T\to G.
+\end{aligned}
+\]
+The fixed $x_G$ dependence is suppressed in $g_T$.
+In particular, the last product retains factors for committed children of
+vertices in $T$: their parent values still vary with $x_T$.
+Every edge with a residual endpoint is either internal to one such $T$ or
+crosses between $T$ and $G$; no edge joins distinct residual components.
+Thus, with products over $T$ ranging over these connected components,
+\[
+ \TargetLaw(x_G,x_{\ResidualPositions})
+ =
+ \left[
+ \prod_{u\in\TargetRoots\cap G}\PosMarginal{u}(x_u)
+ \prod_{\substack{j\in G\setminus\TargetRoots\\\ParentOf{j}\in G}}
+ \EndpointKernel{\ParentOf{j}}{j}(x_j\mid x_{\ParentOf{j}})
+ \right]\prod_T g_T(x_T).
+\]
+The bracket is positive and depends only on $x_G$.
+It therefore cancels when dividing this joint probability by
+$\TargetLaw(X_G=x_G)
+ =\sum_{z_{\ResidualPositions}}\TargetLaw(x_G,z_{\ResidualPositions})$.
+Since the connected components partition $\ResidualPositions$,
+finite distributivity gives
+\[
+ \sum_{x_{\ResidualPositions}}\prod_T g_T(x_T)
+ =\prod_T\left(\sum_{x_T}g_T(x_T)\right).
+\]
+Consequently
+\[
+\begin{aligned}
+ \TargetLaw(X_{\ResidualPositions}=x_{\ResidualPositions}\mid X_G=x_G)
+ &=\frac{\prod_T g_T(x_T)}
+         {\sum_{z_{\ResidualPositions}}\prod_T g_T(z_T)}\\
+ &=\prod_T\frac{g_T(x_T)}{\sum_{z_T}g_T(z_T)}.
+\end{aligned}
+\]
+All sums range over the vocabulary assignments on their indicated vertex
+sets; their denominators are positive by strict positivity of the factors.
+This proves conditional independence of the residual components.
+
+
+\emph{2. Cancel all factors not incident to the readout.}
+For the second claim, root the original connected component at $j$,
+using (C0).
+Every original neighbor $v$ of $j$ is observed: either $v\in G$, or its
+value is fixed in the lemma.  Call this value $x_v$.  The factors involving
+$X_j=a$ are exactly
+\[
+ \PosMarginal{j}(a)
+ \prod_{v\in\mathcal N_{\TargetForest}(j)}
+       \EndpointKernel{j}{v}(x_v\mid a).
+\]
+All other factors are independent of $a$ once these neighbor values are
+fixed.  Revealing, changing, or summing out nonneighbors only changes a
+multiplicative factor independent of $a$.  It cancels in the normalized row
+\[
+ \frac{\PosMarginal{j}(a)
+       \prod_{v\in\mathcal N_{\TargetForest}(j)}
+          \EndpointKernel{j}{v}(x_v\mid a)}
+      {\sum_{b\in\Vocab}\PosMarginal{j}(b)
+       \prod_{v\in\mathcal N_{\TargetForest}(j)}
+          \EndpointKernel{j}{v}(x_v\mid b)}.
+\]
+Thus the history and fixed neighbor values determine the row.
+\end{proof}
+
+The next lemma certifies the omitted tokens for screening and, under (RF\textcolor{red}{; \cref{app:eq:RF}})
+with the standard floor, bounds the number of source columns.
+
+\paragraph{Intuition.}
+The local vocabulary bank $\TokenBank{i}$ from \eqref{app:eq:local-bank}
+includes every token whose true marginal mass exceeds $\TailThreshold$.  Conversely, under the standard floor, every included
+token has true mass at least $\TailThreshold/2$.
+The rank envelope then bounds how many such tokens exist:
+\[
+ \frac{\TailThreshold}{2}
+ \le\FrequencyConstant(\BankSize{i}^{-\RankTailExponent}+\VocabSize^{-1}),
+ \quad
+ \FrequencyConstant\VocabSize^{-1}\le\frac{\TailThreshold}{4}
+ \quad\Longrightarrow\quad
+ \BankSize{i}\le(4\FrequencyConstant/\TailThreshold)^{1/\RankTailExponent}.
+\]
+This is an upper bound on bank size; (RF\textcolor{red}{; \cref{app:eq:RF}}) does not require the envelope to
+be attained.  The complementary tokens can all be represented by one
+certified tail token in the response test.
+
+\begin{lemma}[Preprocessing certificates\textcolor{red}{; \AlgoBlockRef{preprocess}}]
+\label{app:lem:preprocessing-certificates}
+Suppose preprocessing in \cref{app:def:preprocessing} is feasible, and let
+$\TailThreshold$ be the threshold it selects.  Every local vocabulary bank
+$\TokenBank{i}$ has a nonempty complement in $\Vocab$, so each
+$\TailRepresentative{i}$ is well-defined.  For every
+$i\in\PositionSet$ and $a\in\Vocab$,
+\begin{equation}
+ \bigl|\PosMarginal{i}(a)-\NoisyMarginal{i}(a)\bigr|
+ \le\RowTVError,
+ \qquad
+ a\notin\TokenBank{i}
+ \Longrightarrow a\in\TailSet{i}{\TailThreshold}.
+ \label{app:eq:proof-preprocessing-certificates}
+\end{equation}
+Under (RF\textcolor{red}{; \cref{app:eq:RF}}), the standard floor \eqref{app:eq:rate-threshold-floor}
+additionally gives
+\begin{equation}
+ \BankSize{i}
+ \le\left(\frac{4\FrequencyConstant}{\TailThreshold}\right)^{1/\RankTailExponent}
+ \quad\text{for every }i.
+ \label{app:eq:finite-bank-size-proof}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Establish a nonempty vocabulary-bank complement.}
+In \AlgoBlockNamedRef{preprocess}, preprocessing fixes
+$\TailThreshold=\max\FeasibleThresholdGrid$ once from the
+public parameters, before the all-mask submission; this threshold is reused
+by every screen.
+Since $\FrequencyConstant\ge1$, the standard floor satisfies
+$\ThresholdFloor=4\max\{\RowTVError,\FrequencyConstant/\VocabSize\}
+\ge2(\RowTVError+1/\VocabSize)$.
+Together with $\TailThreshold\ge\ThresholdFloor$, this gives
+\begin{equation}
+ \TailThreshold-\RowTVError
+ \ge\RowTVError+\frac2{\VocabSize}
+ >\frac1{\VocabSize}
+ \ge\min_{a\in\Vocab}\NoisyMarginal{i}(a).
+ \label{app:eq:baseline-existence}
+\end{equation}
+Thus $\TokenBank{i}\ne\Vocab$, proving tail-representative existence.
+
+\emph{2. Certify every omitted token using the row-TV bound.}
+At the all-mask state, $\ExactRow{\AllMaskState}{i}=\PosMarginal{i}$ and
+$\OracleRow{\AllMaskState}{i}=\NoisyMarginal{i}$.
+Thus \eqref{app:eq:oracle-tv-radius} and the singleton-event bound for TV give,
+for every $a\in\Vocab$,
+\[
+ \bigl|\PosMarginal{i}(a)-\NoisyMarginal{i}(a)\bigr|
+ \le \sup_{A\subseteq\Vocab}
+       \bigl|\PosMarginal{i}(A)-\NoisyMarginal{i}(A)\bigr|
+ =\dTV(\PosMarginal{i},\NoisyMarginal{i})
+ \le\RowTVError.
+\]
+This bounds both signs of the difference, whether or not $a$ belongs to
+$\TokenBank{i}$.  For a token outside the vocabulary bank $\TokenBank{i}$,
+definition \eqref{app:eq:local-bank} then gives
+\begin{equation}
+ a\notin\TokenBank{i}
+ \quad\Longrightarrow\quad
+ \PosMarginal{i}(a)
+ \le\NoisyMarginal{i}(a)+\RowTVError<\TailThreshold.
+ \label{app:eq:bank-complement-tail}
+\end{equation}
+This proves \eqref{app:eq:proof-preprocessing-certificates}, including the
+tail certificate for $\TailRepresentative{i}$.
+
+
+\emph{3. Apply (RF\textcolor{red}{; \cref{app:eq:RF}}) only for the bank-size estimate.}
+For the vocabulary-bank size $\BankSize{i}=|\TokenBank{i}|$,
+the standard floor gives
+$\TailThreshold\ge\ThresholdFloor=\StandardThresholdFloor{\FrequencyConstant}$,
+hence both $\TailThreshold\ge4\RowTVError$ and
+$\TailThreshold\ge4\FrequencyConstant/\VocabSize$.
+Every $a\in\TokenBank{i}$ therefore satisfies
+\begin{equation}
+ \PosMarginal{i}(a)
+ \ge\NoisyMarginal{i}(a)-\RowTVError
+ \ge\TailThreshold-2\RowTVError
+ \ge\frac{\TailThreshold}{2}.
+ \label{app:eq:bank-member-mass}
+\end{equation}
+If
+$\BankSize{i}\ge1$, at least $\BankSize{i}$ tokens have exact mass at least
+$\TailThreshold/2$; hence the exact rank-$\BankSize{i}$ mass has the same
+lower bound.  Assumption (RF\textcolor{red}{; \cref{app:eq:RF}}) and
+$\TailThreshold\ge4\FrequencyConstant/\VocabSize$ yield
+\[
+ \frac{\TailThreshold}{2}
+ \le\FrequencyConstant
+ \left(\BankSize{i}^{-\RankTailExponent}+\VocabSize^{-1}\right)
+ \le\FrequencyConstant\BankSize{i}^{-\RankTailExponent}
+    +\frac{\TailThreshold}{4}.
+\]
+Rearranging proves \eqref{app:eq:finite-bank-size-proof}.  The inequality is
+trivial when $\BankSize{i}=0$.
+\end{proof}
+
+\paragraph{Screen-success event (analysis only).}
+\textcolor{red}{The colors drawn in \AlgoBlockNamedRef{draft} determine
+the following event for \AlgoBlockNamedRef{screen}.}
+Fix a realized history $\History=(G,x_G)$.  For distinct
+$i,j\in\ResidualPositions$ with
+$d_{\ResidualForest}(j)\le\DegreeCutoff$, call $\tau$
+\emph{$(i,j)$-separating} when
+\begin{equation}
+\begin{aligned}
+ \ColorHash{\tau}{v}&\ne\ColorHash{\tau}{j}
+   &&\text{for every }v\in\mathcal N_{\ResidualForest}(j),\\
+ \ColorHash{\tau}{v}&\ne\ColorHash{\tau}{i}
+   &&\text{for every }
+   v\in\mathcal N_{\ResidualForest}(j)\setminus\{i\}.
+\end{aligned}
+\label{app:eq:pair-separating-coloring}
+\end{equation}
+The screen family is \emph{successful at $\History$}, denoted
+$\ScreenSuccess{\History}$, if
+\begin{equation}
+ \left|
+ \left\{\tau\in\ColoringIndexSet:
+       \tau\text{ is $(i,j)$-separating}\right\}
+ \right|>\frac{\ColoringCount}{2}
+ \label{app:eq:screen-success-event}
+\end{equation}
+for every such ordered pair $(i,j)$.  This event is defined using the hidden
+residual forest only for analysis; the implemented screen neither observes
+nor tests it.  For every separating $\tau$, the two properties used by the
+screen proof are
+\begin{equation}
+ \mathcal N_{\ResidualForest}(j)
+ \cap\ColorClass{\tau}{\ColorHash{\tau}{j}}=\emptyset,
+ \qquad
+ \mathcal N_{\ResidualForest}(j)
+ \cap\ColorClass{\tau}{\ColorHash{\tau}{i}}\subseteq\{i\}.
+ \label{app:eq:pairwise-local-isolation}
+\end{equation}
+\input{figures/algorithm_examples_2026-09-18/separation_example}
+
+\paragraph{Call index, draft, and information before fresh colors.}
+Fix the target, its forest, and the frozen oracle throughout.
+The index $s\in[\ScreenCallCap]$ counts screen calls
+(\AlgoBlockRef{screen}), not individual colorings or commit rounds.
+Define the \emph{reach event}
+\[
+ R_s:=\{\text{Algorithm~\ref{app:alg:complete-sampler} reaches its $s$th screen call}\}.
+\]
+Thus $R_s$ is an event, not the round count $\CommitRounds$.
+Recall that $\DraftFiller=(\DraftToken{i})_{i\in\ResidualPositions}
+\in\Vocab^{\ResidualPositions}$ is the background token vector fixed by
+$\DraftGenerator$ before fresh colors are drawn
+(Definition~\ref{app:def:draft-generator}).  Its call-indexed version is
+\[
+ f^{(s)}:=
+ \begin{cases}
+ \DraftFiller\text{ fixed for call }s\text{ in \AlgoBlockRef{draft}},
+     &\text{on }R_s,\\
+ \dagger,&\text{on }R_s^{\mathsf c}.
+ \end{cases}
+\]
+The symbol $\dagger$ means \emph{no $s$th call}: it is a formal marker,
+not a vocabulary token, $\MASK$, or a draft vector.
+Different executions can stop after different numbers of screens.
+This marker defines $f^{(s)}$ on every execution, so the proof can sum
+over the fixed range $s=1,\ldots,\ScreenCallCap$ without adding any call.
+
+On $R_s$, let $\mathcal T_{s-}$ record the past colors, replies, commits,
+and decision-rule state just after $f^{(s)}$ is fixed and before the
+current color block is drawn.  On $R_s^{\mathsf c}$, use the terminal
+transcript instead.  Define
+\[
+ \mathcal F_{s-1}:=\sigma(\mathcal T_{s-},f^{(s)}),
+ \qquad
+ \mathcal F:=\mathcal F_{s-1}\quad\text{at the call under consideration}.
+\]
+On a reached call, this is precisely the information available between
+draft generation and fresh color generation: the history and completed
+draft are fixed under this conditioning, but the current colors are not.
+It excludes current or future colors and the full seed $W$; fixing $W$
+would fix those colors.  No union over possible histories or drafts is needed.
+
+\paragraph{Intuition.}
+A low-degree readout creates at most $2\DegreeCutoff$ forbidden color
+equalities.  Thus
+$\RandomColorCount=8(\DegreeCutoff+1)\simeq\DegreeCutoff$
+makes one coloring good with probability greater than $3/4$.
+Repeating independently $\RandomColoringCount$ times makes a wrong
+majority exponentially unlikely:
+\[
+ \Pr(\hbox{wrong majority for one pair}\mid\mathcal F)
+ \le e^{-\RandomColoringCount/8},\qquad
+ \ScreenCallCap N^2 e^{-\RandomColoringCount/8}\le\ScreenFailureBudget.
+\]
+A union bound over pairs yields \cref{main:eq:conditional-screen-success}.
+The chosen $\RandomColoringCount$ is the ceiling of the logarithm
+obtained by solving the second inequality.  Conditioning is on the past before the fresh colors.
+
+\begin{lemma}[Fresh randomized screens succeed adaptively\textcolor{red}{; \AlgoBlockRef{draft}}]
+\label{app:lem:random-screen-success}
+Suppose Algorithm~\ref{app:alg:complete-sampler} reaches a screen call with
+realized past $\mathcal F$, including the completed generation of its fixed
+draft but preceding the current coloring block.  Conditional on
+$\mathcal F$, the fresh family in
+\eqref{app:eq:random-color-parameters} satisfies
+\begin{equation}
+ \Pr\bigl(\ScreenSuccess{\History}^{\mathsf c}\mid\mathcal F\bigr)
+ \le \frac{\ScreenFailureBudget}{\ScreenCallCap}.
+ \label{app:eq:conditional-screen-failure}
+\end{equation}
+Consequently, over all decision-rule randomness and commit draws,
+\begin{equation}
+ \Pr\{\text{some reached screen is unsuccessful}\}
+ \le\ScreenFailureBudget.
+ \label{app:eq:adaptive-screen-failure}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Separate one ordered pair with one fresh coloring.}
+Conditional on $\mathcal F$, the history, residual forest, and draft are fixed, while
+the current colors drawn in \AlgoBlockRef{draft} are mutually independent
+and uniform.  Fix an ordered pair
+$(i,j)$ with $d_{\ResidualForest}(j)\le\DegreeCutoff$.  The two lines of
+\eqref{app:eq:pair-separating-coloring} contain at most
+$2d_{\ResidualForest}(j)\le2\DegreeCutoff$ forbidden color equalities.  Each
+has probability $1/\RandomColorCount$, so one coloring is nonseparating with
+conditional probability at most
+\begin{equation}
+ \frac{2\DegreeCutoff}{\RandomColorCount}
+ =\frac{\DegreeCutoff}{4(\DegreeCutoff+1)}<\frac14.
+ \label{app:eq:one-random-coloring-bad}
+\end{equation}
+
+\emph{2. Amplify to a strict majority for that pair.}
+Let $X_\tau$ indicate that coloring $\tau$ separates this pair.  Conditional
+on $\mathcal F$, the $X_\tau$ are independent and have mean at least $3/4$.
+Hoeffding's inequality therefore gives
+\begin{equation}
+ \Pr\left\{\sum_{\tau=1}^{\RandomColoringCount}X_\tau
+       \le\frac{\RandomColoringCount}{2}\,\middle|\,\mathcal F\right\}
+ \le \exp\{-2\RandomColoringCount(3/4-1/2)^2\}
+ =\exp\{-\RandomColoringCount/8\}.
+ \label{app:eq:random-majority-hoeffding}
+\end{equation}
+
+\emph{3. Take a union bound over ordered pairs at the current history.}
+There are fewer than $N^2$ relevant ordered pairs.  A union bound and
+\eqref{app:eq:random-color-parameters} give
+\[
+ N^2e^{-\RandomColoringCount/8}
+ \le\ScreenFailureBudget/\ScreenCallCap,
+\]
+which proves \eqref{app:eq:conditional-screen-failure}.
+
+
+\emph{4. Sum over adaptively reached calls by conditional expectation.}
+Recall that $R_s$ means the algorithm reaches its $s$th screen call,
+and $f^{(s)}$ is that call's draft; $\dagger$ marks an unreached call.
+On $R_s$, let $H^{(s)}$ be the committed history at that call, and define
+\hypertarget{app-reached-screen-failure}{}
+\[
+ E_s:=\{R_s\text{ occurs and }\ScreenSuccess{H^{(s)}}\text{ fails}\}.
+\]
+Thus $E_s$ means \emph{call $s$ is reached and fails}; it is false on
+$R_s^{\mathsf c}$, with no history or screen evaluated there.
+The draft rule terminates before the fresh colors
+(Definition~\ref{app:def:draft-generator}), so reaching the call is
+decided before those colors.  In the notation above,
+$R_s=\{f^{(s)}\ne\dagger\}\in
+\mathcal F_{s-1}=\sigma(\mathcal T_{s-},f^{(s)})$.
+On $R_s$ apply \eqref{app:eq:conditional-screen-failure};
+on $R_s^{\mathsf c}$ the conditional failure probability is zero.  Hence
+\[
+ \Pr(E_s\mid\mathcal F_{s-1})
+ \le
+ \begin{cases}
+ \ScreenFailureBudget/\ScreenCallCap,&\text{on }R_s,\\
+ 0,&\text{on }R_s^{\mathsf c}
+ \end{cases}
+ =\mathbf 1_{R_s}\frac{\ScreenFailureBudget}{\ScreenCallCap}.
+\]
+Taking expectations gives
+\[
+ \Pr(E_s)
+ =\mathbb E\!\left[
+   \Pr(E_s\mid\mathcal F_{s-1})
+  \right]
+ \le\mathbb E\!\left[
+   \mathbf 1_{R_s}\frac{\ScreenFailureBudget}{\ScreenCallCap}
+  \right]
+ =\Pr(R_s)\frac{\ScreenFailureBudget}{\ScreenCallCap}
+ \le\frac{\ScreenFailureBudget}{\ScreenCallCap}.
+\]
+The failed-screen event is the union of these reached-call failures, so
+\[
+ \Pr\!\left(\bigcup_{s=1}^{\ScreenCallCap}E_s\right)
+ \le\sum_{s=1}^{\ScreenCallCap}\Pr(E_s)
+ \le\ScreenCallCap\,
+      \frac{\ScreenFailureBudget}{\ScreenCallCap}
+ =\ScreenFailureBudget.
+\]
+This proves \eqref{app:eq:adaptive-screen-failure}.  No independence between
+different screen-success events is asserted or needed.  The same separating coloring
+isolates every packed column for a fixed ordered pair, so neither the event
+nor this union bound requires an additional union over bank values, columns,
+or possible drafts.  Draft generation is allowed to depend on the past
+oracle transcript; independence of that draft from oracle error is not used.
+\end{proof}
+
+\paragraph{Intuition\textcolor{red}{~(\AlgoBlockRef{chunks}, \AlgoBlockRef{probes})}.}
+\textcolor{red}{By \cref{app:lem:random-screen-success}, with high probability
+every reached screen has a strict separating majority for each pair with
+readout degree at most $\DegreeCutoff$.
+Fix one such coloring with different source and readout colors.
+The readout chunk contains no neighbor of $j$, and the probed source class
+contains no neighbor of $j$ other than possibly $i$
+(\cref{app:eq:pairwise-local-isolation}).
+Thus every neighbor is observed, and only $i$ can change among them.
+By \cref{app:lem:residual-markov}, the exact row equals the row obtained by
+varying only $i$ at the common draft boundary in
+\cref{app:eq:fixed-draft-boundary-row}; this is the boundary at which
+(RT; \cref{app:eq:RT}) and (UEN; \cref{app:eq:UEN}) apply.}
+
+\begin{lemma}[Exact rows at a fixed draft boundary\textcolor{red}{; \AlgoBlockRef{chunks}, \AlgoBlockRef{probes}}]
+\label{app:lem:fixed-draft-rows}
+Suppose preprocessing is feasible and $\MaxBankSize\ge1$.
+Fix $\History=(G,x_G)$, $\DraftFiller\in\Vocab^{\ResidualPositions}$, and
+distinct residual positions $i,j$.  Define the complete boundary $z$ on
+$\PositionSet\setminus\{i,j\}$ by $z_k=x_k$ for $k\in G$ and
+$z_k=\DraftToken{k}$ otherwise.  For an $(i,j)$-separating coloring with
+different source and readout colors, every $\kappa\in\ScreenColumnSet$
+satisfies
+\begin{equation}
+ \ExactRow{
+   \ProbeState{\kappa}{\tau}{\ColorHash{\tau}{i}}
+              {\ReadoutChunkOf{\tau}{j}}}{j}
+ =\BoundaryRow{i}{j}{\PackedColumn{\kappa}{i}}{z}.
+ \label{app:eq:fixed-draft-boundary-row}
+\end{equation}
+In particular, the exact row family contains all source values in the
+local vocabulary bank $\TokenBank{i}$ and its tail representative
+$\TailRepresentative{i}$, at this same boundary.
+Padding may additionally contribute the row for $\DraftToken{i}$.
+\end{lemma}
+
+\begin{proof}
+By \AlgoBlockNamedRef{chunks}, the readout chunk is contained in the
+readout color class.
+Thus the two isolation clauses in \eqref{app:eq:pairwise-local-isolation}
+give, respectively,
+\[
+ \mathcal N_{\ResidualForest}(j)\cap\ReadoutChunkOf{\tau}{j}
+ =\varnothing,
+ \qquad
+ \mathcal N_{\ResidualForest}(j)\cap
+       \ColorClass{\tau}{\ColorHash{\tau}{i}}
+ \subseteq\{i\}.
+\]
+All residual neighbors of $j$ are therefore observed.  Since the source
+and readout colors differ, $i$ is also outside the masked readout chunk.
+In the state submitted by \AlgoBlockNamedRef{probes}, the relevant
+observed coordinates are exactly
+\[
+ \left(\ProbeState{\kappa}{\tau}{\ColorHash{\tau}{i}}
+                    {\ReadoutChunkOf{\tau}{j}}\right)_v
+ =
+ \begin{cases}
+ x_v,&v\in G,\\
+ \PackedColumn{\kappa}{i},&v=i,\\
+ \DraftToken{v},&v\in\mathcal N_{\ResidualForest}(j)\setminus\{i\}.
+ \end{cases}
+\]
+These are the same values as in the complete boundary with source value
+$\PackedColumn{\kappa}{i}$ and remaining values $z$.  Conditional on
+$X_G=x_G$, Lemma~\ref{app:lem:residual-markov} says that the row for $j$
+depends only on its residual neighbors.  Completing or changing all other
+coordinates to $z$ therefore leaves it unchanged, proving the identity.
+The bank columns and column $\TailColumn$ give the asserted subfamily by
+\eqref{app:eq:packed-column}.  The boundary is independent of the coloring
+because one draft is fixed across the entire screen.
+\end{proof}
+
+\textcolor{red}{\Cref{app:lem:random-screen-success} bounds the probability
+that any reached screen fails.  Under the screen-success event,
+\cref{app:lem:low-degree-screen} formalizes \eqref{main:eq:exact-low-degree-row}
+and identifies the output of
+\AlgoBlockNamedRef{aggregate} with the true neighbor set for every readout
+of residual degree at most $\DegreeCutoff$.}
+The target obeys the forest and RT--UEN\textcolor{red}{~%
+(\cref{app:eq:RT,app:eq:UEN})} assumptions
+(Assumptions~\ref{app:ass:forest-structure}
+and~\ref{app:ass:response-regularity}), and oracle rows satisfy the TV bound
+\eqref{app:eq:oracle-tv-radius}.
+Recall the general resolution
+$\ScreenResolution=4\RowTVError+\TailTolerance$ from
+\eqref{app:eq:diameter-screen-resolution}; the main text uses
+$\RowTVError=\TargetTolerance/(2\sqrt N)$.
+The lemma's screening-margin hypothesis $\ScreenResolution<\EdgeSignal$
+means that the target signal exceeds the row-noise and omitted-response allowances.
+This is a sufficient screening condition, not a consequence of RT--UEN\textcolor{red}{~%
+(\cref{app:eq:RT,app:eq:UEN})} alone.
+Preprocessing feasibility is specified in
+Definition~\ref{app:def:preprocessing}, and
+$\ScreenSuccess{\History}$ is defined in
+\eqref{app:eq:screen-success-event}.
+
+\begin{lemma}[Low-degree screen contract\textcolor{red}{; \AlgoBlockRef{aggregate}}]
+\label{app:lem:low-degree-screen}
+% Please retain the former label as a compatibility alias to this same lemma.
+\label{main:lem:low-degree-screen}
+Suppose preprocessing is feasible and
+$\ScreenResolution<\EdgeSignal$ holds. At any history $\History$,
+with any draft fixed throughout the screen, $\ScreenSuccess{\History}$
+implies
+\begin{equation*}
+ \ScreenRow{j}=\mathcal N_{\ResidualForest}(j)
+ \quad\text{for every }j\in\ResidualPositions
+ \text{ with }d_{\ResidualForest}(j)\le\DegreeCutoff.
+\end{equation*}
+\end{lemma}
+High-degree rows have only the construction's size cap; no subset or
+correctness guarantee is asserted for them.
+
+\paragraph{Intuition for the screen contract.}
+At a separating coloring, all exact rows for a nonedge coincide, so its
+observed diameter is at most $2\RowTVError$.  For an edge, restricting source
+values to the vocabulary bank plus tail representative,
+$\TokenBank{i}\cup\{\TailRepresentative{i}\}$, loses at most
+$\TailTolerance$ of the full response
+diameter, and row noise loses at most another $2\RowTVError$.  Thus the
+edge's observed diameter is at least
+\[
+ \EdgeSignal-\TailTolerance-2\RowTVError>2\RowTVError.
+\]
+The strict inequality is exactly
+$4\RowTVError+\TailTolerance<\EdgeSignal$.  The proof below verifies the
+bank/tail comparison, all empty-bank cases, and the strict-majority step.
+
+\begin{proof}[Proof of \AppLowDegreeScreenRef]
+
+\emph{1. Fix a successful screen and the hidden exact rows.}
+We analyze the votes and selected rows of \AlgoBlockNamedRef{aggregate}.
+If $\MaxBankSize=0$, use the empty-bank argument in the final paragraph
+below.  Otherwise assume $\MaxBankSize\ge1$.
+Fix a history $\History$ and a screen draft $\DraftFiller$ for which
+$\ScreenSuccess{\History}$ holds, a readout
+$j\in\ResidualPositions$ with
+$d_{\ResidualForest}(j)\le\DegreeCutoff$, and a candidate source
+$i\in\ResidualPositions\setminus\{j\}$.  By
+\eqref{app:eq:screen-success-event}, more than $\ColoringCount/2$
+evaluations are $(i,j)$-separating.
+
+Recall the binary dependence-test vote $\ScreenVote{\tau}{i}{j}$ in
+\eqref{app:eq:screen-vote}: it is zero if
+$\ColorHash{\tau}{i}=\ColorHash{\tau}{j}$, and otherwise
+$\ScreenVote{\tau}{i}{j}
+ =\mathbf 1\{\ScreenDiameter{\tau}{i}{j}>2\RowTVError\}$.
+Here $\ScreenDiameter{\tau}{i}{j}$ is the observed TV diameter in
+\eqref{app:eq:observed-screen-diameter}.
+By \eqref{app:eq:provisional-row}, $i\in\CandidateRow{j}$ exactly when
+$\sum_{\tau\in\ColoringIndexSet}\ScreenVote{\tau}{i}{j}
+ >\ColoringCount/2$.
+
+For a separating evaluation whose source and readout colors differ, define
+the hidden exact rows
+\begin{align}
+ \ProbeExactRow{\tau}{\kappa}{i}{j}
+ &:=\ExactRow{
+   \ProbeState{\kappa}{\tau}{\ColorHash{\tau}{i}}
+              {\ReadoutChunkOf{\tau}{j}}}{j},
+ \qquad \kappa\in\ScreenColumnSet,
+ \label{app:eq:hidden-screen-rows}\\
+ \ExactRowFamily{\tau}{i}{j}
+ &:=\{\ProbeExactRow{\tau}{\kappa}{i}{j}:
+             \kappa\in\ScreenColumnSet\}.
+ \label{app:eq:hidden-screen-row-family}
+\end{align}
+
+\emph{2. No false positives.}
+Assume $\{i,j\}\notin E(\ResidualForest)$ and fix a separating $\tau$.
+If $\ColorHash{\tau}{i}=\ColorHash{\tau}{j}$, then
+$\ScreenVote{\tau}{i}{j}=0$ by \eqref{app:eq:screen-vote}.
+Otherwise, the probe state in \eqref{app:eq:screen-probe-state} masks
+$\ReadoutChunkOf{\tau}{j}$, so the other masked positions are exactly
+$\ReadoutChunkOf{\tau}{j}\setminus\{j\}$.
+Since $\ReadoutChunkOf{\tau}{j}
+\subseteq\ColorClass{\tau}{\ColorHash{\tau}{j}}$, the first relation in
+\eqref{app:eq:pairwise-local-isolation} gives
+$\mathcal N_{\ResidualForest}(j)\cap\ReadoutChunkOf{\tau}{j}=\varnothing$.
+The positions that can change across columns lie in the source class
+$\ColorClass{\tau}{\ColorHash{\tau}{i}}$.
+The second relation in \eqref{app:eq:pairwise-local-isolation} bounds its
+intersection with $\mathcal N_{\ResidualForest}(j)$ by $\{i\}$;
+this intersection is empty because $i\notin\mathcal N_{\ResidualForest}(j)$.
+Thus all bank- and tail-column states agree on the committed history and
+reveal every residual neighbor of $j$ at its fixed draft value.
+Lemma~\ref{app:lem:residual-markov} gives
+\begin{equation}
+ \ProbeExactRow{\tau}{\TailColumn}{i}{j}
+ =\ProbeExactRow{\tau}{\kappa}{i}{j}
+ \quad\text{for every }\kappa\in\ScreenColumnSet.
+ \label{app:eq:nonedge-exact-row-equality}
+\end{equation}
+Every observed row is within $\RowTVError$ of this common exact row by
+\eqref{app:eq:oracle-tv-radius}; hence every pair of observed rows is within
+$2\RowTVError$, and $\ScreenVote{\tau}{i}{j}=0$.
+A strict majority of all evaluations are separating, so
+$\sum_{\tau\in\ColoringIndexSet}\ScreenVote{\tau}{i}{j}<\ColoringCount/2$.
+Thus $i\notin\CandidateRow{j}$ by \eqref{app:eq:provisional-row}, proving
+\begin{equation}
+ \CandidateRow{j}\subseteq\mathcal N_{\ResidualForest}(j).
+ \label{app:eq:no-false-positive-row}
+\end{equation}
+
+\emph{3. No false negatives when the local vocabulary bank is nonempty.}
+Now assume $\{i,j\}\in E(\ResidualForest)$ and $\BankSize{i}\ge1$.
+For every separating $\tau$, the first relation in
+\eqref{app:eq:pairwise-local-isolation} implies
+$\ColorHash{\tau}{i}\ne\ColorHash{\tau}{j}$.
+The second relation in \eqref{app:eq:pairwise-local-isolation} makes $i$
+the only residual neighbor of $j$ in the probed source class.  Fix a complete
+boundary $z\in\Vocab^{\PositionSet\setminus\{i,j\}}$ that agrees with the
+history and assigns $\DraftToken{v}$ to every uncommitted coordinate
+$v\ne i,j$.  Lemma~\ref{app:lem:fixed-draft-rows} gives
+\begin{align}
+ \ProbeExactRow{\tau}{\TailColumn}{i}{j}
+ &=\BoundaryRow{i}{j}{\TailRepresentative{i}}{z},\notag\\
+ \ProbeExactRow{\tau}{\kappa}{i}{j}
+ &=\begin{cases}
+ \BoundaryRow{i}{j}{\BankToken{i}{\kappa}}{z},
+     &\kappa\le\BankSize{i},\\
+ \BoundaryRow{i}{j}{\DraftToken{i}}{z},
+     &\BankSize{i}<\kappa\le\MaxBankSize.
+ \end{cases}
+ \label{app:eq:isolated-boundary-row-family}
+\end{align}
+Every separating $\tau$ therefore contains the same bank-plus-tail exact
+subfamily.  Its diameter is
+\begin{equation}
+ D^{\mathrm{ex}}_{\History}(i,j)
+ :=\max_{a,b\in\TokenBank{i}\cup\{\TailRepresentative{i}\}}
+ \dTV\bigl(\BoundaryRow{i}{j}{a}{z},
+            \BoundaryRow{i}{j}{b}{z}\bigr).
+ \label{app:eq:queried-exact-diameter}
+\end{equation}
+Choose columns $\kappa,\kappa'$ whose exact rows attain this finite
+bank-plus-tail maximum.  Padding can add rows but cannot remove these
+columns.  Applying \eqref{app:eq:oracle-tv-radius} to both rows gives
+\begin{align*}
+ \ScreenDiameter{\tau}{i}{j}
+ &\ge\dTV\bigl(\ProbeObservedRow{\tau}{\kappa}{i}{j},
+                  \ProbeObservedRow{\tau}{\kappa'}{i}{j}\bigr)\\
+ &\ge\dTV\bigl(\ProbeExactRow{\tau}{\kappa}{i}{j},
+                  \ProbeExactRow{\tau}{\kappa'}{i}{j}\bigr)\\
+ &\quad-\dTV\bigl(\ProbeObservedRow{\tau}{\kappa}{i}{j},
+                    \ProbeExactRow{\tau}{\kappa}{i}{j}\bigr)\\
+ &\quad-\dTV\bigl(\ProbeObservedRow{\tau}{\kappa'}{i}{j},
+                    \ProbeExactRow{\tau}{\kappa'}{i}{j}\bigr)\\
+ &\ge D^{\mathrm{ex}}_{\History}(i,j)-2\RowTVError.
+\end{align*}
+If $D^{\mathrm{ex}}_{\History}(i,j)>4\RowTVError$, this is larger than
+$2\RowTVError$, so $\ScreenVote{\tau}{i}{j}=1$ for every separating $\tau$.
+The strict majority then puts $i$ in $\CandidateRow{j}$ by
+\eqref{app:eq:provisional-row}.
+Taking the contrapositive,
+\begin{equation}
+ i\notin\CandidateRow{j}
+ \quad\Longrightarrow\quad
+ D^{\mathrm{ex}}_{\History}(i,j)\le4\RowTVError.
+ \label{app:eq:missed-queried-diameter}
+\end{equation}
+To rule out this missed edge, it suffices to show
+$\DirectedResponse{i}{j}{z}\le\ScreenResolution<\EdgeSignal$,
+contradicting (UEN\textcolor{red}{; \cref{app:eq:UEN}}).  We establish this full-response bound next.
+
+\emph{Recovering the full response diameter.}
+The tail representative $\TailRepresentative{i}$ and every token outside
+the vocabulary bank $\TokenBank{i}$ lie in
+$\TailSet{i}{\TailThreshold}$ by
+Lemma~\ref{app:lem:preprocessing-certificates}.  Feasibility of
+$\TailThreshold$ and (RT\textcolor{red}{; \cref{app:eq:RT}}) therefore give
+\begin{equation}
+ \max_{a,b\notin\TokenBank{i}}
+ \dTV\bigl(\BoundaryRow{i}{j}{a}{z},
+            \BoundaryRow{i}{j}{b}{z}\bigr)
+ \le\min\{1,\ResponseConstant\TailThreshold^{\ResponseExponent}\}
+ \le\TailTolerance.
+ \label{app:eq:tail-diameter-at-screen-boundary}
+\end{equation}
+Suppose $i\notin\CandidateRow{j}$.  In the mixed case
+$a\in\TokenBank{i}$ and $b\notin\TokenBank{i}$, the triangle inequality
+through the tail representative gives
+\begin{align*}
+ &\dTV\bigl(\BoundaryRow{i}{j}{a}{z},\BoundaryRow{i}{j}{b}{z}\bigr)\\
+ &\quad\le
+ \dTV\bigl(\BoundaryRow{i}{j}{a}{z},
+           \BoundaryRow{i}{j}{\TailRepresentative{i}}{z}\bigr)
+ +\dTV\bigl(\BoundaryRow{i}{j}{\TailRepresentative{i}}{z},
+             \BoundaryRow{i}{j}{b}{z}\bigr)\\
+ &\quad\le 4\RowTVError+\TailTolerance.
+\end{align*}
+The first distance uses \eqref{app:eq:missed-queried-diameter}; the second
+uses \eqref{app:eq:tail-diameter-at-screen-boundary}.  Interchanging $a,b$
+handles the other mixed case.  Together with the bank--bank and tail--tail
+bounds, this gives, for arbitrary $a,b\in\Vocab$,
+\begin{equation}
+ \dTV\bigl(\BoundaryRow{i}{j}{a}{z},
+            \BoundaryRow{i}{j}{b}{z}\bigr)
+ \le
+ \begin{cases}
+  4\RowTVError,&a,b\in\TokenBank{i},\\
+  4\RowTVError+\TailTolerance,
+    &\text{exactly one of $a,b$ lies in }\TokenBank{i},\\
+  \TailTolerance,&a,b\notin\TokenBank{i}.
+ \end{cases}
+ \label{app:eq:screen-three-case-diameter}
+\end{equation}
+The maximum of the three upper bounds in
+\eqref{app:eq:screen-three-case-diameter} is $\ScreenResolution$ by
+\eqref{app:eq:diameter-screen-resolution}.  Hence a missed true edge would
+have directed response at most $\ScreenResolution$, contradicting (UEN\textcolor{red}{; \cref{app:eq:UEN}}) and
+$\ScreenResolution<\EdgeSignal$.
+
+The same three comparisons also give the quantitative link used in the
+intuition, without assuming that the edge was missed:
+\begin{align*}
+ \DirectedResponse{i}{j}{z}
+ &\le\max\{D^{\mathrm{ex}}_{\History}(i,j),
+           D^{\mathrm{ex}}_{\History}(i,j)+\TailTolerance,
+           \TailTolerance\}\\
+ &=D^{\mathrm{ex}}_{\History}(i,j)+\TailTolerance,\\
+ \ScreenDiameter{\tau}{i}{j}
+ &\ge D^{\mathrm{ex}}_{\History}(i,j)-2\RowTVError\\
+ &\ge\DirectedResponse{i}{j}{z}-\TailTolerance-2\RowTVError\\
+ &\ge\EdgeSignal-\TailTolerance-2\RowTVError>2\RowTVError.
+\end{align*}
+Here the three entries are the bank--bank, mixed, and tail--tail cases;
+the last line uses (UEN\textcolor{red}{; \cref{app:eq:UEN}}) for this true edge.
+
+\emph{4. Empty vocabulary banks and row selection.}
+If $\BankSize{i}=0$, every source token lies in the certified tail, so
+\eqref{app:eq:tail-diameter-at-screen-boundary} bounds the entire directed
+response by
+$\TailTolerance\le\ScreenResolution<\EdgeSignal$.  Such an $i$ cannot be
+adjacent to $j$ by (UEN\textcolor{red}{; \cref{app:eq:UEN}}).  This also covers $\MaxBankSize=0$: then every local
+vocabulary bank $\TokenBank{i}$ is empty, every returned row is defined to
+be empty, and no residual edge
+incident to a low-degree readout can exist.
+
+
+\emph{5. Preserve the exact candidate row under public selection.}
+We have proved that $\CandidateRow{j}$ equals the true neighbor set.  Its size
+is at most $\DegreeCutoff$, so every admissible selector in
+Definition~\ref{app:def:row-selector}, as applied in \AlgoBlockRef{aggregate},
+preserves it by the nonoverflow identity condition.  Therefore
+$\ScreenRow{j}=\mathcal N_{\ResidualForest}(j)$.
+\end{proof}

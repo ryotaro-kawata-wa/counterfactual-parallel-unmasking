@@ -1,0 +1,121 @@
+% Upper-construction quantities.  Semantic names isolate the proof source
+% from the visible alphabet used for graph, bank, color, and chunk objects.
+
+% Public accuracy and threshold parameters.
+\newcommand{\RowTVError}{\varepsilon_0}
+% These two roles use the same derived row-TV bound, not separate inputs.
+\newcommand{\MarginalError}{\RowTVError}
+\newcommand{\ScreenError}{\RowTVError}
+\newcommand{\ScreenResolution}{\delta}
+\newcommand{\TailTolerance}{\delta_{\mathrm{tail}}}
+\newcommand{\ThresholdFloor}{\underline t}
+% Please pass the public RF constant, or 1 for the main benchmarks.
+% This expands the chosen value without introducing a new visible symbol.
+\newcommand{\StandardThresholdFloor}[1]{4\max\{\RowTVError,#1/\VocabSize\}}
+\newcommand{\TailThreshold}{t}
+
+% Public algorithmic parameters and their rate exponents.
+\newcommand{\DegreeCutoff}{d}
+\newcommand{\ChunkCount}{J}
+\newcommand{\DegreeExponent}{\gamma_{\mathrm{deg}}}
+\newcommand{\ChunkExponent}{\gamma_{\mathrm{ch}}}
+\newcommand{\BalancedExponent}{\gamma_\star}
+
+% One-time preprocessing objects.
+\newcommand{\PreprocessData}{\mathsf{Prep}}
+\newcommand{\ThresholdGridDepth}{J^{\mathrm{grid}}}
+\newcommand{\ThresholdGrid}{\mathcal G}
+\newcommand{\FeasibleThresholdGrid}{\mathcal G^{\mathrm{feas}}}
+\newcommand{\NoisyMarginal}[1]{\widetilde\pi_{#1}}
+\newcommand{\TokenBank}[1]{\widehat{\mathcal B}_{#1}}
+\newcommand{\BankToken}[2]{\widehat a_{#1,#2}}
+\newcommand{\BankSize}[1]{\ell_{#1}}
+\newcommand{\MaxBankSize}{\ell_{\max}}
+\newcommand{\TailRepresentative}[1]{b_{#1}}
+
+% Please keep the screen background separate from its certified tail column.
+\newcommand{\DraftFiller}{f}
+\newcommand{\DraftToken}[1]{f_{#1}}
+\newcommand{\DraftGenerator}{\mathsf{Draft}}
+\newcommand{\DraftSeedBlock}[1]{U_{#1}^{\mathrm{draft}}}
+\newcommand{\TailColumn}{\mathsf T}
+\newcommand{\ScreenColumnSet}{\mathcal I^{\mathrm{src}}}
+\newcommand{\ScreenColumnCount}{\Lambda}
+\newcommand{\PackedColumn}[2]{\varphi_{#1}(#2;\DraftFiller)}
+\newcommand{\DraftQueries}{Q_{f}}
+\newcommand{\DraftQueryCap}{\overline Q_{f}}
+\newcommand{\DraftDepth}{D_{f}}
+\newcommand{\DraftDepthCap}{\overline D_{f}}
+\newcommand{\OracleDepth}{D}
+
+% Screen colorings and readout chunks. Please retain the deterministic-only
+% macros for source-archive compatibility; that realization is not compiled.
+\newcommand{\ReadoutChunkSize}{B^{\mathrm{rd}}}
+\newcommand{\PositionCodeLength}{\ell_0}
+\newcommand{\ColorCount}{p}
+\newcommand{\ColoringCount}{M}
+\newcommand{\ColorSet}{\mathcal C^{\mathrm{val}}}
+\newcommand{\ColoringIndexSet}{\mathcal I^{\mathrm{col}}}
+\newcommand{\ColorPrime}{p_{\mathrm{det}}}
+\newcommand{\HashDimension}{m_{\mathrm{det}}}
+\newcommand{\HashCode}[1]{\mathbf c_{#1}}
+\newcommand{\HashCoefficient}[2]{c_{#1,#2}}
+\newcommand{\ColorHash}[2]{h_{#1}(#2)}
+\newcommand{\DetColorHash}[2]{h^{\mathrm{det}}_{#1}(#2)}
+\newcommand{\RandomColorCount}{p_{\mathrm{rnd}}}
+\newcommand{\RandomColoringCount}{M_{\mathrm{rnd}}}
+\newcommand{\ScreenCallCap}{T_{\mathrm{scr}}}
+\newcommand{\ScreenFailureBudget}{\delta^{\mathrm{fail}}}
+\newcommand{\HardRoundCap}{\RoundBudget}
+\newcommand{\ScreenSuccess}[1]{\mathsf{Iso}(#1)}
+\newcommand{\ColorClassAt}[3]{\mathcal C_{#1,#2}(#3)}
+\newcommand{\ColorClass}[2]{\ColorClassAt{#1}{#2}{\History}}
+\newcommand{\ColorClassSize}[2]{n_{#1,#2}(\History)}
+\newcommand{\ReadoutChunkAt}[4]{\mathcal C_{#1,#2,#3}(#4)}
+\newcommand{\ReadoutChunk}[3]{\ReadoutChunkAt{#1}{#2}{#3}{\History}}
+\newcommand{\ReadoutChunkOf}[2]{\mathcal C_{#1}(#2)}
+\newcommand{\ReadoutColorValue}{c^{\mathrm{rd}}}
+\newcommand{\SourceColorValue}{c^{\mathrm{src}}}
+\newcommand{\ReadoutColor}[2]{c^{\mathrm{rd}}_{#1}(#2)}
+\newcommand{\SourceColor}[2]{c^{\mathrm{src}}_{#1}(#2)}
+\newcommand{\BadColorings}[2]{\mathcal B^{\mathrm{col}}_{#1,#2}}
+
+% Submitted states, observable rows, scores, and votes.
+\newcommand{\ProbeStateAt}[5]{y_{#1,#2,#3}(#4,\DraftFiller,#5)}
+\newcommand{\ProbeState}[4]{\ProbeStateAt{#1}{#2}{#3}{\History}{#4}}
+\newcommand{\ProbeObservedRow}[4]{q^{\mathrm{scr}}_{#1,#2}(#3\!\to\!#4\mid\History,\DraftFiller)}
+\newcommand{\ProbeExactRow}[4]{\mu^{\mathrm{scr}}_{#1,#2}(#3\!\to\!#4\mid\History,\DraftFiller)}
+\newcommand{\ObservedRowFamily}[3]{\mathcal Q_{#1}(#2\!\to\!#3\mid\History)}
+\newcommand{\ExactRowFamily}[3]{\mathcal P_{#1}(#2\!\to\!#3\mid\History)}
+\newcommand{\ScreenDiameter}[3]{D_{#1}(#2,#3\mid\History)}
+\newcommand{\ScreenVote}[3]{Y_{#1}(#2,#3\mid\History)}
+\newcommand{\CandidateRow}[1]{\widetilde A_{#1}(\History)}
+% Please keep row selection separate from the strict-majority candidate test.
+\newcommand{\RowSelector}{\mathsf S}
+\newcommand{\ScreenTranscript}{\mathcal T}
+\newcommand{\SelectedPackedSampler}{\RandomizedPackedSampler[\RowSelector]}
+\newcommand{\ScreenRowsAt}[1]{A(#1)}
+\newcommand{\ScreenRowAt}[2]{A_{#2}(#1)}
+\newcommand{\ScreenRows}{\ScreenRowsAt{\History}}
+\newcommand{\ScreenRow}[1]{\ScreenRowAt{\History}{#1}}
+
+% Peeling, terminal certification, and resource accounting.
+\newcommand{\PackedScreenName}{PackedScreen}
+\newcommand{\CommitName}{Commit}
+\newcommand{\CommitOperation}{\operatorname{\CommitName}}
+\newcommand{\InfeasibleOutcome}{\textsc{Infeasible}}
+\newcommand{\ClaimCount}[1]{\operatorname{cl}_{#1}(\History)}
+\newcommand{\PeelSet}{\mathcal P(\History)}
+\newcommand{\FrozenPeelSet}{\overline{\mathcal P}}
+\newcommand{\HighDegreeSetAt}[1]{\mathcal V^{\mathrm{hi}}(#1)}
+\newcommand{\HighDegreeSet}{\HighDegreeSetAt{\History}}
+\newcommand{\HighDegreeCount}[1]{n_{#1}^{\mathrm{hi}}}
+\newcommand{\PeelPhaseCap}{T_{\mathrm{peel}}}
+\newcommand{\ChunksPerColoring}[1]{J_{#1}}
+\newcommand{\ScreenQueries}{Q_{\mathrm{scr}}(\History)}
+\newcommand{\TerminalHistory}{\HistoryAt{\star}}
+\newcommand{\TerminalPositions}{\ResidualPositionsAt{\star}}
+\newcommand{\CertifiedEdges}{\widehat E_\star}
+\newcommand{\CertifiedForest}{\widehat F}
+\newcommand{\RowGraph}[2]{\operatorname{Graph}(#1;#2)}
+\newcommand{\ComponentCentroid}[1]{v_{#1}^{\mathrm{cen}}}

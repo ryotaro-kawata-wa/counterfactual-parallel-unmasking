@@ -1,0 +1,16 @@
+per_run_threshold_refine_0 8/8 binary N=16384 B=14848 K=1.6290007899004167e-08
+per_run_threshold_refine_1 3/3 binary N=14336 B=12096 K=1.7058694455649287e-12
+{
+  "status": "complete",
+  "stage": "complete",
+  "pid": 3636627,
+  "workers": 8,
+  "output": "/home/kawata/work/uen_forest_toy_robustness_20260919/experiments/forest_toy/results/ideal_capless_fixed_accuracy_scaling/random_per_run_threshold_search_k1em10L0",
+  "started_utc": "2026-09-21T16:37:08.542435+00:00",
+  "updated_utc": "2026-09-21T16:37:35.691810+00:00",
+  "stage_jobs": 3,
+  "stage_finished": 3,
+  "seconds": 27.14656559098512,
+  "per_run_searches": 120,
+  "reused_budget_records": 1925
+}

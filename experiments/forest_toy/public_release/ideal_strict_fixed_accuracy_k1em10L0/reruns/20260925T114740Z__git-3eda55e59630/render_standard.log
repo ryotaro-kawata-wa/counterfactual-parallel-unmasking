@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/kawata/work/uen_forest_toy_fresh_reruns/20260925T114740Z__git-3eda55e59630/source/experiments/forest_toy/public_release/ideal_strict_fixed_accuracy_k1em10L0/report_ideal_strict_fixed_accuracy_1x4.py", line 302, in <module>
+    main()
+  File "/home/kawata/work/uen_forest_toy_fresh_reruns/20260925T114740Z__git-3eda55e59630/source/experiments/forest_toy/public_release/ideal_strict_fixed_accuracy_k1em10L0/report_ideal_strict_fixed_accuracy_1x4.py", line 263, in main
+    "input": str(input_path.relative_to(ROOT)),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kawata/miniconda3/lib/python3.12/pathlib.py", line 682, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: '/home/kawata/work/uen_forest_toy_fresh_reruns/20260925T114740Z__git-3eda55e59630/strict_random/figure_data.json' is not in the subpath of '/home/kawata/work/uen_forest_toy_fresh_reruns/20260925T114740Z__git-3eda55e59630/source/experiments/forest_toy/public_release/ideal_strict_fixed_accuracy_k1em10L0'

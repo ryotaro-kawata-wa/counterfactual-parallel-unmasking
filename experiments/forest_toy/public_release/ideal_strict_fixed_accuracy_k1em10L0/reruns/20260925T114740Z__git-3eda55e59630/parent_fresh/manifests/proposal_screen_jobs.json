@@ -1,0 +1,10142 @@
+[
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      175,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      175,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      175,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      175,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      47,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      525,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      525,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      525,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      525,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      55,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      65,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      701,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      701,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      701,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      701,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      877,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      877,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      877,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      877,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      147,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      147,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      223,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      223,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      297,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      297,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      371,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      371,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      73,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      73,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      117,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      117,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      117,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      117,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      233,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      233,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      233,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      233,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      351,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      45,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      467,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      467,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      467,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      467,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      585,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      585,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      585,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      4,
+      585,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      147,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      147,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      197,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      197,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      247,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      247,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      49,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      49,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      99,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      6,
+      99,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 172,
+    "algorithm": 271,
+    "setting": [
+      8,
+      19,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1169,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1169,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1169,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1169,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      233,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      233,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      233,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      233,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      467,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      467,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      467,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      467,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      49,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      701,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      701,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      701,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      701,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      87,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      935,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      935,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      935,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      4,
+      935,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      197,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      197,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      297,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      297,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      397,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      397,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      495,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      495,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      99,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 171,
+    "algorithm": 272,
+    "setting": [
+      6,
+      99,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      107,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      107,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      107,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      107,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      21,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      21,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      21,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      21,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      39,
+      36,
+      0.03333333333333333
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      43,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      43,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      43,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      43,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      63,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      63,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      63,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      63,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      13,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      13,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      13,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      13,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      29,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      29,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      29,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      29,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      43,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      43,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      43,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      43,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      73,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      73,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      73,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      73,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      15,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      15,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      23,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      23,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      33,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      33,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      41,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      41,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      7,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      7,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      145,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      145,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      145,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      145,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      291,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      291,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      291,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      291,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      31,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      437,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      437,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      437,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      437,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      585,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      585,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      585,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      585,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      61,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      731,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      731,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      731,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      731,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      123,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      123,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      123,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      123,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      185,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      185,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      185,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      185,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      247,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      247,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      247,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      247,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      309,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      309,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      309,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      309,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      61,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      61,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      61,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      61,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      72,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      101,
+      72,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      72,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      72,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      72,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      169,
+      72,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      72,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      33,
+      72,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      36,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      72,
+      0.000196078431372549
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      67,
+      72,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      129,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      129,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      129,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      129,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      25,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      25,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      25,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      25,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      77,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      77,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      77,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      77,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      17,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      17,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      17,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      17,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      53,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      53,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      53,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      53,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      89,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      89,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      89,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      89,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      19,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      19,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      29,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      29,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      39,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      39,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      49,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      49,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      9,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      9,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      147,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      147,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      223,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      223,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      297,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      297,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      371,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      371,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      73,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      73,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      72,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      121,
+      72,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      72,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      72,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      72,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      203,
+      72,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      72,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      39,
+      72,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      72,
+      0.00018018018018018018
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      72,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      119,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      119,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      119,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      119,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      149,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      149,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      149,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      149,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      29,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      29,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      29,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      29,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      59,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      59,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      59,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      59,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      89,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      89,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      89,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      89,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      103,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      103,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      103,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      103,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      19,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      19,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      19,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      19,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      41,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      41,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      41,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      41,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      61,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      61,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      61,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      61,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      83,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      83,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      83,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      83,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      11,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      11,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      23,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      23,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      33,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      33,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      45,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      45,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      57,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      57,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1023,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1023,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1023,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      1023,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      203,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      203,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      203,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      203,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      409,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      409,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      409,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      409,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      57,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      613,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      613,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      613,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      613,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      819,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      819,
+      18,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      819,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      819,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      173,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      173,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      173,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      173,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      259,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      259,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      259,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      259,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      347,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      347,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      347,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      347,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      433,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      433,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      433,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      433,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      85,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      85,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      85,
+      9,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      85,
+      9,
+      0.045
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      7,
+      61,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      72,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      143,
+      72,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      72,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      191,
+      72,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      72,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      237,
+      72,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      72,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      47,
+      72,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      36,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      72,
+      0.00016666666666666666
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      95,
+      72,
+      0.0005
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      103,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      137,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      137,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      137,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      137,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      171,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      171,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      171,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      171,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      117,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      117,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      117,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      117,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      71,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      93,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      93,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      93,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      93,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      13,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      13,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      25,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      25,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      39,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      39,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      51,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      51,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      65,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      65,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      33,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      197,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      197,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      297,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      297,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      397,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      397,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      495,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      495,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      99,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      99,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      7,
+      61,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      72,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      72,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      72,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      163,
+      72,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      72,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      217,
+      72,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      72,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      273,
+      72,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      72,
+      0.00015625
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      72,
+      0.00046875
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      17,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      17,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      17,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      17,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      49,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      67,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      10,
+      85,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      11,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      11,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      11,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      11,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      23,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      35,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      47,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      36,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      59,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      12,
+      7,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      13,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      13,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      19,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      19,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      25,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      25,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      33,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      33,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      5,
+      72,
+      0.013333333333333332
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      16,
+      5,
+      72,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      4,
+      31,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      147,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      147,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      197,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      197,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      247,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      247,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      49,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      49,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      99,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      6,
+      99,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      7,
+      57,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      72,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      109,
+      72,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      72,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      135,
+      72,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      72,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      27,
+      72,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      72,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      53,
+      72,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      18,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.02
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      36,
+      0.04
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      72,
+      0.0002197802197802198
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 173,
+    "algorithm": 272,
+    "setting": [
+      8,
+      81,
+      72,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 32,
+    "evaluation_exact_arity": 4
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "pid": 2783657,
+  "workers": 8,
+  "output": "/home/kawata/work/uen_forest_toy_fresh_reruns/20260925T114740Z__git-3eda55e59630/strict_random",
+  "started_utc": "2026-09-25T13:31:18.414325+00:00",
+  "updated_utc": "2026-09-25T13:43:51.938735+00:00",
+  "stage_jobs": 23,
+  "stage_finished": 23,
+  "seconds": 753.484642789932,
+  "per_run_searches": 120,
+  "reused_budget_records": 0
+}

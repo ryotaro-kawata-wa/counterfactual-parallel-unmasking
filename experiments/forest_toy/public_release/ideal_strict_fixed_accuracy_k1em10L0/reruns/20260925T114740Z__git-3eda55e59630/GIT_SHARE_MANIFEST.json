@@ -1,0 +1,85 @@
+{
+  "run_id": "20260925T114740Z__git-3eda55e59630",
+  "root_run_manifest_sha256": "9b3e8a62cf27e8f6f0bd0e3f2ea0f750287947fa59ed6b41d1a53b7daf7f5291",
+  "paper_facing_quantities_match": true,
+  "only_difference_is_recomputed_parent_input_hash": true,
+  "presentation_amendment": {
+    "date": "2026-09-26",
+    "change": "Shorten the dotted reference-line legend to Q_tot = N.",
+    "numerical_data_modified": false
+  },
+  "excluded": [
+    "parent target_profiles/**/*.npz (regenerable; retained on Newton)",
+    "per-job artifacts/ directories (regenerable; retained on Newton)",
+    "runner.lock files",
+    "Python and Matplotlib caches"
+  ],
+  "jsonl_transformations": [
+    {
+      "source": "fresh_confirmation_runs.jsonl",
+      "stored_as": "fresh_confirmation_runs.jsonl.gz",
+      "source_sha256": "e2d5381052527086ef164216bd553c58c65b10a1e030f73871a020376e77ebee",
+      "stored_sha256": "a53ab741dce00b53fa95cbe94d31de270d56b557c6e067903cf5d66639732168"
+    },
+    {
+      "source": "proposal_development_runs.jsonl",
+      "stored_as": "proposal_development_runs.jsonl.gz",
+      "source_sha256": "e6051e6b10b640e12604b1bd756acfbe7fea424d36fce4db73b2563c93a3a288",
+      "stored_sha256": "964e52f509c17ac873e6062ac6d91902f20b920e8a249cf213f82de04dd661a0"
+    },
+    {
+      "source": "proposal_screen_runs.jsonl",
+      "stored_as": "proposal_screen_runs.jsonl.gz",
+      "source_sha256": "69c83c436a4566f46d7e9550b4c0e88ef04c8a8312e16017ab3da3128fc414cf",
+      "stored_sha256": "f5b09c020f60f99e6c19a66971434b25f02dea2acb061c6de915117dbf46830a"
+    },
+    {
+      "source": "random_development_coarse_runs.jsonl",
+      "stored_as": "random_development_coarse_runs.jsonl.gz",
+      "source_sha256": "e2e03447d672a784f1ae407fa27c35e6798f8cff8d0bb049ff33f3793d5637af",
+      "stored_sha256": "7d21add2d301a56f5914aa1d07bb3f7af873e27d9cb469bf8487170d9dff7298"
+    },
+    {
+      "source": "random_development_refine_0_runs.jsonl",
+      "stored_as": "random_development_refine_0_runs.jsonl.gz",
+      "source_sha256": "b006feb1f8e8ee37b7fa8a23aba07c76f1ccee7415a45071a43675342879d5a5",
+      "stored_sha256": "d26d75d2cf339bebe7ffbb33688345022a4cba5549b7b92ae605a9b38db04db9"
+    },
+    {
+      "source": "random_development_refine_1_runs.jsonl",
+      "stored_as": "random_development_refine_1_runs.jsonl.gz",
+      "source_sha256": "f5358260cb80ed4b6c8e01558d6e669a6bade1519657aa707bfd3b97c9b0d8d1",
+      "stored_sha256": "f7f5a293682bbfcb074cc216e4ecb4ce87f366a5b80c2639de71f6b393c4202f"
+    },
+    {
+      "source": "random_development_refine_2_runs.jsonl",
+      "stored_as": "random_development_refine_2_runs.jsonl.gz",
+      "source_sha256": "cce9ba049eadcd014e0cf0d77064c9abaa4c8d62cc0ca21058a47a6c1b6df2cf",
+      "stored_sha256": "a9b100b38c071bd735a6b493fa9ff563fcd199e3c4155bfd61ebe7d6c4cac3a8"
+    },
+    {
+      "source": "per_run_threshold_coarse_runs.jsonl",
+      "stored_as": "per_run_threshold_coarse_runs.jsonl.gz",
+      "source_sha256": "2d9e2a988b94a83fa9e05ecf285e07bc9d49287bd26059ed0b741c91e1d03742",
+      "stored_sha256": "4543ec9ce4caa56e8753404ebc3505333d6599ce3d74653891e16ca2f2e096b8"
+    },
+    {
+      "source": "per_run_threshold_refine_0_runs.jsonl",
+      "stored_as": "per_run_threshold_refine_0_runs.jsonl.gz",
+      "source_sha256": "34ca2bdb8faa9b279ce9422a414d90190f627a95b1fdb18e847be211254f9d4f",
+      "stored_sha256": "6bfcee8a6d2f7b314f4113ce7e3377365373f374e87b349d4ff3ee9eb99b9186"
+    },
+    {
+      "source": "per_run_threshold_refine_1_runs.jsonl",
+      "stored_as": "per_run_threshold_refine_1_runs.jsonl.gz",
+      "source_sha256": "ab10f96598509460f1af7d09450bb782d58e493312261e147940690a1dafcd16",
+      "stored_sha256": "1e94aeb58659fc4feb11a7b6ed903e8fe29878d5d2cc4869e5c9aa15f22581ce"
+    },
+    {
+      "source": "per_run_threshold_refine_2_runs.jsonl",
+      "stored_as": "per_run_threshold_refine_2_runs.jsonl.gz",
+      "source_sha256": "7449609523d66ba5e2be94ea227d4aa85ae2fdb830d7e0dc73251a337b7bf340",
+      "stored_sha256": "1045b0c6d0c59b73736d0bac2f8f6d5e22962bf96ecb59a59ee4dbe6381a1c2c"
+    }
+  ]
+}

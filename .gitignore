@@ -1,0 +1,14 @@
+# Please keep generated caches and local environments out of the release.
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.lake/
+build_arxiv/
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc

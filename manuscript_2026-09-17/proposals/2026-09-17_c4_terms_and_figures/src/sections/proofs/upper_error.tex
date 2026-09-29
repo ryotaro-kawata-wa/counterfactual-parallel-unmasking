@@ -1,0 +1,601 @@
+\subsection{Exact-commit hybrid and adaptive error composition}
+\label{app:upper-proof-error}
+
+This subsection completes the statistical part of the upper bound.
+\Cref{app:lem:exact-hybrid} identifies a structurally safe exact-row hybrid
+with the target law.  Separately,
+\cref{app:lem:adaptive-hellinger-upper} bounds the distance between any
+product-commit decision rule and its exact-row hybrid, whether or not its
+batches are structurally safe.  A safe-decision-rule comparison then accounts
+for failed screens in the implemented randomized sampler.
+
+
+\paragraph{Structural safety.}
+At a history $\History=(G,x_G)$, let $\ResidualForest$ be the true residual
+forest on $\ResidualPositions=\PositionSet\setminus G$.
+A complete decision rule is \emph{structurally safe} if, at every realized
+history, each batch $B\subseteq\ResidualPositions$ it commits satisfies
+\[
+ |B\cap V(T)|\le1
+ \qquad\text{for every connected component }T\text{ of }\ResidualForest.
+\]
+In particular, every singleton batch is safe.
+This is a property used in the analysis, not permission for the implemented
+sampler to inspect the hidden forest.
+
+\paragraph{The two executions and their output laws.}
+Fix one complete decision rule, the frozen oracle $\FrozenOracle$, and a
+decision-rule seed $\ControllerSeed=w$, including the colors and all
+auxiliary draft randomness.  The product-commit draws remain random after
+this conditioning.  For a chosen batch $B$ and the history-compatible
+commit state $y$ in \eqref{app:eq:commit-state}, compare:
+\begin{itemize}
+\item \emph{Oracle execution.}
+A batch assignment $z\in\Vocab^B$ has mass
+$\prod_{j\in B}\OracleRowMass{y}{j}{z_j}$.
+Recall from \textcolor{red}{\cref{app:def:output-risk}} that its full output law is
+$\SamplerOutputLaw{w}{\FrozenOracle}(x)
+ =\Pr(\SamplerOutput=x\mid\ControllerSeed=w)$, with $\FrozenOracle$ fixed
+and all product-commit draws integrated out.
+\item \emph{Exact-commit hybrid.}
+Replace only this commit mass by
+$\prod_{j\in B}\ExactRowMass{y}{j}{z_j}$, using the exact rows in
+\eqref{app:eq:exact-row}.  Keep the decision rule, draft generator, query
+rules, and all frozen-oracle replies unchanged.
+Denote this execution's full output law by $\ExactCommitOutputLaw{w}$.
+\end{itemize}
+Both are laws on $\Vocab^N$; $\otimes$ refers to the product within each
+commit, not to independence of all output coordinates.
+The hybrid can still depend on $\FrozenOracle$ through its decisions;
+that dependence is suppressed in $\ExactCommitOutputLaw{w}$.
+The shared rules do not imply shared realized transcripts: different commit
+outcomes can lead to different later queries and batches.
+
+Structural safety identifies the hybrid's product at each commit with the
+target's joint batch conditional; for an unsafe batch they need not agree.
+Thus \cref{app:lem:exact-hybrid} uses safety to prove
+$\ExactCommitOutputLaw{w}=\TargetLaw$, whereas
+\cref{app:lem:adaptive-hellinger-upper} compares the two output laws without
+requiring safety.  Both lemmas also apply to the analysis-only decision rule
+introduced below.
+
+\paragraph{Intuition.}
+A safe batch takes at most one vertex from each independent residual
+component.  Its product of exact rows is therefore the exact joint
+conditional.  Multiplying these joint conditionals along the adaptive
+partition is the ordinary chain rule, so the output law is exactly
+$\TargetLaw$.
+
+\begin{lemma}[Exact hybrid equals the target law]
+\label{app:lem:exact-hybrid}
+For every structurally safe complete decision rule, the exact-commit hybrid
+satisfies
+\begin{equation}
+ \ExactCommitOutputLaw{w}=\TargetLaw
+ \qquad\text{for every decision-rule seed }w.
+ \label{app:eq:exact-hybrid-target}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Identify the exact joint law of a safe batch.}
+For a singleton batch the product of exact singleton rows is trivially its
+exact joint conditional.  For a nonsingleton safe batch, its vertices lie in
+distinct true residual components.  Lemma~\ref{app:lem:residual-markov}
+therefore identifies their exact joint conditional with the product of their
+exact singleton conditionals, as in
+\eqref{app:eq:centroid-batch-factorization}.
+
+
+\emph{2. Apply the chain rule along each adaptive path.}
+For fixed $w$, draft generation is deterministic as a function of the observed
+past, even when its rule is randomized before conditioning on $w$.
+For a full assignment $x\in\Vocab^N$, let $B_t(x)$ be the batch selected along
+the unique hybrid path consistent with $x$, and let $G_{t-1}(x)$ be the set
+committed before that batch, with $G_0(x)=\varnothing$ and
+$G_t(x)=G_{t-1}(x)\cup B_t(x)$.  The batches form an adaptive ordered partition
+of $\PositionSet$.  The preceding paragraph identifies every hybrid batch law
+with the corresponding exact joint conditional, so the conditional chain
+rule gives
+\begin{align}
+ \ExactCommitOutputLaw{w}(x)
+ &=\prod_t
+ \TargetLaw\!\left(
+  X_{B_t(x)}=x_{B_t(x)}
+ \mid X_{G_{t-1}(x)}=x_{G_{t-1}(x)}
+ \right)\notag\\
+ &=\prod_t
+ \frac{\TargetLaw(X_{G_t(x)}=x_{G_t(x)})}
+      {\TargetLaw(X_{G_{t-1}(x)}=x_{G_{t-1}(x)})}\notag\\
+ &=\TargetLaw(x).
+ \label{app:eq:adaptive-exact-chain-rule}
+\end{align}
+The batch partition may depend on earlier committed values, but for each fixed
+$x$ the displayed factors are precisely the chain-rule factors along that
+path.  Consecutive numerators and denominators cancel; the first denominator
+is the probability of the empty constraint, hence one, and the last numerator
+is $\TargetLaw(x)$ because every coordinate has been committed.
+This proves the equality pointwise.
+\end{proof}
+
+We next compare the full output laws $\ExactCommitOutputLaw{w}$ (exact-row
+commits) and $\SamplerOutputLaw{w}{\FrozenOracle}$ (oracle-row commits) for
+the same decision rule and fixed seed.  For probability masses $P,Q$ on a
+finite set, write
+\begin{equation}
+ \HellingerAffinity(P,Q)
+ :=\sum_x\sqrt{P(x)Q(x)}
+ =1-\sqHellinger(P,Q).
+ \label{app:eq:affinity-definition}
+\end{equation}
+
+\paragraph{Intuition.}
+The error budget is attached to committed coordinates, not to probes or
+rounds.  Each coordinate is committed once, so the total budget is
+\[
+ N\cdot\frac{(\OracleRadius)^2}{2N}=\frac{(\OracleRadius)^2}{2}.
+\]
+For adaptive batches, backward induction on the execution tree justifies
+this accounting.  At each node, charge the current batch and then use the
+budget of the remaining coordinates.
+
+\begin{lemma}[Adaptive squared-Hellinger composition]
+\label{app:lem:adaptive-hellinger-upper}
+{\color{red}Assume \cref{app:ass:oracle-accuracy} (A2): every valid row pair obeys
+$\sqHellinger(\ExactRow{y}{j},\OracleRow{y}{j})
+ \le(\OracleRadius)^2/(2N)$.  For every complete decision rule using the
+product-commit rule and every fixed decision-rule seed $w$, regardless of
+structural safety,}
+\begin{equation}
+ \sqHellinger\bigl(
+  \ExactCommitOutputLaw{w},
+  \SamplerOutputLaw{w}{\FrozenOracle}
+ \bigr)
+ \le\frac{(\OracleRadius)^2}{2}.
+ \label{app:eq:global-upper-hellinger}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Compare the two kernels at a common node.}
+Fix $\FrozenOracle$ and $w$ throughout the proof.
+\hypertarget{app-execution-tree-state}{}
+An \emph{execution-tree node} is a stored algorithm state immediately before
+a commit, or a terminal state after completion; it is not a vertex of the
+hidden forest.  A pre-commit state records
+\[
+ \mathfrak h=(\History,\ScreenTranscript,\text{decision-rule state}),
+ \qquad
+ \History=(G,x_G),\quad
+ \ResidualPositions=\PositionSet\setminus G.
+\]
+Here $\ScreenTranscript$ contains the preceding query/reply and commit
+record, and the internal state includes any current draft and counters.
+We use this complete stored state to define continuation kernels directly,
+without replaying the decision rule from its initial state.
+With $\FrozenOracle$ and $w$ fixed, all operations between commits are
+deterministic.  Thus, from the \emph{same stored state} $\mathfrak h$, both
+executions receive the same frozen-oracle replies and select the same
+batch $B(\mathfrak h)\subseteq\ResidualPositions$ and commit state
+$y(\mathfrak h)$ from \eqref{app:eq:commit-state}.
+Comparing kernels at this common state does not assert that two separately
+sampled executions have identical paths.
+For a batch assignment $z\in\Vocab^{B(\mathfrak h)}$, their kernels are
+\begin{align}
+ \ExactBatchMass{\mathfrak h}{z}
+ &:=\prod_{j\in B(\mathfrak h)}
+       \ExactRowMass{y(\mathfrak h)}{j}{z_j},\notag\\
+ \OracleBatchMass{\mathfrak h}{z}
+ &:=\prod_{j\in B(\mathfrak h)}
+       \OracleRowMass{y(\mathfrak h)}{j}{z_j}.
+ \label{app:eq:exact-oracle-batch-laws}
+\end{align}
+Both kernels are probability masses on $\Vocab^{B(\mathfrak h)}$:
+\begin{align*}
+ \sum_{z\in\Vocab^{B(\mathfrak h)}}\ExactBatchMass{\mathfrak h}{z}
+ &=\prod_{j\in B(\mathfrak h)}
+       \sum_{a\in\Vocab}\ExactRowMass{y(\mathfrak h)}{j}{a}=1,\\
+ \sum_{z\in\Vocab^{B(\mathfrak h)}}\OracleBatchMass{\mathfrak h}{z}
+ &=\prod_{j\in B(\mathfrak h)}
+       \sum_{a\in\Vocab}\OracleRowMass{y(\mathfrak h)}{j}{a}=1.
+\end{align*}
+The finite sums factor by distributivity over the Cartesian product.
+The first kernel is a product of exact rows, whether or not it equals the
+target's joint batch conditional.  \textcolor{red}{Hence this comparison needs
+no structural safety condition.}
+
+
+\emph{2. Charge the current batch to its coordinates.}
+Apply the product identity in \cref{app:lem:finite-hellinger-calculus}
+with index set $B(\mathfrak h)$, each coordinate space equal to $\Vocab$,
+and component laws $\ExactRow{y(\mathfrak h)}{j}$ and
+$\OracleRow{y(\mathfrak h)}{j}$.  This gives
+\begin{equation}
+ \HellingerAffinity(\ExactBatchLaw{\mathfrak h},
+                    \OracleBatchLaw{\mathfrak h})
+ =\prod_{j\in B(\mathfrak h)}
+  \left[1-\sqHellinger\bigl(
+        \ExactRow{y(\mathfrak h)}{j},
+        \OracleRow{y(\mathfrak h)}{j}\bigr)\right].
+ \label{app:eq:upper-batch-affinity}
+\end{equation}
+Using $1-\prod_j(1-u_j)\le\sum_j u_j$ for $u_j\in[0,1]$ and
+\textcolor{red}{\eqref{app:eq:A2}},
+\begin{align}
+ 1-\HellingerAffinity(\ExactBatchLaw{\mathfrak h},
+                      \OracleBatchLaw{\mathfrak h})
+ &=\sqHellinger(\ExactBatchLaw{\mathfrak h},
+                \OracleBatchLaw{\mathfrak h})
+ \label{app:eq:local-batch-cost-definition}\\
+ &\le\sum_{j\in B(\mathfrak h)}
+     \sqHellinger\bigl(\ExactRow{y(\mathfrak h)}{j},
+                      \OracleRow{y(\mathfrak h)}{j}\bigr)\notag\\
+ &\le |B(\mathfrak h)|\frac{(\OracleRadius)^2}{2N}.
+ \label{app:eq:local-batch-cost-bound}
+\end{align}
+
+
+\emph{3. Derive the suffix-affinity recursion.}
+Take a stored execution state $\mathfrak h$ from part~1 of this proof, with committed
+history $\History=(G,x_G)$ and remaining set
+$\ResidualPositions=\PositionSet\setminus G$.
+Here a \emph{suffix} is the assignment of all still-uncommitted coordinates,
+not necessarily a contiguous block of positions.  Define:
+\begin{itemize}
+\item $\ExactSuffixLaw{\mathfrak h}$: the law of those remaining values
+when execution resumes from this entire stored state using exact-row commits.
+\item $\OracleSuffixLaw{\mathfrak h}$: the corresponding law when it
+resumes from the same state using oracle-row commits.
+\end{itemize}
+Both are probability laws on $\Vocab^{\ResidualPositions}$, with
+$\FrozenOracle$ and $w$ still fixed.  The recursion below defines these
+continuation laws from the batch kernels in
+\eqref{app:eq:exact-oracle-batch-laws}; at a terminal state
+$\ResidualPositions=\varnothing$, each puts mass one on the empty assignment.
+Set
+\begin{equation}
+ \SuffixAffinity{\mathfrak h}
+ :=\HellingerAffinity(\ExactSuffixLaw{\mathfrak h},
+                      \OracleSuffixLaw{\mathfrak h}).
+ \label{app:eq:suffix-affinity}
+\end{equation}
+After a batch value $z\in\Vocab^{B(\mathfrak h)}$, write
+$\mathfrak h\oplus z$ for the next pre-commit node (or terminal node),
+including all intervening deterministic operations.  It has remaining
+coordinates $\ResidualPositions\setminus B(\mathfrak h)$.
+For $x'\in\Vocab^{\ResidualPositions\setminus B(\mathfrak h)}$,
+the suffix assignment $(z,x')$ has masses
+\begin{align*}
+ \ExactSuffixMass{\mathfrak h}{(z,x')}
+ &=\ExactBatchMass{\mathfrak h}{z}\,
+   \ExactSuffixMass{\mathfrak h\oplus z}{x'},\\
+ \OracleSuffixMass{\mathfrak h}{(z,x')}
+ &=\OracleBatchMass{\mathfrak h}{z}\,
+   \OracleSuffixMass{\mathfrak h\oplus z}{x'}.
+\end{align*}
+These are normalized: summing first over $x'$ gives one for each child
+law, and summing over $z$ then gives one by the batch normalization above.
+There are at most $N$ nonempty commits, so backward induction starts at
+the empty suffix and defines every law.
+Summing the geometric means first over $x'$ now yields
+\begin{align}
+ \SuffixAffinity{\mathfrak h}
+ &=\sum_z\sqrt{\ExactBatchMass{\mathfrak h}{z}
+               \OracleBatchMass{\mathfrak h}{z}}
+       \sum_{x'}\sqrt{
+        \ExactSuffixMass{\mathfrak h\oplus z}{x'}
+        \OracleSuffixMass{\mathfrak h\oplus z}{x'}}\notag\\
+ &=\sum_z\sqrt{\ExactBatchMass{\mathfrak h}{z}
+               \OracleBatchMass{\mathfrak h}{z}}
+       \SuffixAffinity{\mathfrak h\oplus z}.
+ \label{app:eq:suffix-affinity-recursion}
+\end{align}
+At a terminal node the suffix is empty and its affinity is one.
+
+
+\emph{4. Bound the remaining loss by backward induction.}
+At a node with committed set $G$, every complete continuation partitions
+$\ResidualPositions$ into disjoint future batches.  Thus its total
+coordinate budget is
+\begin{equation}
+ \sum_{\text{future }t}|B(\mathfrak h_t)|
+       \frac{(\OracleRadius)^2}{2N}
+ =|\ResidualPositions|\frac{(\OracleRadius)^2}{2N}.
+ \label{app:eq:remaining-path-budget}
+\end{equation}
+We prove by backward induction that this budget bounds the suffix loss:
+\begin{equation}
+ 1-\SuffixAffinity{\mathfrak h}
+ \le|\ResidualPositions|\frac{(\OracleRadius)^2}{2N}.
+ \label{app:eq:adaptive-affinity-induction}
+\end{equation}
+The terminal case has both sides zero.  At a nonterminal node, subtract
+the recursion from one and add and subtract the batch affinity:
+\begin{align*}
+ 1-\SuffixAffinity{\mathfrak h}
+ &=1-\HellingerAffinity(\ExactBatchLaw{\mathfrak h},
+                        \OracleBatchLaw{\mathfrak h})\\
+ &\quad+\sum_z
+   \sqrt{\ExactBatchMass{\mathfrak h}{z}\OracleBatchMass{\mathfrak h}{z}}
+        \bigl(1-\SuffixAffinity{\mathfrak h\oplus z}\bigr)\\
+ &\le |B(\mathfrak h)|\frac{(\OracleRadius)^2}{2N}
+   +\bigl(|\ResidualPositions|-|B(\mathfrak h)|\bigr)
+      \frac{(\OracleRadius)^2}{2N}
+      \sum_z\sqrt{\ExactBatchMass{\mathfrak h}{z}
+                  \OracleBatchMass{\mathfrak h}{z}}\\
+ &\le|\ResidualPositions|\frac{(\OracleRadius)^2}{2N}.
+\end{align*}
+The first inequality uses the batch bound and the induction hypothesis:
+every child has exactly $|\ResidualPositions|-|B(\mathfrak h)|$
+uncommitted coordinates.  \textcolor{red}{In the last inequality, the
+remaining sum is the batch affinity, at most $\sqrt{1\cdot1}=1$ by
+Cauchy--Schwarz and the two kernel normalizations in part~1.  The resulting
+coordinate count is $|B(\mathfrak h)|+(|\ResidualPositions|-|B(\mathfrak h)|)
+=|\ResidualPositions|$.}
+
+
+\emph{5. Evaluate the budget at the root.}
+The root $\mathfrak h_{\emptyset}$ is the common state before the first
+commit, after the initial deterministic operations.  It has $G=\varnothing$
+and $\ResidualPositions=\PositionSet$, so its continuation laws are the
+full output laws recalled above:
+\[
+ \ExactSuffixLaw{\mathfrak h_{\emptyset}}=\ExactCommitOutputLaw{w},
+ \qquad
+ \OracleSuffixLaw{\mathfrak h_{\emptyset}}
+ =\SamplerOutputLaw{w}{\FrozenOracle}.
+\]
+In particular, $|\ResidualPositions|=N$.  Equivalently, along every complete
+path the disjoint commit batches satisfy
+\begin{equation}
+ \sum_t|B(\mathfrak h_t)|=N.
+ \label{app:eq:path-batches-partition-N}
+\end{equation}
+Therefore
+\begin{equation}
+ \sqHellinger(\ExactCommitOutputLaw{w},
+              \SamplerOutputLaw{w}{\FrozenOracle})
+ =1-\SuffixAffinity{\mathfrak h_{\emptyset}}
+ \le N\frac{(\OracleRadius)^2}{2N}
+ =\frac{(\OracleRadius)^2}{2}.
+ \label{app:eq:root-path-budget}
+\end{equation}
+Counterfactual operations affect which common node is reached; they do not
+generate committed coordinates and add no term to this budget.
+\end{proof}
+
+We now separate oracle error from screen failures by comparing with an
+analysis-only safe decision rule, whose seed-averaged discrepancy from the
+sampler is charged to the failed-screen probability.
+
+Recall the \hyperlink{app-reached-screen-failure}{reached-call event}
+$E_s=\{R_s\text{ occurs and }\ScreenSuccess{H^{(s)}}\text{ fails}\}$:
+$R_s$ means the implemented sampler reaches call $s$, and $H^{(s)}$ is
+its history.  Failure means that the separating-color majority condition
+\eqref{app:eq:screen-success-event} is violated.
+Thus $\ScreenFailureEvent=\bigcup_{s=1}^{\ScreenCallCap}E_s$.
+
+\paragraph{Intuition.}
+The safe decision rule follows the sampler until a screen fails and then
+finishes by singleton commits.  Its batches are always safe, so the previous
+two lemmas bound its TV error by $\OracleRadius$.  A common-path coupling
+charges the discrepancy between the two outputs only to screen failure:
+\[
+ \mathbb E_W\mathrm{TV}(\hbox{target},\hbox{sampler})
+ \le\OracleRadius+\ScreenFailureBudget.
+\]
+The first contribution is controlled for every fixed seed; the failure
+contribution is bounded only after averaging over the colors and commit
+draws, as verified below.
+\textcolor{red}{We compare the full output laws: conditioning the implemented
+output on screen success would also condition its reached histories.}
+
+\begin{lemma}[Safe decision rule and failed-screen coupling]
+\label{app:lem:safe-controller-comparison}
+Fix a target--oracle pair satisfying the finite hypotheses of
+Theorem~\ref{app:thm:finite-upper}.  There is an analysis-only structurally
+safe decision rule whose conditional output law
+$\SafeSamplerOutputLaw{w}{\FrozenOracle}$ satisfies
+\begin{align}
+ \dTV\bigl(\TargetLaw,
+       \SafeSamplerOutputLaw{w}{\FrozenOracle}\bigr)
+ &\le \OracleRadius
+ &&\text{for every }w,
+ \label{app:eq:safe-seedwise-TV}\\
+ \mathbb E_{\ControllerSeed}
+ \dTV\bigl(
+   \SamplerOutputLaw{\ControllerSeed}{\FrozenOracle},
+   \SafeSamplerOutputLaw{\ControllerSeed}{\FrozenOracle}
+ \bigr)
+ &\le\ScreenFailureBudget.
+ \label{app:eq:implemented-safe-TV}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Define the analysis-only safe decision rule.}
+The safe decision rule simulates Algorithm~\ref{app:alg:complete-sampler} with
+the same fixed public row selector, draft generator, auxiliary seed, and fresh colorings while every
+reached screen satisfies
+\eqref{app:eq:screen-success-event}.  It is additionally allowed to inspect
+the hidden residual forest.  Immediately after the first unsuccessful
+execution of \AlgoBlockRef{screen}, and also before any \AlgoGuardRef\
+fallback, it stops using the screen
+output and commits all remaining coordinates as singletons in increasing
+position order.  More formally, number the successive simulation checkpoints
+(screen returns and pre-fallback checks) by $n$, and define
+\[
+ \tau_{\mathrm{sw}}
+ :=\inf\left\{n:
+ \begin{array}{l}
+ \text{an unsuccessful screen has just returned, or}\\
+ \text{the simulated sampler is about to activate a fallback}
+ \end{array}\right\},
+ \qquad \inf\varnothing:=\infty.
+\]
+Before this checkpoint the two rules agree; from this checkpoint onward
+the safe rule uses only the singleton completion just specified.
+The checkpoint index is not the peel-phase index.
+Hidden-forest inspection defines only this comparison law; it is not
+available to the implemented sampler.
+Each singleton commit uses the same frozen oracle $\FrozenOracle$ at the
+updated committed history.  Writing $\widehat X^{\mathrm{safe}}$ for its
+output, define
+\[
+ \SafeSamplerOutputLaw{w}{\FrozenOracle}(x)
+ :=\Pr(\widehat X^{\mathrm{safe}}=x\mid\ControllerSeed=w),
+\]
+with the target and oracle fixed and all product-commit draws integrated out.
+
+
+\emph{2. Check structural safety in all three stages.}
+\begin{itemize}
+\item Before a switch, the peel commits in \AlgoBlockRef{peel} are singletons.
+\item If the terminal stage is
+reached without a switch, \cref{app:lem:successful-path-structure} identifies
+the graph constructed in \AlgoBlockRef{terminal} with the true residual
+forest, so every centroid batch in \AlgoBlockRef{centroid} contains one
+vertex from each true residual component.
+\item After a switch, all
+batches are singletons.
+\end{itemize}
+Hence the safe decision rule is structurally safe on
+every path.
+
+\emph{3. Bound oracle error for each fixed seed.}
+Apply \cref{app:lem:exact-hybrid,app:lem:adaptive-hellinger-upper}
+to this safe rule and its own product-of-exact-rows hybrid.
+The first lemma identifies that hybrid with $\TargetLaw$; the second
+compares it with the safe rule's oracle output.  Thus, for each fixed $w$,
+\begin{equation}
+ \sqHellinger\bigl(
+  \TargetLaw,\SafeSamplerOutputLaw{w}{\FrozenOracle}
+ \bigr)
+ \le\frac{(\OracleRadius)^2}{2}.
+ \label{app:eq:safe-global-hellinger}
+\end{equation}
+By \eqref{app:eq:aux-tv-hellinger},
+\begin{equation}
+ \dTV\bigl(\TargetLaw,
+       \SafeSamplerOutputLaw{w}{\FrozenOracle}\bigr)
+ \le\sqrt{2\sqHellinger\bigl(
+  \TargetLaw,\SafeSamplerOutputLaw{w}{\FrozenOracle}
+ \bigr)}
+ \le\OracleRadius,
+\end{equation}
+which proves \eqref{app:eq:safe-seedwise-TV}.
+
+
+\emph{4. Couple the sampler to its own safe decision rule.}
+For \eqref{app:eq:implemented-safe-TV}, fix the full decision-rule seed $w$ and couple the
+two conditional executions as follows.  Before the safe decision rule switches,
+whenever their histories agree, use
+the same draw from their common product-commit law.  Thus their histories and
+all drafts and deterministic frozen-oracle replies remain identical until the safe
+decision rule switches.  By \cref{app:lem:upper-resources}, in the
+implemented execution,
+\[
+ \{\text{cycle repair or a hard round-cap fallback occurs}\}
+ \subseteq\ScreenFailureEvent.
+\]
+An empty peel set or the peel-phase cap triggers the normal loop exit in
+\AlgoBlockRef{peel}.  On $\ScreenFailureEvent^{\mathsf c}$ no switch occurs
+and the outputs coincide; repair can start only after the safe rule has
+switched to singleton completion.  For the coupled outputs
+$\SamplerOutput$ and $\widehat X^{\mathrm{safe}}$, the common prefix gives
+the pathwise inclusions
+\[
+ \{\SamplerOutput\ne\widehat X^{\mathrm{safe}}\}
+ \subseteq\{\tau_{\mathrm{sw}}<\infty\}
+ \subseteq\ScreenFailureEvent.
+\]
+Indeed, a first switch caused by a failed screen occurs in that common
+prefix.  A first switch caused by a fallback with no preceding failure is
+excluded by \cref{app:lem:upper-resources}.  After a switch the two
+executions may be completed with any coupling of their respective laws.
+The first common-path failure is exactly the first failure of the
+implemented execution, since the coupled histories agree up to that point.
+\textcolor{red}{For any coupling $(X,Y)$ of laws $P,Q$, the coupling inequality
+is $\dTV(P,Q)\le\Pr(X\ne Y)$.  Applying it to these two outputs gives}
+{\color{red}
+\begin{equation}
+ \dTV\bigl(
+   \SamplerOutputLaw{w}{\FrozenOracle},
+   \SafeSamplerOutputLaw{w}{\FrozenOracle}
+ \bigr)
+ \le
+ \Pr(\SamplerOutput\ne\widehat X^{\mathrm{safe}}
+       \mid\ControllerSeed=w)
+ \le
+ \Pr(\ScreenFailureEvent\mid\ControllerSeed=w),
+ \label{app:eq:conditional-safe-coupling}
+\end{equation}
+}
+where the probability integrates the coupled commit draws.
+
+\emph{5. Average the failed-screen probability over seeds.}
+Averaging \eqref{app:eq:conditional-safe-coupling} over the seed gives
+\begin{align*}
+ &\mathbb E_W\dTV\bigl(\SamplerOutputLaw{W}{\FrozenOracle},
+                        \SafeSamplerOutputLaw{W}{\FrozenOracle}\bigr)\\
+ &\quad\le\mathbb E_W\Pr(\ScreenFailureEvent\mid W)
+ =\Pr(\ScreenFailureEvent)
+ =\Pr\!\left(\bigcup_{s=1}^{\ScreenCallCap}E_s\right)
+ \le\ScreenFailureBudget.
+\end{align*}
+The equality averaging conditional probabilities is the law of total
+expectation over colors, draft randomness, and commit draws; the final
+inequality is \eqref{app:eq:adaptive-screen-failure}.  This proves
+\eqref{app:eq:implemented-safe-TV}, without a seedwise failure bound.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{app:thm:finite-upper}]
+
+\emph{1. Account for submissions, commits, and depth.}
+With the standard zero-query generator, the pathwise query and round bounds are
+\eqref{app:eq:proof-finite-Q}--\eqref{app:eq:proof-finite-R} from
+\cref{app:lem:upper-resources}.  The all-mask preprocessing state is excluded
+from $\CounterfactualQueries$ by
+\textcolor{red}{\cref{app:def:resources}}. Charging it gives
+$\ReportedQueries=\CounterfactualQueries+1$, as in
+\eqref{app:eq:reported-query-count}.
+The depth bound is \eqref{app:eq:finite-oracle-depth}.
+
+
+\emph{2. Combine oracle error and failed-screen error.}
+For every target--oracle pair, the TV triangle inequality followed by
+\cref{app:lem:safe-controller-comparison} gives
+\begin{align}
+ &\mathbb E_{\ControllerSeed}
+ \dTV\bigl(
+  \TargetLaw,
+  \SamplerOutputLaw{\ControllerSeed}{\FrozenOracle}
+ \bigr)\notag\\
+ &\quad\le
+ \mathbb E_{\ControllerSeed}
+ \dTV\bigl(
+  \TargetLaw,
+  \SafeSamplerOutputLaw{\ControllerSeed}{\FrozenOracle}
+ \bigr)
+ +\mathbb E_{\ControllerSeed}
+ \dTV\bigl(
+  \SafeSamplerOutputLaw{\ControllerSeed}{\FrozenOracle},
+  \SamplerOutputLaw{\ControllerSeed}{\FrozenOracle}
+ \bigr)\notag\\
+ &\quad\le
+ \OracleRadius+\ScreenFailureBudget.
+ \label{app:eq:randomized-upper-TV-proof}
+\end{align}
+This proves \eqref{app:eq:finite-upper-seed-risk} for each fixed oracle.
+Taking the supremum over
+$\FrozenOracle\in\OracleClass(\TargetLaw;\OracleRadius)$ gives
+\eqref{app:eq:finite-upper-risk}.  With the choice
+\eqref{app:eq:finite-failure-budget-choice}, its
+right-hand side is $3\OracleRadius/2$.
+\end{proof}
+
+% Please keep the selector-invariance supplement in
+% src/sections/proofs/row_selector_invariance.tex, included by the auxiliary appendix.

@@ -1,0 +1,216 @@
+\clearpage
+\section{\HellingerCaseTitle: Hellinger-to-TV upper bound}
+\label{app:upper-proof}
+
+\textcolor{red}{We prove the finite TV guarantee for the sampler in
+Appendix~\ref{app:algorithm}; \cref{app:upper-proof-overview} gives the proof map.
+Screen certification, peeling, and resource counts support both accuracy
+cases via \eqref{app:eq:kl-oracle-inclusion}. The error analysis here proves
+\HellingerCase; Appendix~\ref{app:kl-extension} proves \KLCase.
+Appendix~\ref{app:benchmark-specializations} specializes both to
+\cref{main:thm:upper-curve}.}
+\ifincludeexponents
+Its subsequent corollaries give joint-limit rates.
+\fi
+\ifincludeexponents
+Independent-signal rates are collected in
+Appendix~\ref{app:independent-signal}.
+\fi
+
+\subsection{Finite upper bound}
+\label{app:results-upper}
+
+The finite theorem uses the standard preprocessing floor of
+Appendix~\ref{app:algorithm-preprocessing}; its query bound uses the realized
+vocabulary-bank sizes $\BankSize{i}=|\TokenBank{i}|$.
+Together with \cref{app:lem:benchmark-feasibility}, it yields
+\HellingerCase\ of \cref{main:thm:upper-curve} through
+\cref{app:cor:fixed-accuracy-main}.
+
+\begin{theorem}[\HellingerCaseTitle: finite randomized Hellinger-to-TV upper bound]
+\label{app:thm:finite-upper}
+We work in \HellingerCase, with the oracle condition of
+Assumption~\ref{app:ass:oracle-accuracy}.
+Fix $N\ge10$ and the objects of Appendix~\ref{app:setup}.  Let
+$\RandomizedPackedSampler$ be Algorithm~\ref{app:alg:complete-sampler} with
+the standard zero-query draft of \eqref{app:eq:standard-draft} and
+$\ScreenFailureBudget\in(0,1)$.  Suppose preprocessing is feasible and
+\begin{equation}
+ \ScreenResolution<\EdgeSignal.
+ \label{app:eq:finite-screen-separation}
+\end{equation}
+Here $\RandomColorCount,\RandomColoringCount$ are defined in
+\eqref{app:eq:random-color-parameters}, and
+$\ScreenCallCap,\HardRoundCap$ in
+\eqref{app:eq:screen-call-and-round-caps}; $\ScreenColumnCount$ is
+$\MaxBankSize+1$ when $\MaxBankSize\ge1$ and zero when $\MaxBankSize=0$, as in
+\eqref{app:eq:screen-column-count}.
+Then, for every admissible frozen oracle, pathwise over the random colors
+and product-commit draws,
+\begin{align}
+ \CounterfactualQueries
+ &\le \ScreenColumnCount\ScreenCallCap\RandomColoringCount
+       \RandomColorCount(\RandomColorCount+\ChunkCount),
+ \label{app:eq:finite-upper-Q}\\
+ \CommitRounds
+ &\le\HardRoundCap.
+ \label{app:eq:finite-upper-R}
+\end{align}
+Moreover,
+\begin{equation}
+ \SeedRisk(\RandomizedPackedSampler;\TargetLaw,\FrozenOracle)
+ \le
+ \OracleRadius+\ScreenFailureBudget
+ \quad\text{for every }
+ \FrozenOracle\in\OracleClass(\TargetLaw;\OracleRadius).
+ \label{app:eq:finite-upper-seed-risk}
+\end{equation}
+Consequently,
+\begin{equation}
+ \RobustRisk(\RandomizedPackedSampler;\TargetLaw)
+ \le
+ \OracleRadius+\ScreenFailureBudget.
+ \label{app:eq:finite-upper-risk}
+\end{equation}
+In particular, if $\OracleRadius>0$ and
+\begin{equation}
+ \ScreenFailureBudget:=\frac{\OracleRadius}{2},
+ \label{app:eq:finite-failure-budget-choice}
+\end{equation}
+then
+$\RobustRisk(\RandomizedPackedSampler;\TargetLaw)\le3\OracleRadius/2$.
+If the distinguished all-mask readout is charged, then
+$\ReportedQueries=\CounterfactualQueries+1$ by
+\eqref{app:eq:reported-query-count}.  Thus the bound for
+$\ReportedQueries$ is the right-hand side of
+\eqref{app:eq:finite-upper-Q} plus one; $\CounterfactualQueries$ still
+excludes that readout.
+Including that initial stage, the adaptive oracle depth is at most
+$\OracleDepth\le1+\CommitRounds+\ScreenCallCap$.
+\end{theorem}
+
+\subsection{\texorpdfstring{\textcolor{red}{Proof overview}}{Proof overview}}
+\label{app:upper-proof-overview}
+
+{\color{red}
+The proof turns local screen certificates into safe parallel commits:
+accurate low-degree rows make peeling contract the high-degree core, after
+which the remaining forest is known and its components can be sampled in
+parallel.  We then bound resources and output error separately.
+\Cref{app:tab:upper-proof-map} follows this chain under the finite hypotheses
+above.  The structural certificates hold when every reached screen succeeds;
+the resource caps hold on every path.  The same construction supports both
+accuracy cases, with different output-error arguments.
+
+\begin{table}[H]
+\centering
+\small
+\color{red}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.14\linewidth}
+  >{\raggedright\arraybackslash}p{0.19\linewidth}@{}}
+\toprule
+Proof task & Key argument and conclusion & Algorithm steps & References \\
+\midrule
+\textbf{Certify the vocabulary banks}
+& Preprocessing gives a nonempty complement of $\TokenBank{i}$, whose
+tokens have true marginal mass below $\TailThreshold$, certifying the
+tail representative.  Under the standard floor, (RF) bounds
+$\BankSize{i}\le(4\FrequencyConstant/\TailThreshold)^{1/\RankTailExponent}$.
+& \AlgoBlockRef{preprocess}
+& \cref{app:lem:preprocessing-certificates} \\
+\addlinespace
+\textbf{Recover low-degree neighborhoods}
+& Separating colors reduce packed probes to one-source comparisons at a
+fixed boundary.  RT--UEN and the screening margin make their votes correct;
+fresh-color majorities give
+$\ScreenRow{j}=\mathcal N_{\ResidualForest}(j)$ for degree at most
+$\DegreeCutoff$, except on reached-screen failures of total probability
+at most $\ScreenFailureBudget$.
+& \AlgoBlockRef{draft}--\AlgoBlockRef{screen};
+\AlgoBlockRef{chunks}--\AlgoBlockRef{aggregate}
+& \cref{app:lem:residual-markov,app:lem:random-screen-success,app:lem:fixed-draft-rows};
+\AppLowDegreeScreenRef \\
+\addlinespace
+\textbf{Peel the high-degree core}
+& Let $\HighDegreeCount{k}$ count vertices of degree above $\DegreeCutoff$
+before phase $k$.  On successful paths, the forest degree sum gives
+$\HighDegreeCount{k+1}\le(4/\DegreeCutoff)\HighDegreeCount{k}$.
+Either stopping test leaves maximum degree at most $\DegreeCutoff$,
+certifying the true residual forest.
+& \AlgoBlockRef{peel}--\AlgoBlockRef{terminal}
+& \cref{app:lem:successful-path-structure} \\
+\addlinespace
+\textbf{Complete safe parallel sampling}
+& Singleton peels and one centroid per true residual component are safe.
+Exact-row products then equal joint batch conditionals.  Centroid deletion
+halves component sizes, giving logarithmically many terminal rounds on
+successful paths.
+& \AlgoBlockRef{peel}, \AlgoBlockRef{centroid}
+& \cref{app:lem:residual-markov,app:lem:upper-resources,app:lem:exact-hybrid} \\
+\addlinespace
+\textbf{Bound all-path resources}
+& Count screen loops for $\CounterfactualQueries$, and peel and centroid
+commits for rounds.  \AlgoGuardRef\ caps rounds even on failed-screen paths.
+Each screen is one parallel stage:
+$\OracleDepth\le1+\CommitRounds+\ScreenCallCap$.
+$\CounterfactualQueries$ excludes preprocessing and commits.
+& All: \AlgoBlockRef{preprocess}--\AlgoBlockRef{centroid}, plus \AlgoGuardRef
+& \cref{app:lem:upper-resources} \\
+\addlinespace
+\textbf{\HellingerCaseTitle: bound output TV}
+& Each coordinate is committed once, so adaptive Hellinger composition
+bounds an analysis-only safe rule's oracle error.  Coupling to that rule adds at most
+$\ScreenFailureBudget$, giving seed-averaged TV at most
+$\OracleRadius+\ScreenFailureBudget$.
+& All: \AlgoBlockRef{preprocess}--\AlgoBlockRef{centroid}; output-law analysis
+& \cref{app:lem:exact-hybrid,app:lem:adaptive-hellinger-upper,app:lem:safe-controller-comparison};
+\cref{app:thm:finite-upper} \\
+\addlinespace
+\textbf{\KLCaseTitle: bound output KL}
+& With forward row KL at most $\KLRowBudget$, the joint-reference identity
+separates row error from batch total correlation.  The latter vanishes
+on successful reference paths, giving seed-averaged KL at most
+$N\KLRowBudget+N\log\VocabSize\,\ScreenFailureBudget$.
+& All: \AlgoBlockRef{preprocess}--\AlgoBlockRef{centroid}; output-law analysis
+& \cref{app:lem:adaptive-joint-kl,app:thm:finite-kl-upper} \\
+\addlinespace
+\textbf{Recover the main theorem}
+& Verify preprocessing feasibility and screen separation for the main-text
+scaling, then specialize the finite bounds and choose the degree cutoff.
+Both cases yield \cref{main:thm:upper-curve}.
+& All: \AlgoBlockRef{preprocess}--\AlgoBlockRef{centroid}; parameter choices
+& \cref{app:lem:benchmark-feasibility,app:cor:fixed-accuracy-main} \\
+\bottomrule
+\end{tabularx}
+\caption{Proof steps for the upper bound.  Step labels link to
+Algorithms~\ref{app:alg:complete-sampler}--\ref{app:alg:packed-screen}.}
+\label{app:tab:upper-proof-map}
+\end{table}
+
+Two distinctions guide the proof:
+\begin{itemize}
+\item High-degree rows need only satisfy the size cap
+$|\ScreenRow{j}|\le\DegreeCutoff$.  Accurate low-degree rows suffice to
+force contraction, even when high-degree rows are incorrect.
+\item For \HellingerCase, an analysis-only safe rule switches to singleton
+completion at the first failed screen (and before any cap fallback).
+We compare its full output law with the implemented sampler's law;
+no conditioning of the output on screen success is needed.
+\end{itemize}
+Combining these bounds gives \cref{app:eq:randomized-upper-TV-proof}:
+\[
+ \mathbb E_{\ControllerSeed}
+ \dTV\bigl(\TargetLaw,
+            \SamplerOutputLaw{\ControllerSeed}{\FrozenOracle}\bigr)
+ \le
+ \underbrace{\OracleRadius}_{\text{oracle error at commits}}
+ +\underbrace{\ScreenFailureBudget}_{\text{failed-screen coupling}}.
+\]
+\par}
+
+\input{src/sections/proofs/upper_screen}
+\input{src/sections/proofs/upper_structure}
+\input{src/sections/proofs/upper_error}

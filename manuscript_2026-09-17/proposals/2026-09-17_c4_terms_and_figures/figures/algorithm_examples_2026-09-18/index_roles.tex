@@ -1,0 +1,27 @@
+% Please keep color labels distinct from the source-column index.
+\paragraph{Three different indices.}
+The screen uses the following roles; their domains and sampling law are
+specified in \cref{app:algorithm-screen}.
+\par\smallskip
+\noindent
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule
+Symbol & What it selects & What it does not select\\
+\midrule
+$\tau$ & One entire coloring $h_\tau:\PositionSet\to\ColorSet$
+       & A color within that coloring\\
+$c^{\mathrm{src}},c^{\mathrm{rd}}$
+       & Source and readout colors under the chosen $h_\tau$
+       & Vocabulary tokens\\
+$\kappa\in\ScreenColumnSet$
+       & One slot in the vocabulary bank $\TokenBank{i}$ or its tail representative,
+         separately at each source $i$
+       & A color or one common token\\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+Thus fixing $\tau$ fixes all position colors; fixing $c^{\mathrm{src}}$
+then fixes which residual positions are sources. Varying $\kappa$
+changes the tokens assigned to those sources, without recoloring them.
+The concrete substitution into the submitted-state definition is in
+\cref{ex:algorithm-submissions-20260918}.

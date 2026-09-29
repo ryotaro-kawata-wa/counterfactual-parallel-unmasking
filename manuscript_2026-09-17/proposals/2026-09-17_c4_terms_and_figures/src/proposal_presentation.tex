@@ -1,0 +1,8 @@
+% Please typeset supplementary context in the ordinary manuscript text color.
+% The unnumbered environment keeps contextual remarks separate from the
+% theorem counter without changing any statement or cross-reference number.
+\theoremstyle{remark}
+\newtheorem*{proposalcontextbase}{Remark}
+\newenvironment{proposalcontext}[1]
+  {\begin{proposalcontextbase}[#1]}
+  {\end{proposalcontextbase}}

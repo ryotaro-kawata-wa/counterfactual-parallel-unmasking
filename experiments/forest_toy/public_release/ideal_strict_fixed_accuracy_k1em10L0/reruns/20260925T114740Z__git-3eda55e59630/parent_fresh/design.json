@@ -1,0 +1,463 @@
+{
+  "version": 1,
+  "study": "ideal_capless_fixed_accuracy_n8192plus",
+  "smoke": false,
+  "targets": [
+    "matching",
+    "path",
+    "binary",
+    "stars_original"
+  ],
+  "n_grid": [
+    8192,
+    10240,
+    12288,
+    14336,
+    16384
+  ],
+  "cells": [
+    {
+      "target": "matching",
+      "n": 8192
+    },
+    {
+      "target": "matching",
+      "n": 10240
+    },
+    {
+      "target": "matching",
+      "n": 12288
+    },
+    {
+      "target": "matching",
+      "n": 14336
+    },
+    {
+      "target": "matching",
+      "n": 16384
+    },
+    {
+      "target": "path",
+      "n": 8192
+    },
+    {
+      "target": "path",
+      "n": 10240
+    },
+    {
+      "target": "path",
+      "n": 12288
+    },
+    {
+      "target": "path",
+      "n": 14336
+    },
+    {
+      "target": "path",
+      "n": 16384
+    },
+    {
+      "target": "binary",
+      "n": 8192
+    },
+    {
+      "target": "binary",
+      "n": 10240
+    },
+    {
+      "target": "binary",
+      "n": 12288
+    },
+    {
+      "target": "binary",
+      "n": 14336
+    },
+    {
+      "target": "binary",
+      "n": 16384
+    },
+    {
+      "target": "stars_original",
+      "n": 8192
+    },
+    {
+      "target": "stars_original",
+      "n": 10240
+    },
+    {
+      "target": "stars_original",
+      "n": 12288
+    },
+    {
+      "target": "stars_original",
+      "n": 14336
+    },
+    {
+      "target": "stars_original",
+      "n": 16384
+    }
+  ],
+  "oracle": "exact",
+  "edge_law": "constant",
+  "normalized_edge_strength_mean": 1.0,
+  "edge_scale": {
+    "matching": ".5",
+    "path": ".25",
+    "binary": "1/6",
+    "stars_original": ".5/max(16,ceil(sqrt(N)))"
+  },
+  "thresholds": {
+    "matching": 0.06375289453416719,
+    "path": 0.028019621594196242,
+    "binary": 0.012261620882060044,
+    "stars_original": 5.138930221031766e-05
+  },
+  "threshold_rule": "Per-tree absolute K_star=1e-3 times phase-1 L0_total at N=2048; fixed across N and identical for both methods.",
+  "success": "complete and K+2*conditional_MC_SE_total <= K_star",
+  "proposal_query_limit": null,
+  "query_accounting": "Q=preprocessing+counterfactual+commit rounds, each counted once.",
+  "proposal_screen_r": [
+    0.4,
+    0.8,
+    1.2,
+    1.6,
+    2.0
+  ],
+  "proposal_facets": {
+    "matching": [
+      [
+        4,
+        9
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        4,
+        18
+      ]
+    ],
+    "path": [
+      [
+        8,
+        18
+      ],
+      [
+        10,
+        18
+      ],
+      [
+        8,
+        36
+      ]
+    ],
+    "binary": [
+      [
+        10,
+        36
+      ],
+      [
+        12,
+        36
+      ],
+      [
+        12,
+        72
+      ],
+      [
+        16,
+        72
+      ]
+    ],
+    "stars_original": [
+      [
+        6,
+        36
+      ],
+      [
+        8,
+        36
+      ],
+      [
+        8,
+        72
+      ]
+    ]
+  },
+  "proposal_lambda_grid": {
+    "matching": [
+      0.04,
+      0.09
+    ],
+    "path": [
+      0.08,
+      0.16
+    ],
+    "binary": [
+      0.08,
+      0.16
+    ],
+    "stars_original": [
+      0.04,
+      0.12
+    ]
+  },
+  "proposal_top_k": 6,
+  "proposal_screen_samples": 32,
+  "proposal_development_samples": 64,
+  "confirmation_samples": 128,
+  "hardest_development_pair": {
+    "matching|8192": [
+      172,
+      271
+    ],
+    "matching|10240": [
+      173,
+      272
+    ],
+    "matching|12288": [
+      172,
+      271
+    ],
+    "matching|14336": [
+      173,
+      272
+    ],
+    "matching|16384": [
+      171,
+      272
+    ],
+    "path|8192": [
+      173,
+      272
+    ],
+    "path|10240": [
+      173,
+      272
+    ],
+    "path|12288": [
+      173,
+      272
+    ],
+    "path|14336": [
+      173,
+      272
+    ],
+    "path|16384": [
+      173,
+      272
+    ],
+    "binary|8192": [
+      173,
+      272
+    ],
+    "binary|10240": [
+      173,
+      272
+    ],
+    "binary|12288": [
+      173,
+      272
+    ],
+    "binary|14336": [
+      173,
+      272
+    ],
+    "binary|16384": [
+      173,
+      272
+    ],
+    "stars_original|8192": [
+      173,
+      272
+    ],
+    "stars_original|10240": [
+      173,
+      272
+    ],
+    "stars_original|12288": [
+      173,
+      272
+    ],
+    "stars_original|14336": [
+      173,
+      272
+    ],
+    "stars_original|16384": [
+      173,
+      272
+    ]
+  },
+  "proposal_development_pairs": [
+    [
+      171,
+      271
+    ],
+    [
+      171,
+      272
+    ],
+    [
+      172,
+      271
+    ],
+    [
+      172,
+      272
+    ],
+    [
+      173,
+      271
+    ],
+    [
+      173,
+      272
+    ]
+  ],
+  "development_pairs": [
+    [
+      171,
+      271
+    ],
+    [
+      171,
+      272
+    ],
+    [
+      172,
+      271
+    ],
+    [
+      172,
+      272
+    ],
+    [
+      173,
+      271
+    ],
+    [
+      173,
+      272
+    ]
+  ],
+  "proposal_confirmation_pairs": [
+    [
+      196,
+      292
+    ],
+    [
+      196,
+      293
+    ],
+    [
+      197,
+      292
+    ],
+    [
+      197,
+      293
+    ],
+    [
+      198,
+      292
+    ],
+    [
+      198,
+      293
+    ]
+  ],
+  "random_development_pairs": [
+    [
+      193,
+      290
+    ],
+    [
+      193,
+      291
+    ],
+    [
+      194,
+      290
+    ],
+    [
+      194,
+      291
+    ]
+  ],
+  "random_confirmation_pairs": [
+    [
+      196,
+      294
+    ],
+    [
+      196,
+      295
+    ],
+    [
+      197,
+      294
+    ],
+    [
+      197,
+      295
+    ],
+    [
+      198,
+      294
+    ],
+    [
+      198,
+      295
+    ]
+  ],
+  "common_confirmation_target_draws": [
+    196,
+    197,
+    198
+  ],
+  "random_coarse_ratios": [
+    0.015625,
+    0.03125,
+    0.0625,
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    0.875,
+    0.9375,
+    0.96875,
+    1.0
+  ],
+  "random_refinement_fraction_of_n": 0.05,
+  "random_maximum_refinement_rounds": 10,
+  "selection": {
+    "proposal": "Minimum mean Q among settings succeeding on every development pair; otherwise retain a deterministic labelled fallback.",
+    "random": "Minimum observed all-success suffix at K_upper<=K_star, bisected to the stated relative width; no margin or cushion.",
+    "confirmation": "Settings frozen before the common untouched target draws; no confirmation-triggered reselection."
+  },
+  "plot": {
+    "axes": "linear-linear",
+    "n_minimum": 8192,
+    "display_x_offset_fraction": 0.006,
+    "Q_reference": "exact sequential-singleton reference",
+    "error_bar": "six-run minimum to maximum",
+    "failure": "hollow triangle and dashed adjacent segment"
+  },
+  "plan_sha256": "bf5853740649ed6d23542a0802f9d3d1afa7f6ad76055ff847504aaa05bad71c",
+  "input_sha256": {
+    "fixed_design": "e3ecdbd0fd14657dd299138bb1a0f7f6a9d02c71640f527025830678cd59bcae",
+    "fixed_selection": "3893556f49a1a56d0c491e3fde373dd4821097abf26198ea0fca1a2ee9606336",
+    "fixed_records": "16b8981e3f41fd5478be2f0a8374823ea401657fae70c9e2c92563ffece5630b"
+  },
+  "source_sha256": {
+    "ideal_capless_fixed_accuracy_scaling.py": "bccf5eada0f9a785a15d19c8234b6e3d1a5c41b3bf36fb54dc65616e2d750e68",
+    "explore_minimal.py": "d8193571038d08130575151279b50837a455636803773f116022a17f023c3d19",
+    "row_cap_grid_study.py": "f6e2e741c0b84b08a42970a914bd2775d9e04d000f1555d89b963636682c939b",
+    "standard_tree_study.py": "eb144b2f12336212343d4cb0b05ef8d76094a96d5239ca4174c20101e3b3ff9e",
+    "sublinear_pilot_study.py": "183230964dc6576ecf34e8a942c5da143855703712986e27b0059c32d80dd6a5",
+    "fixed_accuracy_confirmation.py": "d1a6f8fd80c6f6495721fcc470a5afded8679a171ec69d64eb3934b215bc2395",
+    "fixed_accuracy_rescue.py": "94eaa93f2fb874f58f1b35fda974741df39b7470eb3f62ece6fd4b68b9640639",
+    "random_fixed_accuracy_scaling.py": "98238f7d744bdc330ddfa35103a185a63b4fd71eed6ae08124d248b790072e02"
+  }
+}

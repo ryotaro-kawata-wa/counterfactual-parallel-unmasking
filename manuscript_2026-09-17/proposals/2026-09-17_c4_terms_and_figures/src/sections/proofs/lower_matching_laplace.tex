@@ -1,0 +1,194 @@
+\subsection{A Laplace bound for uniform-matching collisions}
+\label{app:lower-proof-matching-laplace}
+
+The next lemma is a finite combinatorial statement independent of the hard
+oracle and the adaptive decision rule. It gives a conditional
+Laplace bound used below to derive an adaptive lower-tail estimate.
+
+\paragraph{Intuition.}
+For a fixed set of $k$ vertices in a uniform matching on $n$ vertices,
+each unordered pair is an edge with probability $1/(n-1)$.  Hence the
+expected number of internal edges is
+\[
+ \binom{k}{2}\frac1{n-1}
+ =\frac{k(k-1)}{2(n-1)}
+ \simeq\frac{k^2}{n}\qquad(k\ge2).
+\]
+To obtain a lower-tail estimate rather than only a mean, the proof exposes
+order $k$ edges, each with conditional success probability at least order
+$k/n$.  Their Laplace factors multiply by successive conditioning; the
+exposures need not be independent.
+
+\begin{lemma}[Internal-edge Laplace transform]
+\label{app:lem:matching-collision-laplace}
+Let \(M\) be a uniformly random perfect matching on a labeled set \(U\) of
+even cardinality \(n\ge 2\). Fix \(S\subseteq U\), put \(k:=|S|\), and let
+\[
+ \InternalEdgeCount{S}:=|\{e\in M:e\subseteq S\}|.
+\]
+Then, for every \(t>0\),
+\begin{equation}
+ \mathbb E e^{-t\InternalEdgeCount{S}}
+ \le
+ \exp\left\{
+  -\frac{1-e^{-t}}{32}\frac{\PositivePart{k-1}^2}{n}
+ \right\}.
+ \label{app:eq:matching-collision-laplace}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Handle sets of size at most three.}
+For \(k\in\{0,1\}\), both sides of
+\eqref{app:eq:matching-collision-laplace} equal one. For
+\(k\in\{2,3\}\), two internal matching edges would require four distinct
+vertices of \(S\). Thus \(\InternalEdgeCount{S}\in\{0,1\}\), and
+\[
+ \mathbb E\InternalEdgeCount{S}
+ =0\cdot\mathbb P(\InternalEdgeCount{S}=0)
+  +1\cdot\mathbb P(\InternalEdgeCount{S}=1)
+ =\mathbb P(\InternalEdgeCount{S}=1).
+\]
+Also, writing the edge count as a sum of indicators and taking expectations,
+\begin{equation}
+ \mathbb E \InternalEdgeCount{S}
+ =\sum_{\{u,v\}\subseteq S}\mathbb P(\{u,v\}\in M)
+ =\frac{\binom{k}{2}}{n-1}
+ =\frac{k(k-1)}{2(n-1)}.
+ \label{app:eq:small-set-internal-edge-mean}
+\end{equation}
+Writing \(a_t:=1-e^{-t}\in(0,1)\), the same two possible values give
+\begin{align*}
+ \mathbb E e^{-t\InternalEdgeCount{S}}
+ &=\mathbb P(\InternalEdgeCount{S}=0)
+   +e^{-t}\mathbb P(\InternalEdgeCount{S}=1)\\
+ &=1-(1-e^{-t})\mathbb P(\InternalEdgeCount{S}=1)
+ =1-a_t\mathbb E\InternalEdgeCount{S}.
+\end{align*}
+Using \(1-v\le e^{-v}\) for \(v\ge0\), we obtain
+\[
+ \mathbb E e^{-t\InternalEdgeCount{S}}
+ =1-a_t\mathbb E \InternalEdgeCount{S}
+ \le e^{-a_t\mathbb E \InternalEdgeCount{S}}
+ \le
+ \exp\left\{-\frac{a_t}{32}
+                   \frac{(k-1)^2}{n}\right\},
+\]
+where the last inequality follows directly from
+\eqref{app:eq:small-set-internal-edge-mean} for \(k=2,3\).
+
+
+\emph{2. Expose edges and bound each conditional success probability.}
+It remains to consider \(k\ge 4\). Partition \(S=A\sqcup B\) with
+\(|A|=\lfloor k/2\rfloor\) and \(|B|=\lceil k/2\rceil\), and put
+\(m:=\lfloor k/4\rfloor\). We reveal edges of the original matching
+\(M\) on the full set \(U\), not of a matching restricted to \(S\).
+Only the starting endpoint is required to lie in \(A\); its mate can lie
+in \(A\), \(B\), or \(U\setminus S\).
+
+Fix an ordering of \(U\). Let \(U_0:=U\), and for \(j=1,\ldots,m\) define
+\begin{align*}
+ a_j&:=\min(A\cap U_{j-1}),
+ &b_j&:=\operatorname{mate}_{M}(a_j),\\
+ e_j&:=\{a_j,b_j\}\in M,
+ &U_j&:=U_{j-1}\setminus\{a_j,b_j\}.
+\end{align*}
+Thus \(U_{j-1}\) consists of the vertices whose matching edges have not yet
+been revealed; these vertices are already matched in \(M\).
+The minimum uses the fixed ordering, so the choice of \(a_j\) depends only
+on the earlier revealed edges. It is well-defined because each previous
+edge removes at most two vertices from \(A\), and
+\[
+ |A\cap U_{j-1}|
+ \ge\lfloor k/2\rfloor-2(j-1)
+ \ge2m-2(j-1)
+ \ge2>0
+ \qquad(1\le j\le m).
+\]
+
+Define the success indicator by
+\[
+ X_j:=\mathbf1_{\{b_j\in B\cap U_{j-1}\}},
+ \qquad
+ \{X_j=1\}=\{\operatorname{mate}_{M}(a_j)\in B\cap U_{j-1}\}.
+\]
+Since every starting endpoint \(a_\ell\) lies in \(A\), each previous
+edge \(e_\ell\) removes at most one vertex from \(B\). Consequently,
+\[
+ |B\cap U_{j-1}|
+ \ge\lceil k/2\rceil-(j-1)
+ \ge k/2-(m-1)
+ \ge k/4,
+ \qquad
+ |U_{j-1}|=n-2(j-1).
+\]
+Conditional on \(e_1,\ldots,e_{j-1}\), the remaining matching is uniform
+on \(U_{j-1}\): every perfect matching there has exactly one extension
+by the already revealed edges. Each possible mate of \(a_j\) has the same
+number of matching completions, so
+\[
+ \mathbb P(b_j=v\mid e_1,\ldots,e_{j-1})
+ =\frac1{|U_{j-1}|-1}
+ \quad\text{for }v\in U_{j-1}\setminus\{a_j\}.
+\]
+Summing over the allowable mates in \(B\), which never include
+\(a_j\in A\), gives
+\begin{align*}
+ \mathbb P(X_j=1\mid e_1,\ldots,e_{j-1})
+ &=\sum_{v\in B\cap U_{j-1}}
+   \mathbb P(b_j=v\mid e_1,\ldots,e_{j-1})\\
+ &=\frac{|B\cap U_{j-1}|}{|U_{j-1}|-1}
+ \ge\frac{k/4}{n}=\frac{k}{4n}.
+\end{align*}
+The earlier indicators \(X_1,\ldots,X_{j-1}\) are determined by these
+revealed edges. Adding them to the conditioning therefore gives the same
+probability:
+\begin{equation}
+ \mathbb P(X_j=1\mid X_1,\ldots,X_{j-1},
+               \text{all preceding exposed edges})
+ \ge u:=\frac{k}{4n}.
+ \label{app:eq:matching-cross-success}
+\end{equation}
+Removing both endpoints after each exposure makes \(e_1,\ldots,e_m\)
+distinct. If \(X_j=1\), then \(a_j\in A\) and \(b_j\in B\), so
+\(e_j\subseteq A\cup B=S\). Therefore
+\[
+ \sum_{j=1}^mX_j
+ =|\{e_j:1\le j\le m,\ X_j=1\}|
+ \le|\{e\in M:e\subseteq S\}|=\InternalEdgeCount{S}.
+\]
+
+\emph{3. Iterate conditional Laplace factors without independence.}
+For one exposure, the Bernoulli identity and the preceding probability
+bound give
+\begin{align*}
+ &\mathbb E[e^{-tX_j}\mid\text{preceding exposed edges}]\\
+ &\qquad=1-(1-e^{-t})\Pr(X_j=1\mid\text{preceding exposed edges})\\
+ &\qquad\le1-u(1-e^{-t}).
+\end{align*}
+For \(1\le r\le m\), condition on the first \(r-1\) exposed edges.
+The earlier factors are measurable with respect to this record, so
+\begin{align*}
+ \mathbb E e^{-t\sum_{j=1}^{r}X_j}
+ &=\mathbb E\!\left[
+   e^{-t\sum_{j=1}^{r-1}X_j}
+   \mathbb E(e^{-tX_r}\mid\text{first \(r-1\) exposed edges})\right]\\
+ &\le[1-u(1-e^{-t})]\,
+      \mathbb E e^{-t\sum_{j=1}^{r-1}X_j}.
+\end{align*}
+Starting with the empty sum at \(r=0\), whose exponential is one, and
+iterating to \(r=m\) gives the power below without an independence
+assumption:
+\begin{align}
+ \mathbb E e^{-t\InternalEdgeCount{S}}
+ &\le \mathbb E\exp\left\{-t\sum_{j=1}^mX_j\right\}\notag\\
+ &\le\{1-u(1-e^{-t})\}^{m}
+ \le\exp\{-mu(1-e^{-t})\}.
+ \label{app:eq:matching-exposure-laplace}
+\end{align}
+Since \(m\ge k/8\) for \(k\ge4\),
+\(mu\ge k^2/(32n)\ge(k-1)^2/(32n)\). Substitution in
+\eqref{app:eq:matching-exposure-laplace} proves
+\eqref{app:eq:matching-collision-laplace}.
+\end{proof}

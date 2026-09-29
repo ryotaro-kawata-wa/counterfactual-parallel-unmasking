@@ -1,0 +1,662 @@
+[
+  {
+    "target": "binary",
+    "n": 8192,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 3584.0,
+    "Q_min": 3584.0,
+    "Q_max": 3584.0,
+    "Q_values": [
+      3584.0,
+      3584.0,
+      3584.0,
+      3584.0,
+      3584.0,
+      3584.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.012261620882060044,
+    "maximum_K_upper": 0.008107402222645858,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 3584,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "binary",
+    "n": 10240,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 6400.0,
+    "Q_min": 6400.0,
+    "Q_max": 6400.0,
+    "Q_values": [
+      6400.0,
+      6400.0,
+      6400.0,
+      6400.0,
+      6400.0,
+      6400.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.012261620882060044,
+    "maximum_K_upper": 0.010028721761098754,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 6400,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "binary",
+    "n": 12288,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 12288.0,
+    "Q_min": 12288.0,
+    "Q_max": 12288.0,
+    "Q_values": [
+      12288.0,
+      12288.0,
+      12288.0,
+      12288.0,
+      12288.0,
+      12288.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.012261620882060044,
+    "maximum_K_upper": 0.0,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 12288,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "binary",
+    "n": 14336,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 8512.0,
+    "Q_min": 8512.0,
+    "Q_max": 8512.0,
+    "Q_values": [
+      8512.0,
+      8512.0,
+      8512.0,
+      8512.0,
+      8512.0,
+      8512.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.012261620882060044,
+    "maximum_K_upper": 0.01203252244011555,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 8512,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "binary",
+    "n": 16384,
+    "method": "random",
+    "runs": 6,
+    "successes": 5,
+    "confirmed": false,
+    "Q": 7680.0,
+    "Q_min": 7680.0,
+    "Q_max": 7680.0,
+    "Q_values": [
+      7680.0,
+      7680.0,
+      7680.0,
+      7680.0,
+      7680.0,
+      7680.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.012261620882060044,
+    "maximum_K_upper": 0.01893111005043277,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 7680,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "matching",
+    "n": 8192,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 6912.0,
+    "Q_min": 6912.0,
+    "Q_max": 6912.0,
+    "Q_values": [
+      6912.0,
+      6912.0,
+      6912.0,
+      6912.0,
+      6912.0,
+      6912.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.06375289453416719,
+    "maximum_K_upper": 0.053794150045541465,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 6912,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "matching",
+    "n": 10240,
+    "method": "random",
+    "runs": 6,
+    "successes": 3,
+    "confirmed": false,
+    "Q": 5120.0,
+    "Q_min": 5120.0,
+    "Q_max": 5120.0,
+    "Q_values": [
+      5120.0,
+      5120.0,
+      5120.0,
+      5120.0,
+      5120.0,
+      5120.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.06375289453416719,
+    "maximum_K_upper": 0.18859116007330012,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 5120,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "matching",
+    "n": 12288,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 11136.0,
+    "Q_min": 11136.0,
+    "Q_max": 11136.0,
+    "Q_values": [
+      11136.0,
+      11136.0,
+      11136.0,
+      11136.0,
+      11136.0,
+      11136.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.06375289453416719,
+    "maximum_K_upper": 0.0,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 11136,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "matching",
+    "n": 14336,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 11648.0,
+    "Q_min": 11648.0,
+    "Q_max": 11648.0,
+    "Q_values": [
+      11648.0,
+      11648.0,
+      11648.0,
+      11648.0,
+      11648.0,
+      11648.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.06375289453416719,
+    "maximum_K_upper": 0.06057091561186478,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 11648,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "matching",
+    "n": 16384,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 14848.0,
+    "Q_min": 14848.0,
+    "Q_max": 14848.0,
+    "Q_values": [
+      14848.0,
+      14848.0,
+      14848.0,
+      14848.0,
+      14848.0,
+      14848.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.06375289453416719,
+    "maximum_K_upper": 0.0,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 14848,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "path",
+    "n": 8192,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 6400.0,
+    "Q_min": 6400.0,
+    "Q_max": 6400.0,
+    "Q_values": [
+      6400.0,
+      6400.0,
+      6400.0,
+      6400.0,
+      6400.0,
+      6400.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.028019621594196242,
+    "maximum_K_upper": 0.01860611552836671,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 6400,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "path",
+    "n": 10240,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 5440.0,
+    "Q_min": 5440.0,
+    "Q_max": 5440.0,
+    "Q_values": [
+      5440.0,
+      5440.0,
+      5440.0,
+      5440.0,
+      5440.0,
+      5440.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.028019621594196242,
+    "maximum_K_upper": 0.024869620900447042,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 5440,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "path",
+    "n": 12288,
+    "method": "random",
+    "runs": 6,
+    "successes": 3,
+    "confirmed": false,
+    "Q": 5760.0,
+    "Q_min": 5760.0,
+    "Q_max": 5760.0,
+    "Q_values": [
+      5760.0,
+      5760.0,
+      5760.0,
+      5760.0,
+      5760.0,
+      5760.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.028019621594196242,
+    "maximum_K_upper": 0.060321005847142554,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 5760,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "path",
+    "n": 14336,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 9408.0,
+    "Q_min": 9408.0,
+    "Q_max": 9408.0,
+    "Q_values": [
+      9408.0,
+      9408.0,
+      9408.0,
+      9408.0,
+      9408.0,
+      9408.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.028019621594196242,
+    "maximum_K_upper": 0.01824951575772669,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 9408,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "path",
+    "n": 16384,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 13312.0,
+    "Q_min": 13312.0,
+    "Q_max": 13312.0,
+    "Q_values": [
+      13312.0,
+      13312.0,
+      13312.0,
+      13312.0,
+      13312.0,
+      13312.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 0.028019621594196242,
+    "maximum_K_upper": 0.024182481646293958,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 13312,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "stars_original",
+    "n": 8192,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 1280.0,
+    "Q_min": 1280.0,
+    "Q_max": 1280.0,
+    "Q_values": [
+      1280.0,
+      1280.0,
+      1280.0,
+      1280.0,
+      1280.0,
+      1280.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 5.138930221031766e-05,
+    "maximum_K_upper": 3.3887842930347236e-05,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 1280,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "stars_original",
+    "n": 10240,
+    "method": "random",
+    "runs": 6,
+    "successes": 5,
+    "confirmed": false,
+    "Q": 1280.0,
+    "Q_min": 1280.0,
+    "Q_max": 1280.0,
+    "Q_values": [
+      1280.0,
+      1280.0,
+      1280.0,
+      1280.0,
+      1280.0,
+      1280.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 5.138930221031766e-05,
+    "maximum_K_upper": 5.276777634711999e-05,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 1280,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "stars_original",
+    "n": 12288,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 1920.0,
+    "Q_min": 1920.0,
+    "Q_max": 1920.0,
+    "Q_values": [
+      1920.0,
+      1920.0,
+      1920.0,
+      1920.0,
+      1920.0,
+      1920.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 5.138930221031766e-05,
+    "maximum_K_upper": 3.307004942657517e-05,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 1920,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "stars_original",
+    "n": 14336,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 1792.0,
+    "Q_min": 1792.0,
+    "Q_max": 1792.0,
+    "Q_values": [
+      1792.0,
+      1792.0,
+      1792.0,
+      1792.0,
+      1792.0,
+      1792.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 5.138930221031766e-05,
+    "maximum_K_upper": 3.3577304032939355e-05,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 1792,
+    "development_bracket_width_over_N": 0.03125
+  },
+  {
+    "target": "stars_original",
+    "n": 16384,
+    "method": "random",
+    "runs": 6,
+    "successes": 6,
+    "confirmed": true,
+    "Q": 1536.0,
+    "Q_min": 1536.0,
+    "Q_max": 1536.0,
+    "Q_values": [
+      1536.0,
+      1536.0,
+      1536.0,
+      1536.0,
+      1536.0,
+      1536.0
+    ],
+    "Q_se": 0.0,
+    "K_threshold": 5.138930221031766e-05,
+    "maximum_K_upper": 4.24573749262819e-05,
+    "fresh_target_draws": [
+      196,
+      197,
+      198
+    ],
+    "fresh_sampler_streams": [
+      294,
+      295
+    ],
+    "budget": 1536,
+    "development_bracket_width_over_N": 0.03125
+  }
+]

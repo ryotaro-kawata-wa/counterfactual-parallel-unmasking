@@ -1,0 +1,234 @@
+% Isolated working copy: 2026-09-17.
+% Please edit only this folder; legacy manuscripts and review copies remain separate.
+% Results-first main-text proposal: 2026-09-16.
+% Please continue the direct-accuracy snapshot without changing its appendix.
+% Please keep active sources and parallel red/blue review files unchanged.
+% Please select the presentation while sharing all manuscript content.
+\ifdefined\ArxivVersion
+  \input{src/arxiv_preamble}
+\else
+  \documentclass{article} % For LaTeX2e
+  \usepackage{iclr2027_conference,times}
+\fi
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,fit,positioning}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{src/math_commands.tex}
+\input{src/notation.tex}
+\usepackage{amsthm}
+\input{src/algorithm_environments.tex}
+
+\usepackage{hyperref}
+\usepackage[capitalise,noabbrev,nameinlink]{cleveref}
+% Please define shared-counter environments after cleveref so older TeX Live
+% releases retain each statement's reference type.
+\input{src/theorem_environments.tex}
+% Please name the custom assumption environment in automatic cross-references.
+\crefname{assumption}{Assumption}{Assumptions}
+\Crefname{assumption}{Assumption}{Assumptions}
+\usepackage{url}
+
+\input{src/proposal_presentation.tex}
+\input{src/algorithm_example_environments.tex}
+\input{src/algorithm_blocks.tex}
+
+% Please share all manuscript content between review-color and black-text PDFs.
+% The black wrapper changes editorial colors only, not the conference layout.
+\ifdefined\BlackTextVersion
+  \input{src/black_text.tex}
+\fi
+
+% Please keep the optional exponent results on disk; the short edition omits them.
+% Set \includeexponentstrue here, or define \WithExponentSupplement in a wrapper,
+% to restore both the joint-limit and independent-signal sections and their routes.
+\newif\ifincludeexponents
+\includeexponentsfalse
+\ifdefined\WithExponentSupplement
+  \includeexponentstrue
+\fi
+
+\title{Counterfactual Probing for Parallel\\
+Unmasking with Hidden Forest Structure}
+\ifdefined\ArxivVersion
+  % Please retain the author order and affiliations confirmed for the arXiv preprint.
+  \author{%
+    Ryotaro Kawata\textsuperscript{1}\thanks{\href{mailto:kawata-ryotaro725@g.ecc.u-tokyo.ac.jp}{\nolinkurl{kawata-ryotaro725@g.ecc.u-tokyo.ac.jp}}}\qquad
+    Satoshi Hayakawa\textsuperscript{1}\thanks{\href{mailto:hayakawa@mist.i.u-tokyo.ac.jp}{\nolinkurl{hayakawa@mist.i.u-tokyo.ac.jp}}}\qquad
+    Taiji Suzuki\textsuperscript{1,2}\thanks{\href{mailto:taiji@mist.i.u-tokyo.ac.jp}{\nolinkurl{taiji@mist.i.u-tokyo.ac.jp}}}\\[0.5em]
+    \normalsize\textsuperscript{1}The University of Tokyo\\
+    \normalsize\textsuperscript{2}RIKEN AIP
+  }
+  \date{}
+  \hypersetup{
+    pdftitle={Counterfactual Probing for Parallel Unmasking with Hidden Forest Structure},
+    pdfauthor={Ryotaro Kawata, Satoshi Hayakawa, Taiji Suzuki}
+  }
+\else
+  \author{Anonymous Authors}
+\fi
+
+%\iclrfinalcopy % Uncomment for camera-ready version, but NOT for submission.
+\begin{document}
+% Please retain the official ICLR style's flush-bottom page alignment.
+
+\maketitle
+
+\begin{abstract}
+Masked generative models offer parallel token prediction, but accurate parallel
+sampling must account for dependencies among tokens. When dependencies
+are unknown, finding safe batches also costs model evaluations.
+We study whether total evaluations, including discovery, can be sublinear
+in sequence length $N$; sublinear sequential depth then follows.
+We consider discrete distributions
+with hidden forest structure, accessed through a fixed approximate conditional
+oracle. Under explicit regularity conditions and uniform Hellinger error bounds,
+for any fixed target accuracy $\TargetTolerance\in(0,1/8]$ and sufficiently
+large $N$, our sampler achieves seed-averaged total-variation error at most
+$\TargetTolerance$, with total masked-state submissions and sequential depth
+both bounded by $\widetilde O(N^C\TargetTolerance^{-a})$ for constants
+$0<C<1$ and $a>0$. These guarantees use polynomial vocabulary size and an
+edge-response lower bound set by $N$ and $\TargetTolerance$.
+The sampler shares evaluations of hypothetical reveals across dependence
+tests to identify safe parallel batches without requiring full recovery
+of the hidden forest. A tunable
+parameter trades probing cost against irreversible commit rounds. In the same
+class, any admissible irreversible product-commit sampler attaining
+the same seed-averaged accuracy requires $\Omega(N^c\TargetTolerance^b)$ counterfactual submissions
+or commit rounds in the worst case, for constants $c,b>0$.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Masked generative models predict missing tokens from a partially revealed
+sequence, allowing many positions to be processed in one model
+evaluation~\citep{austin2021structured,sahoo2024simple,nie2025large}.
+Turning these predictions into a joint sample is less straightforward.
+Drawing several tokens independently can miss dependencies between them.
+With exact conditionals, revealing one token at a time samples exactly by
+the chain rule, in any fixed order, but uses $N$ model evaluations in $N$
+sequential steps for a sequence of length $N$.
+The question is whether parallel unmasking can reduce this total cost.
+
+Choosing which tokens to reveal together is itself part of the problem.
+Confidence, entropy, and adaptive ordering guide practical
+samplers~\textcolor{red}{\citep{chang2022maskgit,benhamu2025accelerated,kim2025train,hayakawa2026demystifying}}.
+Yet the singleton predictions at one masked state do not, in general,
+determine the dependence among its masked positions.
+Evaluating hypothetical reveals can supply additional information:
+\textcolor{red}{existing methods compare candidate continuations or test contextual
+independence across positions
+\citep{lee2025lookahead,azangulov2025parallel}.}
+\textcolor{red}{These evaluations also contribute to the sampling cost.}
+These methods do not establish a sublinear total-evaluation bound at fixed
+sampling accuracy. We therefore ask:
+\begin{quote}
+\emph{Can a sampler discover enough dependence structure and generate an
+accurate sample with $o(N)$ model evaluations in total, at fixed accuracy?}
+\end{quote}
+
+\textcolor{red}{To study this question, we consider distributions that factorize
+over hidden forests, classical models of discrete dependence
+\citep{chowliu1968dependence,tan2011markovforest}.
+For a known forest, exact conditionals allow exact sampling in
+$O(\log N)$ rounds by revealing one centroid per residual component.
+Our goal is to exploit this conditional separation while accounting for
+the cost of discovering safe batches.}
+
+\textbf{\textcolor{red}{Key strategy: shared counterfactual probing.}}
+\textcolor{red}{We compare singleton predictions from a fixed approximate
+conditional oracle under hypothetical token fillings, without committing
+the tested values
+(Figure~\ref{fig:intro-counterfactual-20260920}).
+Sharing evaluations across many dependence tests reduces discovery cost.
+The resulting local structure guides generation, progressively simplifying
+the remaining forest. To generate tokens, we independently sample a batch
+from the oracle's singleton conditionals and commit it permanently.
+We count evaluations used for both probing and generation.}
+
+\input{figures/intro_counterfactual_2026-09-20/main_figure}
+
+\textbf{Main results, informally.}
+\textcolor{red}{\emph{Under the target and oracle assumptions in
+Section~\ref{sec:main-setup}, for any fixed sufficiently small accuracy
+$\TargetTolerance>0$ and all sufficiently large $N$, there is a sampler
+with seed-averaged total-variation (TV) error at most $\TargetTolerance$
+using $\widetilde O(N^{2/3+1/(9\RankTailExponent)})$ evaluations in total,
+which also gives sublinear sequential depth.
+Here $\RankTailExponent>1$ is the rank-frequency exponent.
+Conversely, every admissible irreversible product-commit sampler meeting
+the same accuracy target uniformly over the class requires worst-case
+budgets of $\Omega(N^c)$ probes or $\Omega(N^c)$ commit rounds for some
+$c>0$ (Theorems~\ref{main:thm:upper-curve}--\ref{main:thm:lower-envelope}).}}
+
+\textcolor{red}{The model assumes detectable edge responses, controlled tail responses,
+a rank-frequency envelope, and polynomial vocabulary.
+Its uniform oracle accuracy also suffices
+for the $N$-step baseline to meet the output target
+(Appendix~\ref{app:comparison-unmasking-errors}).}
+
+Existing distribution-general samplers achieve smaller depth exponents
+with sufficient total budgets of $O(N)$ or $O(N\log N)$
+\citep{anari2024parallel,anari2026autospeculation}.
+Dependence-adaptive guarantees can be sublinear on weakly dependent
+instances \citep{li2025convergence,zhao2026adaptation}.
+\textcolor{red}{Our guarantee also covers paths with constant dependence per
+edge and total correlation $\Theta(N)$
+(Proposition~\ref{app:prop:path-in-class}; Section~\ref{sec:related-work}).}
+
+\textcolor{red}{Section~\ref{sec:main-algorithm} combines random-color probes,
+majority certification of low-degree neighborhoods, singleton peeling of the
+high-degree core, and parallel centroid commits, without first recovering
+the original forest.}
+A public degree cutoff trades probing work against commit rounds.
+
+\input{src/sections/main_setup}
+\input{src/sections/main_upper}
+\input{src/sections/main_lower}
+\input{src/sections/main_algorithm}
+% Please retain main_proof_sketches.tex as an inactive source; its proof ideas
+% now accompany the lower theorem and the algorithmic construction.
+\input{src/sections/main_related_work}
+\input{src/sections/main_experiments}
+\input{src/sections/main_conclusion}
+
+\label{proposal:main-text-end}
+\clearpage
+\ifdefined\ArxivVersion
+  \input{src/sections/acknowledgments}
+\fi
+\input{src/sections/ai_use_statement}
+\ifdefined\ArxivVersion
+  \input{src/sections/code_availability}
+\fi
+
+\bibliography{src/iclr2027_conference}
+\ifdefined\ArxivVersion
+  \bibliographystyle{plainnat}
+\else
+  \bibliographystyle{iclr2027_conference}
+\fi
+
+\appendix
+\input{src/sections/appendix_setup}
+\input{src/sections/appendix_results}
+\input{src/sections/appendix_lower_proofs}
+\input{src/sections/appendix_algorithm}
+\input{src/sections/appendix_upper_proofs}
+\input{src/sections/appendix_kl_extension}
+\input{src/sections/appendix_benchmarks}
+\input{src/sections/appendix_auxiliary}
+\ifincludeexponents
+\input{src/sections/appendix_independent_signal}
+\fi
+\input{src/sections/appendix_comparison}
+\input{src/sections/appendix_oracle_comparison}
+\input{src/sections/appendix_experiments}
+
+
+\end{document}

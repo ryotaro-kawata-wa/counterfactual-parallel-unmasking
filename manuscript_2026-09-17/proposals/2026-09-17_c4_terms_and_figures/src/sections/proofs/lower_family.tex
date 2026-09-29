@@ -1,0 +1,355 @@
+\subsection{Hard-family local facts and class membership}
+\label{app:lower-proof-family}
+
+This subsection proves the one-edge calculations in
+\cref{app:lem:hard-local-facts}: positivity and common marginals, the edge
+response, the selected-oracle error, and the one-edge Hellinger loss.  The
+same calculations then verify \cref{app:prop:hard-family-inclusion}, placing
+the finite hard family inside the shared target/oracle class used by both
+bounds.
+
+\paragraph{Intuition.}
+There are two different error scales.  Removing one dependence edge costs
+$\HardEdgeDistance\simeq\EdgeCoupling^2$, whereas replacing a nontrigger
+conditional by the neutral marginal costs at most order
+$\EdgeCoupling^2\TriggerMass$.  The extra factor $\TriggerMass$ lets the
+frozen oracle hide failed trigger tests while preserving a larger loss
+when two unresolved endpoints are committed together.
+
+For the moment calculations, if
+\(A\sim\HardMarginal\), then the trigger indicator at position \(i\) is
+Bernoulli with mean \(\TriggerMass\).  Hence
+\begin{equation}
+ \mathbb E\TriggerFeature{i}(A)=0,
+ \qquad
+ \mathbb E\TriggerFeature{i}(A)^2=\TriggerVariance,
+ \qquad
+ \mathbb E|\TriggerFeature{i}(A)|=2\TriggerVariance.
+ \label{app:eq:hard-feature-moments}
+\end{equation}
+Indeed, the feature is $1-\TriggerMass$ with probability $\TriggerMass$
+and $-\TriggerMass$ otherwise, so
+\[
+\begin{aligned}
+ \mathbb E\TriggerFeature{i}
+ &=\TriggerMass(1-\TriggerMass)
+   -(1-\TriggerMass)\TriggerMass=0,\\
+ \mathbb E\TriggerFeature{i}^2
+ &=\TriggerMass(1-\TriggerMass)^2
+   +(1-\TriggerMass)\TriggerMass^2
+   =\TriggerMass(1-\TriggerMass),\\
+ \mathbb E|\TriggerFeature{i}|
+ &=\TriggerMass(1-\TriggerMass)
+   +(1-\TriggerMass)\TriggerMass
+   =2\TriggerMass(1-\TriggerMass).
+\end{aligned}
+\]
+
+\begin{lemma}[Local facts for the hard matching family]
+\label{app:lem:hard-local-facts}
+Under \eqref{app:eq:hard-basic-conditions}, every member of
+\(\HardFamily[\HardVocabSize,\HardBankSize,
+\TriggerMass,\EdgeCoupling]\) has the following properties.
+\begin{enumerate}
+ \item \textup{\textbf{Positivity, marginals, and factorization.}}
+ Each edge law in \eqref{app:eq:hard-edge-law} is strictly positive,
+ has both marginals equal to \(\HardMarginal\), and the product law satisfies
+ the structural forest assumptions.
+ \item \textup{\textbf{Edge response.}}
+ For either orientation \(i\to j\) of a matching edge, the largest TV
+ change in the endpoint kernel equals \(\EdgeCoupling\).
+ \item \textup{\textbf{Oracle error.}}
+ Let $j$ be any readout, let $i:=\MateInMatching{j}$, and let
+ $a\in\Vocab\setminus\{\HardCandidate{\TriggerIndex{i}}\}$ be a revealed
+ nontrigger value at $i$.  The selected oracle is exact outside this case,
+ while in this case
+ \begin{equation}
+  \sqHellinger\bigl(
+   \HardKernel{i}{j}{I}(\cdot\mid a),\HardMarginal
+  \bigr)
+  \le
+  \frac{\EdgeCoupling^2\TriggerMass}
+       {2(1-\TriggerMass)}
+  \le \EdgeCoupling^2\TriggerMass.
+  \label{app:eq:hard-local-oracle-error}
+ \end{equation}
+ \item \textup{\textbf{One-edge Hellinger loss.}}
+ For every matching edge \(e\), uniformly over its two private trigger
+ indices, the value below depends only on
+ \((\TriggerMass,\EdgeCoupling)\), not on \(e\) or \(I\):
+ \begin{equation}
+  \frac{\EdgeCoupling^2}{12}
+  \le
+  \HardEdgeDistance
+  :=\sqHellinger\bigl(
+     \HardEdgeLaw{e}{I},\HardIndependentEdgeLaw{e}
+    \bigr)
+  \le\frac{\EdgeCoupling^2}{2}.
+  \label{app:eq:hard-edge-distance}
+ \end{equation}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Positivity, common marginals, and forest factorization.}
+Fix \(e=\{i,j\}\).  Summing \eqref{app:eq:hard-edge-law} over its second
+coordinate and using \eqref{app:eq:hard-feature-moments} gives
+\[
+ \sum_b\HardEdgeLaw{e}{I}(a,b)
+ =\HardMarginal(a)
+  \left[1+
+   \EdgeCoupling\frac{\TriggerFeature{i}(a)}{\TriggerVariance}
+   \mathbb E\TriggerFeature{j}(B)
+  \right]
+ =\HardMarginal(a),
+\]
+where \(B\sim\HardMarginal\).  The other marginal follows symmetrically.
+The likelihood ratio with respect to
+\(\HardIndependentEdgeLaw{e}\) takes the three values
+\begin{equation}
+ 1+\EdgeCoupling
+   \frac{\TriggerFeature{i}(a)\TriggerFeature{j}(b)}
+        {\TriggerVariance}
+ =
+ \begin{cases}
+  1+\EdgeCoupling(1-\TriggerMass)/\TriggerMass,
+    &a,b\text{ are their respective triggers},\\
+  1-\EdgeCoupling,
+    &\text{exactly one of }a,b\text{ is its trigger},\\
+  1+\EdgeCoupling\TriggerMass/(1-\TriggerMass),
+    &a,b\text{ are both nontriggers}.
+ \end{cases}
+ \label{app:eq:hard-likelihood-values}
+\end{equation}
+The conditions
+\(0<\EdgeCoupling\le\TriggerMass\le1/2\) place every value in
+\([1/2,2]\), proving strict positivity.  The marginal identity also gives
+the endpoint compatibility
+\[
+ \HardMarginal(a)\HardKernel{i}{j}{I}(b\mid a)
+ =\HardEdgeLaw{e}{I}(a,b)
+ =\HardMarginal(b)\HardKernel{j}{i}{I}(a\mid b).
+\]
+Every component is one edge, so multiplying these identities over the hidden
+matching proves the required forest factorization for either root choice.
+
+
+\emph{2. Directed endpoint response.}
+For source values \(a,a'\),
+\begin{align}
+ &\dTV\bigl(
+   \HardKernel{i}{j}{I}(\cdot\mid a),
+   \HardKernel{i}{j}{I}(\cdot\mid a')
+  \bigr)\notag\\
+ &\qquad=
+ \frac{\EdgeCoupling
+       |\TriggerFeature{i}(a)-\TriggerFeature{i}(a')|}
+      {2\TriggerVariance}
+ \sum_b\HardMarginal(b)|\TriggerFeature{j}(b)|
+ =\EdgeCoupling
+  |\TriggerFeature{i}(a)-\TriggerFeature{i}(a')|.
+ \label{app:eq:hard-directed-response}
+\end{align}
+The feature equals \(1-\TriggerMass\) at the unique trigger and
+\(-\TriggerMass\) elsewhere.  Its largest difference is therefore one, so
+the maximum in \eqref{app:eq:hard-directed-response} is exactly
+\(\EdgeCoupling\).
+
+
+\emph{3. Oracle error at a revealed nontrigger.}
+Because the target is a product over matching edges, the exact row at a
+readout \(j\) is \(\HardMarginal\) when its mate is masked and is
+\(\HardKernel{i}{j}{I}(\cdot\mid y_i)\) when the mate \(i\) is revealed.
+Thus \eqref{app:eq:hard-oracle} is exact in its first two cases.  In the third
+case, $\TriggerFeature{i}(y_i)=-\TriggerMass$, so the likelihood ratio is
+\[
+ \frac{\HardKernel{i}{j}{I}(b\mid y_i)}{\HardMarginal(b)}
+ =1-\frac{\EdgeCoupling}{1-\TriggerMass}\TriggerFeature{j}(b).
+\]
+Substitution into the definition of chi-square divergence gives
+\begin{align}
+ \ChiSquareDivergence{
+  \HardKernel{i}{j}{I}(\cdot\mid y_i)}{\HardMarginal}
+ &=\sum_b\HardMarginal(b)
+       \left(\frac{\EdgeCoupling\TriggerFeature{j}(b)}
+                   {1-\TriggerMass}\right)^2\notag\\
+ &=\frac{\EdgeCoupling^2}{(1-\TriggerMass)^2}
+       \TriggerMass(1-\TriggerMass)
+ =\EdgeCoupling^2\frac{\TriggerMass}{1-\TriggerMass}.
+ \label{app:eq:hard-oracle-chi-square}
+\end{align}
+For a likelihood ratio \(r\),
+\((\sqrt r-1)^2\le(r-1)^2\).  The normalization in
+\eqref{app:eq:distances} therefore implies
+\(\sqHellinger(p,q)\le\ChiSquareDivergence{p}{q}/2\).  Combining this with
+\eqref{app:eq:hard-oracle-chi-square} and
+\(\TriggerMass\le1/2\) proves \eqref{app:eq:hard-local-oracle-error}.
+
+
+\emph{4. One-edge squared-Hellinger loss.}
+Finally, put
+\[
+ Z_e(a,b):=
+ \frac{\TriggerFeature{i}(a)\TriggerFeature{j}(b)}
+      {\TriggerVariance}.
+\]
+Under \(\HardIndependentEdgeLaw{e}\), each endpoint independently equals
+its trigger token with probability \(\TriggerMass\).  Thus
+\[
+ Z_e=
+ \begin{cases}
+ (1-\TriggerMass)/\TriggerMass,
+   &\text{with probability }\TriggerMass^2
+      \quad\text{(both triggers)},\\
+ -1,
+   &\text{with probability }2\TriggerMass(1-\TriggerMass)
+      \quad\text{(one trigger)},\\
+ \TriggerMass/(1-\TriggerMass),
+   &\text{with probability }(1-\TriggerMass)^2
+      \quad\text{(neither trigger)}.
+ \end{cases}
+ \]
+This law depends only on \(\TriggerMass\), not on the edge or its trigger
+indices.
+\Eqref{app:eq:hard-feature-moments} and independence under
+\(\HardIndependentEdgeLaw{e}\) give
+\[
+ \mathbb E_{\HardIndependentEdgeLaw{e}}Z_e
+ =\frac{\mathbb E\TriggerFeature{i}\,
+        \mathbb E\TriggerFeature{j}}{\TriggerVariance}=0,\qquad
+ \mathbb E_{\HardIndependentEdgeLaw{e}}Z_e^2
+ =\frac{\mathbb E\TriggerFeature{i}^2\,
+        \mathbb E\TriggerFeature{j}^2}{(\TriggerVariance)^2}=1.
+\]  Since
+\(\mathrm d\HardEdgeLaw{e}{I}/\mathrm d\HardIndependentEdgeLaw{e}
+=1+\EdgeCoupling Z_e\),
+the definition of squared Hellinger distance gives the first line below.
+For the second, multiply
+$\sqrt{1+\EdgeCoupling Z_e}-1$ by
+$(\sqrt{1+\EdgeCoupling Z_e}+1)/
+ (\sqrt{1+\EdgeCoupling Z_e}+1)$:
+\begin{align}
+ \HardEdgeDistance
+ &=\frac12\mathbb E_{\HardIndependentEdgeLaw{e}}
+       \bigl(\sqrt{1+\EdgeCoupling Z_e}-1\bigr)^2\notag\\
+ &=\frac{\EdgeCoupling^2}{2}
+  \mathbb E_{\HardIndependentEdgeLaw{e}}
+  \frac{Z_e^2}
+       {(\sqrt{1+\EdgeCoupling Z_e}+1)^2}.
+ \label{app:eq:hard-edge-distance-formula}
+\end{align}
+Consequently \(\HardEdgeDistance\) depends only on
+\((\TriggerMass,\EdgeCoupling)\), so it is the same for every matching
+component and every choice of its trigger indices.
+By \eqref{app:eq:hard-likelihood-values}, the denominator lies between
+one and \((\sqrt2+1)^2<6\).
+\Eqref{app:eq:hard-edge-distance} follows.
+\end{proof}
+
+\paragraph{Intuition for class inclusion.}
+The four checks have separate jobs:
+$\HardVocabSize\TriggerMass>1$ puts the candidate bank above the background,
+$\TriggerMass\le\HardBankSize^{-\RankTailExponent}$ gives the frequency
+envelope, $\EdgeSignal\le\EdgeCoupling$ gives the edge signal, and
+$\EdgeCoupling^2\TriggerMass\le(\OracleRadius)^2/(2N)$ hides nontrigger replies
+within the oracle budget.  In the main calibration,
+$\EdgeCoupling=\TriggerMass=\EdgeSignal$, so the last check becomes the
+cubic constraint $\EdgeSignal^3\le(\OracleRadius)^2/(2N)$.
+
+\begin{proposition}[Finite hard-family inclusion]
+\label{app:prop:hard-family-inclusion}
+In addition to \eqref{app:eq:hard-basic-conditions}, let
+$\RankTailExponent>1$, use the same public vocabulary of size $\VocabSize$,
+set
+$\ResponseExponent=\ResponseConstant=\FrequencyConstant=1$, and suppose
+\begin{equation}
+ \HardVocabSize\TriggerMass>1,
+ \qquad
+ \TriggerMass\le\HardBankSize^{-\RankTailExponent},
+ \qquad
+ \EdgeSignal\le\EdgeCoupling,
+ \qquad
+ \EdgeCoupling^2\TriggerMass\le\frac{(\OracleRadius)^2}{2N}.
+ \label{app:eq:finite-hard-inclusion}
+\end{equation}
+Then every target in
+$\HardFamily[\HardVocabSize,\HardBankSize,\TriggerMass,\EdgeCoupling]$
+satisfies the structural and response assumptions in
+Appendix~\ref{app:setup}, as well as the finite rank--frequency inequality in
+(RF\textcolor{red}{; \cref{app:eq:RF}}), and its selected oracle \eqref{app:eq:hard-oracle} belongs to
+$\OracleClass(\HardTargetLaw{I};\OracleRadius)$.  If the public vocabulary
+sequence also obeys the vocabulary-growth condition in (RF\textcolor{red}{; \cref{app:ass:rate-regime}}), then the full
+(RF\textcolor{red}{; \cref{app:ass:rate-regime}}) assumption holds.  Under that additional asymptotic condition, this
+matching family is a contained subfamily of the same public problem class
+used by the upper theorem.
+\end{proposition}
+
+\begin{proof}[Proof of \cref{app:prop:hard-family-inclusion}]
+
+\emph{1. Forest structure and the edge-signal condition (UEN\textcolor{red}{; \cref{app:eq:UEN}}).}
+Apply \cref{app:lem:hard-local-facts}.  Its first conclusion proves
+strict positivity and Assumption~\ref{app:ass:forest-structure}.  Complete
+boundary assignments outside a matching edge do not alter that edge's law,
+so \eqref{app:eq:hard-directed-response} makes both directed intrinsic
+responses exactly \(\EdgeCoupling\).  The condition
+\(\EdgeSignal\le\EdgeCoupling\) therefore proves (UEN\textcolor{red}{; \cref{app:eq:UEN}}).
+
+
+\emph{2. Response-tail regularity (RT\textcolor{red}{; \cref{app:eq:RT}}).}
+For (RT\textcolor{red}{; \cref{app:eq:RT}}), first consider distinct positions \(i,j\) that are not matched.
+Conditioning on a complete boundary fixes the mates of \(i\) and \(j\), and
+the product over matching components makes
+\(\BoundaryRow{i}{j}{a}{z}\) independent of \(a\).  The response diameter is
+therefore zero.
+
+It remains to consider a matching edge.  Fix a threshold
+\(t\).
+\begin{itemize}
+\item If \(t<\TriggerMass\), the marginal tail
+contains no candidate token and hence no trigger.  Every source value in the
+tail has the same centered feature \(-\TriggerMass\), so its response
+diameter is zero.
+\item If \(t\ge\TriggerMass\), the response diameter is at most
+\(\EdgeCoupling\le\TriggerMass\le t\).
+\end{itemize}
+Thus (RT\textcolor{red}{; \cref{app:eq:RT}}) holds with
+\(\ResponseExponent=\ResponseConstant=1\).
+
+
+\emph{3. Rank--frequency regularity (RF\textcolor{red}{; \cref{app:eq:RF}}).}
+The inequality \(\HardVocabSize\TriggerMass>1\) is equivalent to the
+background mass in \eqref{app:eq:hard-common-marginal} being strictly less
+than $\HardVocabSize^{-1}$, since
+\[
+ \frac{1-\HardBankSize\TriggerMass}{\HardVocabSize-\HardBankSize}
+ <\frac1{\HardVocabSize}
+ \quad\Longleftrightarrow\quad
+ \HardVocabSize-\HardVocabSize\HardBankSize\TriggerMass
+ <\HardVocabSize-\HardBankSize
+ \quad\Longleftrightarrow\quad
+ \HardVocabSize\TriggerMass>1.
+\]  Hence the \(\HardBankSize\) candidates occupy
+the first \(\HardBankSize\) marginal ranks.  For
+\(k\le\HardBankSize\),
+\[
+ \HardMarginal(\HardCandidate{k})=\TriggerMass
+ \le\HardBankSize^{-\RankTailExponent}
+ \le k^{-\RankTailExponent};
+\]
+for \(k>\HardBankSize\), the vocabulary-floor term
+\(\HardVocabSize^{-1}\) suffices.  This proves the rank--frequency inequality
+in (RF\textcolor{red}{; \cref{app:eq:RF}}) with \(\FrequencyConstant=1\).  The separate vocabulary-growth clause
+in (RF\textcolor{red}{; \cref{app:ass:rate-regime}}) holds whenever the public sequence \(\HardVocabSize\) has the
+declared asymptotic scaling.
+
+
+\emph{4. Uniform oracle accuracy (A2).}
+The only nonzero oracle error is bounded by
+\eqref{app:eq:hard-local-oracle-error}.  The final condition in
+\eqref{app:eq:finite-hard-inclusion} therefore places it below
+\((\OracleRadius)^2/(2N)\), proving (A2).  All required finite conditions hold
+for every hidden matching and trigger vector.  Together with the stated
+vocabulary-growth condition, this proves the asserted inclusion in the
+shared asymptotic class.
+\end{proof}

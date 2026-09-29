@@ -1,0 +1,13 @@
+% Please keep the two benchmark calibrations separate from the general
+% signal parameter and from each other's accuracy convention.
+\newcommand{\HellingerBenchmarkSignal}{\frac12
+  \left(\frac{(\OracleRadius)^2}{N}\right)^{1/3}}
+\newcommand{\KLBenchmarkSignal}{\frac12
+  \left(\frac{\KLTargetTolerance}{2N}\right)^{1/3}}
+\newcommand{\TradeoffExponent}{\gamma}
+\newcommand{\HellingerBalancedScale}{\BalancedResourceScale^{(i)}}
+\newcommand{\KLBalancedScale}{\BalancedResourceScale^{(ii)}}
+
+% Please use this main-text alias only for the common resource calibration.
+% It does not identify the Hellinger and forward-KL output objectives.
+\newcommand{\MainAccuracyRadius}{\varepsilon_\star}

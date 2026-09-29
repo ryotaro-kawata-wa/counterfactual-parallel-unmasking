@@ -1,0 +1,170 @@
+\subsection{Collision-affinity bound}
+\label{app:lower-proof-affinity}
+
+We combine the midpoint identity with the one-edge Hellinger loss to
+convert unresolved collisions into a multiplicative affinity penalty.
+Recall our normalization: for probability masses \(p,q\) on the same
+finite set \(\mathcal X\),
+\(\HellingerAffinity(p,q):=\sum_{x\in\mathcal X}\sqrt{p(x)q(x)}\).
+The squared Hellinger distance is
+\(\sqHellinger(p,q):=\tfrac12\sum_{x\in\mathcal X}
+(\sqrt{p(x)}-\sqrt{q(x)})^2=1-\HellingerAffinity(p,q)\).
+
+\paragraph{Intuition.}
+Each unresolved edge whose endpoints are committed together contributes
+the factor $1-\HardEdgeDistance$.  Since
+$\HardEdgeDistance\simeq\EdgeCoupling^2$,
+\[
+ 1-(1-\HardEdgeDistance)^{\TotalCollisions}
+ \simeq
+ \min\{1,\EdgeCoupling^2\TotalCollisions\}.
+\]
+For justification, $1-(1-d)^z\le\min\{1,zd\}$ for integer $z\ge0$, while
+$1-(1-d)^z\ge1-e^{-zd}\ge(1-e^{-1})\min\{1,zd\}$.
+This is an edge-penalty scale; the next lemma places its expectation below
+the actual squared-Hellinger risk.
+
+\begin{lemma}[Affinity loss from unresolved collisions]
+\label{app:lem:collision-affinity}
+For every fixed decision-rule seed \(w\),
+\begin{equation}
+ \mathbb E_{I\sim\HardInstancePrior}
+ \sqHellinger(\HardTargetLaw{I},\HardOutputLaw{I}{w})
+ \ge
+ \mathbb E_{I,H}
+ \left[1-(1-\HardEdgeDistance)^{\TotalCollisions}\right],
+ \label{app:eq:global-collision-affinity}
+\end{equation}
+where the expectation on the right is under
+\eqref{app:eq:joint-instance-midpoint-law}.
+\end{lemma}
+
+\begin{proof}
+\emph{1. Specify the edge components at a fixed history.}
+Fix \(I,w\) and a reachable pre-commit history \(h\), and write
+\(B_t=B_t(h)\). As in Step~4 of \cref{app:lem:unresolved-invariant}, the
+two component laws on \(\Vocab^{e\cap B_t}\), for
+\(e\in\HiddenMatching\), are
+\begin{align*}
+ p_e(z_{e\cap B_t})
+ &:=\HardEdgeLaw{e}{I}
+        (z_{e\cap B_t}\mid x_{e\cap G(h)}),\\
+ \widehat p_e(z_{e\cap B_t})
+ &:=\prod_{j\in e\cap B_t}
+       \HardOracleRowMass{I}{y_t(h)}{j}{z_j}.
+\end{align*}
+The first line is the conditional probability of the current edge
+coordinates given the already committed coordinates of that edge.
+Both masses sum to one; on an empty coordinate set both equal one on the
+empty assignment. The conditional product calculation in that step gives
+\[
+ \HardExactBatchLaw{t}{I}(z\mid h)
+   =\prod_{e\in\HiddenMatching}p_e(z_{e\cap B_t}),
+ \qquad
+ \HardProductBatchLaw{t}{I}(z\mid h)
+   =\prod_{e\in\HiddenMatching}\widehat p_e(z_{e\cap B_t}).
+\]
+These products are at fixed \(I,h\); each component is a block of batch
+coordinates from one edge, not necessarily a single vertex.
+
+\emph{2. Compute the factor of an unresolved collision.}
+Partition the unresolved edges according to the number of selected endpoints:
+\begin{equation}
+ \mathcal E_t^{(r)}:=
+ \{e\in\OpUnresolvedMatching{s_t}:
+       |e\cap\ActiveBatch{t}|=r\},
+ \qquad r\in\{0,1,2\}.
+ \label{app:eq:commit-edge-partition}
+\end{equation}
+Thus the collision-edge set and its size are
+\[
+ \mathcal E_t^{(2)}
+ =\{e\in\OpUnresolvedMatching{s_t}:
+                       e\subseteq\ActiveBatch{t}\},
+ \qquad
+ |\mathcal E_t^{(2)}|=\CollisionCount{t},
+ \qquad
+ \ActiveBatch{t}=B_t\cap\UnresolvedVertices{t}.
+\]
+For \(e=\{i,j\}\in\mathcal E_t^{(2)}\), both endpoints belong to \(B_t\)
+and neither belongs to \(G(h)\). Thus the exact component has no
+conditioning within \(e\), while both oracle rows see their mate masked:
+\[
+ p_e(z_i,z_j)=\HardEdgeLaw{e}{I}(z_i,z_j),
+ \qquad
+ \widehat p_e(z_i,z_j)
+ =\HardMarginal(z_i)\HardMarginal(z_j)
+ =\HardIndependentEdgeLaw{e}(z_i,z_j).
+\]
+Here the oracle equality uses \eqref{app:eq:hard-oracle}, and the absence
+of conditioning from other edges uses the target's edgewise product law.
+Consequently,
+\(\HellingerAffinity(p_e,\widehat p_e)
+ =1-\sqHellinger(\HardEdgeLaw{e}{I},\HardIndependentEdgeLaw{e})
+ =1-\HardEdgeDistance\), where \(\HardEdgeDistance\) is defined in
+\eqref{app:eq:hard-edge-distance}. In terms of the actual edge masses,
+this is
+\begin{equation}
+ \sum_{z_i,z_j}
+ \sqrt{\HardEdgeLaw{e}{I}(z_i,z_j)
+       \HardIndependentEdgeLaw{e}(z_i,z_j)}
+ =1-\HardEdgeDistance.
+ \label{app:eq:one-collision-affinity}
+\end{equation}
+\emph{3. Bound every remaining component and apply product affinity.}
+Since \(p_e\) and \(\widehat p_e\) are probability masses,
+\(0\le\HellingerAffinity(p_e,\widehat p_e)\le1\) by Cauchy--Schwarz.
+This covers all noncollision components, including previously retired
+edges where the oracle need not be exact. More specifically, an unresolved
+crossing edge has \(p_e=\widehat p_e=\HardMarginal\), and an edge with
+\(e\cap B_t=\varnothing\) has both masses equal to one on the empty
+assignment; these components have affinity exactly one.
+
+Apply \cref{app:lem:finite-hellinger-calculus} with index set
+\(J=\HiddenMatching\), spaces \(\mathcal X_e=\Vocab^{e\cap B_t}\),
+and component laws \(p_e,\widehat p_e\).
+The two product laws to which it applies are exactly
+\(\HardExactBatchLaw{t}{I}(\cdot\mid h)\) and
+\(\HardProductBatchLaw{t}{I}(\cdot\mid h)\) from Step~1.
+By the definition \eqref{app:eq:hard-local-affinity} and that lemma,
+\begin{align*}
+ \HardLocalAffinity{t}{I,h}
+ &=\HellingerAffinity\!\left(
+      \HardExactBatchLaw{t}{I}(\cdot\mid h),
+      \HardProductBatchLaw{t}{I}(\cdot\mid h)\right)\\
+ &=\prod_{e\in\HiddenMatching}\HellingerAffinity(p_e,\widehat p_e)\\
+ &=\left(\prod_{e\in\mathcal E_t^{(2)}}(1-\HardEdgeDistance)\right)
+   \left(\prod_{e\in\HiddenMatching\setminus\mathcal E_t^{(2)}}
+                \HellingerAffinity(p_e,\widehat p_e)\right)\\
+ &=(1-\HardEdgeDistance)^{\CollisionCount{t}}
+   \prod_{e\in\HiddenMatching\setminus\mathcal E_t^{(2)}}
+                \HellingerAffinity(p_e,\widehat p_e).
+\end{align*}
+Every factor in the remaining product lies in \([0,1]\), so
+\begin{equation}
+ \HardLocalAffinity{t}{I,h}
+ \le(1-\HardEdgeDistance)^{\CollisionCount{t}}.
+ \label{app:eq:local-collision-affinity}
+\end{equation}
+\emph{4. Multiply along the adaptive path and average.}
+The preceding bound holds at each reached history, including histories
+under the midpoint law. Multiplying over rounds and using
+\(\TotalCollisions=\sum_t\CollisionCount{t}\) yields
+\[
+ \prod_t\HardLocalAffinity{t}{I,H_{t-1}}
+ \le(1-\HardEdgeDistance)^{\TotalCollisions}.
+\]
+Using the adaptive identity \eqref{app:eq:adaptive-midpoint-identity}
+first at fixed \(I,w\) and then averaging over \(I\) gives
+\begin{align*}
+ &\mathbb E_I\sqHellinger(\HardTargetLaw{I},\HardOutputLaw{I}{w})\\
+ &\quad=1-\mathbb E_I
+    \mathbb E_{H\sim\HardMidpointLaw{I}{w}}
+       \prod_t\HardLocalAffinity{t}{I,H_{t-1}}\\
+ &\quad\ge1-\mathbb E_{I,H}(1-\HardEdgeDistance)^{\TotalCollisions}\\
+ &\quad=\mathbb E_{I,H}
+       [1-(1-\HardEdgeDistance)^{\TotalCollisions}],
+\end{align*}
+where the joint expectation uses the conditional midpoint law given \(I,w\).
+This proves \eqref{app:eq:global-collision-affinity}.
+\end{proof}

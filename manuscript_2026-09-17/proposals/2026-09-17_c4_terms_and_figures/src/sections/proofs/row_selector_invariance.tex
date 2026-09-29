@@ -1,0 +1,139 @@
+\subsection{Public row-selector invariance}
+
+\paragraph{Intuition.}
+The structural proof uses two selector properties: exact candidate rows
+of size at most $\DegreeCutoff$ are preserved, and every returned row
+has size at most $\DegreeCutoff$.  Consequently the same successful-path and all-path arguments apply
+to every public selector with this contract.  The statistical comparisons
+are then constructed for that selector's own decision rule.
+
+\begin{proposition}[Invariance under public row selection]
+\label{app:prop:row-selector-invariance}
+Replace the standard top-vote selector by any rule in
+Definition~\ref{app:def:row-selector}, keeping all other screen parameters,
+fresh-color rules, and decision-rule caps unchanged.
+Under the finite hypotheses of Theorem~\ref{app:thm:finite-upper},
+$\SelectedPackedSampler$ has the same low-degree screen contract,
+successful-path contraction and stopping guarantees, all-path resource
+bounds, and expected-TV bound $\OracleRadius+\ScreenFailureBudget$.
+Under the additional oracle hypotheses of
+Theorem~\ref{app:thm:finite-kl-upper}, its expected forward KL is at most
+$N\KLRowBudget+N\log\VocabSize\,\ScreenFailureBudget$.
+Consequently both main-text benchmark guarantees retain their original
+calibrations and rates.  This statement compares guarantees, not the
+realized paths or errors of two selectors.
+\end{proposition}
+
+\begin{proof}
+
+Recall the selector contract of \cref{app:def:row-selector}:
+\[
+ \begin{gathered}
+ \RowSelector(j,C,\DegreeCutoff;\ScreenTranscript)\subseteq C,
+ \qquad
+ |\RowSelector(j,C,\DegreeCutoff;\ScreenTranscript)|\le\DegreeCutoff,\\
+ |C|\le\DegreeCutoff
+ \quad\Longrightarrow\quad
+ \RowSelector(j,C,\DegreeCutoff;\ScreenTranscript)=C.
+ \end{gathered}
+\]
+The selector is a deterministic function of the available public transcript,
+makes no submission or commit, and does not read future randomness.
+The dependencies of the proof are as follows.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.28\linewidth}
+ >{\raggedright\arraybackslash}p{.30\linewidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Property retained & Argument using it & Guarantee retained\\
+\midrule
+Identity on nonoverflowing rows
+ & \AppLowDegreeScreenRef & Low-degree exactness\\
+Row-size cap and low-degree exactness
+ & \Cref{app:lem:successful-path-structure,app:lem:upper-resources}
+ & Contraction, stopping, resource bounds\\
+Fresh colors conditional on the past
+ & \Cref{app:lem:random-screen-success} & Failure budget\\
+This selector's own safe rule
+ & \Cref{app:lem:exact-hybrid,app:lem:adaptive-hellinger-upper,app:lem:safe-controller-comparison}
+ & Expected TV bound\\
+This selector's own joint reference
+ & \Cref{app:lem:adaptive-joint-kl,app:thm:finite-kl-upper}
+ & Expected forward-KL bound\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\emph{1. Preserve the low-degree screen contract.}
+On a successful screen, the proof of
+\AppLowDegreeScreenRef{} identifies the candidate row with
+the true neighborhood before applying the selector in \AlgoBlockRef{aggregate}.
+Its size is at most
+$\DegreeCutoff$, so the nonoverflow identity preserves it.  Every other
+returned row still has size at most $\DegreeCutoff$; no claim that it
+contains only true neighbors is needed.
+
+\emph{2. Transfer the structural and resource bounds.}
+These two properties are exactly those used in
+\eqref{app:eq:survivor-high-neighbors} and
+\eqref{app:eq:total-claim-bound}.  Thus the contraction, terminal exactness,
+and successful-path round count above apply to the decision rule with
+the chosen selector.
+In particular, neither cycle repair nor the round-cap fallback activates
+on a successful path.
+The selector adds no submission or commit, and the unchanged caps bound
+resources on every path, including failed screens.
+
+
+\emph{3. Retain the conditional screen-failure budget.}
+Conditioning on this decision rule's realized past, including previous
+selector outputs, still leaves the next colors drawn in \AlgoBlockRef{draft}
+independent and uniform.  Lemma~\ref{app:lem:random-screen-success} therefore gives the
+same failure budget without a union bound over selectors or histories.
+
+\emph{4. Use the chosen selector's own safe decision rule for TV.}
+For TV, construct the safe decision rule of
+Lemma~\ref{app:lem:safe-controller-comparison} using this same selector.
+The common-path coupling compares $\SelectedPackedSampler$ with its own
+safe decision rule using the same selector; it does not compare different
+selectors.  Structural safety and the generic adaptive Hellinger bound
+give $\OracleRadius$, and a failed screen contributes at most
+$\ScreenFailureBudget$.
+
+
+\emph{5. Use the chosen selector's own joint-reference process for KL.}
+For KL, instead construct the joint-reference process of
+Appendix~\ref{app:kl-joint-reference} for the decision rule with the chosen
+selector.  Write $\ScreenFailureEvent$ for the event that a reached
+screen fails in this selector's joint-reference process.
+On its reference paths, the costs in
+\eqref{app:eq:adaptive-joint-kl} satisfy
+\begin{align*}
+ \sum_t\sum_{j\in B(\mathfrak h_t)}
+  \KLDivergence{\ExactRow{y(\mathfrak h_t)}{j}}
+               {\OracleRow{y(\mathfrak h_t)}{j}}
+ &\le\KLRowBudget\sum_t|B(\mathfrak h_t)|=N\KLRowBudget,\\
+ \sum_t\mathrm{TC}(\JointBatchLaw{\mathfrak h_t})
+ &\le N\log\VocabSize\,\mathbf 1_{\ScreenFailureEvent}.
+\end{align*}
+The second line is zero on a successful reference path by the structural
+argument; on any path, the sum is at most $N\log\VocabSize$.
+Conditioning before each fresh color block in this same reference process
+gives \eqref{app:eq:joint-reference-screen-failure}.  Therefore
+\begin{align*}
+ \mathbb E_W\KLDivergence{\TargetLaw}{\SamplerOutputLaw{W}{\FrozenOracle}}
+ &\le N\KLRowBudget+
+       N\log\VocabSize\,\mathbb E_W\JointReferenceLaw{W}(\ScreenFailureEvent)\\
+ &\le N\KLRowBudget+N\log\VocabSize\,\ScreenFailureBudget.
+\end{align*}
+All output and reference laws here belong to the chosen selector.
+No comparison with the standard top-vote selector, or conversion from the
+TV coupling, is used.
+\end{proof}
+
+\begin{proposalcontext}{Interpreting selector invariance}
+The resource guarantees do not bound a selector's local arithmetic or
+memory costs.
+\end{proposalcontext}

@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "n_grid": [
+    8192,
+    10240,
+    12288,
+    14336,
+    16384
+  ],
+  "cells": 20,
+  "proposal_fresh_confirmed_cells": 20,
+  "random_fresh_confirmed_cells": 16,
+  "proposal_external_query_limit": null,
+  "query_identity_verified": true,
+  "random_exact_threshold_no_margin": true,
+  "random_one_step_cushion": false,
+  "confirmation_reselection": false,
+  "common_confirmation_target_draws": true,
+  "disjoint_sampler_streams": true,
+  "source_sha256": {
+    "ideal_capless_fixed_accuracy_scaling.py": "bccf5eada0f9a785a15d19c8234b6e3d1a5c41b3bf36fb54dc65616e2d750e68",
+    "explore_minimal.py": "d8193571038d08130575151279b50837a455636803773f116022a17f023c3d19",
+    "row_cap_grid_study.py": "f6e2e741c0b84b08a42970a914bd2775d9e04d000f1555d89b963636682c939b",
+    "standard_tree_study.py": "eb144b2f12336212343d4cb0b05ef8d76094a96d5239ca4174c20101e3b3ff9e",
+    "sublinear_pilot_study.py": "183230964dc6576ecf34e8a942c5da143855703712986e27b0059c32d80dd6a5",
+    "fixed_accuracy_confirmation.py": "d1a6f8fd80c6f6495721fcc470a5afded8679a171ec69d64eb3934b215bc2395",
+    "fixed_accuracy_rescue.py": "94eaa93f2fb874f58f1b35fda974741df39b7470eb3f62ece6fd4b68b9640639",
+    "random_fixed_accuracy_scaling.py": "98238f7d744bdc330ddfa35103a185a63b4fd71eed6ae08124d248b790072e02"
+  },
+  "input_sha256": {
+    "fixed_design": "e3ecdbd0fd14657dd299138bb1a0f7f6a9d02c71640f527025830678cd59bcae",
+    "fixed_selection": "3893556f49a1a56d0c491e3fde373dd4821097abf26198ea0fca1a2ee9606336",
+    "fixed_records": "16b8981e3f41fd5478be2f0a8374823ea401657fae70c9e2c92563ffece5630b"
+  }
+}

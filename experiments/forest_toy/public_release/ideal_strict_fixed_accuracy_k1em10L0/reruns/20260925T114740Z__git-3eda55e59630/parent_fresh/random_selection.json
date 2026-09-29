@@ -1,0 +1,202 @@
+{
+  "matching|8192": {
+    "target": "matching",
+    "n": 8192,
+    "budget": 6912,
+    "lower_observed_budget": 6656,
+    "bracket_width": 256,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "matching|10240": {
+    "target": "matching",
+    "n": 10240,
+    "budget": 5120,
+    "lower_observed_budget": 4800,
+    "bracket_width": 320,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "matching|12288": {
+    "target": "matching",
+    "n": 12288,
+    "budget": 11136,
+    "lower_observed_budget": 10752,
+    "bracket_width": 384,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "matching|14336": {
+    "target": "matching",
+    "n": 14336,
+    "budget": 11648,
+    "lower_observed_budget": 11200,
+    "bracket_width": 448,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "matching|16384": {
+    "target": "matching",
+    "n": 16384,
+    "budget": 14848,
+    "lower_observed_budget": 14336,
+    "bracket_width": 512,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "path|8192": {
+    "target": "path",
+    "n": 8192,
+    "budget": 6400,
+    "lower_observed_budget": 6144,
+    "bracket_width": 256,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "path|10240": {
+    "target": "path",
+    "n": 10240,
+    "budget": 5440,
+    "lower_observed_budget": 5120,
+    "bracket_width": 320,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "path|12288": {
+    "target": "path",
+    "n": 12288,
+    "budget": 5760,
+    "lower_observed_budget": 5376,
+    "bracket_width": 384,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "path|14336": {
+    "target": "path",
+    "n": 14336,
+    "budget": 9408,
+    "lower_observed_budget": 8960,
+    "bracket_width": 448,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "path|16384": {
+    "target": "path",
+    "n": 16384,
+    "budget": 13312,
+    "lower_observed_budget": 12800,
+    "bracket_width": 512,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "binary|8192": {
+    "target": "binary",
+    "n": 8192,
+    "budget": 3584,
+    "lower_observed_budget": 3328,
+    "bracket_width": 256,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "binary|10240": {
+    "target": "binary",
+    "n": 10240,
+    "budget": 6400,
+    "lower_observed_budget": 6080,
+    "bracket_width": 320,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "binary|12288": {
+    "target": "binary",
+    "n": 12288,
+    "budget": 12288,
+    "lower_observed_budget": 11904,
+    "bracket_width": 384,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "binary|14336": {
+    "target": "binary",
+    "n": 14336,
+    "budget": 8512,
+    "lower_observed_budget": 8064,
+    "bracket_width": 448,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "binary|16384": {
+    "target": "binary",
+    "n": 16384,
+    "budget": 7680,
+    "lower_observed_budget": 7168,
+    "bracket_width": 512,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "stars_original|8192": {
+    "target": "stars_original",
+    "n": 8192,
+    "budget": 1280,
+    "lower_observed_budget": 1024,
+    "bracket_width": 256,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "stars_original|10240": {
+    "target": "stars_original",
+    "n": 10240,
+    "budget": 1280,
+    "lower_observed_budget": 960,
+    "bracket_width": 320,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "stars_original|12288": {
+    "target": "stars_original",
+    "n": 12288,
+    "budget": 1920,
+    "lower_observed_budget": 1536,
+    "bracket_width": 384,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "stars_original|14336": {
+    "target": "stars_original",
+    "n": 14336,
+    "budget": 1792,
+    "lower_observed_budget": 1344,
+    "bracket_width": 448,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  },
+  "stars_original|16384": {
+    "target": "stars_original",
+    "n": 16384,
+    "budget": 1536,
+    "lower_observed_budget": 1024,
+    "bracket_width": 512,
+    "bracket_width_over_N": 0.03125,
+    "one_step_cushion": 0,
+    "selection_rule": "first all-success development suffix at exact K_star; no safety margin and no cushion"
+  }
+}

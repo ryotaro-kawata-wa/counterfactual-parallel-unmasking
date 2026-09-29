@@ -1,0 +1,58 @@
+[
+  {
+    "stage": "proposal_screen",
+    "jobs": 676,
+    "new_runs": 676,
+    "workers": 8,
+    "seconds": 2911.9489057851024,
+    "finished_utc": "2026-09-25T12:39:25.830782+00:00"
+  },
+  {
+    "stage": "proposal_development",
+    "jobs": 720,
+    "new_runs": 720,
+    "workers": 8,
+    "seconds": 2024.8870108521078,
+    "finished_utc": "2026-09-25T13:13:41.851789+00:00"
+  },
+  {
+    "stage": "random_development_coarse",
+    "jobs": 960,
+    "new_runs": 960,
+    "workers": 8,
+    "seconds": 453.65651928214356,
+    "finished_utc": "2026-09-25T13:21:15.807749+00:00"
+  },
+  {
+    "stage": "random_development_refine_0",
+    "jobs": 76,
+    "new_runs": 76,
+    "workers": 8,
+    "seconds": 53.15789777599275,
+    "finished_utc": "2026-09-25T13:22:09.088542+00:00"
+  },
+  {
+    "stage": "random_development_refine_1",
+    "jobs": 56,
+    "new_runs": 56,
+    "workers": 8,
+    "seconds": 49.88481902796775,
+    "finished_utc": "2026-09-25T13:22:59.079303+00:00"
+  },
+  {
+    "stage": "random_development_refine_2",
+    "jobs": 32,
+    "new_runs": 32,
+    "workers": 8,
+    "seconds": 37.91103745996952,
+    "finished_utc": "2026-09-25T13:23:37.072306+00:00"
+  },
+  {
+    "stage": "fresh_confirmation",
+    "jobs": 240,
+    "new_runs": 240,
+    "workers": 8,
+    "seconds": 407.6309833880514,
+    "finished_utc": "2026-09-25T13:30:57.391310+00:00"
+  }
+]

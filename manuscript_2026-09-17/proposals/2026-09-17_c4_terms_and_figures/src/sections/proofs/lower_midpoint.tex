@@ -1,0 +1,318 @@
+% Please keep the comparison's goal, obstacle, and bridge on the same page.
+\begin{samepage}
+\subsection{Adaptive midpoint comparison and instance prior}
+\label{app:lower-proof-midpoint}
+
+We relate the target law to the sampler's output law through the discrepancies
+at individual commits. Three points guide the comparison:
+\begin{itemize}
+\item \emph{Goal.} Express the output affinity, or equivalently one minus the
+squared-Hellinger error, in terms of local commit affinities.
+\item \emph{Obstacle.} A different committed value can change subsequent
+probes, batches, and the stopping round. Thus local affinities depend on the
+realized history; the fixed-product affinity formula does not directly
+combine them.
+\item \emph{Bridge.} Normalize the geometric mean of the two commit kernels
+at each history. These normalized kernels define a common path law under
+which the product of local affinities equals the output affinity in
+expectation (\cref{app:lem:adaptive-midpoint-lower}).
+\end{itemize}
+\end{samepage}
+
+\emph{Fixed objects.}
+Fix an admissible algorithm with finite pathwise budgets
+\((\QueryBudget{},\RoundBudget{})\), an instance
+\(I=(\HiddenMatching,\TriggerVector)\) of
+\cref{app:def:hard-matching-family}, and one value \(w\) of the
+decision-rule seed. Put
+\begin{equation}
+ \HardOutputLaw{I}{w}
+ :=\SamplerOutputLaw{w}{\HardOracle{I}}.
+ \label{app:eq:hard-seeded-output-law}
+\end{equation}
+The following three executions differ in their commit kernels, defined
+below. The exact comparison process has terminal law \(\HardTargetLaw{I}\);
+Step~2 of the proof verifies this even for adaptive batches.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.23\linewidth}
+  >{\raggedright\arraybackslash}p{0.32\linewidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Execution & Commit kernel at history \(h\) & Law and role \\
+\midrule
+Exact comparison
+& \(\HardExactBatchLaw{t}{I}(\cdot\mid h)\): true joint conditional
+& \(\HardTargetLaw{I}\): target output law. \\
+\addlinespace
+Product-commit sampler
+& \(\HardProductBatchLaw{t}{I}(\cdot\mid h)\): product of oracle rows
+& \(\HardOutputLaw{I}{w}\): output law being evaluated. \\
+\addlinespace
+Adaptive midpoint
+& \(\HardMidpointKernel{t}{I}(\cdot\mid h)\): normalized geometric mean
+& \(\HardMidpointLaw{I}{w}\): analytic path law for averaging local affinities. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{itemize}
+\item \emph{Shared operations.} All three use the same seed-fixed decision
+rule and the same frozen oracle \(\HardOracle{I}\) for probes. At a common
+history they select the same batch \(B_t(h)\).
+\item \emph{Changed operation.} Only the law of the committed values changes.
+The resulting histories, and hence later batches, can differ between executions.
+\end{itemize}
+
+\begin{definition*}[Commit kernels and adaptive midpoint law]
+\emph{History and batch.}
+Immediately before commit \(t\), after the intervening probes, let \(h\)
+be the complete observable history: committed positions and values,
+the earlier oracle transcript, and the decision-rule state.
+Thus $h=\OpVisibleHistory{s_t}$ in the operation notation of
+\cref{app:eq:operation-action,app:eq:operation-visible-history}.
+Write \(G(h)\) for the committed set, \(x_{G(h)}\) for its values, and
+\(y_t(h)\) for the commit state in \eqref{app:eq:commit-state}.
+For fixed \((I,w)\), the probes and batch selection are deterministic
+functions of the observed past; write \(B_t(h)\) for the selected batch.
+The seed \(w\) is suppressed from local kernels because \(h\) includes
+the seed-fixed decision-rule state, but retained in full-law and
+terminal-round notation.
+
+\emph{Commit kernels.}
+For \(z\in\Vocab^{B_t(h)}\), define
+\begin{align}
+ \HardExactBatchLaw{t}{I}(z\mid h)
+ &:=\HardTargetLaw{I}\bigl(
+   X_{B_t(h)}=z\mid X_{G(h)}=x_{G(h)}
+  \bigr),
+ \label{app:eq:hard-exact-batch-law}\\
+ \HardProductBatchLaw{t}{I}(z\mid h)
+ &:=\prod_{j\in B_t(h)}\HardOracleRowMass{I}{y_t(h)}{j}{z_j}.
+ \label{app:eq:hard-product-batch-law}
+\end{align}
+
+\emph{Local affinity and midpoint law.}
+Define
+\begin{align}
+ \HardLocalAffinity{t}{I,h}
+ &:=\sum_{z\in\Vocab^{B_t(h)}}
+    \sqrt{
+     \HardExactBatchLaw{t}{I}(z\mid h)
+     \HardProductBatchLaw{t}{I}(z\mid h)},
+ \label{app:eq:hard-local-affinity}\\
+ \HardMidpointKernel{t}{I}(z\mid h)
+ &:=\frac{
+    \sqrt{
+     \HardExactBatchLaw{t}{I}(z\mid h)
+     \HardProductBatchLaw{t}{I}(z\mid h)}}
+   {\HardLocalAffinity{t}{I,h}}.
+ \label{app:eq:hard-midpoint-kernel}
+\end{align}
+Let \(\HardMidpointLaw{I}{w}\) be the analytic adaptive path law that runs
+the same decision rule and frozen-oracle probes, drawing every commit
+batch from \(\HardMidpointKernel{t}{I}(\cdot\mid h)\).
+\end{definition*}
+
+\paragraph{Why the construction is well defined.}
+\begin{itemize}
+\item \emph{Conditioning on the history.}
+For fixed \((I,w)\), every reachable \(h\) can be reconstructed from
+\(x_{G(h)}\): replay the seed-fixed decision rule from the initial state and,
+at each earlier commit, supply the coordinates of \(x_{G(h)}\) selected
+by that commit. The frozen oracle reproduces the intervening replies,
+batches, and decision-rule states. Conversely, \(h\) records \(x_{G(h)}\).
+Thus conditioning on this \(h\) adds no random event beyond
+\(X_{G(h)}=x_{G(h)}\), justifying
+\eqref{app:eq:hard-exact-batch-law}.
+\item \emph{Normalization.}
+Strict positivity makes the denominator nonzero. Cauchy--Schwarz gives
+\(0<\HardLocalAffinity{t}{I,h}\le1\). In particular,
+\[
+ \sum_{z\in\Vocab^{B_t(h)}}\HardMidpointKernel{t}{I}(z\mid h)
+ =\frac{\displaystyle
+   \sum_{z\in\Vocab^{B_t(h)}}
+    \sqrt{\HardExactBatchLaw{t}{I}(z\mid h)
+           \HardProductBatchLaw{t}{I}(z\mid h)}}
+  {\HardLocalAffinity{t}{I,h}}
+ =\frac{\HardLocalAffinity{t}{I,h}}{\HardLocalAffinity{t}{I,h}}
+ =1.
+\]
+\item \emph{Pathwise budgets.}
+Both commit kernels are strictly positive, so the midpoint kernel has
+the same support at every reachable history. It therefore traverses the
+same decision tree as the implemented sampler. Every midpoint path has
+at most \(\QueryBudget{}\) counterfactual submissions and at most
+\(\RoundBudget{}\) nonempty commits.
+\end{itemize}
+
+\paragraph{From local affinity to output error.}
+The defining factorization is
+\[
+ \sqrt{\HardExactBatchLaw{t}{I}(z\mid h)
+        \HardProductBatchLaw{t}{I}(z\mid h)}
+ =\HardLocalAffinity{t}{I,h}\HardMidpointKernel{t}{I}(z\mid h).
+\]
+Along a complete path, the normalized \(\HardMidpointKernel{t}{I}\) factors
+supply its midpoint probability, while the \(\HardLocalAffinity{t}{I,h}\)
+factors retain the local affinity losses.
+The next identity averages their product over the adaptive paths.
+
+\begin{lemma}[Adaptive midpoint identity]
+\label{app:lem:adaptive-midpoint-lower}
+For every fixed instance \(I\) and decision-rule seed \(w\),
+\begin{equation}
+ 1-\sqHellinger(
+      \HardTargetLaw{I},\HardOutputLaw{I}{w})
+ =\mathbb E_{H\sim\HardMidpointLaw{I}{w}}
+   \prod_{t=1}^{\HardTerminalRoundCount{I}{w}{H}}
+    \HardLocalAffinity{t}{I,H_{t-1}},
+ \label{app:eq:adaptive-midpoint-identity}
+\end{equation}
+where \(\HardTerminalRoundCount{I}{w}{H}\le \RoundBudget{}\) is the terminal number of
+nonempty commit batches on the midpoint path.
+Here \(H_{t-1}\) denotes the complete observable history immediately
+before commit \(t\), after all intervening counterfactual operations.
+The subscript counts earlier commits, not individual query operations.
+\end{lemma}
+
+The remaining lower-bound argument uses this identity at two levels:
+\begin{itemize}
+\item \emph{Local penalty.} \Cref{app:lem:collision-affinity} bounds the
+factors \(\HardLocalAffinity{t}{I,h}\) using unresolved edges whose
+endpoints are committed together.
+\item \emph{Global error.} The survivor and collision arguments count
+these events under the instance--midpoint law
+\eqref{app:eq:joint-instance-midpoint-law}. The identity converts that
+count into an output-error bound.
+\end{itemize}
+
+\begin{proof}
+
+\emph{1. Reconstruct the unique adaptive path.}
+Fix a complete output \(x\in\Vocab^N\).  Starting with the empty history,
+replay the deterministic seed-fixed decision rule.  Whenever it chooses
+\(B_t(h_{t-1}(x))\), feed it
+\(z_t(x):=x_{B_t(h_{t-1}(x))}\).  This recursively determines the histories,
+batches, and terminal round \(\HardTerminalRoundCount{I}{w}{x}\).  No
+remasking makes the realized batches disjoint and exhaustive.  Put
+\(G_t(x):=G_{t-1}(x)\cup B_t(h_{t-1}(x))\), with \(G_0(x)=\varnothing\).
+
+\emph{2. Factor the exact and product output masses.}
+The exact conditional factors telescope:
+\begin{align*}
+ &\prod_{t=1}^{\HardTerminalRoundCount{I}{w}{x}}
+   \HardExactBatchLaw{t}{I}(z_t(x)\mid h_{t-1}(x))\\
+ &\quad=\prod_{t=1}^{\HardTerminalRoundCount{I}{w}{x}}
+   \frac{\HardTargetLaw{I}(X_{G_t(x)}=x_{G_t(x)})}
+        {\HardTargetLaw{I}(X_{G_{t-1}(x)}=x_{G_{t-1}(x)})}
+ =\frac{\HardTargetLaw{I}(X_{\PositionSet}=x)}{1}
+ =\HardTargetLaw{I}(x).
+\end{align*}
+Here the numerator at round \(t\) is the denominator at round \(t+1\);
+the initial event has probability one and the terminal set is \(\PositionSet\).
+This identity and the
+product-commit rule therefore give
+\begin{align}
+ \HardTargetLaw{I}(x)
+ &=\prod_{t=1}^{\HardTerminalRoundCount{I}{w}{x}}
+   \HardExactBatchLaw{t}{I}
+    (z_t(x)\mid h_{t-1}(x)),
+ \label{app:eq:hard-exact-path-factorization}\\
+ \HardOutputLaw{I}{w}(x)
+ &=\prod_{t=1}^{\HardTerminalRoundCount{I}{w}{x}}
+   \HardProductBatchLaw{t}{I}
+    (z_t(x)\mid h_{t-1}(x)).
+ \label{app:eq:hard-product-path-factorization}
+\end{align}
+The batch-selection rule has no likelihood factor because it is deterministic
+given the displayed history.
+
+
+\emph{3. Normalize the midpoint path mass.}
+For the same terminal output, the midpoint path mass is
+\begin{equation}
+ \HardMidpointLaw{I}{w}(x)
+ :=\prod_{t=1}^{\HardTerminalRoundCount{I}{w}{x}}
+   \HardMidpointKernel{t}{I}
+    (z_t(x)\mid h_{t-1}(x)).
+ \label{app:eq:hard-midpoint-path-mass}
+\end{equation}
+To verify that this path mass sums to one, first account for paths that
+finish at different rounds.  Nonempty batches are disjoint, so every path
+has at most \(N\) rounds.  For this calculation only, pad each finished path
+to \(N\) rounds by setting \(B_t(h)=\varnothing\),
+\(\Vocab^\varnothing=\{\varnothing\}\), and
+\(\HardMidpointKernel{t}{I}(\varnothing\mid h)=1\) after termination.
+These extra factors leave \eqref{app:eq:hard-midpoint-path-mass} unchanged.
+Each complete output corresponds to exactly one padded path, and conversely,
+because the seed-fixed decision rule is deterministic and the genuine batches
+are disjoint and exhaustive.
+
+Write \(h_{t-1}\) for the history determined by the preceding assignments
+\(z_1,\ldots,z_{t-1}\).  For any \(1\le r\le N\), hold
+\(z_1,\ldots,z_{r-1}\) fixed.  The earlier factors do not depend on \(z_r\),
+so the local normalization above gives
+\begin{align*}
+ &\sum_{z_r\in\Vocab^{B_r(h_{r-1})}}
+   \prod_{t=1}^{r}\HardMidpointKernel{t}{I}(z_t\mid h_{t-1})\\
+ &\quad=
+   \left[\prod_{t=1}^{r-1}
+     \HardMidpointKernel{t}{I}(z_t\mid h_{t-1})\right]
+   \underbrace{\sum_{z_r\in\Vocab^{B_r(h_{r-1})}}
+     \HardMidpointKernel{r}{I}(z_r\mid h_{r-1})}_{=1}\\
+ &\quad=\prod_{t=1}^{r-1}
+     \HardMidpointKernel{t}{I}(z_t\mid h_{t-1}).
+\end{align*}
+Applying this equality for \(r=N,N-1,\ldots,1\) removes the nested sums
+from the innermost one outwards and ends with the empty product \(1\):
+\[
+ \sum_{x\in\Vocab^N}\HardMidpointLaw{I}{w}(x)
+ =\sum_{z_1\in\Vocab^{B_1(h_0)}}\cdots
+  \sum_{z_N\in\Vocab^{B_N(h_{N-1})}}
+   \prod_{t=1}^{N}\HardMidpointKernel{t}{I}(z_t\mid h_{t-1})
+ =1.
+\]
+
+\emph{4. Convert the affinity sum into a midpoint expectation.}
+Substituting
+\(\sqrt{\HardExactBatchLaw{t}{I}\HardProductBatchLaw{t}{I}}
+ =\HardLocalAffinity{t}{I,h}\HardMidpointKernel{t}{I}\) into the terminal
+affinity sum yields
+\begin{align*}
+ &\HellingerAffinity(
+    \HardTargetLaw{I},\HardOutputLaw{I}{w})\\
+ &\quad=\sum_{x\in\Vocab^N}
+  \sqrt{\HardTargetLaw{I}(x)\HardOutputLaw{I}{w}(x)}\\
+ &\quad=\sum_{x\in\Vocab^N}
+  \HardMidpointLaw{I}{w}(x)
+  \prod_{t=1}^{\HardTerminalRoundCount{I}{w}{x}}
+   \HardLocalAffinity{t}{I,h_{t-1}(x)}\\
+ &\quad=\mathbb E_{H\sim\HardMidpointLaw{I}{w}}
+  \prod_{t=1}^{\HardTerminalRoundCount{I}{w}{H}}
+   \HardLocalAffinity{t}{I,H_{t-1}}.
+\end{align*}
+Since \(\HellingerAffinity(p,q)=1-\sqHellinger(p,q)\), this is
+\eqref{app:eq:adaptive-midpoint-identity}.
+\end{proof}
+
+\paragraph{Instance prior for the remaining proof.}
+Keep the seed \(w\) fixed. Draw an instance
+\(I=(\HiddenMatching,\TriggerVector)\) from the prior
+\(\HardInstancePrior\) as follows:
+\begin{itemize}
+\item \emph{Matching.} \(\HiddenMatching\) is uniform over all perfect
+matchings of \(\PositionSet\).
+\item \emph{Triggers.} \(\TriggerIndex{1},\ldots,\TriggerIndex{N}\) are
+independent uniform elements of \([\HardBankSize]\), independent of
+\(\HiddenMatching\).
+\end{itemize}
+All random variables used in the remaining proof are evaluated under the
+joint analytic law
+\begin{equation}
+ I\sim\HardInstancePrior,
+ \qquad
+ H\mid(I,w)\sim\HardMidpointLaw{I}{w}.
+ \label{app:eq:joint-instance-midpoint-law}
+\end{equation}

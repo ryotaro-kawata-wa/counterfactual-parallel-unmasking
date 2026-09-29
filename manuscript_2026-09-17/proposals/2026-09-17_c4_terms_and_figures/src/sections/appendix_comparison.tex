@@ -1,0 +1,706 @@
+\section{Existing guarantees in the units of this paper}
+\label{app:comparison}
+
+We separate two tasks: accounting for oracle submissions, and evaluating
+the dependence quantities in the representative schedule bounds of
+Table~\ref{tab:resource-comparison} and Section~\ref{sec:related-work}.
+The latter uses one explicit path, evaluated for TC, DTC, and effective TC.
+The comparison substitutes into
+published sufficient upper bounds; it is not a lower bound on another
+sampler or a tight worst-case complexity over forests.
+Appendix~\ref{app:oracle-comparison} records the source-specific oracle
+conditions and output objectives.
+
+\subsection{Submissions and parallel depth}
+\label{app:comparison-states}
+
+One submitted masked state returns all requested singleton rows; repeated
+submissions and different inputs in a parallel batch are charged separately.
+A query for one conditional row can therefore be implemented by one such
+submission, so a published row-query upper bound is also a full-output
+submission upper bound.  This conversion need not be tight.
+A product-unmasking schedule with $K$ updates needs at most $K$ submissions
+and depth $K$.  Our completed feasible run uses
+$\CounterfactualQueries+\CommitRounds+1$ submissions, including preprocessing.
+All these counts exclude local arithmetic and vocabulary readout costs.
+
+Parallel verification does not require sequential prefix queries.
+Write $\mu$ for the target law used by the external verification sampler,
+$h$ for its accepted history, and
+$z=(z_1,\ldots,z_b)$ for an ordered candidate block, with
+$z_{<j}=(z_1,\ldots,z_{j-1})$.
+Once $z$ and $h$ are available, every input in
+the chain-rule product
+\[
+ \mu(z\mid h)=\prod_j\mu(z_j\mid h,z_{<j})
+\]
+is known and the conditional rows can be queried in parallel.
+This is consistent with the sublinear-depth Anari results summarized in
+the table; their exact resource statements are recorded only in
+Appendix~\ref{app:comparison-exact-oracles}.
+
+\subsection{One path with linear TC and DTC}
+\label{app:comparison-path}
+
+All entropies and mutual informations below are under $X\sim P$.
+Using the \hyperlink{app-finite-entropy}{finite entropy}
+$H(p)=-\sum_xp(x)\log p(x)$, write $H(A):=H(\mathcal L_P(A))$ and,
+for finite random variables $A,B,C$,
+\[
+ \begin{aligned}
+ H(A\mid C)&:=\sum_cP(C=c)H(P_{A\mid C=c}),\\
+ I(A;B\mid C)&:=\sum_cP(C=c)
+   \KLDivergence{P_{AB\mid C=c}}
+                {P_{A\mid C=c}\otimes P_{B\mid C=c}}.
+ \end{aligned}
+\]
+The sums run over positive-probability values of $C$;
+omitting $C$ gives unconditional mutual information.
+Here $P_{AB\mid C=c}$ denotes the conditional joint law and
+$P_{A\mid C=c},P_{B\mid C=c}$ its marginals.
+With $X_{-i}:=(X_j)_{j\ne i}$, write
+\[
+ \mathrm{TC}(P):=\sum_iH(X_i)-H(X),\qquad
+ \mathrm{DTC}(P):=H(X)-\sum_iH(X_i\mid X_{-i}).
+\]
+For every forest law, choose a rooted ordering in which each parent
+precedes its children.  In the factorization \eqref{app:eq:S0}, a nonroot
+vertex $j$, conditional on earlier vertices, has law
+$\EndpointKernel{\ParentOf{j}}{j}(\cdot\mid X_{\ParentOf{j}})$:
+none of its descendants has appeared yet, and its parent separates it
+from the other earlier vertices.  Roots belong to independent components
+and retain their marginal laws.  The entropy chain rule therefore gives
+\[
+ H(X)=\sum_{r\in\TargetRoots}H(X_r)
+       +\sum_{j\notin\TargetRoots}H(X_j\mid X_{\ParentOf{j}}).
+\]
+Subtracting from $\sum_iH(X_i)$ cancels the
+root entropies and yields
+\begin{align}
+ \mathrm{TC}(P)
+ &=\sum_{j\notin\TargetRoots}
+      [H(X_j)-H(X_j\mid X_{\ParentOf{j}})]\notag\\
+ &=\sum_{j\notin\TargetRoots}I(X_j;X_{\ParentOf{j}}).
+ \label{app:eq:forest-tc-identity}
+\end{align}
+A forest need not have large TC: the matching lower-bound witness becomes
+weakly coupled as accuracy changes.  The following different witness
+has constant dependence per edge while retaining the response and tail
+assumptions.  All background tokens share one type, making rare-token
+exchanges invisible to the conditional rows.
+
+\paragraph{Intuition.}
+The vocabulary has only two dependence-relevant types.  The type chain
+has a fixed nonzero dependence between adjacent positions, while token
+variation within a type contributes only independent emissions.
+Consequently each edge contributes a positive constant to TC, and each
+interior position contributes a positive constant to DTC:
+\[
+ \mathrm{TC}(P)\simeq N,\qquad \mathrm{DTC}(P)\simeq N.
+\]
+The background vocabulary can grow without changing these dependence
+scales.  The proof checks both class membership and the entropy identities.
+
+\begin{proposition}[A shared-class path with linear TC and DTC]
+\label{app:prop:path-in-class}
+Fix $\RankTailExponent>1$ and put $p=2^{-\RankTailExponent}$.
+For every $N,\VocabSize\ge3$, let
+$\Vocab=\{a_1,a_2\}\sqcup\mathcal B$, $|\mathcal B|=\VocabSize-2$, with
+\[
+ \pi(a_1)=1-p,\qquad \pi(a_2)=p/2,\qquad
+ \pi(b)=\frac{p}{2(\VocabSize-2)}\quad(b\in\mathcal B).
+\]
+Define $\tau(a_1)=\mathsf A$ and $\tau(a)=\mathsf B$ for $a\ne a_1$.
+The type masses are $P_{\mathsf A}=1-p$, $P_{\mathsf B}=p$.
+In the type order $(\mathsf A,\mathsf B)$, set
+\begin{equation}
+ J=\begin{pmatrix}1-3p/2&p/2\\p/2&p/2\end{pmatrix},
+ \qquad
+ g(t,t')=\frac{J(t,t')}{P_tP_{t'}},\qquad
+ K(y\mid x)=\pi(y)g(\tau(x),\tau(y)).
+ \label{app:eq:two-type-kernel}
+\end{equation}
+Then $P(x)=\pi(x_1)\prod_{j=2}^NK(x_j\mid x_{j-1})$ is a strictly
+positive path law with all marginals $\pi$.
+There is a constant $\omega_\star(p)>0$, independent of $N,\VocabSize$,
+such that this law satisfies (RT\textcolor{red}{; \cref{app:eq:RT}})--(UEN\textcolor{red}{; \cref{app:eq:UEN}}) with
+$\ResponseConstant=\ResponseExponent=1$ and every
+$\EdgeSignal\le\omega_\star(p)$, and (RF\textcolor{red}{; \cref{app:eq:RF}}) with $\FrequencyConstant=1$.
+Its exact oracle satisfies both oracle accuracy conditions.
+Moreover,
+\begin{equation}
+ \mathrm{TC}(P)=\Theta(N),\qquad \mathrm{DTC}(P)=\Theta(N),
+ \label{app:eq:path-tc-dtc}
+\end{equation}
+where the constants depend only on $p$.
+Consequently this path belongs to each main-text benchmark class for all
+sufficiently large $N$ along that class's vocabulary and accuracy regime.
+\end{proposition}
+
+\begin{proof}
+\emph{1. Kernel normalization and stationary marginal.}
+For a type $t$, the definition of its mass is
+$P_t=\sum_{x:\tau(x)=t}\pi(x)$.
+Here $0<p<1/2$, and the four entries of $J$ are positive.  Its row sums are
+\[
+ (1-3p/2)+p/2=1-p=P_{\mathsf A},\qquad
+ p/2+p/2=p=P_{\mathsf B}.
+\]
+Since $J$ is symmetric, its column sums are the same.
+For a fixed token $x$ of type $t=\tau(x)$, group the sum over $y$ by type:
+\begin{align*}
+ \sum_yK(y\mid x)
+ &=\sum_{t'\in\{\mathsf A,\mathsf B\}}
+       \sum_{y:\tau(y)=t'}\pi(y)\frac{J(t,t')}{P_tP_{t'}}\\
+ &=\sum_{t'\in\{\mathsf A,\mathsf B\}}
+       P_{t'}\frac{J(t,t')}{P_tP_{t'}}
+ =\frac1{P_t}\sum_{t'}J(t,t')=1.
+\end{align*}
+Thus $K$ is a probability kernel.  For a fixed $y$ of type $t'$,
+the column-sum identity similarly yields
+\begin{align*}
+ \sum_x\pi(x)K(y\mid x)
+ &=\pi(y)\sum_{t\in\{\mathsf A,\mathsf B\}}
+       \sum_{x:\tau(x)=t}\pi(x)\frac{J(t,t')}{P_tP_{t'}}\\
+ &=\pi(y)\frac1{P_{t'}}\sum_tJ(t,t')=\pi(y).
+\end{align*}
+Starting the path from $\pi$ therefore gives marginal $\pi$ at every
+position, by induction along the path.  Also,
+\[
+ \pi(x)K(y\mid x)
+ =\pi(x)\pi(y)\frac{J(\tau(x),\tau(y))}
+                      {P_{\tau(x)}P_{\tau(y)}}
+ =\pi(y)K(x\mid y),
+\]
+which verifies endpoint compatibility.  Positivity of $\pi$ and $K$
+gives strict positivity of the path law.
+
+\emph{2. Boundary-conditioned rows and the edge signal.}
+Substituting the kernel formula into the path law gives
+\[
+ P(x)=\left(\prod_{j=1}^N\pi(x_j)\right)
+      \left(\prod_{j=2}^Ng(\tau(x_{j-1}),\tau(x_j))\right).
+\]
+For fixed values outside readout $j$, all factors not incident to $j$
+cancel.  Write $\mathcal N_F(j)=\{j-1,j+1\}\cap[N]$ for its path
+neighbors.  Its normalized conditional row is
+\[
+ P(X_j=y\mid X_{-j}=x_{-j})
+ =\frac{\pi(y)\prod_{k\in\mathcal N_F(j)}
+                   g(\tau(y),\tau(x_k))}
+        {\sum_z\pi(z)\prod_{k\in\mathcal N_F(j)}
+                   g(\tau(z),\tau(x_k))}.
+\]
+Within type $t$, every factor $g$ is constant, so the conditional token
+law given the type is always $\pi(y)/P_t$ for $\tau(y)=t$.
+Summing the numerator separately over the two types shows that the
+conditional odds of type $\mathsf A$ against type $\mathsf B$ are
+\begin{align*}
+ &\frac{P(\tau(X_j)=\mathsf A\mid X_{-j}=x_{-j})}
+        {P(\tau(X_j)=\mathsf B\mid X_{-j}=x_{-j})}\\
+ &\qquad=
+ \frac{P_{\mathsf A}\prod_{k\in\mathcal N_F(j)}g(\mathsf A,\tau(x_k))}
+      {P_{\mathsf B}\prod_{k\in\mathcal N_F(j)}g(\mathsf B,\tau(x_k))}
+ =\rho\prod_{k\in\mathcal N_F(j)}r_{\tau(x_k)},\\
+ &\rho:=\frac{P_{\mathsf A}}{P_{\mathsf B}}=\frac{1-p}{p},
+ \qquad r_t:=\frac{g(\mathsf A,t)}{g(\mathsf B,t)}
+ \quad(t\in\{\mathsf A,\mathsf B\}).
+\end{align*}
+Thus $\rho$ is the marginal type-odds ratio, and $r_t$ is the
+multiplicative contribution of a neighbor of type $t$.
+Their values follow from the four entries
+\[
+ g(\mathsf A,\mathsf A)=\frac{1-3p/2}{(1-p)^2},\quad
+ g(\mathsf A,\mathsf B)=g(\mathsf B,\mathsf A)=\frac1{2(1-p)},\quad
+ g(\mathsf B,\mathsf B)=\frac1{2p}:
+\]
+\begin{align*}
+ \PathOddsA&=
+ \frac{g(\mathsf A,\mathsf A)}{g(\mathsf B,\mathsf A)}
+ =
+ \frac{(1-3p/2)/(1-p)^2}{1/[2(1-p)]}
+ =\frac{2-3p}{1-p},\\
+ \PathOddsB&=
+ \frac{g(\mathsf A,\mathsf B)}{g(\mathsf B,\mathsf B)}
+ =
+ \frac{1/[2(1-p)]}{1/(2p)}
+ =\frac{p}{1-p}.
+\end{align*}
+In particular, $\PathOddsA-\PathOddsB=2(1-2p)/(1-p)>0$.
+
+Fix a directed edge $i\to j$ and a complete boundary
+$z\in\Vocab^{[N]\setminus\{i,j\}}$.
+The two rows to compare are precisely
+\begin{align*}
+ \BoundaryRow{i}{j}{a_1}{z}
+ &=\mathcal L_P(X_j\mid X_i=a_1,X_{[N]\setminus\{i,j\}}=z),\\
+ \BoundaryRow{i}{j}{a_2}{z}
+ &=\mathcal L_P(X_j\mid X_i=a_2,X_{[N]\setminus\{i,j\}}=z).
+\end{align*}
+Here $\tau(a_1)=\mathsf A$ and $\tau(a_2)=\mathsf B$.
+Put $f(o)=o/(1+o)$, the type-$\mathsf A$ probability at odds $o$, and
+define the contribution of the other neighbors by
+\[
+ q:=\prod_{k\in\mathcal N_F(j)\setminus\{i\}}r_{\tau(z_k)}
+ \in\{1,\PathOddsA,\PathOddsB\}.
+\]
+The empty product is one; a path readout has at most one other neighbor.
+The type-$\mathsf A$ weights of these two rows are, respectively,
+\begin{align*}
+ u&:=P(\tau(X_j)=\mathsf A\mid X_i=a_1,X_{[N]\setminus\{i,j\}}=z)
+       =f(\rho\PathOddsA q),\\
+ u'&:=P(\tau(X_j)=\mathsf A\mid X_i=a_2,X_{[N]\setminus\{i,j\}}=z)
+       =f(\rho\PathOddsB q).
+\end{align*}
+Within each type, both rows have the same token law $\pi(y)/P_t$.
+Expanding TV over the disjoint type supports therefore gives
+\begin{align*}
+ &\dTV\bigl(\BoundaryRow{i}{j}{a_1}{z},
+             \BoundaryRow{i}{j}{a_2}{z}\bigr)\\
+ &\quad=\frac12\left(
+    \sum_{\tau(y)=\mathsf A}|u-u'|\frac{\pi(y)}{P_{\mathsf A}}
+   +\sum_{\tau(y)=\mathsf B}|(1-u)-(1-u')|
+                            \frac{\pi(y)}{P_{\mathsf B}}\right)\\
+ &\quad=\frac12\bigl(|u-u'|+|(1-u)-(1-u')|\bigr)
+ =u-u'=:D(q),\\
+ &D(q)=f(\rho\PathOddsA q)-f(\rho\PathOddsB q)
+ =\frac{\rho q(\PathOddsA-\PathOddsB)}
+        {(1+\rho\PathOddsA q)(1+\rho\PathOddsB q)}>0.
+\end{align*}
+The two sums of $\pi(y)/P_t$ equal one by the definition of $P_t$.
+The conditional row depends on the source token only through its type,
+so $a_1,a_2$ attain the full directed response:
+\[
+ \DirectedResponse{i}{j}{z}
+ =\max_{c,c'\in\Vocab}
+   \dTV\bigl(\BoundaryRow{i}{j}{c}{z},
+              \BoundaryRow{i}{j}{c'}{z}\bigr)
+ =D(q).
+\]
+Define
+$\omega_\star(p):=\min\{D(1),D(\PathOddsA),D(\PathOddsB)\}>0$.
+This minimum depends only on $p$, not on $N,\VocabSize$ or the boundary.
+The same calculation applies to either orientation of every path edge,
+so the required condition \eqref{app:eq:UEN} is
+\[
+ \min\bigl\{\DirectedResponse{i}{j}{z},
+             \DirectedResponse{j}{i}{z}\bigr\}
+ \ge\omega_\star(p)\ge\EdgeSignal
+ \qquad\text{(UEN\textcolor{red}{; \cref{app:eq:UEN}})}.
+\]
+
+\emph{3. Tail response and the rank--frequency envelope.}
+Recall that $\PosMarginal{i}=\pi$ at every position, so the marginal
+tail in \eqref{app:eq:tail} is
+$\TailSet{i}{t}=\{c\in\Vocab:\pi(c)\le t\}$.
+For a nonedge $\{i,j\}\notin\TargetEdges$, the conditional row does
+not involve the source value, and hence for every $c,c'\in\Vocab$,
+\[
+ \BoundaryRow{i}{j}{c}{z}=\BoundaryRow{i}{j}{c'}{z},
+ \qquad
+ \dTV\bigl(\BoundaryRow{i}{j}{c}{z},
+            \BoundaryRow{i}{j}{c'}{z}\bigr)=0.
+\]
+For an edge, the two threshold ranges are as follows.
+\begin{itemize}
+ \item If $t<1-p=\pi(a_1)$, then
+ $\TailSet{i}{t}\subseteq\{a_2\}\cup\mathcal B=\tau^{-1}(\mathsf B)$.
+ Thus all permitted source tokens have the same type and give the same
+ readout row; their maximum TV distance is zero.
+ \item If $t\ge1-p$, then $\TailSet{i}{t}=\Vocab$, since $1-p$ is the
+ largest marginal mass.  The full directed response is $D(q)$ from
+ step~2, so it remains to prove $D(q)\le1-p$.
+\end{itemize}
+
+Here is the needed bound with its maximization made explicit.
+Set $x=\sqrt{\PathOddsA/\PathOddsB}>1$ and
+$\zeta=\rho\PathOddsB q>0$.  Then
+\[
+ D(q)=\frac{x^2\zeta}{1+x^2\zeta}-\frac\zeta{1+\zeta}
+     =\frac{(x^2-1)\zeta}{(1+x^2\zeta)(1+\zeta)}.
+\]
+The denominator is $1+(1+x^2)\zeta+x^2\zeta^2$.
+The quotient rule gives
+\[
+ \frac{d}{d\zeta}
+ \frac{(x^2-1)\zeta}{(1+x^2\zeta)(1+\zeta)}
+ =\frac{(x^2-1)(1-x^2\zeta^2)}
+        {(1+x^2\zeta)^2(1+\zeta)^2}.
+\]
+The derivative is positive for $\zeta<1/x$ and negative for $\zeta>1/x$.
+Substituting $\zeta=1/x$ therefore gives
+\[
+ \sup_{q>0}D(q)
+ =\frac{(x^2-1)/x}{(1+x)(1+1/x)}
+ =\frac{x-1}{x+1}.
+\]
+All quantities are positive, and
+\[
+ \frac{x-1}{x+1}\le1-p
+ \quad\Longleftrightarrow\quad
+ px\le2-p
+ \quad\Longleftrightarrow\quad
+ p^2x^2\le(2-p)^2.
+\]
+Finally,
+\[
+ p^2x^2=p(2-3p),\qquad
+ (2-p)^2-p(2-3p)=4-6p+4p^2>0
+ \quad(0<p<1/2).
+\]
+Combining the nonedge and edge cases gives, for every distinct $i,j$,
+complete boundary $z$, and $t\in[0,1]$,
+\[
+ \begin{aligned}
+ &\max_{c,c'\in\TailSet{i}{t}}
+ \dTV\bigl(\BoundaryRow{i}{j}{c}{z},
+            \BoundaryRow{i}{j}{c'}{z}\bigr)\\
+ &\qquad\le
+ \begin{cases}
+  0,&0\le t<1-p,\\
+  1-p,&1-p\le t\le1
+ \end{cases}
+ \le t=\ResponseConstant t^{\ResponseExponent}
+ \qquad\text{(RT\textcolor{red}{; \cref{app:eq:RT}})},
+ \end{aligned}
+\]
+where $\ResponseConstant=\ResponseExponent=1$, and the maximum is zero
+for a tail with at most one token, as in \eqref{app:eq:RT}.
+
+For (RF\textcolor{red}{; \cref{app:eq:RF}}), $a_1$ has mass $1-p>1/2$ and is the largest atom.
+The mass of $a_2$ is $p/2=2^{-\RankTailExponent-1}\le2^{-\RankTailExponent}$.
+Each background mass obeys, since $\VocabSize\ge3$,
+\[
+ \frac{p}{2(\VocabSize-2)}
+ \le\frac1{4(\VocabSize-2)}
+ \le\frac1{\VocabSize};
+ \qquad
+ \VocabSize\le4(\VocabSize-2)
+ \ \Longleftrightarrow\ 3\VocabSize\ge8.
+\]
+The background masses are no larger than $p/2$.
+Therefore, with the ranked tokens of \eqref{app:eq:hidden-ranks}, every
+position $i$ and rank $k\in[\VocabSize]$ satisfy
+\begin{align*}
+ \PosMarginal{i}(\RankedToken{i}{k})
+ &\le
+ \begin{cases}
+  1,&k=1,\\
+  2^{-\RankTailExponent},&k=2,\\
+  \VocabSize^{-1},&3\le k\le\VocabSize
+ \end{cases}
+ \\
+ &\le k^{-\RankTailExponent}+\VocabSize^{-1}
+ =\FrequencyConstant(k^{-\RankTailExponent}+\VocabSize^{-1})
+ \qquad\text{(RF\textcolor{red}{; \cref{app:eq:RF}})},
+\end{align*}
+with $\FrequencyConstant=1$.
+If $\VocabSize=3$, the possible tie at rank two has mass $p/2$ on
+either token, so the same bounds apply under the public tie-breaking order.
+This is the finite envelope \eqref{app:eq:RF}; the asymptotic part of
+(RF\textcolor{red}{; \cref{app:ass:rate-regime}}) is supplied by the prescribed sequence
+$\VocabSize=N^{\VocabGrowthExponent+o(1)}$.
+The exact oracle has zero Hellinger and KL error.
+
+\emph{4. Total correlation.}
+Let $T_j=\tau(X_j)$.  Its transition probability follows by grouping $K$:
+\[
+ P(T_{j+1}=t'\mid T_j=t)
+ =\sum_{\tau(y)=t'}\pi(y)g(t,t')
+ =\frac{J(t,t')}{P_t}.
+\]
+Since its marginal is $P_t$, the adjacent type joint law is $J$.
+The adjacent token joint law is
+\[
+ P(X_j=x,X_{j+1}=y)
+ =J(t,t')\frac{\pi(x)}{P_t}\frac{\pi(y)}{P_{t'}},
+ \qquad t=\tau(x),\quad t'=\tau(y).
+\]
+Its likelihood ratio relative to $\pi(x)\pi(y)$ is
+$J(t,t')/(P_tP_{t'})$, which depends only on the types.
+Grouping the mutual-information sum by type therefore gives
+\[
+ I(X_j;X_{j+1})
+ =\sum_{t,t'}J(t,t')\log\frac{J(t,t')}{P_tP_{t'}}
+ =I(T_j;T_{j+1})=:c.
+\]
+\hypertarget{app-positive-pair-mi}{}
+To see why this constant is positive, the displayed sum is
+$\KLDivergence{J}{(P_tP_{t'})_{t,t'}}$.
+KL is zero exactly when its two laws agree.  Such equality would make
+$J$ a product table and hence rank one, but
+\[
+ \det J=(1-3p/2)(p/2)-(p/2)^2
+       =\frac{p(1-2p)}2>0.
+\]
+It depends only on $p$, so \eqref{app:eq:forest-tc-identity} gives
+$\mathrm{TC}(P)=(N-1)c=\Theta(N)$.
+
+\emph{5. Dual total correlation.}
+The chain rule and conditional Markov property give, respectively,
+\[
+ H(X)=H(X_1)+\sum_{i=2}^NH(X_i\mid X_{i-1})
+\]
+and
+\[
+ \sum_iH(X_i\mid X_{-i})
+ =H(X_1\mid X_2)
+  +\sum_{i=2}^{N-1}H(X_i\mid X_{i-1},X_{i+1})
+  +H(X_N\mid X_{N-1}).
+\]
+Subtracting cancels the final-coordinate term and yields
+\begin{align}
+ \mathrm{DTC}(P)
+ &=H(X_1)-H(X_1\mid X_2)\notag\\
+ &\quad+\sum_{i=2}^{N-1}
+   \bigl[H(X_i\mid X_{i-1})
+         -H(X_i\mid X_{i-1},X_{i+1})\bigr]\notag\\
+ &=I(X_1;X_2)+\sum_{i=2}^{N-1}
+                   I(X_i;X_{i+1}\mid X_{i-1}).
+ \label{app:eq:path-dtc-identity}
+\end{align}
+To evaluate an interior term, fix the previous type $t$.
+The conditional joint table of $(T_i,T_{i+1})$ is
+\[
+ P(T_i=u,T_{i+1}=v\mid T_{i-1}=t)
+ =\frac{J(t,u)}{P_t}\frac{J(u,v)}{P_u}.
+\]
+This is obtained from $J$ by multiplying row $u$ by the positive factor
+$J(t,u)/(P_tP_u)$.  Its determinant is consequently
+\[
+ \frac{J(t,\mathsf A)J(t,\mathsf B)}
+      {P_t^2P_{\mathsf A}P_{\mathsf B}}\det J>0.
+\]
+The two conditional type variables are therefore dependent for either
+$t$, and their conditional mutual information is a positive constant
+depending only on $p$.
+
+It remains to relate this type calculation to the token term.
+Conditioning on $X_{i-1}=x$ affects the future law only through $\tau(x)=t$.
+For this calculation write $\Pr_t(\cdot)=\Pr(\cdot\mid T_{i-1}=t)$.
+For tokens $y,z$ of types $u,v$, the emission factors cancel as follows:
+\begin{align*}
+ &\frac{\Pr_t(X_i=y,X_{i+1}=z)}
+        {\Pr_t(X_i=y)\Pr_t(X_{i+1}=z)}\\
+ &\quad=
+ \frac{\Pr_t(T_i=u,T_{i+1}=v)\,[\pi(y)/P_u]\,[\pi(z)/P_v]}
+      {\Pr_t(T_i=u)\,[\pi(y)/P_u]\,
+       \Pr_t(T_{i+1}=v)\,[\pi(z)/P_v]}\\
+ &\quad=
+ \frac{\Pr_t(T_i=u,T_{i+1}=v)}
+      {\Pr_t(T_i=u)\Pr_t(T_{i+1}=v)}.
+\end{align*}
+Grouping the token sum by $(u,v)$ therefore gives
+\begin{align*}
+ &I(X_i;X_{i+1}\mid T_{i-1}=t)\\
+ &=\sum_{u,v}\Pr_t(T_i=u,T_{i+1}=v)
+   \log\frac{\Pr_t(T_i=u,T_{i+1}=v)}
+             {\Pr_t(T_i=u)\Pr_t(T_{i+1}=v)}\\
+ &\qquad\times
+   \underbrace{\left(\sum_{y:\tau(y)=u}\frac{\pi(y)}{P_u}\right)}_{=1}
+   \underbrace{\left(\sum_{z:\tau(z)=v}\frac{\pi(z)}{P_v}\right)}_{=1}\\
+ &=I(T_i;T_{i+1}\mid T_{i-1}=t).
+\end{align*}
+The two sums equal one because $P_u=\sum_{\tau(y)=u}\pi(y)$ and similarly
+for $P_v$.  The conditional future law is the same for every previous token
+of type $t$, so averaging over the previous token, or equivalently over its
+type with weights $P_t$, yields
+\[
+ I(X_i;X_{i+1}\mid X_{i-1})
+ =I(T_i;T_{i+1}\mid T_{i-1}).
+\]
+Every interior term is the same positive constant by stationarity and is
+at most $\log2$, since the types are binary.
+Together with $I(X_1;X_2)=c>0$, the identity above proves
+$\mathrm{DTC}(P)=\Theta(N)$.
+
+All constants used for the signal and dependence depend only on
+$p=2^{-\RankTailExponent}$.  Each main benchmark has
+$\EdgeSignal\to0$, so eventually $\EdgeSignal\le\omega_\star(p)$;
+its prescribed vocabulary sequence supplies the remaining asymptotic
+part of (RF\textcolor{red}{; \cref{app:ass:rate-regime}}).  This proves membership in those benchmark classes.
+\end{proof}
+
+\paragraph{What the substitution establishes.}
+For this path, the TC/DTC sufficient counts listed in
+Table~\ref{tab:resource-comparison} become
+$\widetilde O(1+N/\varepsilon)$ at forward-KL tolerance $\varepsilon$.
+These displayed guarantees alone do not yield a sublinear count at fixed
+accuracy.  They do not establish that those samplers require linear work:
+exact singleton updates already give an $N$-call cap.
+Our case-(ii) benchmark also applies, with the balanced count in
+\eqref{main:eq:balanced-upper} on its sublinear range.
+The calculation concerns one class member, not every forest or every
+dependence-adaptive schedule.
+
+\begin{proposalcontext}{Other dependence measures}
+No corresponding quantitative comparison is made here for entropy-based
+bounds or refined unmasking growth complexity.
+\end{proposalcontext}
+
+\subsection{Effective total correlation on the same path}
+\label{app:comparison-effective-tc}
+
+To compare with \citet{dmitriev2026efficient}, let $Y(t)$ be an
+independently masked copy of $X\sim P$: each $Y_i(t)$ equals $X_i$
+with probability $e^{-t}$ and equals $\MASK$ otherwise.
+Write $Y_{-(i,j)}(t)$ for all coordinates except $i,j$.
+Their effective total correlation, written $\EffectiveTC$ here, is
+\begin{equation}
+ \EffectiveTC(P)
+ :=\int_0^\infty\min\{1,t\}\MaskedPairInformation_P(t)\,dt,
+ \qquad
+ \MaskedPairInformation_P(t)
+ :=\sum_{i\ne j}I\bigl(Y_i(t);Y_j(t)\mid Y_{-(i,j)}(t)\bigr).
+ \label{app:eq:effective-tc-definition}
+\end{equation}
+These are equation~(16) of
+\href{https://arxiv.org/html/2602.15008v2}{arXiv:2602.15008v2}.
+Its Lemma~16 gives
+$\EffectiveTC(P)\le\min\{\mathrm{TC}(P),\mathrm{DTC}(P)\}$.
+Large TC and DTC alone do not imply large effective TC: that paper's
+Proposition~5 supplies a counterexample. We therefore evaluate
+$\EffectiveTC$ on our path directly.
+
+\paragraph{Intuition.}
+For an interior edge, reveal its two endpoints and their two outer
+neighbors. This occurs with probability $e^{-4t}$.
+Fixing those neighbors isolates a dependent two-vertex conditional law,
+regardless of other reveals. Summing over the $N-3$ interior edges gives
+$\MaskedPairInformation_P(t)\gtrsim_{\RankTailExponent}Ne^{-4t}$;
+integrating over a fixed time interval keeps a linear contribution.
+
+\begin{corollary}[Linear effective TC on the comparison path]
+\label{app:cor:path-effective-tc}
+For the path law in Proposition~\ref{app:prop:path-in-class},
+with fixed $\RankTailExponent>1$,
+$\EffectiveTC(P)=\Theta(N)$ as $N\to\infty$.
+The constants depend only on $\RankTailExponent$, not on $\VocabSize$.
+\end{corollary}
+
+\begin{proof}
+% Please keep the mask definitions and their chain-rule expansion on one page.
+\begin{samepage}
+\emph{1. Expand over the visible coordinates.}
+Take $N\ge4$, fix $t>0$, and put $\lambda=e^{-t}$.
+For a pair $i\ne j$, the visible set outside the pair is
+$S\subseteq[N]\setminus\{i,j\}$ with probability
+$\lambda^{|S|}(1-\lambda)^{N-2-|S|}$.
+Put $M_k:=\mathbf 1\{Y_k(t)\ne\MASK\}$, so the $M_k$ are independent
+$\operatorname{Ber}(\lambda)$ variables, independent of $X$.
+Fix an exterior mask pattern with visible set $S$ and revealed values
+$X_S=x_S$.  The conditioning event is
+\[
+ \mathcal C=\{M_k=\mathbf 1\{k\in S\}\ \text{for every }k\notin\{i,j\},
+                \ X_S=x_S\}.
+\]
+For this calculation abbreviate $Y_k(t)$ to $Y_k$.
+Since $M_i$ is determined by $Y_i$ and $M_j$ by $Y_j$, two applications
+of the conditional chain rule give
+\begin{align*}
+ I(Y_i;Y_j\mid\mathcal C)
+ &=I(M_i;Y_j\mid\mathcal C)
+   +I(Y_i;Y_j\mid M_i,\mathcal C)\\
+ &=I(Y_i;M_j\mid M_i,\mathcal C)
+   +I(Y_i;Y_j\mid M_i,M_j,\mathcal C)\\
+ &=\lambda^2 I(X_i;X_j\mid X_S=x_S).
+\end{align*}
+Here $I(M_i;Y_j\mid\mathcal C)=0$ and
+$I(Y_i;M_j\mid M_i,\mathcal C)=0$ by mask independence.
+The last conditional mutual information averages over $(M_i,M_j)$.
+It is zero whenever either endpoint is masked, because that $Y$ value is
+constant; when both are visible it equals
+$I(X_i;X_j\mid X_S=x_S)$, with weight $\lambda^2$.
+Averaging over $x_S$ and then over exterior mask patterns gives
+\begin{equation}
+ I\bigl(Y_i(t);Y_j(t)\mid Y_{-(i,j)}(t)\bigr)
+ =\lambda^2
+   \sum_{S\subseteq[N]\setminus\{i,j\}}
+    \lambda^{|S|}(1-\lambda)^{N-2-|S|}
+    I(X_i;X_j\mid X_S).
+ \label{app:eq:masked-pair-information}
+\end{equation}
+\end{samepage}
+
+\emph{2. Retain a positive dependence across each interior edge.}
+Recall the two types $T_i=\tau(X_i)$ and their transition matrix
+$\bar K(a,b)=J(a,b)/P_a$ from the proof of
+Proposition~\ref{app:prop:path-in-class}.
+All entries are positive, and
+$\det\bar K=\det J/(P_{\mathsf A}P_{\mathsf B})>0$.
+For an interior pair $i,i+1$, where $2\le i\le N-2$, fix the outer
+types $T_{i-1}=a,T_{i+2}=b$.
+The conditional two-by-two table is
+\begin{align*}
+ &\Pr(T_i=u,T_{i+1}=v\mid T_{i-1}=a,T_{i+2}=b)
+ =\frac{\bar K(a,u)\bar K(u,v)\bar K(v,b)}{Z_{a,b}},\\
+ &Z_{a,b}:=\sum_{u,v}\bar K(a,u)\bar K(u,v)\bar K(v,b)>0.
+\end{align*}
+Here and below type indices range over $\{\mathsf A,\mathsf B\}$.
+This table is obtained from $\bar K$ by multiplying row $u$ by
+$\bar K(a,u)$, column $v$ by $\bar K(v,b)$, and the whole table
+by $Z_{a,b}^{-1}$. Its determinant is
+\[
+ \frac{\bar K(a,\mathsf A)\bar K(a,\mathsf B)
+       \bar K(\mathsf A,b)\bar K(\mathsf B,b)}
+      {Z_{a,b}^{\,2}}\det\bar K>0.
+\]
+Thus the conditional pair has positive mutual information for each
+boundary type pair, by the \hyperlink{app-positive-pair-mi}{KL and rank-one
+criterion} used above.  There are only four such pairs.  By stationarity,
+the positive constant
+\[
+ c_{\mathrm{pair}}
+ :=\min_{a,b}I(T_2;T_3\mid T_1=a,T_4=b)>0
+\]
+depends only on $p=2^{-\RankTailExponent}$.
+
+If $\{i-1,i+2\}\subseteq S\subseteq[N]\setminus\{i,i+1\}$,
+path factorization shows that other
+observed coordinates affect only factors outside this pair.
+Conditional on $X_S=x_S$, the type pair therefore has the displayed
+table with $a=\tau(x_{i-1})$, $b=\tau(x_{i+2})$.
+Applying data processing to the two type maps at each $x_S$ and then
+averaging gives
+\begin{align*}
+ I(X_i;X_{i+1}\mid X_S)
+ &=\sum_{x_S}P(X_S=x_S)
+       I(X_i;X_{i+1}\mid X_S=x_S)\\
+ &\ge\sum_{x_S}P(X_S=x_S)
+       I(T_i;T_{i+1}\mid X_S=x_S)\\
+ &\ge\sum_{x_S}P(X_S=x_S)c_{\mathrm{pair}}
+ =c_{\mathrm{pair}}.
+\end{align*}
+The total mask weight of these sets is
+\[
+ \sum_{\substack{S\subseteq[N]\setminus\{i,i+1\}\\
+                 \{i-1,i+2\}\subseteq S}}
+   \lambda^{|S|}(1-\lambda)^{N-2-|S|}
+ =\lambda^2\bigl(\lambda+(1-\lambda)\bigr)^{N-4}
+ =\lambda^2.
+\]
+The first $\lambda^2$ requires the two outer neighbors to be visible;
+each remaining coordinate contributes $\lambda+(1-\lambda)=1$.
+Substituting into \eqref{app:eq:masked-pair-information} yields
+$I(Y_i(t);Y_{i+1}(t)\mid Y_{-(i,i+1)}(t))
+ \ge c_{\mathrm{pair}}\lambda^4$.
+
+\emph{3. Sum the edges and integrate.}
+There are $N-3$ such edges and two orientations per edge in
+$\MaskedPairInformation_P(t)$. Nonnegativity of the other terms gives
+\[
+ \MaskedPairInformation_P(t)\ge
+ 2(N-3)c_{\mathrm{pair}}e^{-4t}.
+\]
+Hence
+\[
+ \EffectiveTC(P)\ge
+ 2(N-3)c_{\mathrm{pair}}
+ \int_0^\infty\min\{1,t\}e^{-4t}\,dt
+ =\Omega_{\RankTailExponent}(N).
+\]
+The integral is a positive finite absolute constant.
+The reverse bound follows from
+$\EffectiveTC(P)\le\mathrm{DTC}(P)=O_{\RankTailExponent}(N)$,
+using the cited Lemma~16 and Proposition~\ref{app:prop:path-in-class}.
+\end{proof}

@@ -1,0 +1,104 @@
+\subsection{Nonlinear finite minimax bound}
+\label{app:lower-proof-nonlinear}
+
+\paragraph{Intuition.}
+When the query budget is a small enough fraction of the bank size,
+the preceding two results give
+\[
+ \text{risk}\ \gtrsim\
+ 1-\exp\{-cN\EdgeCoupling^2/\RoundBudget\}
+ \simeq\min\{1,N\EdgeCoupling^2/\RoundBudget\},
+\]
+where $c>0$ is a fixed numerical constant.
+The constant-probability collision event supplies order
+$N/\RoundBudget$ missed edges; each contributes order $\EdgeCoupling^2$.
+For a small target tolerance $\varepsilon$, this forces
+$\RoundBudget\gtrsim N\EdgeCoupling^2/\varepsilon$.
+The proof retains the finite constants and checks the prior-to-minimax
+step explicitly.
+
+\begin{proof}[Proof of \cref{app:thm:nonlinear-finite-lower}]
+
+\emph{1. Obtain the nonlinear bound at a fixed seed.}
+Fix an arbitrary algorithm in \(\HardAlgorithmClass{\QueryBudget{}}{\RoundBudget{}}\) and a decision-rule
+seed \(w\). Suppose \(\QueryBudget{}\le\HardBankSize/8\) and
+\(1\le \RoundBudget{}\le N/16384\). By
+\cref{app:lem:collision-affinity,app:prop:collision-lower-tail},
+\begin{align}
+ &\mathbb E_{I\sim\HardInstancePrior}
+ \sqHellinger(\HardTargetLaw{I},\HardOutputLaw{I}{w})\notag\\
+ &\quad\ge
+ \mathbb E_{I,H}
+ \left[1-(1-\HardEdgeDistance)^{\TotalCollisions}\right]\notag\\
+ &\quad\ge
+ \frac14\left[
+  1-(1-\HardEdgeDistance)^{N/(8192\RoundBudget{})}
+ \right].
+ \label{app:eq:nonlinear-fixed-seed-step}
+\end{align}
+The exponent in the last display need not be an integer: on the event
+\(\TotalCollisions\ge N/(8192\RoundBudget{})\), monotonicity of
+\(c\mapsto1-(1-\HardEdgeDistance)^c\) gives the displayed lower bound.
+Using \(1-d\le e^{-d}\) for \(d\in[0,1]\) and the one-edge estimate
+\(\HardEdgeDistance\ge\EdgeCoupling^2/12\) from
+\eqref{app:eq:hard-edge-distance}, we obtain
+\begin{equation}
+ \mathbb E_{I\sim\HardInstancePrior}
+ \sqHellinger(\HardTargetLaw{I},\HardOutputLaw{I}{w})
+ \ge
+ \frac14\left[
+  1-\exp\left\{-\frac{N\EdgeCoupling^2}{98304\RoundBudget{}}\right\}
+ \right].
+ \label{app:eq:nonlinear-fixed-seed-lower}
+\end{equation}
+
+
+\emph{2. Average over seeds and pass from the prior to minimax risk.}
+Finally, \(\dTV\ge\sqHellinger\) by
+\cref{app:lem:finite-hellinger-calculus}. The decision-rule seed \(W\) is
+independent of \(I\sim\HardInstancePrior\), so Tonelli's theorem gives
+\begin{align}
+ \mathbb E_I\SeedRisk(\mathcal A;\HardTargetLaw{I},\HardOracle{I})
+ &=\mathbb E_W\mathbb E_I
+    \dTV(\HardTargetLaw{I},\HardOutputLaw{I}{W})\notag\\
+ &\ge\mathbb E_W\mathbb E_I
+    \sqHellinger(\HardTargetLaw{I},\HardOutputLaw{I}{W})\notag\\
+ &\ge\frac14\left[
+  1-\exp\left\{-\frac{N\EdgeCoupling^2}{98304\RoundBudget{}}\right\}
+ \right].
+ \label{app:eq:prior-to-seed-risk}
+\end{align}
+At least one fixed instance has seed-averaged TV risk at least this
+prior average. Taking the supremum over the hard family and then the
+infimum over \(\HardAlgorithmClass{\QueryBudget{}}{\RoundBudget{}}\)
+proves \eqref{app:eq:nonlinear-finite-lower}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{app:cor:nonlinear-finite-target-tradeoff}]
+Suppose the first two alternatives in
+\eqref{app:eq:nonlinear-finite-target-alternative} fail. Then
+\cref{app:thm:nonlinear-finite-lower} and
+\eqref{app:eq:finite-target-risk} imply
+\[
+ \varepsilon
+ \ge
+ \frac14\left[
+  1-\exp\left\{-\frac{N\EdgeCoupling^2}{98304\RoundBudget{}}\right\}
+ \right].
+\]
+Since \(\varepsilon\le1/8\), rearrangement gives
+\begin{align*}
+ \frac{N\EdgeCoupling^2}{98304\RoundBudget{}}
+ &\le-\log(1-4\varepsilon)\\
+ &\le\frac{4\varepsilon}{1-4\varepsilon}
+ \le8\varepsilon.
+\end{align*}
+Here \(-\log(1-u)\le u/(1-u)\) for \(u\in[0,1)\), obtained by integrating
+\((1-x)^{-1}\le(1-u)^{-1}\) over \(x\in[0,u]\). Thus
+\[
+ \RoundBudget{}\ge\frac{N\EdgeCoupling^2}{786432\varepsilon},
+\]
+which is the third alternative in
+\eqref{app:eq:nonlinear-finite-target-alternative}.
+\end{proof}

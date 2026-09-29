@@ -1,0 +1,42 @@
+\section{Related work}
+\label{sec:related-work}
+
+{\color{red}
+\textbf{Masked generation and dependence-aware decoding.}
+Under standard absorbing masks, the denoising target can be expressed using
+time-independent clean-data conditionals
+\citep{ou2024your,zheng2025timeagnostic}, motivating our frozen-oracle model.
+Most closely related, PUNT~\mbox{\citep{azangulov2025parallel}} uses hypothetical
+reveals and shares evaluations across contextual-independence tests, but does
+not establish a sublinear total-evaluation guarantee or an end-to-end
+sampling-error bound. Our random-color screen instead certifies local
+neighborhoods and yields sublinear total submissions under the hidden-forest
+target--oracle assumptions of Theorem~\ref{main:thm:upper-curve}.
+\Citet{fu2025bits} lower-bound rounds under a confidence-threshold restriction;
+our lower bound trades probes against commit rounds over the full admissible
+interface.
+
+\textbf{Parallel sampling guarantees.}
+Distribution-general conditional-oracle samplers provide exact- and
+noisy-oracle guarantees with smaller depth exponents
+\citep{anari2024parallel,anari2026autospeculation};
+Table~\ref{tab:resource-comparison} compares their row-query bounds in our
+submission units. Dependence-based schedule analyses control error through
+TC/DTC, effective TC, or adaptive estimates
+\citep{li2025convergence,chen2026optimal,dmitriev2026efficient,zhao2026adaptation}.
+Our class contains a path on which TC, DTC, and effective TC are all
+$\Theta(N)$, while the construction exploits local conditional separation.
+Appendices~\ref{app:comparison}--\ref{app:oracle-comparison} give the source
+conditions and path calculations; these substitutions compare sufficient
+upper bounds, not lower bounds on those samplers.
+
+\textbf{Learning hidden structure.}
+Structure learning uses subset queries~\citep{angluin2008hidden,abasi2019edge},
+samples~\citep{chowliu1968dependence,dasarathy2016active}, or Gaussian
+covariance entries~\citep{lugosi2021covariancequeries}.
+Tree Ising laws can be learned in global TV without exact tree
+recovery~\citep{daskalakis2021treeising}.
+Our conditional-row probes yield local certificates and charge discovery to
+sampling; Appendix~\ref{app:related-work-supplement} gives further
+historical context.
+}

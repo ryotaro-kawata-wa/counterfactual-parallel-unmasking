@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-29",
+  "snapshot": "arxiv-v1",
+  "source_base_commit": "ddc2060d3210edbd3b12e0e51e55881a90906fd5",
+  "lean": {
+    "version": "4.33.0",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "build_exit_code": 0,
+    "build_jobs": 8880,
+    "build_note": "Existing pinned dependency/build cache reused; all 175 Lean files and toolchain/dependency pins match the previously checked development byte-for-byte. Axiom and claim-reference audits rerun from this public copy.",
+    "axiom_audit_declarations": 4716,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "claim_references_resolved": 122,
+    "named_proof_claims": 36,
+    "compiled_manuscript_inputs_match": 63
+  },
+  "experiments": {
+    "checksums_passed": 128,
+    "bundled_result_comparison": "experiment_comparison.json",
+    "smoke_status": "complete",
+    "smoke_audit": "pass",
+    "smoke_per_run_searches": 4,
+    "smoke_workers": 2,
+    "smoke_reused_budget_records": 0,
+    "smoke_seconds": 16.839424416,
+    "numpy_version": "1.26.4",
+    "matplotlib_version": "3.8.4",
+    "full_experiment_rerun_performed_for_this_release": false,
+    "note": "The release includes separate pre-existing independent full-rerun records. This release check compared the frozen records and ran a new small smoke experiment."
+  },
+  "manuscript": {
+    "archive_sha256": "5284a69ff2f731c2742e6e46c66f4edde7f75dc6545a0c466c3bfe0f76d84010",
+    "source_pdf_sha256": "23b39846b8262b9618311278630091c9ec408f0c1ba48c95bf75a8f272b1a731",
+    "clean_pdf_sha256": "7b7fd68917cb9b7a0382bd3fef77945a6acf37f17bd10a095918a9620a873f9c",
+    "pages": 97,
+    "archive_files": 72,
+    "all_pages_match_in_text_and_pixels": true,
+    "actual_arxiv_regeneration_still_to_check": true,
+    "detailed_record": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/output/arxiv/arxiv_source_verification.json"
+  }
+}

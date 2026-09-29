@@ -1,0 +1,32 @@
+per_run_threshold_coarse 100/1440 binary N=12288 B=9216 K=0.007258437855281539
+per_run_threshold_coarse 200/1440 binary N=16384 B=4096 K=0.017492185136034982
+per_run_threshold_coarse 300/1440 path N=12288 B=11520 K=1.6073232372390285e-13
+per_run_threshold_coarse 400/1440 path N=16384 B=14336 K=1.4444788193931285e-05
+per_run_threshold_coarse 500/1440 binary N=10240 B=10240 K=0.0
+per_run_threshold_coarse 600/1440 matching N=14336 B=224 K=1.9184107900807734
+per_run_threshold_coarse 700/1440 path N=16384 B=8192 K=0.01692958355851508
+per_run_threshold_coarse 800/1440 stars_original N=12288 B=384 K=0.00014089630280147966
+per_run_threshold_coarse 900/1440 matching N=16384 B=512 K=1.0351548993561348
+per_run_threshold_coarse 1000/1440 matching N=10240 B=9600 K=0.0
+per_run_threshold_coarse 1100/1440 matching N=16384 B=1 K=512.8242768011318
+per_run_threshold_coarse 1200/1440 matching N=8192 B=8192 K=0.0
+per_run_threshold_coarse 1300/1440 binary N=12288 B=9216 K=9.921020380110089e-07
+per_run_threshold_coarse 1400/1440 stars_original N=8192 B=128 K=0.00036448600160974426
+per_run_threshold_coarse 1440/1440 path N=8192 B=8192 K=0.0
+per_run_threshold_refine_0 60/60 path N=16384 B=14848 K=0.015485629526413245
+per_run_threshold_refine_1 43/43 binary N=14336 B=12096 K=1.7058694455649287e-12
+per_run_threshold_refine_2 23/23 binary N=14336 B=6720 K=2.3951283322877763e-07
+{
+  "status": "complete",
+  "stage": "complete",
+  "pid": 2783657,
+  "workers": 8,
+  "output": "/home/kawata/work/uen_forest_toy_fresh_reruns/20260925T114740Z__git-3eda55e59630/strict_random",
+  "started_utc": "2026-09-25T13:31:18.414325+00:00",
+  "updated_utc": "2026-09-25T13:43:51.938735+00:00",
+  "stage_jobs": 23,
+  "stage_finished": 23,
+  "seconds": 753.484642789932,
+  "per_run_searches": 120,
+  "reused_budget_records": 0
+}

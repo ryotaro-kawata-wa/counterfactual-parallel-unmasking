@@ -1,0 +1,36 @@
+% Priority-one namespace: target law, hidden forest, and target-class
+% parameters.  Algorithmic and lower-witness notation must not reuse the
+% rendered letters below for a different global meaning.
+
+% Positions, vocabulary, target law, and forest.
+\newcommand{\PositionSet}{[N]}
+\newcommand{\Vocab}{\mathcal V}
+\newcommand{\VocabSize}{V}
+\newcommand{\TargetLaw}{P}
+\newcommand{\InstanceTargetLaw}[1]{P^{#1}}
+\newcommand{\TargetForest}{F}
+\newcommand{\TargetEdges}{E}
+\newcommand{\TargetRoots}{\operatorname{Roots}(\TargetForest)}
+\newcommand{\TokenOrder}{\prec}
+\newcommand{\ParentOf}[1]{\operatorname{pa}(#1)}
+
+% Local probabilistic objects of the target law.
+\newcommand{\PosMarginal}[1]{\pi_{#1}}
+\newcommand{\EndpointKernel}[2]{K_{#1\to #2}}
+\newcommand{\BoundaryRow}[4]{\mu_{#1\to #2}(\cdot\mid #3,#4)}
+\newcommand{\TailSet}[2]{\mathcal T_{#1}(#2)}
+\newcommand{\DirectedResponse}[3]{\Omega_{#1\to #2}(#3)}
+
+% Public finite target-class parameters.
+% The response exponent is deliberately undecorated: it is part of the target
+% class, not a derived bank exponent or an algorithmic tuning parameter.
+\newcommand{\ResponseConstant}{L}
+\newcommand{\ResponseExponent}{\alpha}
+\newcommand{\EdgeSignal}{\omega}
+\newcommand{\FrequencyConstant}{C}
+
+% Public asymptotic target-class exponents and hidden marginal ranks.
+\newcommand{\VocabGrowthExponent}{\nu}
+\newcommand{\RankTailExponent}{s}
+\newcommand{\EdgeSignalExponent}{r}
+\newcommand{\RankedToken}[2]{a_{#1,#2}}

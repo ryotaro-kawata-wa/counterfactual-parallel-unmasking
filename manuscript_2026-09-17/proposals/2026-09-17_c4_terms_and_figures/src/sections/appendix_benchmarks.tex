@@ -1,0 +1,669 @@
+\section{From finite bounds to the main theorems}
+\label{app:benchmark-specializations}
+
+We derive the main-text Theorems~\ref{main:thm:upper-curve}
+and~\ref{main:thm:lower-envelope} directly from the finite results.
+Under the main-text scaling in \textcolor{red}{\cref{main:ass:main-scaling}
+(Scaling)}, the row-TV
+allowance $\TargetTolerance/(2\sqrt N)$ and vocabulary floor
+$\VocabSize^{-1}$ are $o(\EdgeSignal)$.
+\Cref{app:lem:benchmark-feasibility} verifies the resulting finite
+upper-bound design conditions.
+Next, \cref{app:cor:signal-calibrated-finite-lower} calibrates the finite
+lower bound with an independent Hellinger radius and checks the matching
+witness's class inclusion at the actual finite public values.
+With both ingredients in place, \cref{app:cor:fixed-accuracy-main} derives
+both main theorems with accuracy fixed before $N\to\infty$, using
+$\OracleRadius=\TargetTolerance/2$ in \HellingerCase\ and
+$\KLTargetTolerance=\TargetTolerance^2/2$ in \KLCase.
+\ifincludeexponents
+The subsequent corollaries additionally give joint-limit rates.
+\fi
+
+\subsection{A finite design condition}
+
+\paragraph{Intuition.}
+With response constant and exponent equal to one, choosing
+$\TailTolerance=\EdgeSignal/2$ leaves the other half of the edge signal
+for row noise.  If both $x/\sqrt N$ and $\VocabSize^{-1}$ are sufficiently
+below $\EdgeSignal$, the threshold grid has a feasible point with
+$\TailThreshold\simeq\EdgeSignal$.  The bank bound then gives a column
+upper bound of order $\EdgeSignal^{-1/\RankTailExponent}$.
+The following finite inequalities specify the margins and the grid rounding.
+Here $x$ denotes the public radius supplied to preprocessing:
+use $x=\OracleRadius$ under (A2), or the Hellinger radius obtained from
+the KL inclusion \eqref{app:eq:kl-oracle-inclusion}.  It is not a separate
+output-error tolerance.
+
+\begin{lemma}[Public feasibility with a half-signal tail tolerance]
+\label{app:lem:benchmark-feasibility}
+Let $N\ge10$, $\VocabSize\ge2$, $\RankTailExponent>1$, and
+$\ResponseExponent=\ResponseConstant=\FrequencyConstant=1$.
+Use a public preprocessing radius $x\in(0,1]$, so the marginal and screen
+TV error bounds used by the construction are $x/\sqrt N$.
+Suppose
+\begin{equation}
+ 16\max\{x/\sqrt N,\VocabSize^{-1}\}
+ \le\EdgeSignal\le\frac12.
+ \label{app:eq:benchmark-finite-margin}
+\end{equation}
+Set $\TailTolerance=\EdgeSignal/2$ and use the standard threshold floor
+\eqref{app:eq:rate-threshold-floor}.  Then preprocessing is feasible,
+the selected threshold satisfies
+\begin{equation}
+ \frac{\EdgeSignal}{4}\le\TailThreshold\le\frac{\EdgeSignal}{2},
+ \qquad
+ 4x/\sqrt N+\TailTolerance\le\frac34\EdgeSignal<\EdgeSignal,
+ \label{app:eq:benchmark-threshold-and-separation}
+\end{equation}
+and, under (RF\textcolor{red}{; \cref{app:eq:RF}}), the number of source columns obeys
+\begin{equation}
+ \ScreenColumnCount
+ \le \left(\frac{16}{\EdgeSignal}\right)^{1/\RankTailExponent}+1.
+ \label{app:eq:benchmark-column-cap}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+
+\emph{1. Exhibit a feasible grid point.}
+Under the stated constants, the public floor is exactly
+\[
+ \ThresholdFloor
+ =4\max\{x/\sqrt N,\VocabSize^{-1}\}\le\EdgeSignal/4.
+\]
+Specifically, choose
+\[
+ t'=2^{-\lceil\log_2(2/\EdgeSignal)\rceil},
+ \qquad \EdgeSignal/4<t'\le\EdgeSignal/2.
+\]
+The bracket follows by applying $a\le\lceil a\rceil<a+1$ to
+$a=\log_2(2/\EdgeSignal)$.  Since $t'>\ThresholdFloor$ and
+$\lceil\log_2(2/\EdgeSignal)\rceil
+ \le\lceil\log_2(1/\ThresholdFloor)\rceil=\ThresholdGridDepth$,
+this is an unclipped point of the grid in \eqref{app:eq:threshold-grid}.
+Every such point is feasible because its response bound is the threshold
+itself, at most $\TailTolerance=\EdgeSignal/2<1$.
+The maximal feasible grid point lies in the same interval.
+
+\emph{2. Verify separation and bound the bank.}
+The screen error bound in \eqref{app:eq:benchmark-finite-margin} gives
+$4x/\sqrt N\le\EdgeSignal/4$, proving strict separation.
+Lemma~\ref{app:lem:preprocessing-certificates} now bounds every bank by
+$(4/\TailThreshold)^{1/\RankTailExponent}
+\le(16/\EdgeSignal)^{1/\RankTailExponent}$.
+Adding the tail column proves \eqref{app:eq:benchmark-column-cap}; if every
+bank is empty the column count is zero and the same bound holds.
+\end{proof}
+
+\subsection{Finite lower-bound calibration for the main text}
+
+The next corollary supplies the finite lower bound used in
+\cref{main:thm:lower-envelope}. It places the matching witness in the
+normalized Hellinger/TV model of \cref{app:setup-oracle}, then
+calibrates the signal to the independently specified radius $\OracleRadius$.
+The main-text class takes $\OracleRadius=\TargetTolerance/2$.
+The fixed-accuracy limit, including removal of the floor and the finite
+round minimum, is carried out in \cref{app:cor:fixed-accuracy-main}.
+
+\begin{corollary}[Signal-calibrated finite query--round lower bound]
+\label{app:cor:signal-calibrated-finite-lower}
+Let $N\ge4$ be even, let $\VocabSize\ge2$ be an integer, and fix
+$\RankTailExponent>1$, $0<\OracleRadius\le1$, and
+$\ResponseExponent=\ResponseConstant=\FrequencyConstant=1$.
+Suppose
+\begin{equation}
+ 0<\EdgeSignal\le\frac12,\qquad
+ \VocabSize\EdgeSignal>1,\qquad
+ \EdgeSignal^3\le\frac{(\OracleRadius)^2}{2N}.
+ \label{app:eq:signal-calibrated-finite-domain}
+\end{equation}
+Fix $0<\TargetTolerance\le1/8$.  Every admissible algorithm with integer
+worst-case pathwise budgets $\QueryBudget\ge0$, $\RoundBudget\ge1$ and
+seed-averaged output-TV error at most $\TargetTolerance$ uniformly over the target--oracle
+tuples satisfying the structural and response assumptions of
+Appendix~\ref{app:setup}, the finite envelope \eqref{app:eq:RF}, and
+\textcolor{red}{\cref{app:ass:oracle-accuracy} (A2)},
+with these public parameters satisfies
+\begin{equation}
+ \QueryBudget>\frac{\lfloor\EdgeSignal^{-1/\RankTailExponent}\rfloor}{8}
+ \quad\text{or}\quad
+ \RoundBudget\ge
+ \min\left\{\frac N{16384},
+            \frac{N\EdgeSignal^2}{786432\TargetTolerance}\right\}.
+ \label{app:eq:benchmark-finite-lower}
+\end{equation}
+For the benchmark choice $\EdgeSignal=\HellingerBenchmarkSignal$,
+the conditions in \eqref{app:eq:signal-calibrated-finite-domain} reduce to
+$\VocabSize>2(N/(\OracleRadius)^2)^{1/3}$, and the alternative becomes
+\begin{equation}
+ \begin{aligned}
+ \QueryBudget
+ &>\frac18\left\lfloor
+   2^{1/\RankTailExponent}
+   \left(\frac N{(\OracleRadius)^2}\right)^{1/(3\RankTailExponent)}
+   \right\rfloor
+ \quad\text{or}\\
+ \RoundBudget
+ &\ge\min\left\{\frac N{16384},
+   \frac{N^{1/3}(\OracleRadius)^{4/3}}{3145728\TargetTolerance}\right\}.
+ \end{aligned}
+ \label{app:eq:signal-calibrated-direct-lower}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+
+\emph{1. Construct the witness using the same public parameters.}
+Keep the public vocabulary of size \(\VocabSize\), its order,
+\(\RankTailExponent\), \(\EdgeSignal\), and \(\OracleRadius\) from the
+statement, with
+\(\ResponseExponent=\ResponseConstant=\FrequencyConstant=1\).
+In the matching family of \cref{app:def:hard-matching-family}, choose
+\begin{equation}
+ \EdgeCoupling=\TriggerMass=\EdgeSignal,\qquad
+ \HardBankSize=\lfloor\EdgeSignal^{-1/\RankTailExponent}\rfloor.
+ \label{app:eq:benchmark-hard-witness}
+\end{equation}
+The inequalities
+\[
+ \begin{aligned}
+ 1\le\HardBankSize
+ &\le\EdgeSignal^{-1/\RankTailExponent}<\EdgeSignal^{-1}<\VocabSize,\\
+ \HardBankSize\EdgeSignal
+ &\le\EdgeSignal^{1-1/\RankTailExponent}<1,\qquad
+ \EdgeSignal\le\HardBankSize^{-\RankTailExponent}
+ \end{aligned}
+\]
+give \(1\le\HardBankSize<\HardVocabSize\) and
+\(\HardBankSize\TriggerMass<1\). Together with
+\(0<\EdgeCoupling=\TriggerMass=\EdgeSignal\le1/2\), these verify
+\eqref{app:eq:hard-basic-conditions}.
+For the last rank inequality, explicitly,
+\(\HardBankSize\le\EdgeSignal^{-1/\RankTailExponent}\) implies
+\(\HardBankSize^{\RankTailExponent}\le\EdgeSignal^{-1}\), hence
+\(\TriggerMass=\EdgeSignal\le\HardBankSize^{-\RankTailExponent}\).
+The remaining hypotheses of \cref{app:prop:hard-family-inclusion} are
+\[
+ \HardVocabSize\TriggerMass=\VocabSize\EdgeSignal>1,
+ \qquad
+ \EdgeSignal=\EdgeCoupling,
+ \qquad
+ \EdgeCoupling^2\TriggerMass
+ =\EdgeSignal^3\le\frac{(\OracleRadius)^2}{2N}.
+\]
+Thus that proposition applies at the actual finite public values.
+\textcolor{red}{It verifies \cref{main:ass:forest-structure} and the
+RT, UEN, and RF items of \cref{main:ass:regularity-scaling}},
+and the Hellinger condition (A2) in Assumption~\ref{app:ass:oracle-accuracy}.
+At $\OracleRadius=\TargetTolerance/2$, the latter is precisely
+Assumption~\ref{main:ass:oracle-accuracy}(i).
+\textcolor{red}{The vocabulary-growth requirement is additionally supplied
+when taking the public sequence in \cref{main:ass:main-scaling} (Scaling).}
+
+\emph{2. Restrict the uniform guarantee and apply the finite tradeoff.}
+Fix any admissible algorithm satisfying this corollary's risk and
+pathwise-budget hypotheses. Every target--oracle pair in the chosen
+matching family belongs to the stipulated finite class, so the same
+algorithm satisfies
+\[
+ \sup_{I\in\HardFamily[\VocabSize,\HardBankSize,\EdgeSignal,\EdgeSignal]}
+ \SeedRisk(\mathcal A;\HardTargetLaw{I},\HardOracle{I})
+ \le\TargetTolerance.
+\]
+Its deterministic budgets \(\QueryBudget,\RoundBudget\) still hold on
+every instance, seed, transcript, and path in this subfamily.
+Apply \cref{app:cor:nonlinear-finite-target-tradeoff} at tolerance
+\(\TargetTolerance\), with \(\EdgeCoupling=\EdgeSignal\);
+the required tolerance range is precisely
+\(0<\TargetTolerance\le1/8\).
+If \(\QueryBudget>\HardBankSize/8\), the query alternative in
+\eqref{app:eq:benchmark-finite-lower} already holds.
+Otherwise that corollary implies
+\textcolor{red}{either $\RoundBudget>N/16384$ or
+$\RoundBudget\ge N\EdgeSignal^2/(786432\TargetTolerance)$; either
+alternative implies $\RoundBudget\ge
+\min\{N/16384,N\EdgeSignal^2/(786432\TargetTolerance)\}$.}
+Substituting
+\(\HardBankSize=\lfloor\EdgeSignal^{-1/\RankTailExponent}\rfloor\)
+proves \eqref{app:eq:benchmark-finite-lower}.
+
+\Needspace{6\baselineskip}
+\emph{3. Substitute the signal calibration.}
+\textcolor{red}{Use the benchmark signal
+$\EdgeSignal=\HellingerBenchmarkSignal
+=\tfrac12((\OracleRadius)^2/N)^{1/3}$.  It places the matching witness
+inside the public oracle-accuracy class while retaining the
+$\EdgeSignal^{-1/\RankTailExponent}$ query threshold.}
+This is the signal choice in \textcolor{red}{\cref{main:ass:main-scaling}
+(Scaling)} at
+\(\OracleRadius=\TargetTolerance/2\).
+Since \(0<\OracleRadius\le1\) and \(N\ge4\), this gives
+\(0<\EdgeSignal\le1/2\), and
+\[
+ \EdgeSignal^3
+ =\frac18\,\frac{(\OracleRadius)^2}{N}
+ =\frac{(\OracleRadius)^2}{8N}
+ \le\frac{(\OracleRadius)^2}{2N}.
+\]
+The only remaining condition in
+\eqref{app:eq:signal-calibrated-finite-domain} is the vocabulary condition:
+\[
+ \VocabSize\EdgeSignal>1
+ \quad\Longleftrightarrow\quad
+ \frac{\VocabSize}{2}
+      \left(\frac{(\OracleRadius)^2}{N}\right)^{1/3}>1
+ \quad\Longleftrightarrow\quad
+ \VocabSize>2\left(\frac N{(\OracleRadius)^2}\right)^{1/3}.
+\]
+The two resource thresholds become
+\begin{align*}
+ \EdgeSignal^{-1/\RankTailExponent}
+ &=\left[\frac12
+        \left(\frac{(\OracleRadius)^2}{N}\right)^{1/3}
+   \right]^{-1/\RankTailExponent}
+ =2^{1/\RankTailExponent}
+       \left(\frac N{(\OracleRadius)^2}\right)^{1/(3\RankTailExponent)},\\
+ \frac{N\EdgeSignal^2}{786432\TargetTolerance}
+ &=\frac{N}{786432\TargetTolerance}\,
+       \frac14\left(\frac{(\OracleRadius)^2}{N}\right)^{2/3}
+ =\frac{N^{1/3}(\OracleRadius)^{4/3}}{3145728\TargetTolerance}.
+\end{align*}
+Substitution into \eqref{app:eq:benchmark-finite-lower} proves
+\eqref{app:eq:signal-calibrated-direct-lower}, with its floor and minimum
+still intact. The lower-bound part of
+\cref{app:cor:fixed-accuracy-main} completes the passage from this finite
+statement to \cref{main:thm:lower-envelope}.
+\end{proof}
+
+\subsection{Fixed-accuracy specialization for the main text}
+\label{app:fixed-accuracy-specialization}
+
+The main text fixes its accuracy parameter before taking $N\to\infty$.
+We first retain independent oracle and output budgets, then specialize
+them at the end of the proof. The cutoff $\DegreeCutoff$ remains a direct
+parameter, and the logarithmic overhead is displayed explicitly.
+
+The three main claims use the following proof routes; the final part of
+Corollary~\ref{app:cor:fixed-accuracy-main} performs their common
+main-text specialization to the classes in \cref{main:def:shared-rate-class}.
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Main claim & Finite result and calibration\\
+\midrule
+Theorem~\ref{main:thm:upper-curve}, \HellingerCase
+ & Theorem~\ref{app:thm:finite-upper} and
+   Lemma~\ref{app:lem:benchmark-feasibility}\\
+Theorem~\ref{main:thm:upper-curve}, \KLCase
+ & Theorem~\ref{app:thm:finite-kl-upper},
+   Corollary~\ref{app:cor:kl-epsilon}, and
+   Lemma~\ref{app:lem:benchmark-feasibility}\\
+Theorem~\ref{main:thm:lower-envelope}
+ & Theorem~\ref{app:thm:nonlinear-finite-lower},
+   Corollaries~\ref{app:cor:nonlinear-finite-target-tradeoff}
+   and~\ref{app:cor:signal-calibrated-finite-lower}\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{corollary}[Fixed-accuracy main-text bounds]
+\label{app:cor:fixed-accuracy-main}
+Fix $\RankTailExponent>1$, $\VocabGrowthExponent>1/3$, and a public
+$\VocabSize=N^{\VocabGrowthExponent+o(1)}$.
+For simplicity, set $\ResponseExponent=\ResponseConstant=\FrequencyConstant=1$ and
+take all target--oracle tuples satisfying the forest, RT--UEN\textcolor{red}{~%
+(\cref{app:eq:RT,app:eq:UEN})}, and RF\textcolor{red}{~%
+(\cref{app:ass:rate-regime})}
+assumptions of Appendix~\ref{app:setup}, with either calibration:
+\begin{itemize}
+ \item \emph{\HellingerCaseTitle:} fix $0<\OracleRadius\le1$,
+ use (A2), and set $\EdgeSignal=\HellingerBenchmarkSignal$.
+ \item \emph{\KLCaseTitle:} fix $0<\KLTargetTolerance\le1$,
+ impose uniform forward row KL at most $\KLTargetTolerance/(2N)$,
+ and set $\EdgeSignal=\KLBenchmarkSignal$.
+\end{itemize}
+The exponents $\RankTailExponent,\VocabGrowthExponent$ and the chosen
+accuracy parameter ($\OracleRadius$ or $\KLTargetTolerance$) are fixed
+independently of $N$; the vocabulary size, signal floor, and per-row
+oracle-error allowance follow the displayed $N$-dependent calibrations.
+Here $\SharedClass$ is the Hellinger class at these public values, and
+$\SharedRisk(\mathcal A):=\sup_{I\in\SharedClass}
+ \SeedRisk(\mathcal A;\InstanceTargetLaw{I},\InstanceOracle{I})$
+abbreviates its worst-case seed-averaged TV risk.
+For every public integer choice $9\le\DegreeCutoff\le N-1$ and
+$\ChunkCount=\DegreeCutoff$, use the standard draft, the standard threshold
+floor, and $\TailTolerance=\EdgeSignal/2$.
+Choose $\ScreenFailureBudget=\OracleRadius/2$ in \HellingerCase, or
+$\ScreenFailureBudget=\KLTargetTolerance/(2N\log\VocabSize)$ in \KLCase.
+For all sufficiently large $N$, uniformly over this cutoff range and
+the respective target--oracle class, the construction is feasible and
+\begin{equation}
+ \CounterfactualQueries
+ =O\!\left(\EdgeSignal^{-1/\RankTailExponent}
+             \DegreeCutoff^2(\log N)^2\right),
+ \qquad
+ \CommitRounds,\OracleDepth
+ =O\!\left(\frac N{\DegreeCutoff}\log N\right).
+ \label{app:eq:fixed-accuracy-resources}
+\end{equation}
+These bounds hold on every path. The output guarantees are
+$\SharedRisk(\RandomizedPackedSampler)\le3\OracleRadius/2$ in
+\HellingerCase\ and expected forward KL at most $\KLTargetTolerance$
+in \KLCase.
+
+For \HellingerCase, every admissible algorithm with uniform TV risk
+at most the fixed $0<\TargetTolerance\le1/8$ satisfies, for all
+sufficiently large even $N$,
+\begin{equation}
+ \QueryBudget=\Omega\!\left(
+  (N/(\OracleRadius)^2)^{1/(3\RankTailExponent)}\right)
+ \quad\text{or}\quad
+ \RoundBudget=\Omega\!\left(
+  N^{1/3}(\OracleRadius)^{4/3}/\TargetTolerance\right).
+ \label{app:eq:fixed-accuracy-lower}
+\end{equation}
+Taking $\OracleRadius=\TargetTolerance/2$ in \HellingerCase\ and
+$\KLTargetTolerance=\TargetTolerance^2/2$ in \KLCase\ gives
+Theorems~\ref{main:thm:lower-envelope}
+and~\ref{main:thm:upper-curve}, including their balanced bounds.
+\end{corollary}
+
+\begin{proof}
+\emph{Upper bound: feasibility for \cref{main:thm:upper-curve}.}
+Set $x=\OracleRadius$ in \HellingerCase\ and
+$x=\sqrt{\KLTargetTolerance/2}$ in \KLCase.
+Both calibrations have
+$\EdgeSignal=\frac12(x^2/N)^{1/3}$, so
+\[
+ \frac{x/\sqrt N}{\EdgeSignal}
+ =2x^{1/3}N^{-1/6}\longrightarrow0,
+ \qquad
+ \frac{\VocabSize^{-1}}{\EdgeSignal}
+ =2x^{-2/3}N^{1/3-\VocabGrowthExponent-o(1)}
+ \longrightarrow0.
+\]
+Also $\EdgeSignal\to0$.
+Lemma~\ref{app:lem:benchmark-feasibility} therefore supplies preprocessing,
+screen separation, and
+$\ScreenColumnCount=O_{\RankTailExponent}
+(\EdgeSignal^{-1/\RankTailExponent})$ for all sufficiently large $N$.
+This step does not depend on $\DegreeCutoff$.
+
+\emph{Phase and coloring counts.}
+The finite cap \eqref{app:eq:phase-cap} satisfies
+\[
+ \PeelPhaseCap
+ \le 1+\frac{\log(2N)}{\log(9/8)}=O(\log N),
+ \qquad
+ \ScreenCallCap=\PeelPhaseCap+1=O(\log N),
+\]
+uniformly for $9\le\DegreeCutoff\le N-1$.
+The chosen failure budgets give respectively
+\[
+ \RandomColoringCount=
+ \begin{cases}
+ \left\lceil8\log
+   \dfrac{2\ScreenCallCap N^2}{\OracleRadius}\right\rceil,
+ &\text{\HellingerCase},\\[5pt]
+ \left\lceil8\log
+   \dfrac{2\ScreenCallCap N^3\log\VocabSize}{\KLTargetTolerance}
+ \right\rceil,
+ &\text{\KLCase}.
+ \end{cases}
+\]
+Each is $O(\log N)$: $\log\ScreenCallCap=O(\log\log N)$,
+$\log\log\VocabSize=O(\log\log N)$, and the logarithms of the inverse
+accuracy parameters are fixed constants.
+With $\RandomColorCount=8(\DegreeCutoff+1)\le16\DegreeCutoff$,
+\[
+ \RandomColorCount(\RandomColorCount+\ChunkCount)
+ \le16\DegreeCutoff(17\DegreeCutoff)=272\DegreeCutoff^2.
+\]
+Substituting these factors into \eqref{app:eq:finite-upper-Q} gives
+\begin{align*}
+ \CounterfactualQueries
+ &\le\ScreenColumnCount\,\ScreenCallCap\,\RandomColoringCount\,
+          \RandomColorCount(\RandomColorCount+\ChunkCount)\\
+ &\le O_{\RankTailExponent}(\EdgeSignal^{-1/\RankTailExponent})
+          \,O(\log N)\,O(\log N)\,O(\DegreeCutoff^2)\\
+ &=O\!\left(\EdgeSignal^{-1/\RankTailExponent}
+                \DegreeCutoff^2(\log N)^2\right).
+\end{align*}
+This proves the query bound.  The round cap and the depth inequality give
+\[
+ \begin{aligned}
+ \CommitRounds
+ &\le\left\lceil\frac{4N\PeelPhaseCap}{\DegreeCutoff}\right\rceil
+       +\lceil\log_2(N+1)\rceil+2\\
+ &=O\!\left(\frac N{\DegreeCutoff}\log N+\log N\right)
+  =O\!\left(\frac N{\DegreeCutoff}\log N\right),\\
+ \OracleDepth&\le1+\CommitRounds+\ScreenCallCap
+  =O\!\left(\frac N{\DegreeCutoff}\log N\right).
+ \end{aligned}
+\]
+The last equalities use $N/\DegreeCutoff\ge1$.
+All inputs to these caps are public, so the estimates also cover fallback
+paths. The finite TV theorem gives
+$\OracleRadius+\ScreenFailureBudget=3\OracleRadius/2$.
+The finite KL calibration gives
+\[
+ N\frac{\KLTargetTolerance}{2N}
+ +N\log\VocabSize\,
+   \frac{\KLTargetTolerance}{2N\log\VocabSize}
+ =\KLTargetTolerance.
+\]
+
+For either value of $x$ chosen above,
+\[
+ \EdgeSignal^{-1/\RankTailExponent}
+ =\left[\frac12(x^2/N)^{1/3}\right]^{-1/\RankTailExponent}
+ =2^{1/\RankTailExponent}
+        (N/x^2)^{1/(3\RankTailExponent)}.
+\]
+Thus suppressing the displayed powers of $\log N$ gives the resource
+bound before the final single-accuracy substitution below.
+The TV tolerance is met when
+$\TargetTolerance\ge3\OracleRadius/2$; the KL guarantee uses the separate
+forward-KL hypothesis, not a TV-to-KL conversion.
+The constants and the sufficiently-large-$N$ threshold depend only on the
+fixed public parameters and sequences, not on the cutoff, target, or
+frozen oracle.
+
+\emph{Balancing and sublinearity.}
+Put
+$\DegreeCutoff=\ChunkCount=
+ \lceil(N\EdgeSignal^{1/\RankTailExponent})^{1/3}\rceil$.
+Using $\EdgeSignal=\frac12(x^2/N)^{1/3}$, the unrounded value is
+\[
+ (N\EdgeSignal^{1/\RankTailExponent})^{1/3}
+ =2^{-1/(3\RankTailExponent)}
+       x^{2/(9\RankTailExponent)}N^{1/3-1/(9\RankTailExponent)}.
+\]
+Since $\RankTailExponent>1$ and $x>0$ is fixed, this tends to infinity
+and is $o(N)$; the cutoff eventually belongs to $\{9,\ldots,N-1\}$.
+For all large $N$, the unrounded value is at least one, so
+\[
+ (N\EdgeSignal^{1/\RankTailExponent})^{1/3}
+ \le\DegreeCutoff
+ <(N\EdgeSignal^{1/\RankTailExponent})^{1/3}+1
+ \le2(N\EdgeSignal^{1/\RankTailExponent})^{1/3}.
+\]
+Consequently rounding changes only a constant factor, and
+\[
+ \begin{aligned}
+ \EdgeSignal^{-1/\RankTailExponent}\DegreeCutoff^2
+ &=\Theta\!\left(
+     N^{2/3}\EdgeSignal^{-1/(3\RankTailExponent)}\right),\\
+ N/\DegreeCutoff
+ &=\Theta\!\left(
+     N^{2/3}\EdgeSignal^{-1/(3\RankTailExponent)}\right).
+ \end{aligned}
+\]
+The two calibrations yield
+\[
+ \EdgeSignal^{-1/(3\RankTailExponent)}
+ =
+ \begin{cases}
+ 2^{1/(3\RankTailExponent)}
+ (N/(\OracleRadius)^2)^{1/(9\RankTailExponent)},&\text{\HellingerCase},\\
+ 2^{4/(9\RankTailExponent)}
+ (N/\KLTargetTolerance)^{1/(9\RankTailExponent)},&\text{\KLCase}.
+ \end{cases}
+\]
+Thus the balanced resources are
+$\widetilde O(N^{2/3+1/(9\RankTailExponent)}x^{-2/(9\RankTailExponent)})$.
+After division by $N$, their upper bounds are a fixed constant
+times at most
+$N^{-1/3+1/(9\RankTailExponent)}(\log N)^2$, which tends to zero.
+The additional all-mask submission contributes only $1/N$.
+
+\emph{Lower bound: deduction of \cref{main:thm:lower-envelope}.}
+Work in the corollary's independently parameterized \HellingerCase.
+The public parameters \(\RankTailExponent>1\),
+\(0<\OracleRadius\le1\), and \(0<\TargetTolerance\le1/8\) are fixed
+before \(N\to\infty\), and
+\(\VocabSize=N^{\VocabGrowthExponent+o(1)}\) with
+\(\VocabGrowthExponent>1/3\).
+The finite conditions of \cref{app:cor:signal-calibrated-finite-lower}
+hold for all sufficiently large even \(N\), because
+\begin{align*}
+ \EdgeSignal
+ &=\frac12(\OracleRadius)^{2/3}N^{-1/3}\longrightarrow0,\\
+ \VocabSize\EdgeSignal
+ &=\frac12(\OracleRadius)^{2/3}
+      N^{\VocabGrowthExponent-1/3+o(1)}\longrightarrow\infty,\\
+ \EdgeSignal^3
+ &=\frac{(\OracleRadius)^2}{8N}
+ \le\frac{(\OracleRadius)^2}{2N}.
+\end{align*}
+The matching witness in that corollary is therefore a subfamily of the
+Hellinger class \(\SharedClass\) at these public values.
+For any admissible \(\mathcal A\) with
+\(\SharedRisk(\mathcal A)\le\TargetTolerance\) and the stated deterministic
+budgets, \eqref{app:eq:signal-calibrated-direct-lower} applies.
+
+To remove the query threshold's floor, use
+\[
+ u_N:=2^{1/\RankTailExponent}
+       (N/(\OracleRadius)^2)^{1/(3\RankTailExponent)}
+       \longrightarrow\infty,
+ \qquad
+ \lfloor u_N\rfloor\ge u_N-1\ge u_N/2
+ \quad(u_N\ge2).
+\]
+If the finite query alternative holds, then
+\[
+ \QueryBudget>\frac{\lfloor u_N\rfloor}{8}
+ \ge\frac{u_N}{16}
+ =\frac{2^{1/\RankTailExponent}}{16}
+       \left(\frac N{(\OracleRadius)^2}\right)^{1/(3\RankTailExponent)},
+\]
+which is the query alternative in \eqref{app:eq:fixed-accuracy-lower}.
+Otherwise the finite corollary forces its round alternative.
+To identify the smaller term in that minimum,
+\[
+ \frac{N^{1/3}(\OracleRadius)^{4/3}/(3145728\TargetTolerance)}
+      {N/16384}
+ =\frac{(\OracleRadius)^{4/3}}
+        {192\TargetTolerance N^{2/3}}\longrightarrow0.
+\]
+Because both accuracy parameters are fixed and positive, this ratio is
+at most one for all sufficiently large \(N\). Thus the finite round
+alternative gives
+\[
+ \RoundBudget\ge
+ \min\left\{\frac N{16384},
+   \frac{N^{1/3}(\OracleRadius)^{4/3}}{3145728\TargetTolerance}\right\}
+ =\frac{N^{1/3}(\OracleRadius)^{4/3}}{3145728\TargetTolerance}.
+\]
+Together with the query case, this proves
+\eqref{app:eq:fixed-accuracy-lower}.
+The query coefficient \(2^{1/\RankTailExponent}/16\) depends only on
+\(\RankTailExponent\), and the round coefficient is \(1/3145728\).
+The sufficiently-large-\(N\) threshold can depend on the fixed public
+parameters and vocabulary sequence, but none of these choices depends on
+the hidden instance or the algorithm.
+
+\emph{Single-accuracy substitution for both main theorems.}
+Fix $0<\TargetTolerance\le1/8$. Set
+$\OracleRadius=\TargetTolerance/2$ in \HellingerCase\ and
+$\KLTargetTolerance=\TargetTolerance^2/2$ in \KLCase.
+The respective row assumptions become
+\[
+ \frac{(\TargetTolerance/2)^2}{2N}
+ =\frac{\TargetTolerance^2}{8N},
+ \qquad
+ \frac{\TargetTolerance^2/2}{2N}
+ =\frac{\TargetTolerance^2}{4N},
+\]
+as required in Assumption~\ref{main:ass:oracle-accuracy}.
+Both cases use $x=\TargetTolerance/2$, so
+\[
+ \EdgeSignal=\frac12\left(\frac{(\TargetTolerance/2)^2}{N}\right)^{1/3}
+ =\left(\frac{\TargetTolerance^2}{32N}\right)^{1/3},
+ \qquad
+ \EdgeSignal^{-1/\RankTailExponent}
+ =\left(\frac{32N}{\TargetTolerance^2}\right)^{1/(3\RankTailExponent)}.
+\]
+This is exactly the target-class calibration in
+\textcolor{red}{\cref{main:ass:main-scaling} (Scaling)}. The output bounds are
+\[
+ \SharedRisk(\RandomizedPackedSampler)
+ \le\frac{3\OracleRadius}{2}
+ =\frac{3\TargetTolerance}{4}\le\TargetTolerance,
+ \qquad
+ \mathbb E_W\KLDivergence{\TargetLaw}
+ {\SamplerOutputLaw{W}{\FrozenOracle}}
+ \le\KLTargetTolerance
+ =\frac{\TargetTolerance^2}{2}\le\TargetTolerance^2,
+\]
+in cases (i) and (ii), respectively. Substituting $x=\TargetTolerance/2$
+in the resource and balanced bounds proves
+\cref{main:thm:upper-curve}.
+For the two lower alternatives,
+\[
+ (N/(\OracleRadius)^2)^{1/(3\RankTailExponent)}
+ =2^{2/(3\RankTailExponent)}
+   (N/\TargetTolerance^2)^{1/(3\RankTailExponent)},
+ \qquad
+ \frac{N^{1/3}(\OracleRadius)^{4/3}}{\TargetTolerance}
+ =2^{-4/3}N^{1/3}\TargetTolerance^{1/3}.
+\]
+Absorbing only these fixed factors into the constants proves
+\cref{main:thm:lower-envelope}. The independent finite statements
+remain available for other oracle and output budgets.
+\ifincludeexponents
+This fixed-accuracy deduction is separate from the joint-limit
+corollaries below.
+\fi
+\end{proof}
+
+\paragraph{Accuracy dependence in the abstract.}
+Fix $0<\TargetTolerance\le1/8$ and take
+$\OracleRadius=\TargetTolerance/2$ in \HellingerCase.
+The output TV bound is then $3\TargetTolerance/4\le\TargetTolerance$.
+The balanced bound \eqref{main:eq:balanced-upper} gives the abstract's
+upper form with $C=2/3+1/(9\RankTailExponent)<1$ and
+$a=2/(9\RankTailExponent)>0$.
+The lower alternatives become
+$\QueryBudget=\Omega(N^{1/(3\RankTailExponent)}
+\TargetTolerance^{-2/(3\RankTailExponent)})$ or
+$\RoundBudget=\Omega(N^{1/3}\TargetTolerance^{1/3})$.
+Since $N\ge1$, $0<\TargetTolerance\le1$, and $\RankTailExponent>1$,
+\[
+ N^{1/(3\RankTailExponent)}\TargetTolerance^{-2/(3\RankTailExponent)}
+ \ge N^{1/(3\RankTailExponent)}\TargetTolerance^{1/3},
+ \qquad
+ N^{1/3}\TargetTolerance^{1/3}
+ \ge N^{1/(3\RankTailExponent)}\TargetTolerance^{1/3}.
+\]
+Thus either counterfactual submissions or commit rounds have the common
+lower bound $\Omega(N^c\TargetTolerance^b)$ with
+$c=1/(3\RankTailExponent)>0$ and $b=1/3$.
+This is a coarser summary, not a matching lower bound for the upper rate.
+
+% Please retain the full proofs on disk, but do not load them in the short edition.
+\ifincludeexponents
+\input{src/sections/supplements/benchmark_joint_limits}
+\fi

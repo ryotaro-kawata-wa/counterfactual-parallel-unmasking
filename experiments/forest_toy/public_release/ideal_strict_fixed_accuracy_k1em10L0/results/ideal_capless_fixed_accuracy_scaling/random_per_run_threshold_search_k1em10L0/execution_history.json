@@ -1,0 +1,18 @@
+[
+  {
+    "stage": "per_run_threshold_refine_0",
+    "jobs": 8,
+    "new_runs": 8,
+    "workers": 8,
+    "seconds": 13.645393003942445,
+    "finished_utc": "2026-09-21T16:37:22.311607+00:00"
+  },
+  {
+    "stage": "per_run_threshold_refine_1",
+    "jobs": 3,
+    "new_runs": 3,
+    "workers": 8,
+    "seconds": 11.445440331008285,
+    "finished_utc": "2026-09-21T16:37:33.856526+00:00"
+  }
+]

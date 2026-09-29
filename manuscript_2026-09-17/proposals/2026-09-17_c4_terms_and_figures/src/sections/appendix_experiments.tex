@@ -1,0 +1,149 @@
+\section{Ideal-target fixed-accuracy protocol}
+\label{app:experiments}
+
+\subsection{Targets}
+\label{app:experiment-targets}
+
+Let $\Vocab=\{0,\ldots,2047\}$, with $\phi(0)=1$, $\phi(1)=-1$,
+and $\phi(a)=0$ otherwise. On a hidden forest
+$\TargetForest=(\PositionSet,\TargetEdges)$, the target law is
+\begin{equation}
+ \TargetLaw(x)=\frac{1}{Z_F}
+ \prod_{i=1}^N\psi_i(x_i)
+ \prod_{\{i,j\}\in\TargetEdges}
+ \bigl(1+w_{ij}\phi(x_i)\phi(x_j)\bigr),
+ \qquad x\in\Vocab^N,
+ \label{app:eq:experiment-target}
+\end{equation}
+where $Z_F$ is the normalizer. For independent
+$h_i\sim\operatorname{Unif}[-1,1]$, its unary factors are
+\begin{equation}
+ \psi_i(a)=\frac{1}{0.4e^{h_i}+0.4e^{-h_i}+0.2}
+ \begin{cases}
+ 0.4e^{h_i},&a=0,\\
+ 0.4e^{-h_i},&a=1,\\
+ 0.2/2046,&a\in\{2,\ldots,2047\}.
+ \end{cases}
+ \label{app:eq:experiment-unary}
+\end{equation}
+For each target draw, a master field vector is shared by prefixes across
+sizes and forest families, and vertex labels are randomly permuted.
+Edge weights are given in Table~\ref{tab:experiment-targets}.
+The frozen conditional oracle is exact,
+$\OracleRow{y}{j}=\ExactRow{y}{j}$, and the sampler is not given the edges.
+We test $N\in\{8192,10240,12288,14336,16384\}$.
+
+\begin{table}[htbp]
+ \centering
+ \caption{Ideal target families and fixed absolute accuracy thresholds.
+ Here $\Delta_\star(N)=\max\{16,\lceil\sqrt N\rceil\}$, and
+ $K_\star=10^{-10}L_0$ uses the reference in
+ Appendix~\ref{app:experiment-accuracy}.}
+ \label{tab:experiment-targets}
+ \begin{tabular}{@{}llcc@{}}
+ \toprule
+ Family & Structure before relabeling & $w_F(N)$ & $K_\star$ \\
+ \midrule
+ Matching & Disjoint pairs & $0.5$ & $6.375289\times10^{-9}$ \\
+ Path & One path & $0.25$ & $2.801962\times10^{-9}$ \\
+ Binary tree & Complete binary tree & $1/6$ & $1.226162\times10^{-9}$ \\
+ Growing stars & At most $\Delta_\star(N)$ leaves per star
+   & $0.5/\Delta_\star(N)$ & $5.138930\times10^{-12}$ \\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+\subsection{Resources and accuracy}
+\label{app:experiment-accuracy}
+
+\begin{equation}
+ Q_{\mathrm{tot}}=Q_{\mathrm{pre}}+\CounterfactualQueries+\CommitRounds,
+ \label{app:eq:experiment-total-rounds}
+\end{equation}
+counts preprocessing submissions, counterfactual submissions, and nonempty
+commit rounds. Each submission is charged once, including repeated states;
+rows sharing a submission share its cost. For random sampling with $B$
+balanced batches, $Q_{\mathrm{tot}}=\CommitRounds=B$.
+The proposal has no external $Q_{\mathrm{tot}}\le N$ cap.
+
+At history $H_{t-1}=(G_{t-1},x_{G_{t-1}})$ before batch $B_t$, let $y_t$ reveal
+$x_{G_{t-1}}$ and mask the other positions, and put
+$q_{t,i}=\OracleRow{y_t}{i}$ and
+$P_t=\TargetLaw(X_{B_t}\in\cdot\mid X_{G_{t-1}}=x_{G_{t-1}})$,
+using the commit index of \cref{app:def:admissible-algorithm}. We measure
+\begin{equation}
+ K=\sum_{t=1}^{\CommitRounds}
+ \KLDivergence{\bigotimes_{i\in B_t}q_{t,i}}{P_t}.
+ \label{app:eq:experiment-kl}
+\end{equation}
+This is a product-to-joint sum along the sampled history, distinct from
+the target-to-output risk $\KLSeedRisk$.
+Passive evaluation adds no oracle rounds: after conditioning and
+marginalization, boundary factors of arity at most four are enumerated
+exactly; larger factors use 128 independent Monte Carlo draws each.
+$\operatorname{SE}_{\mathrm{MC}}$ is the conditional standard error of
+the total estimate. A completed run passes the empirical criterion
+\begin{equation}
+ K+2\operatorname{SE}_{\mathrm{MC}}\le K_\star,
+ \qquad K_\star=10^{-10}L_0.
+ \label{app:eq:experiment-accuracy}
+\end{equation}
+For each forest family, the reference target $P^{(0)}$ has $N=2048$ and
+\begin{equation}
+ L_0=\KLDivergence{\bigotimes_{i=1}^{2048}P_i^{(0)}}{P^{(0)}},
+ \qquad P_i^{(0)}=\mathcal L_{P^{(0)}}(X_i).
+ \label{app:eq:experiment-reference-kl}
+\end{equation}
+Thus each absolute threshold in Table~\ref{tab:experiment-targets}
+is fixed across sizes and methods.
+
+\subsection{Sampling and evaluation}
+\label{app:experiment-proposal}
+
+\paragraph{Proposal.}
+\textcolor{red}{We tune color counts, degree cutoffs, and thresholds empirically,
+without enforcing the theoretical parameter prescriptions
+(\cref{app:algorithm-overview,app:eq:random-color-parameters}); the target family
+also need not satisfy (RT; \cref{app:eq:RT}) with
+$\ResponseConstant=\ResponseExponent=1$.}
+Within each $(\text{forest},N)$ cell, we screen \textcolor{red}{candidate settings},
+then evaluate six low-cost diverse candidates on target
+draws $171,172,173$ crossed with sampler streams $271,272$.
+We freeze the minimum-mean-$Q_{\mathrm{tot}}$ candidate that completes
+and passes on all six pairs at development threshold $10^{-3}L_0$.
+Screening and development use respectively 32 and 64 Monte Carlo draws
+per nonenumerated factor; evaluation uses 128.
+All 120 fresh proposal evaluation runs have structural exact zero
+discrepancy, $K=\operatorname{SE}_{\mathrm{MC}}=0$.
+
+\paragraph{Random baseline.}
+\label{app:experiment-random}
+For each evaluation run, fix a random permutation and commit random stream
+across budgets; budget $B$ partitions the permutation into $B$ balanced
+nonempty batches. Since adjacent partitions need not be nested, among
+observed budgets $b_1<\cdots<b_m=N$ select the first passing suffix:
+\begin{equation}
+ B_{\mathrm{safe}}=b_{k_\star},\qquad
+ k_\star=\min\bigl\{k:\text{every observed }b_\ell,\ \ell\ge k,
+                    \text{ passes \eqref{app:eq:experiment-accuracy}}\bigr\}.
+ \label{app:eq:experiment-random-suffix}
+\end{equation}
+The adjacent unsafe--safe bracket is refined to width at most $0.05N$
+(observed maximum: $0.03125N$); $B=N$ is the exact singleton endpoint.
+This is per-run selection from each evaluation curve, not a globally frozen
+budget. Reported cost is $B_{\mathrm{safe}}$ and excludes search costs,
+just as proposal development is excluded.
+
+\paragraph{Replicates.}
+\label{app:experiment-replicates}
+Each point uses target draws $196,197,198$, crossed with sampler streams
+$292,293$ for the proposal and disjoint streams $294,295$ for random.
+Means and min--max ranges use these same six runs.
+
+\paragraph{Computation.}
+\label{app:experiment-reproducibility}
+Eight workers ran on an Apple-silicon Mac mini (macOS 15.7.7,
+Python 3.13.15, NumPy 2.2.2) and a Linux 5.4.0 host (Python 3.10.12,
+NumPy 1.26.4; one BLAS/OpenMP thread per worker).
+The proposal/random study took about 64.7 minutes; the per-run random
+budget searches took about 12.0 minutes in total.

@@ -1,0 +1,242 @@
+\section{Problem formulation}
+\label{sec:main-setup}
+
+\textbf{Public and hidden information.}
+\textcolor{red}{The vocabulary and its order, class parameters, accuracy target,
+and algorithm parameters are public: known to the sampler and fixed before
+the hidden instance is chosen.}
+The target, forest, exact marginals, ranks, and response witnesses are hidden.
+For the main results, fix $0<\TargetTolerance\le1/8$ before taking
+$N\to\infty$; we suppress dependence on $N$.
+The appendix retains the general finite setup.
+
+For laws $p,q$ on a finite alphabet, write
+$\dTV(p,q)=\frac12\sum_a|p(a)-q(a)|$,
+$\sqHellinger(p,q)=1-\sum_a\sqrt{p(a)q(a)}$, and
+$\KLDivergence{p}{q}=\sum_a p(a)\log(p(a)/q(a))$ (natural logarithms).
+Write $\Delta^\circ$ for the strictly positive probability simplex.
+
+\subsection{Hidden forest and regularity}
+\label{sec:main-target-law}
+\label{sec:main-response}
+
+\begin{definition}[Forest target and committed history]
+\label{main:def:forest-target}
+Let $\PositionSet=\{1,\ldots,N\}$ and let $\Vocab$ be a vocabulary of
+size $\VocabSize$ with public order $\TokenOrder$.
+The target $X\in\Vocab^N$ has a strictly positive law
+$\TargetLaw\in\Delta^\circ(\Vocab^N)$ and a hidden undirected forest
+$\TargetForest=(\PositionSet,\TargetEdges)$\textcolor{red}{~\citep{tan2011markovforest,bhattacharyya2023chowliu}}.
+Write $\PosMarginal{i}$ for the marginal of $X_i$.
+A committed history $\History=(G,x_G)$ leaves residual positions
+$\ResidualPositions=\PositionSet\setminus G$ and forest
+$\ResidualForest=\TargetForest[\ResidualPositions]$
+(\cref{app:def:target-law,app:eq:history}).
+\end{definition}
+
+\begin{assumption}[Forest factorization]
+\label{main:ass:forest-structure}
+Choose one root per component, with root set $\TargetRoots$ and parent
+$\ParentOf{j}$ for each nonroot. Assume the factorization
+(\cref{app:ass:forest-structure}):
+\begin{equation}
+\TargetLaw(x)
+ =\prod_{u\in\TargetRoots}\PosMarginal{u}(x_u)
+  \prod_{j\notin\TargetRoots}
+  \TargetLaw(X_j=x_j\mid X_{\ParentOf{j}}=x_{\ParentOf{j}}).
+\label{main:eq:forest-factorization}
+\end{equation}
+\end{assumption}
+
+\begin{definition}[Tail sets and directed response]
+\label{main:def:response-quantities}
+\textcolor{red}{For distinct positions $i,j$, call $i$ the \emph{source}
+whose token value is varied and $j$ the masked \emph{readout} whose
+conditional distribution is inspected. For a complete boundary}
+$z\in\Vocab^{\PositionSet\setminus\{i,j\}}$, write
+$\TailSet{i}{t}=\{a:\PosMarginal{i}(a)\le t\}$ and
+$\BoundaryRow{i}{j}{a}{z}
+ =\mathcal L_{\TargetLaw}(X_j\mid X_i=a,\,
+ X_{\PositionSet\setminus\{i,j\}}=z)$.
+The directed response is
+$\DirectedResponse{i}{j}{z}
+ =\max_{a,b\in\Vocab}\dTV(\BoundaryRow{i}{j}{a}{z},
+ \BoundaryRow{i}{j}{b}{z})$ (\cref{app:def:response-quantities}).
+\end{definition}
+
+{\color{red}
+\begin{assumption}[Regularity and scaling for the main results]
+\label{main:ass:regularity-scaling}
+% Please preserve the former RT--UEN label for scoped cross-references.
+\label{main:ass:response-regularity}
+Let $\RankTailExponent>1$ and $\EdgeSignal\in(0,1]$ be public.
+% Please keep this requested indentation local; retain the official vertical spacing.
+\begingroup
+\setlength{\leftmargini}{2pc}
+\begin{itemize}
+\item \phantomsection\label[assumption]{main:ass:rt}
+\textbf{(RT) Tail response.}
+For all distinct $i,j$, $t\in[0,1]$, and complete boundaries $z$,
+$\max_{a,b\in\TailSet{i}{t}}
+ \dTV\bigl(\BoundaryRow{i}{j}{a}{z},\BoundaryRow{i}{j}{b}{z}\bigr)
+ \le t$.
+For tails of size at most one, take the maximum as zero.
+Tail tokens are thus interchangeable within TV error $t$
+(\cref{app:ass:response-regularity}).
+
+\item \phantomsection\label[assumption]{main:ass:uen}
+\textbf{(UEN) Edge nondegeneracy.}
+Every edge
+$\{u,v\}\in\TargetEdges$ and complete boundary $z$ satisfy
+$\min\{\DirectedResponse{u}{v}{z},\DirectedResponse{v}{u}{z}\}
+ \ge\EdgeSignal$.
+The witnessing token pair may depend on the direction and boundary
+(\cref{app:ass:response-regularity}).
+
+\item \phantomsection\label[assumption]{main:ass:frequency-envelope}
+\textbf{(RF) Rank-frequency envelope.}
+Rank tokens $\RankedToken{i}{k}$ by decreasing $\PosMarginal{i}$
+(ties use $\TokenOrder$). For every position $i$ and rank $k$,
+$\PosMarginal{i}(\RankedToken{i}{k})
+ \le k^{-\RankTailExponent}+\VocabSize^{-1}$
+(\cref{app:ass:rate-regime}). No lower frequency bound or adjacent-rank
+separation is assumed. This bounds tokens above thresholds exceeding
+$\VocabSize^{-1}$ and, with RT, explicit token choices
+(\cref{sec:main-algorithm-flow}).
+
+\item \phantomsection\label[assumption]{main:ass:main-scaling}
+\textbf{Scaling.}
+For a public $\VocabGrowthExponent>1/3$, take
+$\VocabSize=N^{\VocabGrowthExponent+o(1)}$
+and set $\EdgeSignal=(\TargetTolerance^2/(32N))^{1/3}$
+(\cref{app:cor:fixed-accuracy-main}).
+\end{itemize}
+\endgroup
+\end{assumption}
+}
+
+
+\subsection{Oracle access and sampling objective}
+\label{sec:main-oracle}
+
+One oracle evaluation is one \emph{masked-state submission}; a
+\emph{probe} is a noncommit counterfactual submission.
+Hypothetical-reveal tests also appear in PUNT~\citep{azangulov2025parallel};
+Definition~\ref{main:def:algorithm-risk-resources} charges probes to the sampling budget.
+
+\begin{definition}[Frozen conditional oracle]
+\label{main:def:frozen-oracle}
+A masked state is $y\in(\Vocab\cup\{\MASK\})^N$ with observed set
+$\ObservedSet{y}=\{i:y_i\ne\MASK\}$.
+For a masked readout $j\notin\ObservedSet{y}$, its exact row is
+$\ExactRow{y}{j}
+ =\mathcal L_{\TargetLaw}(X_j\mid
+ X_{\ObservedSet{y}}=y_{\ObservedSet{y}})$.
+\begingroup\color{red}
+The oracle $\FrozenOracle=\{\FrozenOracle_j\}_{j\in\PositionSet}$ is fixed
+and deterministic (\cref{app:def:frozen-oracle}). One submission returns
+probability vectors for a requested subset $S$ of masked positions:
+\[
+ (y,S)\ \xrightarrow{\text{one masked-state submission}}\quad
+ \bigl\{\OracleRow{y}{j}\bigr\}_{j\in S},
+ \qquad S\subseteq\PositionSet\setminus\ObservedSet{y}.
+\]
+Each row is the full vector
+$\OracleRow{y}{j}=(\OracleRowMass{y}{j}{a})_{a\in\Vocab}\in\Delta^\circ(\Vocab)$;
+the submission costs one evaluation, regardless of $|S|$.
+\endgroup
+\end{definition}
+
+\begingroup\color{red}
+\begin{definition}[Sampling operations, resources, and risk]
+\label{main:def:algorithm-risk-resources}
+An admissible algorithm uses $\FrozenOracle$ adaptively without remasking
+committed positions (\cref{app:def:admissible-algorithm}).
+At $\History=(G,x_G)$, both operations preserve $y_G=x_G$:
+% Please match the regularity list without changing other manuscript lists.
+\begingroup
+\setlength{\leftmargini}{2pc}
+\begin{itemize}
+\item \emph{Probe.} Submit $(y,S)$ with
+$S\subseteq\PositionSet\setminus\ObservedSet{y}$ and inspect the probabilities
+$\{\OracleRowMass{y}{j}{a}:j\in S,\ a\in\Vocab\}$ returned together.
+The state $y$ may temporarily reveal residual coordinates;
+only the transcript changes, while $(G,x_G)$ stays fixed.
+\item \emph{Commit.} Choose a nonempty batch $B\subseteq\ResidualPositions$
+from prior information, before the reply. Submit $(y,B)$ with all residual
+positions masked, receive $\{\OracleRow{y}{j}\}_{j\in B}$, and sample
+$z_B\sim\bigotimes_{j\in B}\OracleRow{y}{j}$ to commit permanently.
+\end{itemize}
+\endgroup
+Batches eventually partition $\PositionSet$.
+Committing counterfactual values or using verify-and-accept steps is not allowed.
+
+\emph{Resources (\cref{app:def:resources}).}
+Let $s=1,2,\ldots$ index the submissions actually performed, and let
+$s_{\mathrm{pre}}$ index the distinguished preprocessing all-mask readout
+($0$ if absent). Define
+\[
+\begin{aligned}
+ \CounterfactualQueries
+ &:=\bigl|\{s:s\ne s_{\mathrm{pre}},\ \text{submission }s\text{ is a probe}\}\bigr|,\\
+ \CommitRounds
+ &:=\bigl|\{s:\text{submission }s\text{ performs a nonempty product commit}\}\bigr|.
+\end{aligned}
+\]
+The construction's total is $1+\CounterfactualQueries+\CommitRounds$,
+including its one initial all-mask readout. Repeated states and parallel
+submissions count separately; positions and tests sharing one submission do not.
+The oracle depth $\OracleDepth$ counts sequential oracle stages; returned probabilities and
+local computation are not charged separately.
+
+\emph{Output law and risk.}
+The algorithm's decision rule chooses submissions and batches from available
+information and a seed $\ControllerSeed$ independent of the hidden instance
+and primitive commit-draw randomness. Conditional on $\ControllerSeed=w$,
+the output law $\SamplerOutputLaw{w}{\FrozenOracle}$ integrates the commit draws
+(\cref{app:def:output-risk}). Its seed-averaged risks are
+$\SeedRisk(\mathcal A;\TargetLaw,\FrozenOracle)
+ =\mathbb E_{\ControllerSeed}
+   \dTV(\TargetLaw,\SamplerOutputLaw{\ControllerSeed}{\FrozenOracle})$
+and $\KLSeedRisk(\mathcal A;\TargetLaw,\FrozenOracle)
+ =\mathbb E_{\ControllerSeed}\KLDivergence{\TargetLaw}
+   {\SamplerOutputLaw{\ControllerSeed}{\FrozenOracle}}$
+(\cref{app:def:kl-oracle-risk}).
+\end{definition}
+\endgroup
+
+The risks average divergence over decision-rule seeds, before mixing their
+output laws. Convexity gives
+$\dTV(\TargetLaw,\mathbb E_{\ControllerSeed}
+ \SamplerOutputLaw{\ControllerSeed}{\FrozenOracle})
+ \le\SeedRisk(\mathcal A;\TargetLaw,\FrozenOracle)$:
+the upper bound also controls the mixed output, while the lower bound
+concerns the stated seed-averaged criterion.
+
+\begin{assumption}[Uniform frozen-oracle accuracy: two cases]
+\label{main:ass:oracle-accuracy}
+For the fixed public accuracy $\TargetTolerance$, assume one of the
+following bounds uniformly over all valid state--readout pairs.
+
+\emph{\HellingerCaseTitle\ (Hellinger, A2; \cref{app:ass:oracle-accuracy}):}
+$\sqHellinger(\ExactRow{y}{j},\OracleRow{y}{j})
+ \le\TargetTolerance^2/(8N)$.
+
+\emph{\KLCaseTitle\ (forward KL; \cref{app:def:kl-oracle-risk}):}
+$\KLDivergence{\ExactRow{y}{j}}{\OracleRow{y}{j}}
+ \le\TargetTolerance^2/(4N)$.
+\end{assumption}
+\textcolor{red}{Both cases imply row-TV error at most
+$\TargetTolerance/(2\sqrt N)$, uniformly over counterfactual and commit states.
+This uniform requirement is stronger than average prediction accuracy
+of a trained model.}
+
+\begin{definition}[Target--oracle classes]
+\label{main:def:shared-rate-class}
+\textcolor{red}{For each case, take all target--oracle tuples satisfying
+\cref{main:ass:forest-structure,main:ass:regularity-scaling}
+and the corresponding condition of \cref{main:ass:oracle-accuracy}.}
+For \HellingerCase, denote this class by $\SharedClass$ and write
+$(\InstanceTargetLaw{I},\InstanceOracle{I})$ for the target and oracle of
+instance $I\in\SharedClass$ (\cref{app:cor:fixed-accuracy-main}).
+\end{definition}

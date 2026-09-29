@@ -1,0 +1,73 @@
+proposal_screen 50/676 matching N=8192 Q=13079 K=0.0 complete
+proposal_screen 100/676 binary N=10240 Q=20345 K=0.0 complete
+proposal_screen 150/676 matching N=10240 Q=8151 K=0.0 complete
+proposal_screen 200/676 stars_original N=10240 Q=24342 K=0.0 complete
+proposal_screen 250/676 binary N=12288 Q=11646 K=0.0 complete
+proposal_screen 300/676 stars_original N=12288 Q=29152 K=0.0 complete
+proposal_screen 350/676 path N=14336 Q=16925 K=0.0 complete
+proposal_screen 400/676 matching N=14336 Q=17167 K=0.0 complete
+proposal_screen 450/676 stars_original N=14336 Q=11401 K=0.0 complete
+proposal_screen 500/676 binary N=16384 Q=19619 K=0.0 complete
+proposal_screen 550/676 stars_original N=16384 Q=52209 K=0.0 complete
+proposal_screen 600/676 binary N=8192 Q=13280 K=0.0 complete
+proposal_screen 650/676 stars_original N=8192 Q=6572 K=0.0 complete
+proposal_screen 676/676 path N=8192 Q=24009 K=14.099608860665159 complete
+proposal_development 50/720 path N=14336 Q=7238 K=0.0 complete
+proposal_development 100/720 path N=16384 Q=7279 K=0.0 complete
+proposal_development 150/720 matching N=12288 Q=1824 K=0.0 complete
+proposal_development 200/720 matching N=16384 Q=6527 K=0.0 complete
+proposal_development 250/720 binary N=10240 Q=10045 K=0.0 complete
+proposal_development 300/720 matching N=14336 Q=5613 K=0.0 complete
+proposal_development 350/720 binary N=8192 Q=10567 K=0.0 complete
+proposal_development 400/720 binary N=12288 Q=11705 K=0.0 complete
+proposal_development 450/720 path N=16384 Q=6525 K=0.0 complete
+proposal_development 500/720 path N=10240 Q=8056 K=0.0 complete
+proposal_development 550/720 path N=14336 Q=6506 K=0.0 complete
+proposal_development 600/720 binary N=8192 Q=8988 K=0.0 complete
+proposal_development 650/720 binary N=14336 Q=16682 K=0.0 complete
+proposal_development 700/720 matching N=8192 Q=3279 K=0.0 complete
+proposal_development 720/720 path N=8192 Q=6654 K=0.0 complete
+random_development_coarse 50/960 stars_original N=10240 Q=9920 K=3.0207725905059315e-11 complete
+random_development_coarse 100/960 binary N=12288 Q=9216 K=1.1110671349032815e-12 complete
+random_development_coarse 150/960 path N=14336 Q=7168 K=0.009744408956787158 complete
+random_development_coarse 200/960 binary N=16384 Q=4096 K=0.015590958998589113 complete
+random_development_coarse 250/960 path N=10240 Q=160 K=0.9311789590667192 complete
+random_development_coarse 300/960 path N=12288 Q=11520 K=1.5501215881088114e-27 complete
+random_development_coarse 350/960 binary N=14336 Q=13440 K=5.805396582512058e-05 complete
+random_development_coarse 400/960 path N=16384 Q=14336 K=1.8964024891864407e-27 complete
+random_development_coarse 450/960 binary N=8192 Q=512 K=0.07060084586827119 complete
+random_development_coarse 500/960 binary N=10240 Q=10240 K=0.0 complete
+random_development_coarse 550/960 stars_original N=12288 Q=12288 K=0.0 complete
+random_development_coarse 600/960 matching N=14336 Q=224 K=1.6442802943204533 complete
+random_development_coarse 650/960 matching N=16384 Q=16384 K=0.0 complete
+random_development_coarse 700/960 matching N=8192 Q=6144 K=0.0 complete
+random_development_coarse 750/960 matching N=10240 Q=7680 K=0.0527556257842797 complete
+random_development_coarse 800/960 path N=12288 Q=12288 K=0.0 complete
+random_development_coarse 850/960 path N=14336 Q=448 K=0.4908724271491004 complete
+random_development_coarse 900/960 matching N=16384 Q=4096 K=0.4318675749103188 complete
+random_development_coarse 950/960 path N=8192 Q=7680 K=7.867027687156462e-09 complete
+random_development_coarse 960/960 path N=8192 Q=8192 K=0.0 complete
+random_development_refine_0 50/76 matching N=8192 Q=6656 K=0.0 complete
+random_development_refine_0 76/76 binary N=16384 Q=6144 K=0.02059628300789693 complete
+random_development_refine_1 50/56 matching N=8192 Q=6912 K=0.0 complete
+random_development_refine_1 56/56 binary N=16384 Q=7168 K=0.018127624906388053 complete
+random_development_refine_2 32/32 binary N=16384 Q=7680 K=1.9219714309657225e-06 complete
+fresh_confirmation 50/240 matching N=16384 Q=2439 K=0.0 complete
+fresh_confirmation 100/240 stars_original N=12288 Q=1995 K=0.0 complete
+fresh_confirmation 150/240 binary N=16384 Q=11716 K=0.0 complete
+fresh_confirmation 200/240 matching N=10240 Q=5120 K=0.0 complete
+fresh_confirmation 240/240 binary N=16384 Q=7680 K=0.011299640197015784 complete
+{
+  "status": "complete",
+  "stage": "complete",
+  "pid": 2771384,
+  "workers": 8,
+  "output": "/home/kawata/work/uen_forest_toy_fresh_reruns/20260925T114740Z__git-3eda55e59630/source/experiments/forest_toy/public_release/ideal_strict_fixed_accuracy_k1em10L0/results/ideal_capless_fixed_accuracy_scaling",
+  "started_utc": "2026-09-25T11:50:47.812377+00:00",
+  "updated_utc": "2026-09-25T13:31:03.946942+00:00",
+  "stage_jobs": 240,
+  "stage_finished": 240,
+  "seconds": 6016.134568359004,
+  "proposal_confirmed": 20,
+  "random_confirmed": 16
+}

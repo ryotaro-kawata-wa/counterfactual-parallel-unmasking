@@ -1,0 +1,41 @@
+[
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8640,
+    "role": "per_run_threshold_refine_1",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8640,
+    "role": "per_run_threshold_refine_1",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 12096,
+    "role": "per_run_threshold_refine_1",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  }
+]

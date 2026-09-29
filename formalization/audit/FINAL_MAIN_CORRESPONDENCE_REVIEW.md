@@ -1,0 +1,23 @@
+# Independent final main and finite-claim correspondence review
+
+This review compares the compiled manuscript's main setup, main upper/lower statements, finite results, KL extension, finite calibration, and the named-claim inventory with the final actual-sampler declarations. It is a mathematical interface review, not a second kernel and not an assertion that every prose sentence or literature comparison has been formalized. The final path effective-TC assembly was active under another owner during this review; its final aggregate theorem is outside this independent pass.
+
+## Actionable distinction found and closed
+
+The arbitrary-signal finite lower corollary previously had proved inclusion, an exact finite family lower theorem, and vocabulary/controller transport, but the direct public-class wrapper only specialized the signal to the benchmark. Its public benchmark wrapper also simplified the exact floor threshold. `ObservedSignalLower` now composes the proved ingredients into both literal finite public statements, including full commit feedback and arbitrary vocabulary. See `OBSERVED_SIGNAL_LOWER.md`.
+
+No additional mathematical contradiction or extra substantive assumption was identified in the reviewed main TV/KL/lower statements and finite named-claim bundles.
+
+## Quantifiers and resource points checked
+
+1. The generic upper curve puts the eventual N threshold before every allowed cutoff and every target/oracle. The public sampler and query cap do not depend on hidden target or oracle data. `GeneralUpperCurve` covers every allowed D, while `MainResourceTotals` and `GeneralResourceTotals` cover actual balanced total calls and grouped depth, including the distinguished preprocessing call.
+2. The literal appendix TV allocation is eta = radius/2. This differs from the older balanced main construction's allocation, but `GeneralUpperCurve` and `GeneralResourceTotals` now prove the literal appendix allocation as well. KL uses the separately calibrated row and failure budgets; risk is forward KL and is averaged after conditioning on the seed. The main fixed-error specialization has slack and is not relying on a seed-mixture divergence bound.
+3. All-path query/round caps include failed-screen paths. The successful-path strict round bound is separately proved. Parallel depth is witnessed by fixed-input query groups, not equated with the sequential query count. Fixed-history screen success and actual adaptive reached-screen failure are both present (`Screening.screenFailure_le_budget` and `PackedSampler.sampler_reached_screen_failure_le`).
+4. The final lower class uses `ObservedProgram`, whose commit continuation receives both the selected probability rows and values. Exact compilation to free current-history reads preserves output and risk without adding charged probes. The disclosure and collision theorems explicitly handle those free reads. The legacy value-only class is not sufficient by itself and is not the final theorem.
+5. Lower bounds are on the actual public class, with proved RT/UEN/RF/A2 inclusion and arbitrary vocabulary relabeling. Supremum and minimax nonemptiness/measurability are handled. The eventual lower alternative is pointwise for each sufficiently large even N; it does not assert that a single branch holds across all N.
+6. The residual Markov bundle contains both full conditional factorization over separated blocks (`ForestModel.residualLaw_factorizes_over_blocks`) and local row invariance. Its safe-batch corollary is not the only available component-independence result. Joint-reference KL and exact-hybrid target identities are derived from actual adaptive evaluation and replay, not assumed target output laws.
+7. Selector invariance is instantiated by the actual selector-parametric loop, not only a local row lemma. Public memory and completed current-color replies are allowed; future color blocks are excluded by the evaluator interface. The final selector modules include TV/KL risk, all-path resources, successful-path rounds, and grouped depth.
+
+## Audited limits
+
+The TeX-to-Lean correspondence remains a human-readable translation argument. In particular, a bounded paper controller is represented by a well-founded decision tree with legal fallbacks on unreachable replies; there is no parser theorem from arbitrary executable controller code. The inventory counts named statement environments and may cite several declarations for one statement. Unlabelled exposition, external citations/comparisons, experimental claims, and omitted optional manuscript sections are outside that count. These limits do not supply an extra premise to the proved main inequalities.

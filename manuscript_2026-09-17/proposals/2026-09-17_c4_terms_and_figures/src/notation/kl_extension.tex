@@ -1,0 +1,15 @@
+% Please keep the forward-KL tolerance distinct from the Hellinger radius
+% and output-TV tolerance.  The auxiliary radius is displayed directly.
+\newcommand{\KLRowBudget}{\kappa}
+\newcommand{\KLTargetTolerance}{\varepsilon^{\mathrm{KL}}}
+\newcommand{\KLTargetExponent}{a}
+\newcommand{\KLOracleRadius}{\sqrt{\KLTargetTolerance/2}}
+\newcommand{\KLCase}{case~(ii)}
+\newcommand{\KLCaseTitle}{Case~(ii)}
+\newcommand{\KLOracleClass}{\mathcal Q^{\mathrm{KL}}}
+\newcommand{\KLSeedRisk}{\mathcal R_{\mathrm{KL}}}
+\newcommand{\JointReferenceLaw}[1]{\mathbb P_{#1}^{\mathrm{joint}}}
+% Please keep the true joint batch law separate from the product-commit law.
+\newcommand{\JointBatchLaw}[1]{p(\cdot\mid #1)}
+\newcommand{\ScreenFailureEvent}{\mathsf{Fail}}
+\newcommand{\KLRateSlack}{\xi^{\mathrm{KL}}}

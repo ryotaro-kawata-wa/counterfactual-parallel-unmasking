@@ -1,0 +1,250 @@
+{
+  "manuscript_commit": "1507791fd7c1137c77ec139cc0b73b5765f1464b",
+  "manuscript_pdf_sha256": "72995407689cc36e9ffb860b69f1fb0bbd5b6136995b027ae2a3e83216d9bd26",
+  "compiled_tex_inputs": [
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/main_arxiv.tex",
+      "sha256": "5d1b7f1a4c7959833d396e2a0726f60b7226d71f516253d6d8ef6afcf7f5b9df"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/main.tex",
+      "sha256": "8f7a02d95c9bb6d9a349017c0c937e73c310f2eef95bc02a3aacb733b5544bc9"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/arxiv_preamble.tex",
+      "sha256": "73c018c641aaaffc20032f1f9bfdff2337e21472d5b17cb38101d695478a4785"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/math_commands.tex",
+      "sha256": "90473c4d0542070db244cea73ef962d6cddc5b2a746757e6a40ddf5fdfb90ba9"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation.tex",
+      "sha256": "cfdf91501302d95e05c648b7daf14ffdbdaa3dfa4eab389b82353d9d58a31926"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/core.tex",
+      "sha256": "51af67e969c37b5e36008ae78ae03e0c805fd20d91c8a5807efe2b8d8031a810"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/target.tex",
+      "sha256": "8a4fbf1b91fb05d84a4d1283c5dfda4b18563f18a275ae486826a09589cb0866"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/oracle_resources.tex",
+      "sha256": "5d2c39f5fc599f937a4384b5ea3a2415259f1ef37794c629b64df56f146a1613"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/upper_algorithm.tex",
+      "sha256": "d2b63d2be494eed00f4b4d4e72904b34cb17639e648e99db7c7502c3492a598a"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/lower_family.tex",
+      "sha256": "ca7bd6055673ee1f5067fe85ce4787dca0f7d6f8930a45597090292242af3ab6"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/rates.tex",
+      "sha256": "e169e76392583eec0a79db2383f158e6500c7969d6e32338761f66d1d59efe56"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/kl_extension.tex",
+      "sha256": "a59cfde7e2da7e32935d0eb06cce306243053fb955df81b4acc51caf75daad8b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/benchmark.tex",
+      "sha256": "221cf984d365c9aef7453336e9e3498af7cef12da30928f11cd86f6442928840"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/comparison.tex",
+      "sha256": "45254ee1212734ed09c9ffad5f715978e19b93b00194f5f62f4b131f532a8056"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/theorem_environments.tex",
+      "sha256": "d2965a72eef5e5b3c53a4a6ff546f02198b5f30777979a0cb3b49b69b60ee393"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/algorithm_environments.tex",
+      "sha256": "8cee090da7fde42cee211b6e0793162d8cffc5cf140ee40c38c5a7bc64423a7a"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/proposal_presentation.tex",
+      "sha256": "113aed9da12897c2da3d11008de1222c811d3405ab562c2f20d24886d2bb4dd7"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/algorithm_example_environments.tex",
+      "sha256": "ce83c5461dc9a817a7e1408e7a9a2ceb6628c8d8634ca7338c8e9c354f6e8f1b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/algorithm_blocks.tex",
+      "sha256": "4018ccaa0840d63074201a4df5b1dc671080b4587125123e0016316227efac21"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/black_text.tex",
+      "sha256": "0b3b2d7579e18489ec33c3a4d5eea66a8291e131bc0d1e118f8b0e973cfaee98"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/intro_counterfactual_2026-09-20/main_figure.tex",
+      "sha256": "48702709e1ad6b4690429ffcfb271dbbd91be2a00ec4e6823dca6de6ad8b3500"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "sha256": "4d8a7bde892678220e504bd145e0c582215081fbff53794396589e2cdfaa5600"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_upper.tex",
+      "sha256": "0ee89f5be71f73cbf9b996801b9cc0a64b801a4733c99e0de432ac7591768e29"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_resource_table.tex",
+      "sha256": "e389151c83bd07ff78b6839a72239197a58a8a3aca5b92111b10c63486e99394"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_lower.tex",
+      "sha256": "593dd3498e18e7cafc254de0294bd60fbc9b711f23c132bcbcf0afb60f3e1e92"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_algorithm.tex",
+      "sha256": "c7b255cd50b6e8364c10b8aa243e59cf118b35b9a520bf53300d2a594934eb93"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/fig2_votes_2026-09-26_002617_JST.tex",
+      "sha256": "b3f0fa4de8f6869911d13bb405ae7e1faa1a052dd79d10d677a88cdb4530cbdb"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_related_work.tex",
+      "sha256": "1294ff1e21c4dc905043a7a1c25a78d76e1bea1ac4d9c4854f718f7949ac8a61"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_experiments.tex",
+      "sha256": "8668f2e999d72db866701cf9c621b916e00e86cbc2d1275851707f8b46743b1e"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_conclusion.tex",
+      "sha256": "baf74b7d2431600e87b4bb8585054e738b9b47c6c7cbade0199bbc6b5127e214"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/ai_use_statement.tex",
+      "sha256": "068117802b9631689e2e9d54fa7e2410f57217d3025bb6c24a9e02df100d158d"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "sha256": "187e7ce34910fe5497eb7606560a5ac9397e7592b0bd1c12d6f5d10a458bf670"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_results.tex",
+      "sha256": "86b9bc00a697ce026a732b2175ae80e14d790ce9215cd809247ae33b7071f76e"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_lower_proofs.tex",
+      "sha256": "18b1532b7bc8431f8d6e148e385566e5802b9ce57def86f528e8181422dae62c"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_family.tex",
+      "sha256": "920d4f58a8c3490ed3fd6dc98961c2b5acf48f8afec6ce9e9e0123398ca6d506"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_midpoint.tex",
+      "sha256": "1b8fc98ad891c0eb78d4a479873e67a981b8a604eea6ce3d135cacace72ec9ba"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_invariant.tex",
+      "sha256": "e56351ab5cc6f02c2963df1631c0b8b6764eb7a88635583cb201212ec1f2294b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/figures/c4_matching_states.tex",
+      "sha256": "86f90c46de240bdb830c33ae35915556ebb6cb91a4ff054b263d96419fac0ae0"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_collisions.tex",
+      "sha256": "1c11e65c3cc567849cd7873ccd089ed5c8a652eca03d484b2b03a1ff449a2db3"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_matching_laplace.tex",
+      "sha256": "25406a25a1efe0e5d7afd8d0dca0827f041b807811bcc273f6c16286700c9bb0"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_collision_tail.tex",
+      "sha256": "4a40a039cf09a80495618e79798b12b8961112c29392841aafe8e3ac650b3372"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_affinity.tex",
+      "sha256": "b3893ee274e78d13f3b0a72e965e71fad48e7ffc935432fdd5c07ff63b0e95f5"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_nonlinear.tex",
+      "sha256": "62054d4f8f81ba4b668dd8d56d77f2993c0466cb2c019fc881a3dab332482149"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_algorithm.tex",
+      "sha256": "59266b59099bbc6ac165559bedc99e8fb543b70e2c18c61cd4dcbf348b399228"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/bank_example.tex",
+      "sha256": "3625ee16faf3c65e1eb2b41ec9a4cb5fabbd8d9a7ee6d7f6247331aa57573a12"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/index_roles.tex",
+      "sha256": "0da5eb7bf1d433a50742abaab32c6c8788d063889fb5618f3f1423ce3c3e6f29"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/submission_example.tex",
+      "sha256": "67a1354e995be0d98ef9c4e659e61736d3e6b909da9f912f5c8d38e220a38b70"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_upper_proofs.tex",
+      "sha256": "bf39c0e50bfbba67e3b1181805b29af6483173d2e43098c2c7da7115d4559c4e"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_screen.tex",
+      "sha256": "275599df517ffc5b65a95c6b8241a0056c2282e5aa6d7ab86afaff79ead177e4"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/separation_example.tex",
+      "sha256": "47c0dfd1f8f48013d9d5c7cbdce1414fdc5fe7471eb03e393eb5f92d39d74d41"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_structure.tex",
+      "sha256": "7b0827e26bf76c74d543a151033025c6a8086612aab396000e46870af55e36dc"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/workflow_example.tex",
+      "sha256": "24813969f04c0b42609917cc2fe93eafe8cde9ebeca25d43c87b004d25c82bca"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/survivor_example.tex",
+      "sha256": "fd3ab7dc93f17412349c37c926a9633f8f190d50bcb02a112f959b4bb171fdbc"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_error.tex",
+      "sha256": "9ba3e301183b0b57acfab670d8758e90981da87835017cba56c5b3437b14381f"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_kl_extension.tex",
+      "sha256": "1fe166f045664cf2f148592fd2eb26b1f7bed1467309b51bcd983170d9983c5b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_benchmarks.tex",
+      "sha256": "a258e8e760337d2e06cd536dc17835cf9f1f437bb57c09d06df405516ab290d2"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_auxiliary.tex",
+      "sha256": "db616abc46986bfc1a22ebd2e2c9b3fe6eca0618a87dd89ca8cf460af0cb1d36"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/row_selector_invariance.tex",
+      "sha256": "f0d936e6e17f9468fb9f031aecb8019feff90ac2809cb5cfbb8bb695f5302f2a"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_comparison.tex",
+      "sha256": "10ab6db6ee3616dd3c57a319585adc9025c0a4b1428fd060bdad9190a883ad65"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_oracle_comparison.tex",
+      "sha256": "30d0f9f152379407c9af0d0135d3c5991bb2d4361c9db50c340fa3fa2ba12693"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_experiments.tex",
+      "sha256": "1b7c261e5dcad0da9de66fd926323908e158e528057cc68563f44b39390eacbb"
+    }
+  ]
+}

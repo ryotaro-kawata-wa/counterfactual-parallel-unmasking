@@ -1,0 +1,225 @@
+\section{Source locators and conventions for Table~\ref{tab:resource-comparison}}
+\label{app:oracle-comparison}
+
+This appendix is a verification aid for Table~\ref{tab:resource-comparison},
+not a separate survey.  For each external row, it records the linked version,
+the theorem or definition supporting the entry, and only the conversion needed
+to read the table.  Numbering below refers to the linked version and may differ
+from another bibliographic version.
+
+\paragraph{Common conventions.}
+For an external randomized schedule $M$ with conditional output law $Q_M$,
+\emph{Mean KL/TV} denotes $\mathbb E_M D(P,Q_M)$, not
+$D(P,\mathbb E_MQ_M)$; an unqualified TV guarantee concerns the randomized
+output law.  The marker \emph{exp.} applies to both resource
+columns, while \emph{same} means that the submission bound also bounds depth.
+Appendix~\ref{app:comparison-states} gives the conversion from conditional-row
+queries or unmasking updates to our masked-state submissions.  Fixed accuracy
+and polynomial vocabulary are imposed only when comparing growth in $N$.
+Uniform counterfactual-row error and an average under a data--mask or trajectory
+law are different oracle assumptions; Table~\ref{tab:resource-comparison}
+does not identify them.
+
+\subsection{Distribution-general sampler rows}
+\label{app:comparison-exact-oracles}
+
+\begin{description}
+\item[\Citet{anari2024parallel}.]
+\href{https://arxiv.org/pdf/2408.09442v1}{arXiv:2408.09442v1},
+Theorem~2 and Algorithm~4: exact conditional rows and exact output, with
+$O(N)$ expected row queries and $\widetilde O(N^{2/3})$ expected depth for
+polynomial vocabulary.  Appendix~\ref{app:comparison-states} supplies the
+submission conversion used in the table.
+
+\item[\Citet{anari2026autospeculation}.]
+\href{https://arxiv.org/pdf/2511.07869v1}{arXiv:2511.07869v1},
+Theorem~27 and footnote~3: $O(N\log N)$ expected full-row queries and
+$O(\sqrt{N\log\VocabSize\,(\log N)^3})$ expected depth.
+Remark~32, equation~(25), gives the noisy-row TV entry:
+\begin{equation}
+ e\le\min\{\tau/N,N^{-3/2}\}
+ \quad\Longrightarrow\quad
+ \mathrm{TV}(P,Q)\le\tau.
+ \label{app:eq:autospec-native-tv}
+\end{equation}
+The condition is uniform TV accuracy of the normalized rows; the conclusion is
+TV for the output law.  Exact rows give exact output.
+\end{description}
+
+\subsection{Dependence-based schedule rows}
+\label{app:comparison-unmasking-errors}
+
+\begin{description}
+\item[\Citet{li2025convergence}.]
+\href{https://arxiv.org/html/2505.21400v2}{arXiv:2505.21400v2},
+Definition~1, equation~(7), defines the predictor error averaged over target
+data, random masks, and the weighted time index.  Theorem~1, equation~(8), and
+Corollary~1, equation~(9), give for near-balanced blocks
+\[
+ \mathbb E_M\mathrm{KL}(P\Vert Q_M)
+ \le \frac{C}{K}\bigl(\mathrm{TC}(P)+\mathrm{DTC}(P)\bigr)
+      +\varepsilon_{\rm train},
+\]
+where $M$ is the random schedule and $K$ is its number of updates.  The table
+allocates a constant accuracy budget to $\varepsilon_{\rm train}$ and
+substitutes the path calculation in
+Proposition~\ref{app:prop:path-in-class}; no uniform counterfactual-row
+condition is inferred from this average.
+
+\item[\Citet{chen2026optimal}.]
+\href{https://arxiv.org/html/2511.04647v2}{arXiv:2511.04647v2},
+Definition~1.1 specifies schedule-averaged forward KL, Definition~2.1 defines
+one partial-assignment query returning all remaining conditional rows, and
+Theorem~1.9 gives, for a supplied TC or DTC upper bound $\widehat T$,
+\begin{equation}
+ \mathbb E_M\mathrm{KL}(P\Vert Q_M)\le\varepsilon,
+ \qquad
+ K\le2+(1+\log N)(1+\lceil\widehat T/\varepsilon\rceil).
+ \label{app:eq:chen-native-bound}
+\end{equation}
+The table uses exact rows and a constant-factor supplied bound.  On the path of
+Proposition~\ref{app:prop:path-in-class}, both TC and DTC are $\Theta(N)$.
+\end{description}
+
+\paragraph{Baselines and this paper.}
+Exact singleton sampling uses $N$ submissions and depth $N$ by the chain rule.
+For marker $a$, one exact product batch has forward KL
+$\mathrm{TC}(P)$, which is linear on the path of
+Proposition~\ref{app:prop:path-in-class}; it is only a resource baseline.
+Our two rows are the balanced bounds in
+Theorem~\ref{main:thm:upper-curve} and
+\eqref{main:eq:balanced-upper}: case (i) uses uniform row squared-Hellinger
+error and reports mean TV, while case (ii) uses uniform row forward KL and
+reports mean forward KL.  Their exact finite statements are
+Theorems~\ref{app:thm:finite-upper} and
+\ref{app:thm:finite-kl-upper}.
+
+\subsection{Supplementary citation map}
+\label{app:related-work-supplement}
+
+The following citations supply context only; they are not used to derive a row
+of Table~\ref{tab:resource-comparison}.
+
+{\color{red}
+\paragraph{Modeling background.}
+\begin{itemize}
+\item \emph{Forest approximation.}
+\citet{liu2011forestdensity} study nonparametric density estimation using
+forests, allowing the true continuous distribution to lie outside that
+family (\href{https://jmlr.org/papers/v12/liu11a.html}{abstract}).
+This motivates forests as an approximation class; our target instead
+satisfies exact forest factorization.
+
+\item \emph{Prediction without exact structure recovery.}
+\citet{bresler2020predictions} study tree Ising prediction using
+\emph{small-set TV}, which compares marginals on small subsets
+(\href{https://arxiv.org/abs/1604.06749}{abstract}).
+This differs from the global TV objective of
+\citet{daskalakis2021treeising} and our case (i).
+
+\item \emph{Learned conditional distributions.}
+\citet{heckerman2000dependency} allow separately learned local conditionals
+that need not be compatible with a joint law
+(\href{https://www.jmlr.org/papers/volume1/heckerman00a/heckerman00a.pdf\#page=7}{Section 3,
+pp.~55--56}). Their inference procedure uses ordered pseudo-Gibbs updates;
+our interface supplies masked-state rows for irreversible commits.
+\end{itemize}
+
+\paragraph{Algorithmic antecedents.}
+\label{app:algorithmic-antecedents}
+The construction in Section~\ref{sec:main-algorithm} connects the following
+design principles to hidden-forest sampling.
+\begin{itemize}
+\item \emph{Shared evaluations (Steps 2--3).}
+\citet{coleman1983estimation} use graph coloring to reduce function
+evaluations for sparse Jacobian estimation (see the paper's
+\href{https://epubs.siam.org/doi/10.1137/0720013}{abstract}).
+Our packed probes share evaluations across source--readout pairs;
+the separation conditions (R)/(S) in Section~\ref{sec:main-packed-screen}
+make their conditional replies reproduce single-source tests.
+
+\item \emph{Hashing and majority recovery (Step 3).}
+\citet{bshouty2018exact},
+\href{https://arxiv.org/pdf/1706.06934v1\#page=17}{arXiv v1, Section 4.3,
+Theorem 8, Figure 1, steps 1--3}, hash variables, lift identified buckets
+back to variables, and aggregate by majority.
+Our bucket tests use conditional-row diameters; we recover low-degree
+neighborhoods rather than a Boolean function.
+
+\item \emph{Peeling (Step 4).}
+\citet{becker2010referee},
+\href{https://arxiv.org/pdf/1009.4447v2\#page=9}{arXiv v2, Section 3.1, p.~9},
+reconstruct a forest by decoding leaves from exact degrees and neighbor-ID
+sums, then removing them and updating these summaries.
+Here, low-degree reports instead select singleton commits that shrink
+the high-degree core (\cref{main:eq:peeling-contraction}), without requiring
+complete neighborhoods for the committed vertices.
+
+\item \emph{Separator layers (Steps 5--6).}
+\citet{iyer1988optimal} relate vertex ranking to separator-tree height
+(see their
+\href{https://research.ibm.com/publications/optimal-node-ranking-of-trees}{abstract}).
+In our centroid schedule, earlier layers have higher ranks: their committed
+vertices separate same-layer vertices into distinct residual components.
+We use centroid recursion, not their optimal-ranking algorithm.
+\end{itemize}
+}
+
+\paragraph{\textcolor{red}{Additional context.}}
+Diffusion foundations and discrete or language formulations include
+\citet{sohldickstein2015deep,ho2020denoising,song2021score,
+campbell2022continuous,li2022diffusionlm,he2023diffusionbert}.
+Parallel-time and complementary complexity perspectives include
+\citet{shih2023parallel,chen2024sublinear,yao2026parallelintime,
+feng2025theoretical,jiang2026optimal,zhang2026generation,liang2026sharp}.
+
+Adaptive order, lookahead, confidence, and schedule analyses include
+\citet{li2024promises,kim2025train,hayakawa2026demystifying,
+lee2025lookahead,fu2025bits,lavenant2025error,zhao2026adaptation,
+cai2026confidence,jys}.
+For the specific round statement cited in the main text, the locator for
+\citet{fu2025bits} is
+\href{https://arxiv.org/html/2511.21103v1}{arXiv:2511.21103v1},
+Assumption~3.1 and Theorem~3.2.
+Dependence-based, remasking, and within-batch modeling perspectives include
+\citet{dmitriev2026efficient,dmitriev2026remasking,wainwright2026geometry,
+bansal2026randomwalks,hayakawa2025distillation,liu2024discrete,
+lezama2022discrete}.
+
+Related oracle, learning, and convergence settings include approximate-density
+and conditional-sampling access
+\citep{golowich2026testtime,canonne2015conditional,canonne2021random,
+chen2021junta,blanca2023coordinate}, distributed sampling
+\citep{feng2020local}, learned-denoiser error
+\citep{wakasugi2025state}, and discrete-diffusion convergence
+\citep{zhang2025convergence,ren2025discrete,liang2025absorb}.
+These works use objectives or access models different from the fixed
+singleton-conditional interface studied here; no quantitative conversion is
+claimed beyond the four source rows above.
+
+\subsection{Reading Table~\ref{tab:resource-comparison}}
+\label{app:comparison-table-notes}
+
+\begin{itemize}
+\item The external entries are sufficient upper bounds, not lower bounds on
+their samplers.  The two Anari rows retain their distribution-general
+guarantees.  For the TC/DTC rows, Appendix~\ref{app:comparison-path}
+substitutes one path with
+$\mathrm{TC}(P)=\mathrm{DTC}(P)=\Theta(N)$; this does not imply that those
+samplers require linear work.
+
+\item Marker $b$ is exactly the pair of row-precision requirements in
+\eqref{app:eq:autospec-native-tv}.  For
+\citet{chen2026optimal}, $\widehat T$ is a supplied TC or DTC upper bound.
+For the Li--Cai row, $K=N$ removes the factorization term in its Theorem~1;
+for the Chen et al. row, exact singleton sampling gives the $N$-call cap.
+
+\item The scaling comparison fixes positive output tolerance and polynomial
+vocabulary.  Constant allocations to source-specific learning or sampling
+error do not change the displayed powers of $N$.
+
+\item Our rows use $\RankTailExponent>1$ and the balanced examples of
+\eqref{main:eq:balanced-upper}.  Their common leading resource power is
+$2/3+1/(9\RankTailExponent)<1$; the target class and oracle assumptions remain
+part of the comparison.
+\end{itemize}

@@ -1,0 +1,674 @@
+\section{Full problem setup}
+\label{app:setup}
+
+We use the size convention of Section~\ref{sec:main-setup}: $N$ is fixed
+within each finite statement, and size dependence is suppressed, including
+in $\TargetLaw,\VocabSize,\EdgeSignal$ and the accuracy parameters.
+In rate statements, parameters declared constant are independent of $N$;
+every public sequence and its deterministic remainder is fixed uniformly
+over the class before any hidden target or oracle is chosen.
+
+\paragraph{Reading route to the main claims.}
+The formal setup below fixes the objects used by all proofs.
+The following routes give the dependencies of the main claims:
+\begin{itemize}
+ \item \emph{Lower bound in \HellingerCase, \cref{main:thm:lower-envelope}.}
+ Appendix~\ref{app:results} defines the matching family and states its
+ finite lower bound.  Appendix~\ref{app:lower-proof} proves the bound and
+ verifies class inclusion in \cref{app:prop:hard-family-inclusion}.
+ Then the adjacent
+ \cref{app:cor:signal-calibrated-finite-lower,app:cor:fixed-accuracy-main}
+ in Appendix~\ref{app:benchmark-specializations} give the finite
+ calibration and the fixed-accuracy deduction of the main theorem.
+ \item \emph{Upper bounds in both cases, \cref{main:thm:upper-curve}.}
+ Appendix~\ref{app:algorithm} specifies the executable sampler.
+ Appendix~\ref{app:upper-proof} proves the shared screen, peeling, and
+ resource bounds, and the TV guarantee in \HellingerCase\
+ (\cref{app:thm:finite-upper}).
+ Appendix~\ref{app:kl-extension} proves the forward-KL guarantee in
+ \KLCase\ (\cref{app:thm:finite-kl-upper}), using
+ \cref{app:lem:adaptive-joint-kl}.
+ \Cref{app:lem:benchmark-feasibility,app:cor:fixed-accuracy-main}
+ verify the finite calibration and derive \cref{main:thm:upper-curve}
+ with accuracy fixed before $N\to\infty$.
+ \ifincludeexponents
+ \Cref{app:cor:benchmark-hellinger,app:cor:benchmark-kl} give the further
+ joint-limit consequences when accuracy also varies with $N$.
+ \fi
+ \item \emph{Comparison in Table~\ref{tab:resource-comparison}.}
+ Appendix~\ref{app:comparison} proves the row-to-state accounting and
+ the path's TC/DTC scales; Appendix~\ref{app:oracle-comparison} records
+ the assumptions of the source results being substituted.
+ \item \emph{Finite-size experiments, Section~\ref{sec:main-experiments}.}
+ Appendix~\ref{app:experiments} gives the targets, accuracy test, tuning,
+ resource accounting, and evaluation protocol.
+\end{itemize}
+The elementary auxiliary facts in Appendix~\ref{app:auxiliary} are
+referenced at their point of use.  That appendix also collects the
+supplementary selector-invariance result.
+\ifincludeexponents
+Appendix~\ref{app:independent-signal} gives the additional rates when
+the signal floor is specified independently; these are not needed for
+the two fixed-accuracy main theorems.
+\fi
+
+Short intuition paragraphs precede the main proof steps.
+There, $\simeq$ compares scales up to fixed positive multiplicative
+constants in the stated regime.  An upper bound alone is written with
+$\lesssim$ or an explicit inequality, and subpolynomial factors are
+displayed when relevant.  All formal statements retain their finite
+constants and domains.
+
+\begin{proposalcontext}{Supplementary context}
+Unnumbered remarks give supplementary context beyond the proof route above.
+Assumptions, resource definitions, conditioning arguments, and restrictions
+needed to apply a result are stated in the main exposition.
+\end{proposalcontext}
+
+For each $N\ge 3$, let $\PositionSet:=\{1,\ldots,N\}$ be the set of positions and
+let $\Vocab$ be a finite vocabulary of size $\VocabSize\ge 2$, equipped with
+a public total order $\TokenOrder$.  For a finite set $\mathcal A$, write
+$\Delta(\mathcal A)$ for its probability simplex and
+$\Delta^\circ(\mathcal A)$ for the strictly positive part.  For
+\(p,q\in\Delta(\mathcal A)\), we use the normalizations
+\begin{equation}
+ \dTV(p,q)
+ :=\frac12\sum_{a\in\mathcal A}|p(a)-q(a)|,
+ \qquad
+ \sqHellinger(p,q)
+ :=1-\sum_{a\in\mathcal A}\sqrt{p(a)q(a)}.
+ \label{app:eq:distances}
+\end{equation}
+For \(q\in\Delta^\circ(\mathcal A)\), also write
+\begin{equation}
+ \ChiSquareDivergence{p}{q}
+ :=\sum_{a\in\mathcal A}\frac{(p(a)-q(a))^2}{q(a)}.
+ \label{app:eq:chi-square-divergence}
+\end{equation}
+Also define $\KLDivergence{p}{q}:=\sum_a p(a)\log(p(a)/q(a))$, with
+natural logarithms and the convention $0\log(0/q(a))=0$.
+For \(x\in\mathbb R\), let \(\PositivePart{x}:=\max\{x,0\}\).
+
+All quantities explicitly declared public below, together with the algorithm
+and the law of its internal random seed, are fixed before the target instance
+is chosen.  The hidden target law and, subsequently, the frozen oracle may be
+chosen adversarially.  Local vocabulary banks $\TokenBank{i}$, tail
+representatives, drafts, and graph certificates are constructed from oracle
+replies by the algorithm.
+
+\subsection{Target law and hidden forest}
+\label{app:setup-target}
+
+We expand \cref{main:def:forest-target,main:ass:forest-structure}.
+
+\begin{definition}[Forest-structured target law]
+\label{app:def:target-law}
+Let $X=(X_1,\ldots,X_N)\in\Vocab^N$ have a hidden strictly positive law
+$\TargetLaw\in\Delta^\circ(\Vocab^N)$, and let
+$\TargetForest=(\PositionSet,\TargetEdges)$ be a hidden undirected forest.  The exact position
+marginal is
+\begin{equation}
+ \PosMarginal{i}:=\mathcal L_{\TargetLaw}(X_i)
+ \in\Delta^\circ(\Vocab),
+ \qquad i\in\PositionSet.
+ \label{app:eq:position-marginal}
+\end{equation}
+For each orientation $i\to j$ of an edge $\{i,j\}\in\TargetEdges$, let
+$\EndpointKernel{i}{j}(\cdot\mid a)\in\Delta^\circ(\Vocab)$ be an endpoint
+kernel for every $a\in\Vocab$.
+\end{definition}
+
+\begin{assumption}[Structural forest law (S0--C0)]
+\label{app:ass:forest-structure}
+\textbf{Forest factorization (S0).}
+Fix one hidden reference root in each connected component.  If
+$\TargetRoots$ is the resulting root set and $\ParentOf{j}$ is the
+induced parent of a nonroot vertex $j$, assume
+\begin{equation}
+ \TargetLaw(x)
+ =\prod_{u\in\TargetRoots}\PosMarginal{u}(x_u)
+  \prod_{j\notin\TargetRoots}
+  \EndpointKernel{\ParentOf{j}}{j}
+  (x_j\mid x_{\ParentOf{j}}).
+ \label{app:eq:S0}
+\end{equation}
+
+\textbf{Endpoint compatibility (C0).}
+For every $\{i,j\}\in\TargetEdges$ and $a,b\in\Vocab$, assume
+\begin{equation}
+ \PosMarginal{i}(a)\EndpointKernel{i}{j}(b\mid a)
+ =\PosMarginal{j}(b)\EndpointKernel{j}{i}(a\mid b).
+ \label{app:eq:C0}
+\end{equation}
+Moving a root across one edge replaces the left-hand side of
+\ref{app:eq:C0} by its right-hand side and leaves every other factor
+unchanged.  Iterating this replacement along the unique path between two roots
+shows that (S0)--(C0) yield the same factorization for every componentwise root
+choice.
+\end{assumption}
+
+To obtain these kernels from \cref{main:ass:forest-structure}, set
+$\EndpointKernel{i}{j}(b\mid a):=\TargetLaw(X_j=b\mid X_i=a)$
+for each oriented edge. Then (S0) is the main-text factorization, and
+(C0) follows from
+\[
+ \PosMarginal{i}(a)\EndpointKernel{i}{j}(b\mid a)
+ =\TargetLaw(X_i=a,X_j=b)
+ =\PosMarginal{j}(b)\EndpointKernel{j}{i}(a\mid b).
+\]
+
+For a committed set $G\subseteq\PositionSet$ and realized values
+$x_G\in\Vocab^G$, define the history, uncommitted set, and residual
+forest by
+\begin{equation}
+ \History:=(G,x_G),
+ \qquad
+ \ResidualPositions:=\PositionSet\setminus G,
+ \qquad
+ \ResidualForest:=\TargetForest[\ResidualPositions].
+ \label{app:eq:history}
+\end{equation}
+Strict positivity makes every such history admissible.
+For any graph $H=(W,E_H)$, we write
+$\mathcal N_H(v):=\{u\in W:\{u,v\}\in E_H\}$ for its neighborhood and
+$d_H(v):=|\mathcal N_H(v)|$ for its degree.  The induced graph $H[S]$,
+for $S\subseteq W$, has vertex set $S$ and edge set
+$\{\{u,v\}\in E_H:u,v\in S\}$; $V(T)$ denotes the vertex set of a
+connected component $T$.
+
+\subsection{Response regularity}
+\label{app:setup-response}
+
+\textcolor{red}{The response quantities below correspond to
+\cref{main:def:response-quantities}; the general regularity assumptions
+correspond to the RT, UEN, and RF items of
+\cref{main:ass:regularity-scaling}.}
+For simplicity, the main text and \cref{app:cor:fixed-accuracy-main}
+use $\ResponseExponent=\ResponseConstant=\FrequencyConstant=1$.
+
+\begin{definition}[Marginal tails and intrinsic responses]
+\label{app:def:response-quantities}
+For a source position $i\in\PositionSet$ and threshold $t\in[0,1]$, define the exact
+marginal tail
+\begin{equation}
+ \TailSet{i}{t}
+ :=\{a\in\Vocab:\PosMarginal{i}(a)\le t\}.
+ \label{app:eq:tail}
+\end{equation}
+For distinct positions $i,j$ and a complete boundary
+$z\in\Vocab^{\PositionSet\setminus\{i,j\}}$, define the boundary-conditioned
+row
+\begin{equation}
+ \BoundaryRow{i}{j}{a}{z}
+ :=\mathcal L_{\TargetLaw}\!\left(
+ X_j\mid X_i=a,
+ X_{\PositionSet\setminus\{i,j\}}=z
+ \right).
+ \label{app:eq:boundary-row}
+\end{equation}
+For an edge $e=\{u,v\}\in\TargetEdges$ and such a complete boundary, define
+the directed intrinsic response
+\begin{equation}
+ \DirectedResponse{v}{u}{z}
+ :=\max_{a,b\in\Vocab}
+ \dTV\bigl(
+ \BoundaryRow{v}{u}{a}{z},
+ \BoundaryRow{v}{u}{b}{z}
+ \bigr).
+ \label{app:eq:intrinsic-response}
+\end{equation}
+\end{definition}
+
+\begin{assumption}[Response regularity (RT--UEN)]
+\label{app:ass:response-regularity}
+Let $\ResponseExponent>0$, $\ResponseConstant\in[0,\infty)$, and
+$\EdgeSignal\in(0,1]$ be public.
+
+\textbf{Power tail-response continuity (RT).}
+For all distinct $i,u\in\PositionSet$, every $t\in[0,1]$, and every complete assignment
+$z\in\Vocab^{\PositionSet\setminus\{i,u\}}$, assume
+\begin{equation}
+ \max_{a,b\in\TailSet{i}{t}}
+ \dTV\bigl(
+ \BoundaryRow{i}{u}{a}{z},
+ \BoundaryRow{i}{u}{b}{z}
+ \bigr)
+ \le \ResponseConstant t^{\ResponseExponent}.
+ \label{app:eq:RT}
+\end{equation}
+The maximum is defined to be zero when the tail is empty or a singleton.
+
+\textbf{Two-sided edge nondegeneracy (UEN).}
+For every edge
+$e=\{u,v\}\in\TargetEdges$ and every complete boundary $z$, assume
+\begin{equation}
+ \min\bigl\{
+  \DirectedResponse{v}{u}{z},
+  \DirectedResponse{u}{v}{z}
+ \bigr\}
+ \ge \EdgeSignal.
+ \label{app:eq:UEN}
+\end{equation}
+Only the scale $\EdgeSignal$ is public; the forest, edge direction,
+boundary, and maximizing token pair remain hidden.
+\end{assumption}
+
+\begin{assumption}[Asymptotic vocabulary and frequency envelope (RF)]
+\label{app:ass:rate-regime}
+For asymptotic rate statements, let $\VocabGrowthExponent>0$,
+$\RankTailExponent>1$, and $\FrequencyConstant\ge1$ be public constants, and
+assume $\VocabSize=N^{\VocabGrowthExponent+o(1)}$.  Order the vocabulary at each position by exact
+marginal mass,
+\begin{equation}
+ \PosMarginal{i}(\RankedToken{i}{1})\ge\cdots\ge
+ \PosMarginal{i}(\RankedToken{i}{\VocabSize}),
+ \label{app:eq:hidden-ranks}
+\end{equation}
+with ties broken by $\TokenOrder$, and assume uniformly in $i\in\PositionSet$ and
+$k\in[\VocabSize]$ that
+\begin{equation}
+ \PosMarginal{i}(\RankedToken{i}{k})
+ \le \FrequencyConstant
+      (k^{-\RankTailExponent}+\VocabSize^{-1}).
+ \label{app:eq:RF}
+\end{equation}
+No lower Zipf bound or adjacent-rank separation is assumed.  This assumption
+is used only to turn finite bounds into uniform asymptotic rates; it is not
+needed for finite correctness once threshold feasibility and the realized bank
+sizes are fixed.
+\end{assumption}
+
+% Please keep the two case descriptions together with their introductory heading.
+\begin{samepage}
+\subsection{Frozen conditional oracle}
+\label{app:setup-oracle}
+
+The two cases of Assumption~\ref{main:ass:oracle-accuracy} share the frozen oracle
+interface below, with different accuracy conditions and output objectives:
+\begin{itemize}
+ \item \emph{\HellingerCaseTitle\ (Hellinger/TV).}
+ The uniform squared-Hellinger condition is (A2) below; the output objective
+ is the seed-averaged TV risk in \textcolor{red}{\cref{app:def:output-risk}}.
+ The normalized Hellinger radius $\OracleRadius$ remains independent
+ of the output-TV tolerance $\TargetTolerance$.
+ \item \emph{\KLCaseTitle\ (forward KL).}
+ \Cref{app:def:kl-oracle-risk} defines the uniform forward row-KL
+ condition and the seed-averaged forward-KL output objective.
+\end{itemize}
+\end{samepage}
+The main text uses $\OracleRadius=\TargetTolerance/2$ in \HellingerCase\
+and $\KLTargetTolerance=\TargetTolerance^2/2$ in \KLCase, with the latter
+calibrated by \cref{app:cor:kl-epsilon}.
+\Cref{app:cor:fixed-accuracy-main} gives both main-text specializations.
+
+\begin{definition}[Frozen conditional oracle]
+\label{app:def:frozen-oracle}
+As in \cref{main:def:frozen-oracle}, let $\MASK\notin\Vocab$. For a masked state
+$y\in(\Vocab\cup\{\MASK\})^N$, define
+\begin{equation}
+ \MaskSet{y}:=\{i:y_i=\MASK\},
+ \qquad
+ \ObservedSet{y}:=\PositionSet\setminus\MaskSet{y}.
+ \label{app:eq:masked-revealed}
+\end{equation}
+For $j\in\MaskSet{y}$, the hidden exact singleton conditional is
+\begin{equation}
+ \ExactRowMass{y}{j}{a}
+ :=\TargetLaw\bigl(X_j=a\mid
+ X_{\ObservedSet{y}}=y_{\ObservedSet{y}}\bigr),
+ \qquad a\in\Vocab.
+ \label{app:eq:exact-row}
+\end{equation}
+The all-mask state is $\AllMaskState:=(\MASK,\ldots,\MASK)$, so
+$\ExactRow{\AllMaskState}{i}=\PosMarginal{i}$.
+
+The oracle is one deterministic frozen map
+\begin{equation}
+ \FrozenOracle:\{(y,j):y\in(\Vocab\cup\{\MASK\})^N,
+                 \ j\in\MaskSet{y}\}
+ \longrightarrow\Delta^\circ(\Vocab).
+ \label{app:eq:oracle-type}
+\end{equation}
+Equivalently, write
+$\FrozenOracle=\{\FrozenOracle_j\}_{j\in\PositionSet}$, with
+$\FrozenOracle(y,j)=\OracleRow{y}{j}$ and
+$\OracleRowMass{y}{j}{a}$ its probability mass at token $a$.
+
+\emph{\textcolor{red}{One submission, a family of probability vectors.}}
+One oracle evaluation submits a single masked state $y$ and returns full
+vocabulary probability vectors at the requested masked positions:
+\[
+ (y,S)\ \xrightarrow{\text{one masked-state submission}}\quad
+ \bigl\{\OracleRow{y}{j}\bigr\}_{j\in S},
+ \qquad S\subseteq\MaskSet{y}.
+\]
+Here $S$ selects the readouts; each returned row is the whole vector
+$\OracleRow{y}{j}=(\OracleRowMass{y}{j}{a})_{a\in\Vocab}$.
+The charge is one submission, regardless of $|S|$ or how many tests use
+the returned probabilities. Every occurrence of the same $(y,j)$ returns
+the same row, across readout sets and operations; repeated submissions
+still count as separate evaluations.
+Probes and commits in \cref{app:def:admissible-algorithm} use this same
+interface and the same frozen rows.
+\end{definition}
+
+\begin{assumption}[\HellingerCaseTitle: frozen-oracle accuracy (A2)]
+\label{app:ass:oracle-accuracy}
+For a public $\OracleRadius\in[0,1]$, assume uniformly over all valid $(y,j)$ that
+\begin{equation}
+ \sqHellinger\bigl(\ExactRow{y}{j},\OracleRow{y}{j}\bigr)
+ \le \frac{(\OracleRadius)^2}{2N}.
+ \label{app:eq:A2}
+\end{equation}
+Oracle errors may be adversarially correlated across states, positions, and
+calls; no independence, unbiasedness, concentration, or fresh-noise condition
+is imposed.  Let $\OracleClass(\TargetLaw;\OracleRadius)$ denote the class
+of frozen maps satisfying (A2).
+\end{assumption}
+
+\begin{remark}[Oracle metric calibration]
+\label{app:rem:oracle-metric-calibration}
+The parameter $\OracleRadius$ is a normalized oracle budget: the per-row
+Hellinger distance in (A2) is at most $\OracleRadius/\sqrt{2N}$, not
+$\OracleRadius$.  Lemma~\ref{app:lem:finite-hellinger-calculus} therefore
+gives the row-TV bound $\OracleRadius/\sqrt N$ used by the screen; this is
+a consequence of (A2), not an additional assumption.  Conversely, that
+row-TV bound alone does not imply (A2).  For example, for sufficiently small
+$e>0$, the positive binary laws $(1-2e,2e)$ and $(1-e,e)$ have TV distance
+$e$ but squared Hellinger distance at least
+$e(\sqrt2-1)^2/2>e^2/2$.
+
+By Lemma~\ref{app:lem:kl-hellinger}, either of the following uniform bounds
+is sufficient for (A2):
+\begin{equation}
+ \sup_{(y,j)}\KLDivergence{\ExactRow{y}{j}}{\OracleRow{y}{j}}
+ \le\frac{(\OracleRadius)^2}{N}
+ \quad\text{or}\quad
+ \sup_{(y,j)}\KLDivergence{\OracleRow{y}{j}}{\ExactRow{y}{j}}
+ \le\frac{(\OracleRadius)^2}{N}.
+ \label{app:eq:row-kl-sufficient}
+\end{equation}
+These are \emph{sufficient conditions}, not necessary bounds on the KL error of an
+oracle satisfying (A2): Remark~\ref{app:rem:no-hellinger-kl-converse} gives
+a strictly positive counterexample to the converse.  Imposing either KL
+condition leaves the upper theorem valid with its stated output-TV bound;
+it does not assert an output-KL bound for the randomized sampler.
+\end{remark}
+
+\subsection{Algorithms, risk, and resources}
+\label{app:setup-algorithms}
+
+Both operations below use the row family of
+\cref{app:def:frozen-oracle}. A \emph{probe} inspects its probabilities
+without changing the committed history; a \emph{commit} samples a chosen
+batch from these rows and permanently fixes the sampled values.
+The algorithm requirements and resource counts below apply to both cases.
+They give the full interface of \cref{main:def:algorithm-risk-resources}.
+
+\begin{definition}[\textcolor{red}{Admissible algorithms}]
+\label{app:def:admissible-algorithm}
+\textbf{Algorithm requirements.}
+An admissible algorithm accesses
+$\FrozenOracle=\{\FrozenOracle_j\}_{j\in\PositionSet}$ adaptively and
+satisfies the following conditions.
+\begin{itemize}
+\item \emph{Observable decisions and independent randomness.}
+Let $\ControllerSeed$ be decision-rule randomness independent of the hidden
+instance and of the primitive random sources used for product-commit draws.
+The \emph{decision rule} (also called the controller) uses public data,
+previous oracle replies, committed values, and its internal state and seed
+to choose the next operation (probe or commit), its submitted state, and
+any commit batch. Once the seed is fixed,
+these choices are deterministic functions of the observable history.
+The sampled token values may depend on $\ControllerSeed$ through the
+decision rule's choices, but the primitive commit-draw randomness is
+separate from that seed. The forest, exact marginals, endpoint kernels,
+hidden ranks, edge directions, and response witnesses remain hidden.
+
+\item \emph{No remasking and history-compatible submissions.}
+At a realized history $\History=(G,x_G)$, every submitted state must agree
+with the committed values: $y_i=x_i$ for all $i\in G$.
+Committed positions stay revealed in all subsequent submissions, with the
+same values. Uncommitted positions in $\ResidualPositions$ may be masked
+or temporarily assigned vocabulary tokens for a probe.
+
+\item \emph{Probes (counterfactual submissions).}
+\textcolor{red}{Choose a history-compatible state $y$ and a subset of masked
+positions $S\subseteq\MaskSet{y}$. One submission $(y,S)$ returns
+$\{\OracleRow{y}{j}\}_{j\in S}$ together, allowing the algorithm to inspect
+all probabilities $\{\OracleRowMass{y}{j}{a}:j\in S,\ a\in\Vocab\}$.}
+This operation updates the observable transcript but leaves
+$\History=(G,x_G)$ unchanged; temporary assignments are not committed.
+Probes may be adaptive and interleaved with commits.
+They may also use $\ObservedSet{y}=G$, with every residual position masked:
+additional hypothetical reveals are optional.
+
+\item \emph{Irreversible product commits.}
+Let $t$ index commits only, and let $G_{t-1}$ be the positions committed
+before round $t$, with $G_0=\emptyset$.
+Choose a nonempty batch $B_t\subseteq\ResidualPositionsAt{G_{t-1}}$
+from the observable past and $\ControllerSeed$, \emph{before} receiving
+this commit's oracle reply. Submit the state
+\begin{equation}
+ (y_t)_i=
+ \begin{cases}
+  x_i, & i\in G_{t-1},\\
+  \MASK, & i\in\ResidualPositionsAt{G_{t-1}}.
+ \end{cases}
+ \label{app:eq:commit-state}
+\end{equation}
+\textcolor{red}{One submission $(y_t,B_t)$ returns the probability vectors
+$\{\OracleRow{y_t}{j}\}_{j\in B_t}$ from the same interface.}
+Draw $z_{B_t}\in\Vocab^{B_t}$ according to
+\begin{equation}
+ \bigotimes_{j\in B_t}\OracleRow{y_t}{j},
+ \label{app:eq:product-commit}
+\end{equation}
+and permanently update $G_t:=G_{t-1}\cup B_t$ and $x_{B_t}:=z_{B_t}$,
+retaining the earlier values $x_{G_{t-1}}$.
+The product in \eqref{app:eq:product-commit} draws the batch coordinates
+independently conditional on the current history and selected batch.
+Temporary probe assignments cannot replace this draw, and the draw is
+not filtered by an accept--reject or verify-and-accept step.
+
+\item \emph{Completion.}
+The batches are disjoint and satisfy
+$\bigcup_{t=1}^{\CommitRounds}B_t=\PositionSet$.
+\end{itemize}
+
+\smallskip
+\noindent\textbf{Operation-indexed actions and visible history.}
+\textcolor{red}{Index the submissions actually performed, probes and commits
+together, by consecutive positive integers $s=1,2,\ldots$; repeated or
+parallel submissions have separate indices. This operation index is
+distinct from the rank-frequency exponent in \eqref{app:eq:RF}.}
+Let $s_t$ be the operation index of commit $t$, and write $t_s=t$ when
+$s=s_t$. Fix the decision-rule seed $w$.
+The complete visible history immediately before operation $s$ is
+$\OpVisibleHistory{s}$, initialized by the public data and seed-fixed
+initial state, $\OpVisibleHistory{1}:=h_{\mathrm{init}}(w)$.
+The selected action has the form
+\begin{equation}
+ A_s=\mathsf{Next}_w(\OpVisibleHistory{s})=
+ \begin{cases}
+  (\mathsf{query},\OpSubmittedState{s},J_s),
+    &\text{probe},\\
+  (\mathsf{commit},\OpSubmittedState{s},B_{t_s}),
+    &\text{commit}.
+ \end{cases}
+ \label{app:eq:operation-action}
+\end{equation}
+Here $\mathsf{query}$ denotes a probe, $J_s$ is its requested readout set
+($S$ in the probe rule), with
+$J_s\subseteq\MaskSet{\OpSubmittedState{s}}$.
+At the current committed history $(G,x_G)$, a probe state satisfies
+\[
+ (\OpSubmittedState{s})_i=x_i\quad(i\in G),
+ \qquad
+ (\OpSubmittedState{s})_i\in\Vocab\cup\{\MASK\}\quad(i\notin G).
+\]
+The decision rule in \cref{app:eq:operation-action} selects these
+uncommitted entries and $J_s$ from the visible history and fixed seed;
+any token assignments there are temporary and may all be omitted.
+At a commit, the state instead has all uncommitted positions masked:
+\[
+ \OpSubmittedState{s}=y_{t_s},
+ \qquad
+ (y_{t_s})_i=
+ \begin{cases}
+  x_i,&i\in G,\\
+  \MASK,&i\notin G,
+ \end{cases}
+\]
+as in \cref{app:eq:commit-state}, with $G=G_{t_s-1}$.
+
+% Please keep the role table with its introductory sentence.
+\begin{samepage}
+At the current committed history $(G,x_G)$,
+the vertex roles are:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Role & Probe & Commit $t$\\
+\midrule
+Temporarily assigned positions
+ & $\ObservedSet{\OpSubmittedState{s}}\setminus G$ & $\varnothing$\\
+Requested readouts & $J_s$ & $B_t$\\
+Newly committed positions & $\varnothing$ & $B_t$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{samepage}
+If $z_s$ is the vector drawn at a commit, the ordinary observation and
+the visible-history update are
+\begin{equation}
+ \OpVisibleObservation{s}:=
+ \begin{cases}
+  (\OracleRow{\OpSubmittedState{s}}{j})_{j\in J_s},
+    &\text{query},\\
+  ((\OracleRow{\OpSubmittedState{s}}{j})_{j\in B_{t_s}},z_s),
+    &\text{commit},
+ \end{cases}
+ \label{app:eq:operation-visible-observation}
+\end{equation}
+\begin{equation}
+ \OpVisibleHistory{(s+1)}
+ :=(\OpVisibleHistory{s},A_s,\OpVisibleObservation{s}).
+ \label{app:eq:operation-visible-history}
+\end{equation}
+The decision-rule internal state is a deterministic function of this
+history and $w$. This full-history representation does not require the
+implementation to store the entire transcript.
+\end{definition}
+
+\begin{definition}[\textcolor{red}{Output law and \HellingerCase\ risk}]
+\label{app:def:output-risk}
+\textcolor{red}{For an admissible algorithm from
+\cref{app:def:admissible-algorithm}, let $\SamplerOutput$ be its output.}
+Conditional on $\ControllerSeed=w$, let
+$\SamplerOutputLaw{w}{\FrozenOracle}$ be its law after integrating all
+product-commit draws.
+Define the seed-averaged total-variation risk by
+\begin{equation}
+ \SeedRisk(\mathcal A;\TargetLaw,\FrozenOracle)
+ :=\mathbb E_{\ControllerSeed}
+ \dTV\bigl(\TargetLaw,
+            \SamplerOutputLaw{\ControllerSeed}{\FrozenOracle}\bigr),
+ \label{app:eq:seed-risk}
+\end{equation}
+and the oracle-robust risk by
+\begin{equation}
+ \RobustRisk(\mathcal A;\TargetLaw)
+ :=\sup_{\FrozenOracle\in\OracleClass(\TargetLaw;\OracleRadius)}
+ \SeedRisk(\mathcal A;\TargetLaw,\FrozenOracle).
+ \label{app:eq:robust-risk}
+\end{equation}
+The expectation in \eqref{app:eq:seed-risk} is the expectation of the
+conditional-output TV, rather than the TV after first mixing over
+$\ControllerSeed$.
+In \KLCase, the same conditional output law is evaluated by the
+seed-averaged forward-KL risk of \cref{app:def:kl-oracle-risk}.
+\end{definition}
+
+\begin{definition}[\textcolor{red}{Resources and all-path budgets}]
+\label{app:def:resources}
+\textcolor{red}{These definitions apply to both accuracy cases.
+In the counts below, $s$ ranges over the positive-integer indices of
+submissions actually performed, as in \cref{app:eq:operation-action};
+$t$ indexes commits only.}
+Let $s_{\mathrm{pre}}$ be the index of the one distinguished preprocessing
+all-mask readout, with $s_{\mathrm{pre}}=0$ if it is not used. Define
+\[
+\begin{aligned}
+ \CounterfactualQueries
+ &:=\bigl|\{s:s\ne s_{\mathrm{pre}},\
+                 \text{submission }s\text{ is a probe}\}\bigr|,\\
+ \CommitRounds
+ &:=\bigl|\{s:\text{submission }s\text{ performs a nonempty product commit}\}\bigr|.
+\end{aligned}
+\]
+Each probe other than that preprocessing readout contributes one to
+$\CounterfactualQueries$; each commit
+contributes one to $\CommitRounds$ and zero to $\CounterfactualQueries$,
+regardless of its batch size. A probe at the commit state
+\eqref{app:eq:commit-state} still counts toward $\CounterfactualQueries$:
+the operation performed, rather than the masked state alone, determines
+its counter. Every other all-mask probe also counts toward
+$\CounterfactualQueries$. Reusing returned rows in several tests adds
+no submission, whereas submitting the same state again does.
+The actual total number of submissions is therefore
+$\CounterfactualQueries+\CommitRounds+\mathbf 1\{s_{\mathrm{pre}}>0\}$.
+
+The one distinguished all-mask readout is kept separate through the
+accounting flag $\MarginalQueryCharge\in\{0,1\}$: set it to one when
+that readout is charged, and to zero when it is omitted from the reported
+count (or is not used). The reported \emph{noncommit} count is
+\begin{equation}
+ \ReportedQueries
+ :=\CounterfactualQueries+\MarginalQueryCharge.
+ \label{app:eq:reported-query-count}
+\end{equation}
+Thus $\ReportedQueries$ excludes commits. When the preprocessing readout
+is used and charged, the full count is
+$\ReportedQueries+\CommitRounds=1+\CounterfactualQueries+\CommitRounds$,
+as in the main construction. Setting $\MarginalQueryCharge=0$ omits only
+that preprocessing charge; it does not make other probes free.
+
+\emph{Sequential depth and bandwidth.}
+$\OracleDepth$ counts sequential oracle stages. A stage may contain
+multiple submissions whose inputs are fixed before receiving that
+stage's replies; later inputs that depend on those replies require
+another stage. Parallel submissions therefore share depth but each
+retains its own submission charge. Returned-row counts, scalar bandwidth,
+and local computation are not included in these interaction counts;
+\cref{app:lem:upper-resources} separately accounts for the construction's rows.
+
+\smallskip
+\noindent\textbf{Deterministic all-path budgets.}
+The budgets $\QueryBudget,\RoundBudget$ satisfy
+$\CounterfactualQueries\le\QueryBudget$ and $\CommitRounds\le\RoundBudget$
+on every instance, seed, transcript, and realized path.  A lower bound on
+these budgets does not assert the same lower bound on every realized counter.
+\end{definition}
+
+\begin{example*}[Submission counting]
+One preprocessing all-mask readout, two probes of the same state, and
+one commit of all $N$ positions use
+$\CounterfactualQueries=2$ and $\CommitRounds=1$.
+Charging preprocessing gives $\MarginalQueryCharge=1$,
+$\ReportedQueries=3$, and $\ReportedQueries+\CommitRounds=4$ evaluations.
+Returning several rows per probe or using each row in several tests
+does not change these counts.
+\end{example*}
+
+\paragraph{Quantifier order.}
+The public class data and the algorithm
+are fixed first.  A hidden target law satisfying
+Assumptions~\ref{app:ass:forest-structure} and
+\ref{app:ass:response-regularity}, together with
+Assumption~\ref{app:ass:rate-regime} where asymptotic rates are claimed, is
+then chosen. In \HellingerCase, a single frozen oracle satisfying
+Assumption~\ref{app:ass:oracle-accuracy} is chosen after the target law; the algorithm
+is then executed and the robust risk in \eqref{app:eq:robust-risk} is evaluated.
+\KLCaseTitle\ uses the same order with the oracle class and output risk
+of \cref{app:def:kl-oracle-risk}.

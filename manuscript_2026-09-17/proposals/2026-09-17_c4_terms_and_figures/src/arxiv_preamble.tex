@@ -1,0 +1,20 @@
+% Please keep arXiv presentation independent of the conference style.
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% Please separate paragraphs with a modest gap and keep their first lines aligned.
+% The package also accounts for paragraph spacing around lists and headings.
+\usepackage[skip=4pt plus 1pt minus 1pt,indent=0pt]{parskip}
+% Please keep the abstract paragraphs unindented within their existing margins.
+\AddToHook{env/abstract/begin}{%
+  \let\quotation\quote
+  \let\endquotation\endquote
+}
+\usepackage{microtype}
+\usepackage[authoryear,round]{natbib}
+\setcitestyle{citesep={;},aysep={,},yysep={;}}
+\pagestyle{plain}
+
+% Please allow flexible line breaks around long inline mathematical expressions.
+\sloppy

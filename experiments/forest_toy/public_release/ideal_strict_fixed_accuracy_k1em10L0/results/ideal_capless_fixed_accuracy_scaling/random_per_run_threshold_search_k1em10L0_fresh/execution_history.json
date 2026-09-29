@@ -1,0 +1,34 @@
+[
+  {
+    "stage": "per_run_threshold_coarse",
+    "jobs": 1440,
+    "new_runs": 1440,
+    "workers": 8,
+    "seconds": 834.7994321059668,
+    "finished_utc": "2026-09-21T17:23:08.966071+00:00"
+  },
+  {
+    "stage": "per_run_threshold_refine_0",
+    "jobs": 60,
+    "new_runs": 60,
+    "workers": 8,
+    "seconds": 71.57421402796172,
+    "finished_utc": "2026-09-21T17:24:20.687806+00:00"
+  },
+  {
+    "stage": "per_run_threshold_refine_1",
+    "jobs": 43,
+    "new_runs": 43,
+    "workers": 8,
+    "seconds": 44.03256700804923,
+    "finished_utc": "2026-09-21T17:25:04.851827+00:00"
+  },
+  {
+    "stage": "per_run_threshold_refine_2",
+    "jobs": 23,
+    "new_runs": 23,
+    "workers": 8,
+    "seconds": 20.84206223709043,
+    "finished_utc": "2026-09-21T17:25:25.803633+00:00"
+  }
+]

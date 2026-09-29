@@ -1,0 +1,3362 @@
+[
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      10,
+      39,
+      36,
+      0.03333333333333333
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      31,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      61,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      65,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      8,
+      39,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      57,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      8,
+      47,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      87,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      4,
+      31,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      7,
+      57,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 292,
+    "setting": [
+      8,
+      19,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      10,
+      39,
+      36,
+      0.03333333333333333
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      31,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      61,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      65,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      8,
+      39,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      57,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      8,
+      47,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      87,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      4,
+      31,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      7,
+      57,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 292,
+    "setting": [
+      8,
+      19,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      10,
+      39,
+      36,
+      0.03333333333333333
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      31,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      61,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      65,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      8,
+      39,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      57,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      8,
+      47,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      33,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      87,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      4,
+      31,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      7,
+      57,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 292,
+    "setting": [
+      8,
+      19,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      10,
+      39,
+      36,
+      0.03333333333333333
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      31,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      61,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      65,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      8,
+      39,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      57,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      8,
+      47,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      87,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      4,
+      31,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      7,
+      57,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 293,
+    "setting": [
+      8,
+      19,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      10,
+      39,
+      36,
+      0.03333333333333333
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      31,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      61,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      65,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      8,
+      39,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      57,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      8,
+      47,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      87,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      4,
+      31,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      7,
+      57,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 293,
+    "setting": [
+      8,
+      19,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      10,
+      39,
+      36,
+      0.03333333333333333
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      31,
+      36,
+      0.000588235294117647
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      61,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      7,
+      59,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      10,
+      51,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005405405405405405
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      65,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      8,
+      39,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.0005
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      57,
+      9,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      8,
+      47,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      10,
+      53,
+      18,
+      0.019999999999999997
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      33,
+      36,
+      0.00046875
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      87,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      8,
+      53,
+      18,
+      0.04
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "binary",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      10,
+      33,
+      36,
+      0.026666666666666665
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      4,
+      31,
+      36,
+      0.0006593406593406593
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "path",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      7,
+      57,
+      18,
+      0.03
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "proposal",
+    "target": "matching",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 293,
+    "setting": [
+      8,
+      19,
+      9,
+      0.01
+    ],
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5120,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5440,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11136,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 12288,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1920,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5760,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11648,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1792,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8512,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 9408,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 13312,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 14848,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1536,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 7680,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 3584,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6912,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5120,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5440,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11136,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 12288,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1920,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5760,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11648,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1792,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8512,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 9408,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 13312,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 14848,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1536,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 7680,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 3584,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6912,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5120,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5440,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11136,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 12288,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1920,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5760,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11648,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1792,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8512,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 9408,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 13312,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 14848,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1536,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 7680,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 3584,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 294,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6912,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5120,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5440,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 10240,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11136,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 12288,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1920,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 12288,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5760,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11648,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1792,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8512,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 14336,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 9408,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 13312,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 14848,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1536,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 16384,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 7680,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 3584,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 8192,
+    "data": 196,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6912,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5120,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5440,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 10240,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11136,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 12288,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1920,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 12288,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5760,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11648,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1792,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8512,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 14336,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 9408,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 13312,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 14848,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1536,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 16384,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 7680,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 3584,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 8192,
+    "data": 197,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6912,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5120,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5440,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 10240,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11136,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 12288,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1920,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 12288,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 5760,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 11648,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1792,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 8512,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 14336,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 9408,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 13312,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 14848,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1536,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 16384,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 7680,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "stars_original",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 1280,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "binary",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 3584,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "path",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6400,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  },
+  {
+    "kind": "baseline",
+    "target": "matching",
+    "n": 8192,
+    "data": 198,
+    "algorithm": 295,
+    "family": "fixed",
+    "ordering": "random",
+    "parameter": 6912,
+    "role": "random_fresh_confirmation",
+    "evaluation_samples": 128,
+    "evaluation_exact_arity": 4
+  }
+]

@@ -1,0 +1,189 @@
+{
+  "archive_sha256": "5284a69ff2f731c2742e6e46c66f4edde7f75dc6545a0c466c3bfe0f76d84010",
+  "archive_bytes": 477815,
+  "source_commit": "ddc2060d3210edbd3b12e0e51e55881a90906fd5",
+  "archive": "arxiv_source.zip",
+  "reference_pdf_sha256": "23b39846b8262b9618311278630091c9ec408f0c1ba48c95bf75a8f272b1a731",
+  "entrypoint": "main.tex",
+  "compiler": "pdflatex",
+  "file_count": 72,
+  "file_types": {
+    ".json": 1,
+    ".tex": 62,
+    ".pdf": 7,
+    ".bbl": 1,
+    ".bib": 1
+  },
+  "all_member_hashes_match": true,
+  "crc_check": "pass",
+  "clean_build": {
+    "reference_pages": 97,
+    "pages": 97,
+    "comparison_scale": 1.5,
+    "different_text_pages": [],
+    "different_rendered_pages": [],
+    "label_count": 786,
+    "changed_labels": {},
+    "log_alerts": [
+      "Package epstopdf Warning: Shell escape feature is not enabled."
+    ],
+    "underfull_warnings": 37,
+    "repository_inputs": [],
+    "bbl_matches_packaged": true,
+    "local_compile_exit_code": 0,
+    "pdf_sha256": "7b7fd68917cb9b7a0382bd3fef77945a6acf37f17bd10a095918a9620a873f9c"
+  },
+  "pdf": {
+    "pages": 97,
+    "pdf_sha256": "7b7fd68917cb9b7a0382bd3fef77945a6acf37f17bd10a095918a9620a873f9c",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "Counterfactual Probing for Parallel Unmasking with Hidden Forest Structure",
+      "author": "Ryotaro Kawata, Satoshi Hayakawa, Taiji Suzuki",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.29",
+      "creationDate": "D:20260929223114+09'00'",
+      "modDate": "D:20260929223114+09'00'",
+      "trapped": "",
+      "encryption": null
+    },
+    "internal_links": 1154,
+    "bad_links": [],
+    "mailto_links": [
+      {
+        "page": 1,
+        "uri": "mailto:kawata-ryotaro725@g.ecc.u-tokyo.ac.jp"
+      },
+      {
+        "page": 1,
+        "uri": "mailto:hayakawa@mist.i.u-tokyo.ac.jp"
+      },
+      {
+        "page": 1,
+        "uri": "mailto:taiji@mist.i.u-tokyo.ac.jp"
+      }
+    ],
+    "text_outside_page": [],
+    "named_destinations": 720,
+    "bad_destinations": [],
+    "fonts": 68,
+    "unembedded_fonts": [],
+    "acknowledgments_pages": [
+      10
+    ],
+    "figure_3_pages": [
+      9
+    ],
+    "confirmed_author_text": {
+      "kawata-ryotaro725@g.ecc.u-tokyo.ac.jp": true,
+      "hayakawa@mist.i.u-tokyo.ac.jp": true,
+      "taiji@mist.i.u-tokyo.ac.jp": true,
+      "RK was partially supported by JSPS KAKENHI (24K02905) and JST BOOST (JPMJBS2418).": true,
+      "SH was partially supported by JSPS KAKENHI (26K25548) and received access to ChatGPT for Academic Researchers program.": true,
+      "TS was partially supported by JST CREST (PMJCR2015) and JSPS KAKENHI (25H01107).": true,
+      "This work was supported by JST ERATO Grant Number JPMJER2601.": true,
+      "This research is supported by the National Research Foundation, Singapore and the Ministry of Digital Development and Information under the AI Visiting Professorship Programme (award number AIVP-2024-004).": true,
+      "Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not reflect the views of National Research Foundation, Singapore and the Ministry of Digital Development and Information.": true
+    },
+    "obsolete_rk_grant_present": false
+  },
+  "unexpected_external_inputs": [],
+  "main_text_end_page": "9",
+  "local_runtime": "TeX Live 2026 / pdfTeX 1.40.29 / latexmk 4.88",
+  "shell_escape": false,
+  "user_texmf": "empty directory",
+  "pending_editorial_items": [],
+  "crest_number": {
+    "typeset": "PMJCR2015",
+    "basis": "Explicitly confirmed by the user, without a leading J."
+  },
+  "remote_submission_performed": false,
+  "check_pdf": "output/pdf/arxiv_submission_check.pdf",
+  "visual_review": {
+    "reviewed_source_pages": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "unchanged_pages_match_previous_review": true,
+    "all_pages_match_reviewed_source_pdf_at_scale": 1.5,
+    "result": "All 97 source/ZIP pages match in text and rendered pixels. Changed pages 10 through 17 were rendered and visually reviewed; all remaining pages match the preceding reviewed 97-page PDF."
+  },
+  "validation_scope": "Local TeX Live 2026 isolated build and 2025-06-01 LaTeX-kernel rollback comparison. Re-upload and inspect the arXiv-generated PDF to confirm reference types in its actual TeX Live 2025 runtime.",
+  "bibliography_cleanup": {
+    "entries_before": 97,
+    "entries_after": 68,
+    "removed_keys": [
+      "Bengio+chapter2007",
+      "Hinton06",
+      "goodfellow2016deep",
+      "carter1979universal",
+      "erdos1932bertrand",
+      "lou2024discrete",
+      "arriola2025block",
+      "ghazvininejad2019mask",
+      "ringel2026dependency",
+      "wen2026conditional",
+      "hoogeboom2021argmax",
+      "hoogeboom2022autoregressive",
+      "sun2023score",
+      "gong2023diffuseq",
+      "shi2024simplified",
+      "lee2018iterative",
+      "gu2018nonautoregressive",
+      "wang2019bert",
+      "bansal2025joint",
+      "campbell2026selfspeculative",
+      "yoo2026infinite",
+      "guo2026anysubset",
+      "leviathan2023fast",
+      "hu2025exchangeable",
+      "alon2004hidden",
+      "luxembourg2026dilated",
+      "scarlett2017lower",
+      "nesetril2006treedepth",
+      "besnier2025halton"
+    ],
+    "kept_entries_preserved_verbatim": true,
+    "before_bib_sha256": "d1b2201dd5f4d93a1ad5f9bb1a4bde10e300b200d20cec703d9fb40c94e2901a",
+    "after_bib_sha256": "3c55b1afeb90e810f8806beca7879127b5b706587338451fff09e7225d9aa435",
+    "bbl_unchanged": true,
+    "reference_pdf_binary_unchanged": true,
+    "changed_archive_members": [
+      "src/iclr2027_conference.bib"
+    ],
+    "retained_keys_match_all_main_and_appendix_citations": true,
+    "source_state": "Historical bibliography cleanup is included in base commit ddc2060d3210edbd3b12e0e51e55881a90906fd5.",
+    "validation_note": "Historical cleanup check from the preceding archive; its unchanged-PDF comparison does not describe this later AI-statement revision."
+  },
+  "ai_use_statement": {
+    "lean_scope": "Named mathematical claims formalized with AI assistance and checked by the Lean 4 kernel; manuscript correspondence audited separately.",
+    "pdf_text_confirmed": true,
+    "lean_proof_sources_changed": false,
+    "lean_kernel_not_rerun_for_this_prose_change": false,
+    "release_verification_note": "The public-copy lake build used the existing pinned cache with byte-identical proof sources; axiom and claim-reference audits were rerun successfully."
+  },
+  "reference_type_compatibility": {
+    "change": "Load amsthm before cleveref and define theorem environments after cleveref.",
+    "kernel_rollback_date": "2025-06-01",
+    "kernel_rollback_cref_types_match": true,
+    "kernel_rollback_different_rendered_pages": [],
+    "limitation": "This is a TeX Live 2026 runtime with a rolled-back LaTeX kernel, not the arXiv TeX Live 2025 runtime. The old load order also passes that partial emulation; the actual arXiv re-upload must confirm the fix.",
+    "cref_type_count": 392,
+    "all_cref_types_preserved": true,
+    "validation_note": "Kernel-rollback comparison applies to the preceding AI-statement revision; this edit adds only a code-availability section. The actual arXiv regeneration still needs checking."
+  },
+  "code_availability": {
+    "repository": "https://github.com/ryotaro-kawata-wa/counterfactual-parallel-unmasking",
+    "snapshot": "arxiv-v1",
+    "pdf_link_checked": true,
+    "arxiv_ancillary_files_included": false
+  }
+}

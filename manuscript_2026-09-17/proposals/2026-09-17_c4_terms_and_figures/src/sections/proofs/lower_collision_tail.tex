@@ -1,0 +1,226 @@
+\subsection{An adaptive lower tail for batch collisions}
+\label{app:lower-proof-collision-tail}
+
+The conditional Laplace bound and the edge-counting identity now force many collisions
+with constant probability under the joint instance--midpoint law. This is
+the input needed to accumulate edge-level discrepancy nonlinearly; no
+independence between commit rounds is assumed. Recall that
+\(\TotalCollisions=\sum_t\CollisionCount{t}\) counts the unresolved edges
+whose two endpoints are committed in the same active batch, as defined in
+\eqref{app:eq:unresolved-batch-and-collisions}.
+
+\paragraph{Intuition.}
+If order $N$ unresolved vertices were spread evenly across $\RoundBudget$
+batches while the unresolved pool had size order $N$, the collision scale
+would be
+\[
+ \RoundBudget\frac{(N/\RoundBudget)^2}{N}
+ =\frac{N}{\RoundBudget}.
+\]
+The proof does not assume even batches or a fixed pool: the edge-counting identity
+forces enough total active batch mass, Cauchy--Schwarz gives the same
+$N/\RoundBudget$ scale, and the conditional Laplace bound turns that
+pathwise mass into a constant-probability collision event.
+
+\begin{proposition}[Adaptive collision lower tail]
+\label{app:prop:collision-lower-tail}
+Fix a decision-rule seed under the joint law
+\eqref{app:eq:joint-instance-midpoint-law}. If
+\(\QueryBudget{}\le \HardBankSize/8\) and \(1\le \RoundBudget{}\le N/8\), then
+\begin{equation}
+ \mathbb P\left(
+   \TotalCollisions\ge\frac{N}{8192\RoundBudget{}}
+ \right)
+ \ge
+ \frac12-\exp\left\{-\frac{N}{8192\RoundBudget{}}\right\}.
+ \label{app:eq:collision-lower-tail}
+\end{equation}
+In particular, if \(\RoundBudget{}\le N/16384\), then
+\begin{equation}
+ \mathbb P\left(
+   \TotalCollisions\ge\frac{N}{8192\RoundBudget{}}
+ \right)\ge\frac14.
+ \label{app:eq:collision-quarter-probability}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+
+\emph{1. Fix the pre-exposure information and conditional Laplace bound.}
+For an actual commit round \(t\), let \(B_t\) be the batch selected by the
+seed-fixed decision rule. Recall the existing notation:
+\[
+ \ActiveBatch{t}=B_t\cap\UnresolvedVertices{t},
+ \qquad
+ \UnresolvedVertexCount{t}=|\UnresolvedVertices{t}|,
+ \qquad
+ \ActiveBatchSize{t}=|\ActiveBatch{t}|,
+\]
+\[
+ \CollisionCount{t}
+ =|\{e\in\OpUnresolvedMatching{s_t}:
+                    e\subseteq\ActiveBatch{t}\}|,
+ \qquad
+ \TotalCollisions=\sum_t\CollisionCount{t}.
+\]
+Thus \(B_t\) is the full commit batch, whereas \(\ActiveBatch{t}\)
+contains only its currently unresolved vertices.
+
+After termination, append empty rounds until the total number of indexed
+rounds is \(\RoundBudget{}\). In every appended round set
+\(B_t=\ActiveBatch{t}=\UnresolvedVertices{t}=\varnothing\), so
+\(\UnresolvedVertexCount{t}=\ActiveBatchSize{t}=\CollisionCount{t}=0\).
+These rounds add no collision, and hence
+\(\TotalCollisions=\sum_{t=1}^{\RoundBudget{}}\CollisionCount{t}\).
+Introduce only the following additional abbreviation:
+\[
+ A_t:=
+ \begin{cases}
+  \PositivePart{\ActiveBatchSize{t}-1}^2/\UnresolvedVertexCount{t},
+      &\UnresolvedVertexCount{t}>0,\\
+  0,&\UnresolvedVertexCount{t}=0.
+ \end{cases}
+\]
+The pre-commit analytic field \(\AnalyticField{t}\) determines both the
+selected batch \(B_t\) and the unresolved set \(\UnresolvedVertices{t}\),
+hence also \(\ActiveBatch{t}=B_t\cap\UnresolvedVertices{t}\).
+Selecting \(B_t\) adds no observation: the matching edges incident to
+\(\ActiveBatch{t}\) and the midpoint values \(X_{B_t}\) have not yet been
+exposed. Thus \(\UnresolvedVertexCount{t}\), \(\ActiveBatchSize{t}\),
+\(A_t\), and all quantities from earlier rounds are
+\(\AnalyticField{t}\)-measurable. For appended empty rounds, use the terminal
+field.
+
+By \cref{app:lem:unresolved-invariant}, conditional on \(\AnalyticField{t}\),
+the matching on \(\UnresolvedVertices{t}\) is uniform. For
+\(\UnresolvedVertexCount{t}\ge2\), apply
+\cref{app:lem:matching-collision-laplace} with
+\(U=\UnresolvedVertices{t}\), \(S=\ActiveBatch{t}\),
+\(n=\UnresolvedVertexCount{t}\), \(k=\ActiveBatchSize{t}\), and Laplace
+parameter one. Since \(1-e^{-1}\ge1/2\), this gives
+\begin{equation}
+ \mathbb E\!\left[e^{-\CollisionCount{t}}\mid\AnalyticField{t}\right]
+ \le
+ \exp\left\{-\frac{1-e^{-1}}{32}A_t\right\}
+ \le e^{-A_t/64}.
+ \label{app:eq:conditional-collision-laplace}
+\end{equation}
+The unresolved set has even cardinality, so
+\(\UnresolvedVertexCount{t}=1\) cannot occur. If
+\(\UnresolvedVertexCount{t}=0\), then
+\(\ActiveBatchSize{t}=\CollisionCount{t}=A_t=0\), and the same display holds
+with equality.
+
+
+\emph{2. Iterate the exponential expectation bound.}
+Let \(r=0,\ldots,\RoundBudget{}\) count completed commit rounds, not
+individual operations.  Define
+\begin{equation}
+ \CollisionExponential{r}:=
+ \exp\left\{
+   -\sum_{t=1}^{r}\CollisionCount{t}
+   +\frac1{64}\sum_{t=1}^{r}A_t
+ \right\},
+ \qquad \CollisionExponential{0}:=1.
+ \label{app:eq:collision-supermartingale}
+\end{equation}
+Both \(\CollisionExponential{r-1}\) and \(A_r\) are measurable with respect
+to \(\AnalyticField{r}\), the field immediately before commit \(r\)
+after any intervening counterfactual operations. Hence
+\eqref{app:eq:conditional-collision-laplace} and the tower property give
+\[
+ \mathbb E \CollisionExponential{r}
+ =
+ \mathbb E\!\left[
+   \CollisionExponential{r-1}e^{A_r/64}
+   \mathbb E(e^{-\CollisionCount{r}}\mid\AnalyticField{r})
+ \right]
+ \le \mathbb E \CollisionExponential{r-1}.
+\]
+Iteration yields
+\begin{equation}
+ \mathbb E \CollisionExponential{\RoundBudget}\le1.
+ \label{app:eq:terminal-collision-supermartingale}
+\end{equation}
+This is the only concentration step; adaptivity is absorbed into the
+successive conditional expectations.
+
+
+\emph{3. Turn edge counting into a pathwise Laplace budget.}
+By \cref{app:lem:query-disclosure} and
+\(\QueryBudget{}\le\HardBankSize/8\),
+\[
+ \mathbb E\GenieDeletions
+ \le\frac{N\QueryBudget{}}{\HardBankSize}
+ \le\frac{N(\HardBankSize/8)}{\HardBankSize}
+ =\frac N8.
+\]
+Because \(\GenieDeletions\ge0\), Markov's inequality gives
+\[
+ \mathbb P(\GenieDeletions>N/4)
+ \le\frac{\mathbb E\GenieDeletions}{N/4}
+ \le\frac{N/8}{N/4}=\frac12.
+\]
+Taking the complement,
+\(\mathbb P(\GenieDeletions\le N/4)=1-\mathbb P(\GenieDeletions>N/4)\),
+therefore yields
+\begin{equation}
+ \mathbb P(\GenieDeletions\le N/4)\ge\frac12.
+ \label{app:eq:few-genie-deletions-event}
+\end{equation}
+On this event, the pathwise counting identity
+\eqref{app:eq:active-excess-ledger} in \cref{app:lem:pathwise-edge-counting}, the bounds
+\(\ActiveRoundCount\le \RoundBudget{}\le N/8\), and
+\(\TotalCollisions\ge0\) imply
+\begin{equation}
+ \sum_{t=1}^{\RoundBudget{}}\PositivePart{\ActiveBatchSize{t}-1}
+ \ge \frac N2-\GenieDeletions-\RoundBudget{}
+ \ge\frac N8.
+ \label{app:eq:pathwise-active-excess}
+\end{equation}
+Since \(\UnresolvedVertexCount{t}\le N\), the definition of \(A_t\)
+implies \(A_t\ge\PositivePart{\ActiveBatchSize{t}-1}^2/N\).
+This also holds when \(\UnresolvedVertexCount{t}=0\), because then both
+sides are zero. Cauchy--Schwarz over the \(\RoundBudget{}\) indexed rounds
+(including appended empty rounds) now gives
+\begin{align}
+ \sum_{t=1}^{\RoundBudget{}}A_t
+ &\ge\frac1N\sum_{t=1}^{\RoundBudget{}}\PositivePart{\ActiveBatchSize{t}-1}^2\notag\\
+ &\ge\frac1{N\RoundBudget{}}
+       \left(\sum_{t=1}^{\RoundBudget{}}\PositivePart{\ActiveBatchSize{t}-1}\right)^2
+ \ge\frac{N}{64\RoundBudget{}}.
+ \label{app:eq:pathwise-laplace-budget}
+\end{align}
+
+
+\emph{4. Subtract the small-collision event.}
+Set \(x:=N/(8192\RoundBudget{})\). On the intersection
+\(\{\GenieDeletions\le N/4\}\cap\{\TotalCollisions<x\}\),
+\eqref{app:eq:pathwise-laplace-budget} yields
+\[
+ \log \CollisionExponential{\RoundBudget}
+ =-\TotalCollisions+\frac1{64}\sum_{t=1}^{\RoundBudget{}}A_t
+ >-x+\frac{N}{4096\RoundBudget{}}
+ =x.
+\]
+Using \eqref{app:eq:terminal-collision-supermartingale} and Markov's
+inequality,
+\begin{align*}
+ \mathbb P(\GenieDeletions\le N/4,\ \TotalCollisions<x)
+ &\le \mathbb P(\CollisionExponential{\RoundBudget}>e^x)\\
+ &\le\frac{\mathbb E\CollisionExponential{\RoundBudget}}{e^x}
+ \le\frac1{e^x}=e^{-x}.
+\end{align*}
+Combining with \eqref{app:eq:few-genie-deletions-event},
+\begin{align*}
+ \mathbb P(\TotalCollisions\ge x)
+ &\ge \mathbb P(\GenieDeletions\le N/4,\ \TotalCollisions\ge x)\\
+ &=\mathbb P(\GenieDeletions\le N/4)
+   -\mathbb P(\GenieDeletions\le N/4,\ \TotalCollisions<x)\\
+ &\ge \frac12-e^{-x},
+\end{align*}
+which proves \eqref{app:eq:collision-lower-tail}.
+If \(\RoundBudget{}\le N/16384\), then \(x\ge2\)
+and \(1/2-e^{-2}>1/4\), proving
+\eqref{app:eq:collision-quarter-probability}.
+\end{proof}

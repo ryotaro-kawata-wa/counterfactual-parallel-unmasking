@@ -1,0 +1,178 @@
+\section{Auxiliary results}
+\label{app:auxiliary}
+
+This appendix collects the classical finite facts invoked by the construction
+and the upper-bound proof, followed by the supplementary row-selector
+invariance result (\cref{app:prop:row-selector-invariance}).
+The elementary finite facts are deterministic algebraic or graph
+statements and introduce no additional model assumptions.
+
+\subsection{Finite Hellinger-affinity calculus}
+\label{app:auxiliary-affinity}
+
+\textcolor{red}{The textbook cited below uses $H^2(p,q)=2\sqHellinger(p,q)$
+(\href{https://people.lids.mit.edu/yp/homepage/data/itbook-export.pdf}{author-hosted PDF}).
+We include finite proofs for completeness.}
+
+\begin{lemma}[Product affinity and TV comparison; \textcolor{red}{{\citealp[Eqs.~(7.22) and (7.26)]{polyanskiy2025information}}}]
+\label{app:lem:finite-hellinger-calculus}
+Let $J$ be finite.  For every $j\in J$, let $p_j,q_j$ be probability masses
+on a finite set $\mathcal X_j$.  Then
+\begin{equation}
+ \HellingerAffinity\!\left(\bigotimes_{j\in J}p_j,
+                           \bigotimes_{j\in J}q_j\right)
+ =\prod_{j\in J}\HellingerAffinity(p_j,q_j),
+ \label{app:eq:aux-product-affinity}
+\end{equation}
+and consequently
+\begin{equation}
+ \sqHellinger\!\left(\bigotimes_{j\in J}p_j,
+                      \bigotimes_{j\in J}q_j\right)
+ \le\sum_{j\in J}\sqHellinger(p_j,q_j).
+ \label{app:eq:aux-product-hellinger}
+\end{equation}
+For any two probability masses $p,q$ on the same finite set,
+\begin{equation}
+ \sqHellinger(p,q)
+ \le\dTV(p,q)
+ \le\sqrt{2\sqHellinger(p,q)}.
+ \label{app:eq:aux-tv-hellinger}
+\end{equation}
+\end{lemma}
+
+\begin{proof}\color{red}
+\emph{1. Products.}
+For $f_j(x):=\sqrt{p_j(x)q_j(x)}$, distributivity gives
+$\HellingerAffinity(\bigotimes_jp_j,\bigotimes_jq_j)
+=\sum_{(x_j)_j\in\prod_j\mathcal X_j}\prod_j f_j(x_j)
+=\prod_j(\sum_{x\in\mathcal X_j}f_j(x))
+=\prod_j\HellingerAffinity(p_j,q_j)$.
+Put $u_j:=\sqHellinger(p_j,q_j)\in[0,1]$, enumerate $J$, and telescope:
+$1-\prod_j(1-u_j)
+=\sum_j[\prod_{k<j}(1-u_k)-\prod_{k\le j}(1-u_k)]
+=\sum_j u_j\prod_{k<j}(1-u_k)\le\sum_j u_j$.
+Since $\sqHellinger=1-\HellingerAffinity$, this and
+\eqref{app:eq:aux-product-affinity} give \eqref{app:eq:aux-product-hellinger}.
+
+\emph{2. TV comparison.}
+The identity $\min\{a,b\}=(a+b-|a-b|)/2$ gives
+$\sum_x\min\{p(x),q(x)\}
+=(2-\sum_x|p(x)-q(x)|)/2=1-\dTV(p,q)$.
+Since \(\min\{p(x),q(x)\}\le\sqrt{p(x)q(x)}\), subtracting the summed
+inequality from one gives
+\(\sqHellinger(p,q)\le\dTV(p,q)\).  For the other direction,
+Cauchy--Schwarz yields
+\begin{align*}
+ 2\dTV(p,q)
+ &=\sum_x|\sqrt{p(x)}-\sqrt{q(x)}|
+          (\sqrt{p(x)}+\sqrt{q(x)})\\
+ &\le
+ \left(\sum_x(\sqrt{p(x)}-\sqrt{q(x)})^2\right)^{1/2}
+ \left(\sum_x(\sqrt{p(x)}+\sqrt{q(x)})^2\right)^{1/2}\\
+ &\le 2\sqrt{2\sqHellinger(p,q)}.
+\end{align*}
+Here the first squared sum is
+$\sum_x(\sqrt{p(x)}-\sqrt{q(x)})^2
+=2-2\HellingerAffinity(p,q)=2\sqHellinger(p,q)$, and the second is
+$\sum_x(\sqrt{p(x)}+\sqrt{q(x)})^2
+=\sum_xp(x)+\sum_xq(x)+2\sum_x\sqrt{p(x)q(x)}
+=2+2\HellingerAffinity(p,q)\le4$.
+The last inequality uses Cauchy--Schwarz:
+$\HellingerAffinity(p,q)\le\sqrt{\sum_xp(x)\sum_xq(x)}=1$.
+Dividing by two proves \eqref{app:eq:aux-tv-hellinger}.
+\end{proof}
+
+\begin{lemma}[KL-to-Hellinger comparison; \textcolor{red}{{\citealp[Eq.~(7.33)]{polyanskiy2025information}}}]
+\label{app:lem:kl-hellinger}
+For strictly positive probability masses $p,q$ on a finite set,
+\begin{equation}
+ \sqHellinger(p,q)
+ \le 1-\exp\{-\KLDivergence{p}{q}/2\}
+ \le\frac12\KLDivergence{p}{q}.
+ \label{app:eq:aux-kl-hellinger}
+\end{equation}
+The same inequalities hold with the KL arguments reversed.
+\end{lemma}
+
+\begin{proof}\color{red}
+This is the order-$1/2$ R\'enyi/KL comparison in our Hellinger
+normalization (see also \citealp{vanerven2014renyi}).
+Jensen's inequality for the convex exponential gives
+$\HellingerAffinity(p,q)
+=\mathbb E_{X\sim p}\exp\{-\tfrac12\log\frac{p(X)}{q(X)}\}
+\ge\exp\{-\KLDivergence{p}{q}/2\}$.
+Subtract from one and use $1-e^{-x}\le x$ for $x\ge0$.
+The reversed statement follows by exchanging $p,q$ and using the symmetry
+of Hellinger distance.
+\end{proof}
+
+\begin{remark}[No upper KL bound from Hellinger alone]
+\label{app:rem:no-hellinger-kl-converse}
+Strict positivity without a uniform lower bound on the masses does not
+give a converse upper bound on KL.  For $0<u<1/4$, consider
+\[
+ p_u=(1-u,u),\qquad
+ q_u=(1-u e^{-1/u^2},u e^{-1/u^2}).
+\]
+Both laws are strictly positive, and
+\[
+ \sqHellinger(p_u,q_u)\le\dTV(p_u,q_u)
+ =u(1-e^{-1/u^2})\le u\longrightarrow0.
+\]
+Nevertheless,
+\[
+ \KLDivergence{p_u}{q_u}
+ =\frac1u+(1-u)\log\frac{1-u}{1-u e^{-1/u^2}}
+ \ge\frac1u-u\longrightarrow\infty,
+\]
+For the last inequality, $1-u e^{-1/u^2}\le1$ implies
+$\log((1-u)/(1-u e^{-1/u^2}))\ge\log(1-u)$, while
+\[
+ -\log(1-u)=\int_0^u\frac{dt}{1-t}
+ \le\frac{u}{1-u}
+ \quad\Longrightarrow\quad (1-u)\log(1-u)\ge-u.
+\]
+Swapping the two laws proves the corresponding failure for reverse KL.
+\end{remark}
+
+\subsection{Elementary forest facts}
+\label{app:auxiliary-forest}
+
+\begin{lemma}[Forest degree sum and tree centroid]
+\label{app:lem:forest-basics}
+Let $H=(W,E_H)$ be a finite nonempty forest with $c(H)$ connected
+components.  Then
+\begin{equation}
+ |E_H|=|W|-c(H),
+ \qquad
+ \sum_{v\in W}d_H(v)=2|E_H|<2|W|.
+ \label{app:eq:aux-forest-degree-sum}
+\end{equation}
+Moreover, every finite nonempty tree $T$ has a vertex $v$ such that every
+component of $T\setminus\{v\}$ has at most $|V(T)|/2$ vertices.
+\end{lemma}
+
+\begin{proof}
+Each tree component with $n_\ell$ vertices has $n_\ell-1$ edges.  Summing
+over the components gives the first identity; the degree-sum identity then
+gives the remaining claims in \eqref{app:eq:aux-forest-degree-sum}.
+
+For the centroid claim, put $n:=|V(T)|$ and choose $v$ minimizing the largest component size
+after deleting $v$.  If a component $S$ of $T\setminus\{v\}$ had more than
+$|V(T)|/2$ vertices, let $w$ be the neighbor of $v$ in $S$.  After deleting
+$w$, the component containing $v$ has $|V(T)|-|S|<|V(T)|/2$ vertices, while
+every other component is a proper subset of $S$ and hence has at most
+$|S|-1$ vertices.  Thus the largest component after deleting $w$ has size
+at most
+\[
+ \max\{n-|S|,\ |S|-1\}<|S|,
+\]
+whereas the largest component after deleting $v$ has size $|S|$
+(all other components together have $n-1-|S|<|S|$ vertices).
+This contradicts the choice of $v$, proving the centroid claim.
+\end{proof}
+
+\input{src/sections/proofs/row_selector_invariance}
+\ifincludeexponents
+\input{src/sections/proofs/lower_oracle_floor}
+\fi

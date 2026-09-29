@@ -1,0 +1,83 @@
+\subsection{Common collision bookkeeping}
+\label{app:lower-proof-collisions}
+
+We count how matching edges leave the unresolved-edge set; this pathwise
+identity supplies the batch-size constraint in the collision lower-tail
+proof. Recall that \(\UnresolvedVertices{t}\) contains the vertices on
+edges still unresolved immediately before commit \(t\), after any preceding
+queries. At this boundary, operation \(s_t\), the unresolved edge set is
+\(\OpUnresolvedMatching{s_t}\), as in
+\cref{app:eq:unresolved-matching-update,app:eq:remaining-trigger-set}.
+Put \(\UnresolvedVertexCount{t}:=|\UnresolvedVertices{t}|\).
+Removing whole edges makes this number even.
+
+For the selected batch \(B_t\), define its active part and collision count:
+\begin{equation}
+ \ActiveBatch{t}:=B_t\cap\UnresolvedVertices{t},
+ \qquad
+ \ActiveBatchSize{t}:=|\ActiveBatch{t}|,
+ \qquad
+ \CollisionCount{t}:=
+ \bigl|\{e\in\OpUnresolvedMatching{s_t}:
+               e\subseteq\ActiveBatch{t}\}\bigr|,
+ \qquad
+ \TotalCollisions:=\sum_t\CollisionCount{t}.
+ \label{app:eq:unresolved-batch-and-collisions}
+\end{equation}
+An unresolved edge has no committed endpoint, so
+\(\UnresolvedVertices{t}\subseteq\ResidualPositionsAt{G_{t-1}}\).
+The inclusion can be strict: query-retired endpoints and the uncommitted
+mate of a commit-retired endpoint remain uncommitted but are no longer
+active. Figure~\ref{fig:c4-matching-states}(b) shows the latter case.
+A later commit of that mate creates no new unresolved-edge collision.
+
+Let \(\ActiveRoundCount:=|\{t:\ActiveBatchSize{t}\ge1\}|\le\RoundBudget{}\)
+be the number of rounds with a nonempty active batch.
+
+\begin{lemma}[Pathwise edge-counting identity]
+\label{app:lem:pathwise-edge-counting}
+Under the retirement rules in \cref{app:eq:unresolved-matching-update},
+every complete execution satisfies the pathwise identity
+\begin{equation}
+ \frac N2
+ =\GenieDeletions+
+  \sum_t(\ActiveBatchSize{t}-\CollisionCount{t}).
+ \label{app:eq:lower-edge-ledger}
+\end{equation}
+
+Consequently,
+\begin{equation}
+ \sum_{t:\ActiveBatchSize{t}\ge1}
+   (\ActiveBatchSize{t}-1)
+ =\frac N2-\GenieDeletions+\TotalCollisions-\ActiveRoundCount
+ \ge\frac N2-\GenieDeletions-\RoundBudget{}.
+ \label{app:eq:active-excess-ledger}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+An active batch touches exactly
+\(\ActiveBatchSize{t}-\CollisionCount{t}\) previously unresolved edges.
+Indeed, its \(\CollisionCount{t}\) internal edges use
+\(2\CollisionCount{t}\) vertices, while every remaining active vertex lies
+on a distinct crossing edge. Thus the number touched is
+\[
+ \underbrace{\CollisionCount{t}}_{\text{internal edges}}
+ +\underbrace{(\ActiveBatchSize{t}-2\CollisionCount{t})}_{\text{crossing edges}}
+ =\ActiveBatchSize{t}-\CollisionCount{t}.
+\]
+Since every position is eventually committed, every original matching
+edge is retired exactly once: either at a successful counterfactual
+trigger test (query retirement), or at its first active commit batch
+(commit retirement). Summing over the \(N/2\) original edges proves
+\eqref{app:eq:lower-edge-ledger}.
+
+Finally,
+\(\sum_{t:\ActiveBatchSize{t}\ge1}(\ActiveBatchSize{t}-1)
+=\sum_t\ActiveBatchSize{t}-\ActiveRoundCount\).
+Substituting
+\(\sum_t\ActiveBatchSize{t}=N/2-\GenieDeletions+\TotalCollisions\)
+from \eqref{app:eq:lower-edge-ledger}, then using
+\(\TotalCollisions\ge0\) and \(\ActiveRoundCount\le\RoundBudget{}\),
+gives \eqref{app:eq:active-excess-ledger}.
+\end{proof}

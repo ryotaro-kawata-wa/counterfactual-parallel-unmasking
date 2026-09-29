@@ -1,0 +1,41 @@
+% Please keep this comparison beside the upper result, after its parameters are defined.
+\begin{table}[!htb]
+\centering
+\caption{Sufficient bounds at fixed positive accuracy and polynomial vocabulary.
+Mean: seed-averaged divergence; exp.: expected resources (ours are pathwise).
+TC/DTC: total/dual total correlation; $\widehat T$: a supplied bound on either.
+Path: Proposition~\ref{app:prop:path-in-class}.
+Oracle conditions, accuracy dependence, and markers $a,b$:
+Appendices~\ref{app:comparison}--\ref{app:oracle-comparison}.}
+\label{tab:resource-comparison}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.4cm}
+ >{\raggedright\arraybackslash}X
+ >{\raggedright\arraybackslash}p{2.85cm}
+ >{\raggedright\arraybackslash}p{1.85cm}
+ >{\raggedright\arraybackslash}p{1.45cm}@{}}
+\toprule
+Sampler / variant & Target / oracle & Submissions & Depth & Output\\
+\midrule
+Sequential chain rule & Arbitrary / exact & $N$ & $N$ & Exact\\
+One product batch & Arbitrary / exact & $1$ & $1$ & \textcolor{red}{No error bound}$^a$\\
+\midrule
+\citet{anari2024parallel} & Arbitrary / exact
+ & $O(N)$, exp. & $\widetilde O(N^{2/3})$ & Exact\\
+\citet{anari2026autospeculation} & Arbitrary / noisy$^b$
+ & $O(N\log N)$, exp. & $\widetilde O(N^{1/2})$ & TV\\
+\citet{li2025convergence}
+ & TC/DTC / averaged prediction error
+ & $O(1+\mathrm{TC}+\mathrm{DTC})$ (path: $O(N)$) & same & Mean KL\\
+\citet{chen2026optimal}
+ & Supplied $\widehat T$ / exact
+ & $\widetilde O(1+\widehat T)$ (path: $\widetilde O(N)$) & same & Mean KL\\
+\midrule
+This paper, \HellingerCase & Regular hidden forests / uniform Hellinger
+ & $\widetilde O(N^{2/3+1/(9\RankTailExponent)})$ & same & Mean TV\\
+This paper, \KLCase & Regular hidden forests / uniform forward KL
+ & $\widetilde O(N^{2/3+1/(9\RankTailExponent)})$ & same & Mean KL\\
+\bottomrule
+\end{tabularx}
+
+\end{table}

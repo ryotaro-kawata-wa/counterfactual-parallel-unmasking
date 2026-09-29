@@ -1,0 +1,32 @@
+\begin{example}[A column indexes local vocabulary banks, not a common token]
+\label{ex:algorithm-banks-20260918}
+Take $N=15$, $G=\emptyset$, and a vocabulary whose first three tokens in
+the public order are $a\prec b\prec c$ (further tokens may follow).
+Suppose the local vocabulary banks $\TokenBank{i}$ from
+\AlgoBlockRef{preprocess} (\cref{app:def:preprocessing}) and the fixed draft are
+\[
+ \TokenBank{1}=\{a,c\},\quad \DraftToken{1}=a,
+ \qquad
+ \TokenBank{i}=\{b\},\quad \DraftToken{i}=b
+ \quad (i\in[15]\setminus\{1\}).
+\]
+This specifies the screen inputs, not a target distribution or an oracle.
+In particular, $\BankSize{1}=2$, $\BankSize{i}=1$ for $i\ne1$, and
+$\MaxBankSize=2$.  The first token outside each bank is
+$\TailRepresentative{1}=b$ and $\TailRepresentative{i}=a$ for $i\ne1$.
+Substituting into \eqref{app:eq:packed-column} gives
+\[
+\begin{array}{c|ccc}
+ \text{position}&\kappa=1&\kappa=2&\kappa=\TailColumn\\ \hline
+ 1& a&c&b\\
+ i\ne1&b&\DraftToken{i}=b&a
+\end{array}
+ \qquad
+ \ScreenColumnSet=\{1,2,\TailColumn\},\quad \ScreenColumnCount=3.
+\]
+Thus column $1$ assigns $a$ at position $1$ but $b$ at position $4$.
+Column $2$ uses the second bank token at position $1$ and draft padding
+at position $4$, whose bank has no second token.  The tail column uses
+the representative outside each bank.  The same three columns are
+reused for every source color and readout chunk.
+\end{example}

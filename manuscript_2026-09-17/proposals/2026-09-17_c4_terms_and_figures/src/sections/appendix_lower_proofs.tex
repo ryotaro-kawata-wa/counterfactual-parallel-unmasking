@@ -1,0 +1,156 @@
+\section{Proof of the lower bound}
+\label{app:lower-proof}
+
+This section proves the finite matching lower bound in
+\cref{app:thm:nonlinear-finite-lower} and states and proves its class
+inclusion in \cref{app:prop:hard-family-inclusion}.
+The matching proof allows randomized,
+adaptive, value-dependent algorithms, interleaved counterfactual submissions,
+and unrestricted returned bandwidth.  Only deterministic envelopes for the two pathwise counters in
+\textcolor{red}{\cref{app:def:resources}} are bounded.
+The next step toward \cref{main:thm:lower-envelope} is in
+Appendix~\ref{app:benchmark-specializations}:
+\cref{app:cor:signal-calibrated-finite-lower} gives the finite calibration,
+immediately followed by the fixed-accuracy derivation in
+\cref{app:cor:fixed-accuracy-main}.
+\ifincludeexponents
+Independent-signal rate results are in Appendix~\ref{app:independent-signal}.
+\fi
+
+\subsection{Proof overview}
+\label{app:lower-proof-overview}
+
+The goal is to show that few counterfactual submissions and few commit
+rounds cannot both yield small sampling error.  We use a hidden perfect
+matching: each position has one hidden trigger among \(\HardBankSize\)
+candidates, and the oracle conceals an edge's dependence until a trigger
+is hit.  The argument has three steps.
+
+\paragraph{1. At most one candidate per source per submission.}
+A state can return many rows but tests at most one candidate at each
+source.  Conditional uniformity bounds the probability of hitting a given
+source before retirement within \(\QueryBudget{}\) submissions by
+\(\QueryBudget{}/\HardBankSize\). Summing over positions gives
+\(\mathbb E\GenieDeletions\le N\QueryBudget{}/\HardBankSize\), where
+\(\GenieDeletions\) counts query-retired edges.
+
+\paragraph{2. Few commit rounds force collisions.}
+Every edge not retired by a query must be retired at its first endpoint
+commit.  Few rounds therefore require large active batches.  Conditional
+uniformity makes such batches likely to contain both endpoints of an
+unresolved edge: a \emph{collision}.  Edge counting and a conditional
+Laplace bound give \(\TotalCollisions\gtrsim N/\RoundBudget{}\) collisions
+with constant probability under the budget conditions of
+\cref{app:thm:nonlinear-finite-lower}.
+
+\paragraph{3. Collisions turn hidden dependence into sampling error.}
+At a collision, sampling independently from the correct marginals
+\(\HardMarginal\) misses the edge's dependence.  The one-edge squared
+Hellinger loss \(\HardEdgeDistance\asymp\EdgeCoupling^2\) gives a local
+affinity factor \(1-\HardEdgeDistance\).  The midpoint identity combines
+these factors along adaptive paths to bound output error.
+Here query-disclosure and collision probabilities use the
+instance--midpoint law \eqref{app:eq:joint-instance-midpoint-law}, with
+the decision-rule seed fixed; the final conclusion concerns the sampler's
+seed-averaged TV risk.  The table locates the results that implement these
+three steps.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.23\linewidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.23\linewidth}@{}}
+\toprule
+Proof step & Key idea and conclusion & References \\
+\midrule
+\textbf{Construct a hard matching family}
+& Nontrigger oracle replies hide dependence while each edge retains
+loss \(\HardEdgeDistance\asymp\EdgeCoupling^2\).  The inclusion calculation
+checks the target assumptions and oracle error under the stated calibration.
+&
+\cref{app:lower-proof-family};
+\cref{app:lem:hard-local-facts,app:prop:hard-family-inclusion} \\
+\addlinespace
+\textbf{Relate adaptive commits to output error}
+& Later batches depend on sampled values.  The midpoint identity expresses
+output affinity as an expectation of products of local affinities along
+these adaptive paths.
+&
+\cref{app:lower-proof-midpoint};
+\cref{app:lem:adaptive-midpoint-lower} \\
+\addlinespace
+\textbf{Limit what probes can reveal}
+& The unresolved matching and triggers remain conditionally uniform.
+One candidate per source per submission gives
+\(\mathbb E\GenieDeletions\le N\QueryBudget{}/\HardBankSize\).
+&
+\cref{app:lower-proof-invariant};
+\cref{app:lem:unresolved-invariant,app:lem:query-disclosure} \\
+\addlinespace
+\textbf{Force collisions with few rounds}
+& Edge counting forces large active batches; a conditional Laplace bound
+then gives \(\TotalCollisions\gtrsim N/\RoundBudget{}\) with constant
+probability under the budgets in \eqref{app:eq:lower-proof-spine}.
+&
+\cref{app:lower-proof-collisions,app:lower-proof-matching-laplace,app:lower-proof-collision-tail};
+\cref{app:lem:pathwise-edge-counting,app:lem:matching-collision-laplace,app:prop:collision-lower-tail} \\
+\addlinespace
+\textbf{Convert collisions into sampling error}
+& Each collision contributes a factor \(1-\HardEdgeDistance\).
+The midpoint identity gives a prior-averaged loss; averaging over seeds
+and selecting a worst-case instance yields the TV lower bound.
+&
+\cref{app:lower-proof-affinity,app:lower-proof-nonlinear};
+\cref{app:lem:collision-affinity,app:thm:nonlinear-finite-lower} \\
+\addlinespace
+\textbf{Recover the main-text lower bound}
+& Calibrate the matching witness at the public parameters, then take the
+fixed-accuracy limit to obtain \cref{main:thm:lower-envelope}.
+&
+\cref{app:cor:signal-calibrated-finite-lower,app:cor:fixed-accuracy-main} \\
+\bottomrule
+\end{tabularx}
+\caption{Proof steps for the lower bound.}
+\label{app:tab:lower-proof-map}
+\end{table}
+
+\ifincludeexponents
+The joint-limit result in \cref{app:cor:benchmark-hellinger} and
+independent-signal rates in \cref{app:lower-proof-rates} are also separate
+extensions.
+\fi
+
+\paragraph{Quantitative summary.}
+For every fixed decision-rule seed \(w\), the finite hypotheses and
+constants give the following chain:
+\begin{equation}
+ \begin{aligned}
+ &\QueryBudget{}\le\HardBankSize/8,\quad
+ 1\le\RoundBudget{}\le N/16384\\
+ &\Longrightarrow\quad
+ \mathbb E\GenieDeletions\le N/8\\
+ &\Longrightarrow\quad
+ \mathbb P\left(\TotalCollisions\ge
+                 \frac{N}{8192\RoundBudget{}}\right)\ge\frac14\\
+ &\Longrightarrow\quad
+ \mathbb E_{I\sim\HardInstancePrior}\sqHellinger
+   (\HardTargetLaw{I},\HardOutputLaw{I}{w})
+ \ge\frac14\left[1-\exp\left\{
+       -\frac{N\EdgeCoupling^2}{98304\RoundBudget{}}\right\}\right].
+ \end{aligned}
+ \label{app:eq:lower-proof-spine}
+\end{equation}
+The collision step combines the unresolved-matching invariant, the
+edge-counting identity, and the conditional Laplace bound.
+The last step uses the adaptive midpoint identity and
+$\HardEdgeDistance\ge\EdgeCoupling^2/12$.
+
+\input{src/sections/proofs/lower_family}
+\input{src/sections/proofs/lower_midpoint}
+\input{src/sections/proofs/lower_invariant}
+\input{src/sections/proofs/lower_collisions}
+\input{src/sections/proofs/lower_matching_laplace}
+\input{src/sections/proofs/lower_collision_tail}
+\input{src/sections/proofs/lower_affinity}
+\input{src/sections/proofs/lower_nonlinear}

@@ -1,0 +1,289 @@
+{
+  "bundle_version": 2,
+  "experiment": "ideal forest fixed-accuracy scaling",
+  "relative_L0_factor": 1e-10,
+  "assembled_utc": "2026-09-21T18:05:06.020814+00:00",
+  "presentation_amendment": {
+    "date": "2026-09-26",
+    "change": "Shorten the dotted reference-line legend to Q_tot = N.",
+    "numerical_data_modified": false
+  },
+  "canonical_result": "results/ideal_capless_fixed_accuracy_scaling/random_per_run_threshold_search_k1em10L0_fresh",
+  "incremental_reference": "results/ideal_capless_fixed_accuracy_scaling/random_per_run_threshold_search_k1em10L0",
+  "fresh_execution": {
+    "status": "complete",
+    "workers": 8,
+    "seconds": 976.5010244490113,
+    "reused_budget_records": 0
+  },
+  "reproduction": {
+    "status": "pass",
+    "selection_count": 120,
+    "selection_mismatch_count": 0,
+    "summary_cell_count": 20,
+    "summary_mismatch_count": 0,
+    "shared_record_count": 1566,
+    "shared_record_success_mismatch_count": 0,
+    "shared_record_kl_max_absolute_difference": {
+      "K": 2.3305801732931286e-12,
+      "K_upper": 2.3305801732931286e-12
+    }
+  },
+  "source_files": [
+    {
+      "path": "budget_core.py",
+      "sha256": "418b34eefae72cb2e5baf0e3388abe46d03097b8a726ace0ac55f716e0740376"
+    },
+    {
+      "path": "budget_study.py",
+      "sha256": "f9a8bcd24a824e9622267ad5d443df1602c8f2ad89b7d97f0240f2faf92396eb"
+    },
+    {
+      "path": "confidence.py",
+      "sha256": "af450bba1cfd6669420a835dcde66721732d4cd8ca68292f4b36de987169616c"
+    },
+    {
+      "path": "connected_study.py",
+      "sha256": "e0cc3087166cb0aad244ee71e14b13713acb06826cc8e3d16a27fd12f7df501a"
+    },
+    {
+      "path": "cycle_repair.py",
+      "sha256": "e7e1bb837eab372a3f73953fa4fcca5ac849b361fcd855f47e0a66eb1203f380"
+    },
+    {
+      "path": "deferred_screen.py",
+      "sha256": "ffbfa1d8d77db2f7d8e6d29e02c6a1640804120d0c46f9161a31763434f010d1"
+    },
+    {
+      "path": "draft_policy.py",
+      "sha256": "39db7ae6f51c2963e4ae890676875bae4224589a1fbafb7c0e0944b04c7b5e52"
+    },
+    {
+      "path": "explore.py",
+      "sha256": "8d3a4f797189cb2068d2857f681aae15e062b8c16c83100a39b49735d5b9c14f"
+    },
+    {
+      "path": "explore_minimal.py",
+      "sha256": "d8193571038d08130575151279b50837a455636803773f116022a17f023c3d19"
+    },
+    {
+      "path": "fixed_accuracy_confirmation.py",
+      "sha256": "d1a6f8fd80c6f6495721fcc470a5afded8679a171ec69d64eb3934b215bc2395"
+    },
+    {
+      "path": "fixed_accuracy_rescue.py",
+      "sha256": "94eaa93f2fb874f58f1b35fda974741df39b7470eb3f62ece6fd4b68b9640639"
+    },
+    {
+      "path": "forest_batch_kl.c",
+      "sha256": "2064d7c3563f4e6fe6ca38b4e20033fd9266d0cea5dad0858ef92f1604800bf2"
+    },
+    {
+      "path": "forest_kl.py",
+      "sha256": "8202603dcc2cbc27ebb57695707c3a5d9af4161b0d64a677719181768781d753"
+    },
+    {
+      "path": "forest_product_kl.c",
+      "sha256": "099436dd718666d8b483ad1263f2bed176e5553db8b8bdd483019863239e81e2"
+    },
+    {
+      "path": "ideal_capless_fixed_accuracy_scaling.py",
+      "sha256": "bccf5eada0f9a785a15d19c8234b6e3d1a5c41b3bf36fb54dc65616e2d750e68"
+    },
+    {
+      "path": "matching_random_expectation.py",
+      "sha256": "3ec59b06fe8a20777920eedc55ade7d803cb070efaafc3c62c486be14569282d"
+    },
+    {
+      "path": "minimal_oracle.py",
+      "sha256": "752554443b7a2730a2b7e0042acbe60862559ac35e306974e9ecc261eeab334d"
+    },
+    {
+      "path": "minimal_screen.py",
+      "sha256": "83fdc557ed5937900c87e05bc855a5d34638b835d0f16d79c3c378c560431ddd"
+    },
+    {
+      "path": "minimal_study.py",
+      "sha256": "3ac16f6a54c2e78551fcde41244c0a4c5588cd2182848a766a62233a64ad37d1"
+    },
+    {
+      "path": "minimal_tree_bp.c",
+      "sha256": "3b1ae9a37eeba63a6996566f0db55be9a8cf9e1e6845d06a9998c0549e1fd48e"
+    },
+    {
+      "path": "ordering_baselines.py",
+      "sha256": "c5672f1644538bf8ccf0cce826814119b88d4bef81e12722c8a241b910382538"
+    },
+    {
+      "path": "profile_minimal.py",
+      "sha256": "5d806ba60a72a97e266a736c3798f597d90317e177fb04816fac4b4afe994aa9"
+    },
+    {
+      "path": "random_fixed_accuracy_scaling.py",
+      "sha256": "98238f7d744bdc330ddfa35103a185a63b4fd71eed6ae08124d248b790072e02"
+    },
+    {
+      "path": "random_per_run_threshold_search.py",
+      "sha256": "0f72e289461f29049b2d8da883aa2fa7d80b6382e6d74e88435f043337ab70d2"
+    },
+    {
+      "path": "report_fixed_accuracy_confirmation.py",
+      "sha256": "bd6c9920292ff5e98c16b64ca11c8dba906caa56808e00e8b73c80f7fcdb0367"
+    },
+    {
+      "path": "report_fixed_accuracy_rescue.py",
+      "sha256": "60bdc50bcbfb7ce1d83ce6d014186fb46916943a7a9d1ba723a8d61a6724818f"
+    },
+    {
+      "path": "report_ideal_strict_fixed_accuracy_1x4.py",
+      "sha256": "419f3bce0b4e8864064e270fbd340bade93c5d901a1871b5f559000ae4d6d089"
+    },
+    {
+      "path": "report_random_fixed_accuracy_scaling.py",
+      "sha256": "ca367eb4d4d405f6df2931562c91fb671ead65031c40de3de54a420f45eed33a"
+    },
+    {
+      "path": "report_row_cap_grid.py",
+      "sha256": "7593487d9f3828f2a4b93b923664cad233fa270203dfa6cd108ca5f12813295c"
+    },
+    {
+      "path": "report_standard_trees.py",
+      "sha256": "c9d8d105bb4361defcc89db3396e82c0c824ec222d5060d1c8ca2dc0da8f274d"
+    },
+    {
+      "path": "report_strong_path.py",
+      "sha256": "b3b690fe00cb1c16623d2770fd9fbec814c23d528dc89c632c07d71a887cf93f"
+    },
+    {
+      "path": "report_strong_path_baselines.py",
+      "sha256": "ad81518c3d08b95dae7d02fd2722c63966bce09eaf67369e09984ee5b569d4c2"
+    },
+    {
+      "path": "report_strong_path_pivot.py",
+      "sha256": "5ec55691da1fd23095d8a0c919eda557c75144969faf449a9dbd25663b6ab075"
+    },
+    {
+      "path": "report_sublinear_pilot.py",
+      "sha256": "bcb4c706de594e3081eb0a7ea3a96ad5d98b8400910fc95ebd61de0e572ae37b"
+    },
+    {
+      "path": "robustness.py",
+      "sha256": "219f5c9099d8213ee2b75ded57a6eaef76a6ec2a8de245eba6ac770608eb1561"
+    },
+    {
+      "path": "robustness_study.py",
+      "sha256": "31c6b6032caadcdd964791818bf1b4922e35f81bf3b4601e7c2c734f027063c1"
+    },
+    {
+      "path": "row_cap_grid_study.py",
+      "sha256": "f6e2e741c0b84b08a42970a914bd2775d9e04d000f1555d89b963636682c939b"
+    },
+    {
+      "path": "row_cap_study.py",
+      "sha256": "7fcd94ac0afaba858dc860aa781f97cb9af8ce1764a078a280d291e772c0b62e"
+    },
+    {
+      "path": "row_cap_variants.py",
+      "sha256": "7130cad1e9b4fa8eba9387aebf9925800ac363a76bc6334089a16e59c8d8b28d"
+    },
+    {
+      "path": "scale_study.py",
+      "sha256": "4efc0015ef04d09f5efbb4b628565786563879b7e24414575a394fae7a1528cf"
+    },
+    {
+      "path": "standard_tree_study.py",
+      "sha256": "eb144b2f12336212343d4cb0b05ef8d76094a96d5239ca4174c20101e3b3ff9e"
+    },
+    {
+      "path": "strong_path_baseline_study.py",
+      "sha256": "2381a4adb94428594ebce4727f439473492d5c1cae707985ba4967ce28f415d0"
+    },
+    {
+      "path": "strong_path_pivot_study.py",
+      "sha256": "863fed0e3e54bc86483466ba66ac6cf26efc84ffeba9bcfb636f6c2d0873930d"
+    },
+    {
+      "path": "strong_path_study.py",
+      "sha256": "42b8832189dde271c114f7e4243be5930b87a816210bbdbfa283057f517ea92f"
+    },
+    {
+      "path": "sublinear_pilot_study.py",
+      "sha256": "183230964dc6576ecf34e8a942c5da143855703712986e27b0059c32d80dd6a5"
+    },
+    {
+      "path": "toy.py",
+      "sha256": "babc16da84f1749091092fa6bf82562a693d3139d67bf6f39fc0c3a6cbc4e099"
+    },
+    {
+      "path": "tradeoff.py",
+      "sha256": "fd3b57ac8424721c4cdcee186ec7feecbcb074a3222a3ac6b24f524f38d63d3d"
+    },
+    {
+      "path": "tradeoff_core.py",
+      "sha256": "7f483202f5dd83df2a956564a190c305ebcd2d5032145ab2cac582c0c12eca64"
+    },
+    {
+      "path": "tree_bp.c",
+      "sha256": "4d5fd85385f6a352d1ba96fde7ec495206269d9f59587ce944f12a0afb1086aa"
+    },
+    {
+      "path": "tree_oracle.py",
+      "sha256": "bcd09d13da9c7b23dde5634eab7cbb775cc0fc2be69cba99ee717247727cbb43"
+    },
+    {
+      "path": "tree_study.py",
+      "sha256": "00811d04171ba8c9bcdda03f123f8da37968dc68a189b8b6f67930f8d00fc210"
+    },
+    {
+      "path": "tune.py",
+      "sha256": "d6979ef5589c2411d54e979d239ca04d0177bdfe95cbc55836a9e0ccb95d7f5f"
+    },
+    {
+      "path": "validate.py",
+      "sha256": "61e7c83d4cb5dd4220a3351d10c021467cf3469749804302245c4b58116dd9f2"
+    },
+    {
+      "path": "verify_random_threshold_reproduction.py",
+      "sha256": "a5e53bc988943bc1093dd678e3d4c709efad58c6e7161faabd64a2e4d4d8430e"
+    },
+    {
+      "path": "weighted_diagnostics.py",
+      "sha256": "7d63554054e797ff5764e1d0331f82ea09983a42004f4833c235a229c049822b"
+    },
+    {
+      "path": "weighted_oracle.py",
+      "sha256": "615b61d928a2068bd8bed4f3e9f89ee895141b7f6ac0022e84856b1c230193f5"
+    },
+    {
+      "path": "weighted_tree_bp.c",
+      "sha256": "53fbd6806a6171a05dd87809047afb821ac9d3b62a2d447dc475cf9d6f8171aa"
+    }
+  ],
+  "parent_inputs": [
+    {
+      "path": "results/ideal_capless_fixed_accuracy_scaling/design.json",
+      "sha256": "bfe7c08c5bd0cdcea39cbc58ce8ecac3535249692993d8bb3ae001d3bc078e74"
+    },
+    {
+      "path": "results/ideal_capless_fixed_accuracy_scaling/audit.json",
+      "sha256": "0267ebd108c905c2906d62ed5fa873594295c2fdd4540d1175c73189a8c81539"
+    },
+    {
+      "path": "results/ideal_capless_fixed_accuracy_scaling/proposal_confirmation_summary.json",
+      "sha256": "547568c7f15e6e8407a177ad97d424766e7c3c3f0a23d586cffe813fbd930a50"
+    },
+    {
+      "path": "results/ideal_capless_fixed_accuracy_scaling/random_confirmation_records.json",
+      "sha256": "9aeb40c07ba98fe8f9a0a2f8648aed77b8c24cc337834c9d564b527e475c3007"
+    }
+  ],
+  "omitted": [
+    "intermediate NPZ graph, probe, trace, and target-profile artifacts",
+    "process lock files"
+  ],
+  "license_amendment": {
+    "date": "2026-09-29",
+    "license": "MIT",
+    "change": "Update the README licensing note; experiment source, data and numerical results unchanged."
+  }
+}

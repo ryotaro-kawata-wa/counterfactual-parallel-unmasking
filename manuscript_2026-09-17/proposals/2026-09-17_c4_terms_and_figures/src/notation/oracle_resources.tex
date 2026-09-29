@@ -1,0 +1,71 @@
+% Frozen-oracle interface, adaptive state, accuracy objective, and resources.
+% Q is reserved for query/submission counts and R for commit-round counts.
+
+\newcommand{\FrozenOracle}{q}
+% Please keep readout indices below and conditioned values inside the kernel.
+\newcommand{\ExactRow}[2]{\mu_{#2}(\cdot\mid #1)}
+\newcommand{\ExactRowMass}[3]{\mu_{#2}(#3\mid #1)}
+\newcommand{\OracleRow}[2]{q_{#2}(\cdot\mid #1)}
+\newcommand{\OracleRowMass}[3]{q_{#2}(#3\mid #1)}
+\newcommand{\InstanceOracleRow}[3]{q_{#3}^{#1}(\cdot\mid #2)}
+\newcommand{\InstanceOracleRowMass}[4]{q_{#3}^{#1}(#4\mid #2)}
+\newcommand{\OracleClass}{\mathcal Q^{\mathrm{Hel}}}
+% Please retain an independent normalized Hellinger radius in the appendix.
+% Parenthesize this superscripted symbol whenever an additional power is used.
+\newcommand{\OracleRadius}{\varepsilon^{\mathrm H}}
+\newcommand{\HellingerCase}{case~(i)}
+\newcommand{\HellingerCaseTitle}{Case~(i)}
+
+% Masked states and commit histories.
+\newcommand{\MaskSet}[1]{M(#1)}
+\newcommand{\ObservedSet}[1]{O(#1)}
+\newcommand{\AllMaskState}{y^\perp}
+\newcommand{\HistoryAt}[1]{H_{#1}}
+\newcommand{\History}{\HistoryAt{G}}
+\newcommand{\ResidualPositionsAt}[1]{U_{#1}}
+\newcommand{\ResidualPositions}{\ResidualPositionsAt{G}}
+\newcommand{\ResidualForestAt}[1]{F_{#1}}
+\newcommand{\ResidualForest}{\ResidualForestAt{G}}
+
+% Please keep the operation clock distinct from the commit-round clock.
+\newcommand{\OpVisibleHistory}[1]{h^{\mathrm{op}}_{#1-}}
+\newcommand{\OpSubmittedState}[1]{y^{\mathrm{op}}_{#1}}
+\newcommand{\OpVisibleObservation}[1]{o^{\mathrm{vis}}_{#1}}
+
+% Output laws and risks.
+\newcommand{\ControllerSeed}{W}
+\newcommand{\SamplerOutput}{\widehat X}
+\newcommand{\SamplerOutputLaw}[2]{\widehat P_{#1}^{#2}}
+\newcommand{\SafeSamplerOutputLaw}[2]{\widehat P_{#1}^{\mathrm{safe},#2}}
+\newcommand{\ExactCommitOutputLaw}[1]{P_{#1}^{\otimes}}
+\newcommand{\ExactBatchLaw}[1]{P^{\otimes}(\cdot\mid #1)}
+\newcommand{\ExactBatchMass}[2]{P^{\otimes}(#2\mid #1)}
+\newcommand{\OracleBatchLaw}[1]{\widehat P^{\otimes}(\cdot\mid #1)}
+\newcommand{\OracleBatchMass}[2]{\widehat P^{\otimes}(#2\mid #1)}
+\newcommand{\ExactSuffixLaw}[1]{P^{\mathrm{suf}}(\cdot\mid #1)}
+\newcommand{\ExactSuffixMass}[2]{P^{\mathrm{suf}}(#2\mid #1)}
+\newcommand{\OracleSuffixLaw}[1]{\widehat P^{\mathrm{suf}}(\cdot\mid #1)}
+\newcommand{\OracleSuffixMass}[2]{\widehat P^{\mathrm{suf}}(#2\mid #1)}
+\newcommand{\SuffixAffinity}[1]{\operatorname{Aff}_{\mathrm{suf}}(#1)}
+\newcommand{\BatchHellingerCost}[1]{\mathfrak e(#1)}
+\newcommand{\RemainingHellingerBudget}[1]{\mathcal E(#1)}
+\newcommand{\InstanceOracle}[1]{q^{#1}}
+% Please use metric subscripts for seed-averaged risks.  The main text writes
+% worst-case suprema explicitly; the following abbreviations serve the appendix.
+\newcommand{\SeedRisk}{\mathcal R_{\mathrm{TV}}}
+\newcommand{\RobustRisk}{\overline{\mathcal R}_{\mathrm{TV}}}
+\newcommand{\TargetTolerance}{\varepsilon}
+\newcommand{\SharedClass}{\mathfrak F^{\mathrm{sh}}}
+\newcommand{\SharedRisk}{\mathcal R_{\mathrm{TV}}^{\mathrm{sh}}}
+
+% Resource counters and the named constructive sampler.
+\newcommand{\CounterfactualQueries}{Q_{\mathrm{cf}}}
+\newcommand{\MarginalQueryCharge}{Q_{\mathrm{marg}}}
+\newcommand{\ReportedQueries}{Q_{\mathrm{nc}}}
+\newcommand{\CommitRounds}{R}
+% A bar denotes a deterministic all-path budget, not a realized counter.
+\newcommand{\QueryBudget}{\overline Q}
+\newcommand{\RoundBudget}{\overline R}
+\newcommand{\PackedSampler}{\mathcal A_{\mathrm{pack}}}
+\newcommand{\DeterministicPackedSampler}{\mathcal A_{\mathrm{pack}}^{\mathrm{det}}}
+\newcommand{\RandomizedPackedSampler}{\mathcal A_{\mathrm{pack}}^{\mathrm{rnd}}}

@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "study": "ideal_random_per_run_fixed_accuracy_threshold",
+  "smoke": false,
+  "targets": [
+    "matching",
+    "path",
+    "binary",
+    "stars_original"
+  ],
+  "n_grid": [
+    8192,
+    10240,
+    12288,
+    14336,
+    16384
+  ],
+  "evaluation_pairs": [
+    [
+      196,
+      294
+    ],
+    [
+      196,
+      295
+    ],
+    [
+      197,
+      294
+    ],
+    [
+      197,
+      295
+    ],
+    [
+      198,
+      294
+    ],
+    [
+      198,
+      295
+    ]
+  ],
+  "thresholds": {
+    "matching": 6.375289453416719e-09,
+    "path": 2.8019621594196242e-09,
+    "binary": 1.2261620882060043e-09,
+    "stars_original": 5.138930221031766e-12
+  },
+  "parent_thresholds": {
+    "matching": 0.06375289453416719,
+    "path": 0.028019621594196242,
+    "binary": 0.012261620882060044,
+    "stars_original": 5.138930221031766e-05
+  },
+  "threshold_scale": 1e-07,
+  "relative_L0_factor": 1e-10,
+  "threshold_rule": "Per-tree absolute K_star=1e-10 times phase-1 L0_total at N=2048; fixed across N and identical for both methods.",
+  "success": "complete and K+2*conditional_MC_SE_total <= K_star",
+  "coarse_ratios": [
+    0.015625,
+    0.03125,
+    0.0625,
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    0.875,
+    0.9375,
+    0.96875,
+    1.0
+  ],
+  "bracket_width_fraction_of_N": 0.05,
+  "maximum_refinement_rounds": 10,
+  "selection": "For each evaluation pair independently, first observed suffix whose K+2*MCSE<=K_star at every observed larger B.",
+  "endpoint": "B=N exact sequential-singleton sampling; K=0.",
+  "estimand": "Mean and range of six per-run empirical minimum-safe B values; not holdout success of one frozen B.",
+  "sampler_coupling": "Within each evaluation pair, order and commit seeds are derived with budget key zero and reused across B. Balanced partitions therefore use one common random permutation. Adjacent B values are not strictly nested, so successful-suffix selection remains.",
+  "proposal_source": "/home/kawata/work/uen_forest_toy_robustness_20260919/experiments/forest_toy/results/ideal_capless_fixed_accuracy_scaling/proposal_confirmation_summary.json",
+  "seed_records": null,
+  "plan_sha256": "8756baffea16367f668083313a64e7c9813a5149f0008b6b022fcca823105eac",
+  "input_sha256": {
+    "design.json": "bfe7c08c5bd0cdcea39cbc58ce8ecac3535249692993d8bb3ae001d3bc078e74",
+    "audit.json": "0267ebd108c905c2906d62ed5fa873594295c2fdd4540d1175c73189a8c81539",
+    "proposal_confirmation_summary.json": "547568c7f15e6e8407a177ad97d424766e7c3c3f0a23d586cffe813fbd930a50",
+    "random_confirmation_records.json": "9aeb40c07ba98fe8f9a0a2f8648aed77b8c24cc337834c9d564b527e475c3007"
+  },
+  "source_sha256": {
+    "random_per_run_threshold_search.py": "0f72e289461f29049b2d8da883aa2fa7d80b6382e6d74e88435f043337ab70d2",
+    "ideal_capless_fixed_accuracy_scaling.py": "bccf5eada0f9a785a15d19c8234b6e3d1a5c41b3bf36fb54dc65616e2d750e68",
+    "random_fixed_accuracy_scaling.py": "98238f7d744bdc330ddfa35103a185a63b4fd71eed6ae08124d248b790072e02",
+    "sublinear_pilot_study.py": "183230964dc6576ecf34e8a942c5da143855703712986e27b0059c32d80dd6a5"
+  }
+}

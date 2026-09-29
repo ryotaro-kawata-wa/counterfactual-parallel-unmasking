@@ -1,0 +1,509 @@
+\section{\KLCaseTitle: forward-KL upper bound}
+\label{app:kl-extension}
+
+We prove \KLCase\ of \cref{main:thm:upper-curve}, with the finite
+guarantee in \cref{app:thm:finite-kl-upper}.
+The same sampler uses the row-KL and screen-failure budgets defined below.
+Its analysis uses a reference process that draws each batch from the true
+\emph{joint} conditional, even for unsafe batches.
+This differs from the product-of-exact-rows hybrid used for TV.
+
+\begin{proposalcontext}{Relation to the TV formulation}
+The Hellinger/TV and forward-KL guarantees use the same product-commit rule
+with different public accuracy calibrations.  The Hellinger condition (A2)
+applies to the TV case.
+\end{proposalcontext}
+
+\subsection{Oracle condition and output objective}
+\label{app:kl-setup}
+
+We use the same frozen row family, probe/commit operations, and resource
+counts as in
+\textcolor{red}{\cref{app:def:frozen-oracle,app:def:admissible-algorithm,app:def:resources}},
+with the following forward-KL accuracy condition and output risk, corresponding
+to \cref{main:ass:oracle-accuracy,main:def:algorithm-risk-resources}.
+
+\begin{definition}[Uniform forward-KL oracle and seed-averaged KL risk]
+\label{app:def:kl-oracle-risk}
+For a strictly positive target law and $\KLRowBudget\ge0$, let
+$\KLOracleClass(\TargetLaw;\KLRowBudget)$ consist of the strictly positive
+deterministic frozen maps of Definition~\ref{app:def:frozen-oracle} such that
+\begin{equation}
+ \sup_{(y,j):\,j\notin\ObservedSet{y}}
+ \KLDivergence{\ExactRow{y}{j}}{\OracleRow{y}{j}}
+ \le\KLRowBudget.
+ \label{app:eq:kl-row-condition}
+\end{equation}
+For a complete admissible decision rule,
+\textcolor{red}{use the output law of \cref{app:def:output-risk} and define}
+\begin{equation}
+ \KLSeedRisk(\mathcal A;\TargetLaw,\FrozenOracle)
+ :=\mathbb E_{\ControllerSeed}
+   \KLDivergence{\TargetLaw}
+     {\SamplerOutputLaw{\ControllerSeed}{\FrozenOracle}}.
+ \label{app:eq:kl-seed-risk}
+\end{equation}
+The decision-rule seed excludes the primitive randomness used to draw commit
+values.  All KL divergences use natural logarithms and the displayed forward
+direction: target or exact conditional first, generated law or oracle second.
+\end{definition}
+
+The bound in \eqref{app:eq:kl-row-condition} is uniform over \emph{all} masked
+states, including counterfactual and draft-filled inputs, not merely an
+average under a data--mask or generated-trajectory law.  Lemma
+\ref{app:lem:kl-hellinger} implies
+\begin{equation}
+ \KLRowBudget\le\frac{(\OracleRadius)^2}{N}
+ \quad\Longrightarrow\quad
+ \KLOracleClass(\TargetLaw;\KLRowBudget)
+ \subseteq\OracleClass(\TargetLaw;\OracleRadius).
+ \label{app:eq:kl-oracle-inclusion}
+\end{equation}
+Thus all existing preprocessing and screen certificates apply with this
+public Hellinger radius.  Neither the converse inclusion nor an output-KL
+bound from (A2) alone is asserted.  Reverse row KL is sufficient for (A2),
+but is not the assumption used for the forward-KL result here.
+
+\subsection{Adaptive joint-reference identity}
+\label{app:kl-joint-reference}
+
+Learning error and conditional total correlation also appear in the adaptive
+planner decomposition of \citet[Proposition~2]{lavenant2025error}
+(\href{https://arxiv.org/html/2510.25544v2}{arXiv:2510.25544v2}).
+\textcolor{red}{For completeness, we prove the fixed-seed equality for our
+frozen-oracle interface, keeping counterfactual operations in the adaptive
+execution path.}
+
+
+\emph{The joint-reference process.}
+Fix the frozen oracle and a decision-rule seed $w$.  Keep the decision rule,
+counterfactual queries, oracle replies, public row selector, and draft-generation rule fixed, but
+replace each commit kernel by the \emph{true joint conditional} of that
+batch given the committed history.  Denote this analysis-only process by
+$\JointReferenceLaw{w}$; its dependence on the target, oracle, and decision rule
+is suppressed.  Unlike $\ExactCommitOutputLaw{w}$, it draws a dependent
+batch jointly when the decision rule selects an unsafe batch.  It need not be
+implementable by the available oracle.
+
+
+\emph{Its conditional batch law and total correlation.}
+Here $\mathfrak h$ is the
+\hyperlink{app-execution-tree-state}{stored pre-commit execution-tree state}
+from the proof of Lemma~\ref{app:lem:adaptive-hellinger-upper}: it includes
+the committed history, transcript, and internal decision-rule state.
+At this node, let $G(\mathfrak h)$ and
+$x_{G(\mathfrak h)}$ be the committed set and values, $B(\mathfrak h)$
+the next batch, and $y(\mathfrak h)$ the corresponding commit state.  Put
+\[
+ \JointBatchLaw{\mathfrak h}
+ :=\mathcal L_{\TargetLaw}
+   (X_{B(\mathfrak h)}\mid
+    X_{G(\mathfrak h)}=x_{G(\mathfrak h)}).
+\]
+Its singleton marginals are $\ExactRow{y(\mathfrak h)}{j}$.
+The conditional batch's total correlation is
+\[
+ \mathrm{TC}(\JointBatchLaw{\mathfrak h})
+ :=\KLDivergence{\JointBatchLaw{\mathfrak h}}
+  {\bigotimes_{j\in B(\mathfrak h)}\ExactRow{y(\mathfrak h)}{j}}.
+\]
+
+\paragraph{Intuition.}
+For one batch, insert the product of its true singleton marginals into
+the likelihood ratio:
+\[
+ \log\frac{p(X_B)}{\prod_jq_j(X_j)}
+ =\log\frac{p(X_B)}{\prod_jp_j(X_j)}
+  +\sum_j\log\frac{p_j(X_j)}{q_j(X_j)}.
+\]
+Expectation under the true joint law gives the batch's total correlation
+plus its row-KL errors.  The adaptive chain rule then adds these quantities
+along the true-joint reference path.
+
+\begin{lemma}[Joint-reference chain rule and KL decomposition
+\textcolor{red}{(cf.\ {\citealp[Eq.~(7) and Appendix~A.1]{benhamu2025accelerated}})}]
+\label{app:lem:adaptive-joint-kl}
+For every complete admissible decision rule and every fixed seed $w$, the output
+law under $\JointReferenceLaw{w}$ equals $\TargetLaw$, even if its batches
+are not structurally safe.  Moreover,
+\begin{equation}
+\begin{aligned}
+ &\KLDivergence{\TargetLaw}{\SamplerOutputLaw{w}{\FrozenOracle}}\\
+ &\quad=\mathbb E_{\JointReferenceLaw{w}}\sum_t
+ \left[
+  \mathrm{TC}(\JointBatchLaw{\mathfrak h_t})
+  +\sum_{j\in B(\mathfrak h_t)}
+    \KLDivergence{\ExactRow{y(\mathfrak h_t)}{j}}{\OracleRow{y(\mathfrak h_t)}{j}}
+ \right].
+\end{aligned}
+ \label{app:eq:adaptive-joint-kl}
+\end{equation}
+Here $t$ runs over the nonempty commits on the reference path.  Under
+\eqref{app:eq:kl-row-condition}, the sum of row-KL terms is at most
+$N\KLRowBudget$ on every such path.  The sum of total-correlation terms
+is at most $N\log\VocabSize$ on every path and is zero whenever all batches
+are structurally safe for the target forest.
+\end{lemma}
+
+\begin{proof}
+{\color{red}
+
+\emph{1. Identify the reference output law along each adaptive path.}
+With $w$ and the frozen map fixed, all operations between commits are
+deterministic functions of the observed past.  Every full assignment $x$
+therefore determines a unique execution path.  For a reachable node
+$\mathfrak h$, the full assignments that visit it form the cylinder
+\[
+ \{u\in\Vocab^N:\mathfrak h\text{ lies on the fixed-seed path of }u\}
+ =
+ \{u\in\Vocab^N:u_{G(\mathfrak h)}=x_{G(\mathfrak h)}\}.
+\]
+For the forward inclusion, visiting the node requires its committed
+values.  For the reverse inclusion, induct along the path to
+$\mathfrak h$: every earlier committed set is a subset of
+$G(\mathfrak h)$, so these assignments produce the same earlier commit
+values, states, frozen-oracle replies, and next actions.
+Counterfactual replies are functions of the submitted states, not of the
+uncommitted realization of $u$.  Thus the transcript imposes no further
+restriction on that realization.
+
+For the ordered partition $(B_t(x))_t$ chosen along this path, the adaptive
+chain rule gives $\prod_t \TargetLaw\!\left(
+  X_{B_t(x)}=x_{B_t(x)}\mid
+  X_{G_{t-1}(x)}=x_{G_{t-1}(x)}\right)=\TargetLaw(x)$.
+The product telescopes through successive committed sets exactly as in
+\eqref{app:eq:adaptive-exact-chain-rule}.
+This is the reference output mass, so the reference output has law
+$\TargetLaw$.  The cylinder identity then gives
+$\JointReferenceLaw{w}(\text{reach }\mathfrak h)
+ =\TargetLaw(X_{G(\mathfrak h)}=x_{G(\mathfrak h)})>0$ and the node
+conditional
+$\JointReferenceLaw{w}(X_{B(\mathfrak h)}=z\mid\text{reach }\mathfrak h)
+ =\TargetLaw(X_{B(\mathfrak h)}=z\mid
+                     X_{G(\mathfrak h)}=x_{G(\mathfrak h)})
+ =p(z\mid\mathfrak h)$,
+where $p(z\mid\mathfrak h)$ is the mass of
+$\JointBatchLaw{\mathfrak h}$.
+The actual output mass along the same path is
+$\SamplerOutputLaw{w}{\FrozenOracle}(x)
+ =\prod_t\prod_{j\in B_t(x)}
+  \OracleRowMass{y(\mathfrak h_t)}{j}{x_j}$.
+
+\emph{2. Group the pathwise log ratios by reached nodes.}
+Strict positivity makes both masses positive.  Since the reference output
+has law $\TargetLaw$ and its conditional at each reached node $\mathfrak h$
+is $p(\cdot\mid\mathfrak h)$, grouping paths by these nodes gives
+\begin{align*}
+ &\KLDivergence{\TargetLaw}{\SamplerOutputLaw{w}{\FrozenOracle}}\\
+ &=\sum_x\TargetLaw(x)
+   \sum_{\mathfrak h\text{ on the path of }x}
+   \log\frac{p(x_{B(\mathfrak h)}\mid\mathfrak h)}
+             {\prod_{j\in B(\mathfrak h)}
+               \OracleRowMass{y(\mathfrak h)}{j}{x_j}}\\
+ &=\sum_{\mathfrak h}
+   \Pr_{\JointReferenceLaw{w}}\{\text{reach }\mathfrak h\}
+   \sum_z p(z\mid\mathfrak h)
+   \log\frac{p(z\mid\mathfrak h)}
+             {\prod_{j\in B(\mathfrak h)}
+               \OracleRowMass{y(\mathfrak h)}{j}{z_j}}\\
+ &=\mathbb E_{\JointReferenceLaw{w}}\sum_t
+   \KLDivergence{\JointBatchLaw{\mathfrak h_t}}
+     {\bigotimes_{j\in B(\mathfrak h_t)}\OracleRow{y(\mathfrak h_t)}{j}}.
+\end{align*}
+Here $\mathfrak h$ ranges over nonterminal nodes of the fixed-seed execution
+tree.  Every path has at most $N$ nonempty commits and each batch has finitely
+many outcomes, so the sums are finite.  Each node contributes exactly when
+the path visits it; no common path length is required.
+
+
+\emph{3. Decompose the batch KL.}
+For a positive batch law $p$ with singleton marginals $p_j$, recall
+$\mathrm{TC}(p)
+ =\mathbb E_p\log\frac{p(X_B)}{\prod_jp_j(X_j)}$.
+Inserting the product of these marginals into the likelihood ratio gives
+$\KLDivergence{p}{\bigotimes_jq_j}
+ =\mathrm{TC}(p)
+  +\sum_j\mathbb E_p\log\frac{p_j(X_j)}{q_j(X_j)}$.
+For each $j$, expanding the expectation gives
+$\mathbb E_p\log\frac{p_j(X_j)}{q_j(X_j)}
+ =\sum_{a\in\Vocab}\bigl(\sum_{x_B:x_j=a}p(x_B)\bigr)
+     \log\frac{p_j(a)}{q_j(a)}$.
+Since $\sum_{x_B:x_j=a}p(x_B)=p_j(a)$, this equals
+$\sum_{a\in\Vocab}p_j(a)\log\frac{p_j(a)}{q_j(a)}
+ =\KLDivergence{p_j}{q_j}$.
+Thus $\KLDivergence{p}{\bigotimes_jq_j}
+ =\mathrm{TC}(p)+\sum_j\KLDivergence{p_j}{q_j}$, which proves
+\eqref{app:eq:adaptive-joint-kl} after substitution into Step~2.
+
+\emph{4. Bound the pathwise sums.}
+Uniform row accuracy and
+$\sum_t|B(\mathfrak h_t)|=N$ give the $N\KLRowBudget$ bound.
+\hypertarget{app-finite-entropy}{}
+For a finite probability mass $p$, write
+$H(p):=-\sum_zp(z)\log p(z)$, with $0\log0:=0$.
+For a batch law on $\Vocab^B$ with marginals $p_j$, expanding gives
+$\mathrm{TC}(p)
+ =\sum_zp(z)\log p(z)
+   -\sum_{j\in B}\sum_{a\in\Vocab}
+      \bigl(\sum_{z:z_j=a}p(z)\bigr)\log p_j(a)$.
+Substituting $\sum_{z:z_j=a}p(z)=p_j(a)$ yields
+$\mathrm{TC}(p)=\sum_{j\in B}H(p_j)-H(p)$.
+Here $H(p)\ge0$ because $p(z)\le1$, and
+$H(p_j)\le\log\VocabSize$ follows from
+$\KLDivergence{p_j}{\operatorname{Unif}(\Vocab)}
+ =\log\VocabSize-H(p_j)\ge0$.
+Apply this calculation with $p=\JointBatchLaw{\mathfrak h}$ and
+$p_j=\ExactRow{y(\mathfrak h)}{j}$ to obtain
+$0\le\mathrm{TC}(\JointBatchLaw{\mathfrak h})
+ \le|B(\mathfrak h)|\log\VocabSize$.
+Summing over the disjoint batches gives $N\log\VocabSize$.
+Finally, a structurally safe batch
+contains at most one vertex per true residual component (or is a singleton).
+Lemma~\ref{app:lem:residual-markov} makes its true conditional a product, so
+its total correlation is zero.
+}
+\end{proof}
+
+\subsection{Finite bound and the epsilon calibration}
+\label{app:kl-finite}
+
+As in the finite \HellingerCase\ bound of \cref{app:thm:finite-upper},
+preprocessing uses the standard floor;
+feasibility and screen separation remain explicit hypotheses.
+With the accuracy calibration in \cref{app:cor:kl-epsilon}, the theorem
+below yields \KLCase\ of \cref{main:thm:upper-curve} through
+\cref{app:cor:fixed-accuracy-main}.
+
+\paragraph{Intuition.}
+Every path commits $N$ coordinates, so the row-error sum is at most
+$N\KLRowBudget$.  Successful reference paths use only safe batches and
+have zero batch total correlation.  On all other paths the total
+correlation is at most $N\log\VocabSize$.  Thus
+\[
+ \hbox{expected output KL}
+ \le N\KLRowBudget
+     +N\log\VocabSize\,
+        \Pr_{\text{joint reference and seed}}(\ScreenFailureEvent).
+\]
+The fresh-color argument bounds this last probability by
+$\ScreenFailureBudget$ under the reference process as well.
+
+\begin{theorem}[\KLCaseTitle: finite randomized forward-KL upper bound]
+\label{app:thm:finite-kl-upper}
+We work in \KLCase, with the oracle class and output risk of
+\cref{app:def:kl-oracle-risk}.
+Fix $N\ge10$, $\VocabSize\ge2$, and the target, response, and algorithmic
+setup of Appendices~\ref{app:setup} and~\ref{app:algorithm}.  Let
+$\OracleRadius\in[0,1]$ and $0\le\KLRowBudget\le(\OracleRadius)^2/N$.
+Use Algorithm~\ref{app:alg:complete-sampler} with the standard zero-query
+draft, the public radius $\OracleRadius$, and
+$\ScreenFailureBudget\in(0,1)$.  Suppose preprocessing is feasible and
+$\ScreenResolution<\EdgeSignal$.  For every
+$\FrozenOracle\in\KLOracleClass(\TargetLaw;\KLRowBudget)$,
+\begin{equation}
+ \KLSeedRisk(\RandomizedPackedSampler;\TargetLaw,\FrozenOracle)
+ \le N\KLRowBudget+N\log\VocabSize\,\ScreenFailureBudget.
+ \label{app:eq:finite-kl-risk}
+\end{equation}
+On every path, including failed-screen paths, the resources satisfy
+\begin{align}
+ \CounterfactualQueries
+ &\le\ScreenColumnCount\ScreenCallCap\RandomColoringCount
+       \RandomColorCount(\RandomColorCount+\ChunkCount),\notag\\
+ \CommitRounds&\le\HardRoundCap,
+ \qquad
+ \OracleDepth\le1+\CommitRounds+\ScreenCallCap.
+ \label{app:eq:finite-kl-resources}
+\end{align}
+The parameters on the right are the original finite parameters in
+\eqref{app:eq:screen-column-count}, \eqref{app:eq:random-color-parameters},
+and \eqref{app:eq:screen-call-and-round-caps}.  Charging the initial all-mask
+state gives $\ReportedQueries=\CounterfactualQueries+1$ by
+\eqref{app:eq:reported-query-count}, so its submission bound is the
+displayed bound for $\CounterfactualQueries$ plus one.
+If feasibility and separation hold
+for every oracle in this KL class, the supremum of the risk in
+\eqref{app:eq:finite-kl-risk} over that class has the same bound.
+\end{theorem}
+
+\begin{proof}
+
+\emph{1. Transfer the oracle and resource guarantees.}
+\textcolor{red}{By \cref{app:lem:kl-hellinger} and
+\eqref{app:eq:kl-row-condition}, every valid $(y,j)$ satisfies}
+{\color{red}
+\[
+ \sqHellinger(\ExactRow{y}{j},\OracleRow{y}{j})
+ \le\tfrac12\KLDivergence{\ExactRow{y}{j}}{\OracleRow{y}{j}}
+ \le\tfrac12\KLRowBudget
+ \le\frac{(\OracleRadius)^2}{2N}.
+\]
+}
+\textcolor{red}{Thus the oracle meets \cref{app:ass:oracle-accuracy} (A2),
+as recorded in \eqref{app:eq:kl-oracle-inclusion}, and
+\cref{app:lem:upper-resources} transfers the preprocessing, screen, and
+resource guarantees.  The output-KL bound instead uses the preceding
+\cref{app:lem:adaptive-joint-kl}.}
+
+
+\emph{2. Bound the KL cost at a fixed seed.}
+\textcolor{red}{Using the call notation of
+\cref{app:lem:random-screen-success} on the joint-reference execution,
+define the reached-screen failure event by}
+{\color{red}
+\[
+ \ScreenFailureEvent
+ :=\bigcup_{s=1}^{\ScreenCallCap}
+   \{R_s\text{ occurs and }\ScreenSuccess{H^{(s)}}\text{ fails}\}.
+\]
+}
+On $\ScreenFailureEvent^{\mathsf c}$, the deterministic successful-path
+certificates in Lemmas~\ref{app:lem:successful-path-structure}
+and~\ref{app:lem:upper-resources} imply that neither cycle repair nor
+\AlgoGuardRef\ is activated, and every commit is a singleton peel in
+\AlgoBlockRef{peel} or a safe
+centroid batch in \AlgoBlockRef{centroid}.  These statements hold
+for every sequence of realized values, so they also hold for reference
+commits.  Thus the total-correlation cost vanishes on
+$\ScreenFailureEvent^{\mathsf c}$, while the pathwise bound from
+Lemma~\ref{app:lem:adaptive-joint-kl} applies on the failure event:
+\[
+ \sum_t\mathrm{TC}(\JointBatchLaw{\mathfrak h_t})
+ =\mathbf 1_{\ScreenFailureEvent}
+   \sum_t\mathrm{TC}(\JointBatchLaw{\mathfrak h_t})
+ \le N\log\VocabSize\,\mathbf 1_{\ScreenFailureEvent}.
+\]
+Repair batches are singletons, so each has zero total correlation.
+Their coordinates still enter the row-KL sum only once, as for every
+other commit; \textcolor{red}{on every path,}
+{\color{red}
+\[
+ \sum_t\sum_{j\in B(\mathfrak h_t)}
+ \KLDivergence{\ExactRow{y(\mathfrak h_t)}{j}}
+              {\OracleRow{y(\mathfrak h_t)}{j}}
+ \le\KLRowBudget\sum_t|B(\mathfrak h_t)|
+ =N\KLRowBudget.
+\]
+}
+Taking the reference expectation replaces the indicator by
+$\JointReferenceLaw{w}(\ScreenFailureEvent)$.  Adding the pathwise row-KL
+budget $N\KLRowBudget$ in Lemma~\ref{app:lem:adaptive-joint-kl} therefore
+gives, for each fixed $w$,
+\begin{equation}
+ \KLDivergence{\TargetLaw}{\SamplerOutputLaw{w}{\FrozenOracle}}
+ \le N\KLRowBudget
+   +N\log\VocabSize\,\JointReferenceLaw{w}(\ScreenFailureEvent).
+ \label{app:eq:kl-fixed-seed-failure}
+\end{equation}
+
+
+\emph{3. Average the screen failure under the joint-reference law.}
+It remains to average the failure term over the decision-rule seed.  Generate
+reference commit values with a fresh primitive random source independent of
+the color blocks and draft randomness.  Just before each reached color
+draw in \AlgoBlockRef{draft}, condition on the reference history and
+completed draft generation,
+but not on the current or future colors.  The residual forest and draft are
+then fixed and the new colors remain independent and uniform.  The proof of
+Lemma~\ref{app:lem:random-screen-success} uses only these facts, not the law
+of preceding commit values: for each ordered pair, at most $2\DegreeCutoff$
+color equalities are forbidden, each with probability
+$1/\RandomColorCount$, and independent repetition gives the failure bound
+$\exp\{-\RandomColoringCount/8\}$.  Union bounds over fewer than $N^2$
+pairs give the same conditional bound at a reached reference call.
+To pass from that conditional estimate to the seed average, define the
+joint probability of an event $A$ by
+\[
+ \Pr_{\mathrm{joint}}(A):=
+       \mathbb E_W\JointReferenceLaw{W}(A).
+\]
+Form $\mathcal T_{s-},f^{(s)},\mathcal F_{s-1},R_s,E_s$ exactly as in
+\cref{app:lem:random-screen-success}, now from the reference execution.
+In particular, $\mathcal F_{s-1}=\sigma(\mathcal T_{s-},f^{(s)})$
+excludes the current and future colors, and
+$\ScreenFailureEvent=\bigcup_{s=1}^{\ScreenCallCap}E_s$.  Then
+\[
+ \Pr_{\mathrm{joint}}(E_s\mid\mathcal F_{s-1})
+ \le\mathbf 1_{R_s}\frac{\ScreenFailureBudget}{\ScreenCallCap}.
+\]
+The union bound and conditional expectation give
+\begin{align*}
+ \mathbb E_W\JointReferenceLaw{W}(\ScreenFailureEvent)
+ &=\Pr_{\mathrm{joint}}\!\left(
+       \bigcup_{s=1}^{\ScreenCallCap}E_s\right)\\
+ &\le\sum_{s=1}^{\ScreenCallCap}
+       \mathbb E_{\mathrm{joint}}\!
+        \left[\Pr_{\mathrm{joint}}(E_s\mid\mathcal F_{s-1})\right]\\
+ &\le\frac{\ScreenFailureBudget}{\ScreenCallCap}
+       \sum_{s=1}^{\ScreenCallCap}\Pr_{\mathrm{joint}}(R_s)
+ \le\ScreenFailureBudget.
+\end{align*}
+\textcolor{red}{This sums conditional failure probabilities over adaptively
+reached calls; it does not require the calls to be independent.}
+We have therefore proved
+\begin{equation}
+ \mathbb E_{\ControllerSeed}
+   \JointReferenceLaw{\ControllerSeed}(\ScreenFailureEvent)
+ \le\ScreenFailureBudget.
+ \label{app:eq:joint-reference-screen-failure}
+\end{equation}
+This is a joint probability over fresh colors and reference commit draws;
+it is \emph{not} a failure-probability bound conditional on the full seed
+$w$.  Averaging \eqref{app:eq:kl-fixed-seed-failure} proves
+\eqref{app:eq:finite-kl-risk}.  In particular, failed-screen paths are charged
+through their finite total-correlation cost, not by attempting to convert a
+TV coupling bound into KL.  No minimum atom size or bounded likelihood ratio
+is assumed beyond the existing strict positivity.
+\end{proof}
+
+\begin{corollary}[\KLCaseTitle\ with output KL at most epsilon]
+\label{app:cor:kl-epsilon}
+Fix $0<\KLTargetTolerance\le1$ and use the preceding finite target and
+algorithmic setup.  Choose
+\begin{equation}
+ \KLRowBudget:=\frac{\KLTargetTolerance}{2N},
+ \qquad
+ \ScreenFailureBudget:=
+       \frac{\KLTargetTolerance}{2N\log\VocabSize}.
+ \label{app:eq:kl-epsilon-calibration}
+\end{equation}
+Run the existing algorithm with its public radius set to $\KLOracleRadius$.
+If its preprocessing is feasible and $\ScreenResolution<\EdgeSignal$ with
+this radius, then for every
+$\FrozenOracle\in\KLOracleClass(\TargetLaw;\KLRowBudget)$,
+\begin{equation}
+ \KLSeedRisk(\RandomizedPackedSampler;\TargetLaw,\FrozenOracle)
+ \le\KLTargetTolerance,
+ \label{app:eq:kl-epsilon-output}
+\end{equation}
+with the pathwise bounds in \eqref{app:eq:finite-kl-resources}.  Thus the
+per-row budget scales as $\KLTargetTolerance/N$, not
+$(\KLTargetTolerance)^2/N$.
+\end{corollary}
+
+\begin{proof}
+The auxiliary radius is in $[0,1]$,
+$\KLRowBudget=(\KLOracleRadius)^2/N$, and the displayed failure budget is
+in $(0,1)$ for $N\ge10$, $\VocabSize\ge2$.  Each term on the right of
+\eqref{app:eq:finite-kl-risk} is $\KLTargetTolerance/2$.
+\end{proof}
+
+The auxiliary radius $\KLOracleRadius$ is an input calibration for \KLCase,
+not a redefinition of the \HellingerCase\ parameter $\OracleRadius$.
+
+\begin{proposalcontext}{Additional metric consequences}
+Pinsker's
+inequality and Jensen's inequality imply from \eqref{app:eq:kl-epsilon-output}
+that $\mathbb E_W\dTV(\TargetLaw,\SamplerOutputLaw{W}{\FrozenOracle})^2
+\le\KLTargetTolerance/2$ and the mean TV is at most
+$\sqrt{\KLTargetTolerance/2}$.  This explains the KL versus squared-TV
+scaling convention in the comparison; it is not a two-sided equivalence of
+the metrics.  Convexity also bounds the forward KL of the seed-marginalized
+output by \eqref{app:eq:kl-seed-risk}; the latter, stronger objective is the
+one proved here.
+\end{proposalcontext}
+
+\ifincludeexponents
+The independent-signal KL rate and its direct-parameter form are retained
+in Appendix~\ref{app:independent-signal}.
+\fi

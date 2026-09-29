@@ -1,0 +1,14 @@
+% Pseudocode environments.  Keep these separate from theorem counters: an
+% Algorithm is an executable construction, not a theorem-like statement.
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+
+% algorithmicx resets ALG@line in every algorithm.  Include the enclosing
+% algorithm number in Hyperref's destination name so line anchors stay unique.
+\makeatletter
+\def\theHALG@line{\thealgorithm.\arabic{ALG@line}}
+\makeatother
+
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}

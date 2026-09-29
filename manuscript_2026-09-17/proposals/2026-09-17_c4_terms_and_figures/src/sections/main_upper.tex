@@ -1,0 +1,52 @@
+\section{Main results}
+\label{sec:main-results}
+
+\subsection{Sublinear sampling is possible}
+\label{sec:main-upper}
+
+The positive result controls total submissions and sequential depth.
+The public algorithm parameter $\DegreeCutoff$ trades discovery submissions
+against irreversible commit rounds; target degrees may be arbitrary.
+
+\begin{theorem}[Existence of a sublinear oracle sampler]
+\label{main:thm:upper-curve}
+For either target--oracle class in Definition~\ref{main:def:shared-rate-class}
+and every public integer $9\le\DegreeCutoff\le N-1$, there is an admissible
+sampler $\PackedSampler$, depending only on the public class data and
+$\DegreeCutoff$, with the following guarantees for all sufficiently large $N$.
+Uniformly over the respective target--oracle class, on every execution path,
+\begin{equation}
+ \CounterfactualQueries
+ =\widetilde O\!\left(
+   \DegreeCutoff^2(N/\TargetTolerance^2)^{1/(3\RankTailExponent)}
+ \right),
+ \qquad
+ \CommitRounds,\OracleDepth=\widetilde O(N/\DegreeCutoff).
+ \label{main:eq:benchmark-upper}
+\end{equation}
+Here $\widetilde O$ hides powers of $\log N$, with $\TargetTolerance$ fixed.
+In \HellingerCase,
+$\sup_{I\in\SharedClass}
+ \SeedRisk(\PackedSampler;\InstanceTargetLaw{I},\InstanceOracle{I})
+ \le\TargetTolerance$.
+In \KLCase, uniformly over its class,
+$\KLSeedRisk(\PackedSampler;\TargetLaw,\FrozenOracle)\le\TargetTolerance^2$.
+\end{theorem}
+
+In particular, choosing
+$\DegreeCutoff=\lceil(N\EdgeSignal^{1/\RankTailExponent})^{1/3}\rceil$
+gives the common balanced bound
+\begin{equation}
+ 1+\CounterfactualQueries+\CommitRounds,\ \OracleDepth
+ =\widetilde O\!\left(
+ N^{2/3+1/(9\RankTailExponent)}/\TargetTolerance^{2/(9\RankTailExponent)}
+ \right)=o(N).
+ \label{main:eq:balanced-upper}
+\end{equation}
+\textcolor{red}{Since $\RankTailExponent>1$, both total submissions and depth
+are sublinear at fixed admissible accuracy.
+Section~\ref{sec:main-algorithm} gives the construction and
+\cref{app:cor:fixed-accuracy-main} the finite calibration and logarithmic factors.
+Table~\ref{tab:resource-comparison} compares bounds under the respective
+target and oracle assumptions.}
+\input{src/sections/main_resource_table}

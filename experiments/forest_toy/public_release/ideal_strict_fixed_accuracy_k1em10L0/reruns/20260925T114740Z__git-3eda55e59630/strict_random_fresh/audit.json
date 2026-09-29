@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "cells": 20,
+  "per_run_searches": 120,
+  "all_selected_random_runs_pass": true,
+  "all_exact_singleton_endpoints_pass": true,
+  "maximum_allowed_bracket_width_over_N": 0.05,
+  "observed_maximum_bracket_width_over_N": 0.03125,
+  "total_budget_records": 1566,
+  "reused_budget_records": 0,
+  "random_stream_budget_key": 0,
+  "random_stream_coupled_across_budgets": true,
+  "random_budget_selected_from_evaluation_curve": true,
+  "not_untouched_fixed_B_confirmation": true,
+  "query_identity_verified": true,
+  "source_sha256": {
+    "random_per_run_threshold_search.py": "0f72e289461f29049b2d8da883aa2fa7d80b6382e6d74e88435f043337ab70d2",
+    "ideal_capless_fixed_accuracy_scaling.py": "bccf5eada0f9a785a15d19c8234b6e3d1a5c41b3bf36fb54dc65616e2d750e68",
+    "random_fixed_accuracy_scaling.py": "98238f7d744bdc330ddfa35103a185a63b4fd71eed6ae08124d248b790072e02",
+    "sublinear_pilot_study.py": "183230964dc6576ecf34e8a942c5da143855703712986e27b0059c32d80dd6a5"
+  },
+  "input_sha256": {
+    "design.json": "bfe7c08c5bd0cdcea39cbc58ce8ecac3535249692993d8bb3ae001d3bc078e74",
+    "audit.json": "0267ebd108c905c2906d62ed5fa873594295c2fdd4540d1175c73189a8c81539",
+    "proposal_confirmation_summary.json": "547568c7f15e6e8407a177ad97d424766e7c3c3f0a23d586cffe813fbd930a50",
+    "random_confirmation_records.json": "159d859ab5f7488038418227073c20569c7e2a81615d647d2b7c6a845e4ccfe3"
+  }
+}

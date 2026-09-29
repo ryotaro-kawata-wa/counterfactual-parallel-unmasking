@@ -1,0 +1,25 @@
+% Please suppress only the exact named red/blue editorial text colors.
+% Color definitions, mixtures, model-qualified colors and imported PDF artwork
+% are preserved. Restore ordinary color handling locally inside TikZ pictures
+% so semantic diagram colors remain unchanged, including Figure 2.
+% Please copy the robust command and its implementation together; a plain
+% \let would retain xcolor's self-reference and recurse after redefinition.
+\NewCommandCopy\ManuscriptOriginalColor\color
+\ExplSyntaxOn
+\RenewDocumentCommand \color { o m }
+  {
+    \IfNoValueTF {#1}
+      {
+        \str_case:nnF {#2}
+          {
+            {red}  {\ManuscriptOriginalColor{black}}
+            {blue} {\ManuscriptOriginalColor{black}}
+          }
+          {\ManuscriptOriginalColor{#2}}
+      }
+      {\ManuscriptOriginalColor[#1]{#2}}
+  }
+\ExplSyntaxOff
+\AddToHook{env/tikzpicture/begin}{\let\color\ManuscriptOriginalColor}
+% Please retain clickable references without colored link borders in this copy.
+\hypersetup{hidelinks}

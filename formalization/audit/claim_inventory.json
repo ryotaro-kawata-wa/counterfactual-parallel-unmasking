@@ -1,0 +1,1016 @@
+{
+  "manuscript_commit": "ddc2060d3210edbd3b12e0e51e55881a90906fd5",
+  "manuscript_pdf_sha256": "23b39846b8262b9618311278630091c9ec408f0c1ba48c95bf75a8f272b1a731",
+  "scope": "The currently compiled arXiv manuscript; optional omitted exponent sections are excluded. This inventory counts explicit statement environments, not every assertion in prose.",
+  "counts": {
+    "definition": 16,
+    "assumption": 7,
+    "theorem": 5,
+    "corollary": 5,
+    "lemma": 22,
+    "proposition": 4,
+    "definition*": 2
+  },
+  "claims": [
+    {
+      "environment": "definition",
+      "title": "Forest target and committed history",
+      "label": "main:def:forest-target",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 23,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "assumption",
+      "title": "Forest factorization",
+      "label": "main:ass:forest-structure",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 37,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Tail sets and directed response",
+      "label": "main:def:response-quantities",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 51,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "assumption",
+      "title": "Regularity and scaling for the main results",
+      "label": "main:ass:regularity-scaling",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 68,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Frozen conditional oracle",
+      "label": "main:def:frozen-oracle",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 127,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Sampling operations, resources, and risk",
+      "label": "main:def:algorithm-risk-resources",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 151,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "assumption",
+      "title": "Uniform frozen-oracle accuracy: two cases",
+      "label": "main:ass:oracle-accuracy",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 216,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Target--oracle classes",
+      "label": "main:def:shared-rate-class",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "line": 234,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "theorem",
+      "title": "Existence of a sublinear oracle sampler",
+      "label": "main:thm:upper-curve",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_upper.tex",
+      "line": 11,
+      "coverage": "proved",
+      "lean_declarations": [
+        "GeneralUpperCurve.tv_curve_eventually",
+        "GeneralUpperCurve.kl_curve_eventually",
+        "GeneralUpperCurve.queryEnvelope_le_signal_power",
+        "MainUpperTheorem.balanced_grid_upper_eventually",
+        "MainKLUpperTheorem.balanced_grid_kl_upper_eventually",
+        "MainUpperTheorem.queryCap_isLittleO",
+        "MainUpperTheorem.roundCap_isLittleO",
+        "MainKLUpperTheorem.queryCap_isLittleO",
+        "MainResourceTotals.tv_totalGuarantee_eventually",
+        "MainResourceTotals.kl_totalGuarantee_eventually",
+        "MainResourceTotals.tvTotalCallCap_isLittleO",
+        "MainResourceTotals.klTotalCallCap_isLittleO",
+        "MainResourceTotals.depthCap_isLittleO"
+      ],
+      "note": "Actual TV/KL public sampler for every allowed cutoff, with uniform query/round/grouped-depth envelopes and literal vocabulary growth. Actual balanced total calls including preprocessing and parallel depth are o(N). The target-error substitutions are exact scalar calibrations; the displayed main error bounds are weaker than the proved allocations."
+    },
+    {
+      "environment": "theorem",
+      "title": "Fixed-accuracy query--round lower bound",
+      "label": "main:thm:lower-envelope",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_lower.tex",
+      "line": 10,
+      "coverage": "proved",
+      "lean_declarations": [
+        "main_observed_public_class_lower_any_vocabulary",
+        "main_observed_public_class_lower_any_vocabulary_eventually"
+      ],
+      "note": "Full ordinary commit feedback, arbitrary finite vocabulary, actual public class, and literal vocabulary growth. The lower alternative is pointwise for each sufficiently large even N."
+    },
+    {
+      "environment": "definition",
+      "title": "Forest-structured target law",
+      "label": "app:def:target-law",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 104,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "assumption",
+      "title": "Structural forest law (S0--C0)",
+      "label": "app:ass:forest-structure",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 121,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Marginal tails and intrinsic responses",
+      "label": "app:def:response-quantities",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 189,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "assumption",
+      "title": "Response regularity (RT--UEN)",
+      "label": "app:ass:response-regularity",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 222,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "assumption",
+      "title": "Asymptotic vocabulary and frequency envelope (RF)",
+      "label": "app:ass:rate-regime",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 256,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Frozen conditional oracle",
+      "label": "app:def:frozen-oracle",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 304,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "assumption",
+      "title": "\\HellingerCaseTitle: frozen-oracle accuracy (A2)",
+      "label": "app:ass:oracle-accuracy",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 355,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "\\textcolor{red}{Admissible algorithms}",
+      "label": "app:def:admissible-algorithm",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 408,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "\\textcolor{red}{Output law and \\HellingerCase\\ risk}",
+      "label": "app:def:output-risk",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 564,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "\\textcolor{red}{Resources and all-path budgets}",
+      "label": "app:def:resources",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "line": 593,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Finite hard matching family",
+      "label": "app:def:hard-matching-family",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_results.tex",
+      "line": 19,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "theorem",
+      "title": "Nonlinear finite adaptive query--round lower bound",
+      "label": "app:thm:nonlinear-finite-lower",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_results.tex",
+      "line": 120,
+      "coverage": "proved",
+      "lean_declarations": [
+        "NonlinearMatchingParameters.lowerValue_le_observedMinimax"
+      ],
+      "note": "Actual finite minimax theorem for the full observed controller. Commit feedback is simulated with exact output/risk and unchanged charged Q/R; the stronger free-current-marginal disclosure theorem is proved."
+    },
+    {
+      "environment": "corollary",
+      "title": "Nonlinear finite target-error tradeoff",
+      "label": "app:cor:nonlinear-finite-target-tradeoff",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_results.tex",
+      "line": 142,
+      "coverage": "proved",
+      "lean_declarations": [
+        "NonlinearMatchingParameters.observed_target_error_alternative"
+      ],
+      "note": "Full observed-controller target-error corollary, including zero-round impossibility."
+    },
+    {
+      "environment": "lemma",
+      "title": "Local facts for the hard matching family",
+      "label": "app:lem:hard-local-facts",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_family.tex",
+      "line": 48,
+      "coverage": "proved",
+      "lean_declarations": [
+        "HardMatching.exactRowCharacterization",
+        "HardMatching.selectedOracle_accurate",
+        "HardLocalParameters.endpointKernel_tv_eq_feature_difference",
+        "HardLocalParameters.endpointKernel_tv_coupling_attained",
+        "HardLocalParameters.edgeLaw_sqHellinger_bounds",
+        "HardLocalParameters.edgeLaw_sqHellinger_trigger_invariant"
+      ],
+      "note": "The four local assertions are proved in the listed component theorems."
+    },
+    {
+      "environment": "proposition",
+      "title": "Finite hard-family inclusion",
+      "label": "app:prop:hard-family-inclusion",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_family.tex",
+      "line": 260,
+      "coverage": "proved",
+      "lean_declarations": [
+        "NonlinearMatchingParameters.hardFamily_finiteIncluded"
+      ],
+      "note": "Actual forest target, complete-boundary RT/UEN, bijective nonincreasing RF ranking, and selected-oracle squared-Hellinger accuracy are all proved. Vocabulary-growth is a separate asymptotic assumption."
+    },
+    {
+      "environment": "definition*",
+      "title": "Commit kernels and adaptive midpoint law",
+      "label": "app:eq:hard-exact-batch-law",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_midpoint.tex",
+      "line": 68,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "lemma",
+      "title": "Adaptive midpoint identity",
+      "label": "app:lem:adaptive-midpoint-lower",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_midpoint.tex",
+      "line": 162,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Sampler.adaptive_midpoint_identity",
+        "Program.retainedPath_withinBudgets",
+        "ObservedProgram.eval_compile",
+        "ObservedProgram.WithinOracleBudgets.compile_withinFreeMarginalBudgets",
+        "RandomizedObservedSamplerData.risk_compile"
+      ],
+      "note": "The exact output-law/risk-preserving compiler transfers the concrete midpoint argument to full observed commits without adding charged probes."
+    },
+    {
+      "environment": "definition*",
+      "title": "Unresolved edges and the analytic record",
+      "label": "app:eq:hard-test-and-hit",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_invariant.tex",
+      "line": 25,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "lemma",
+      "title": "Unresolved-matching invariant",
+      "label": "app:lem:unresolved-invariant",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_invariant.tex",
+      "line": 202,
+      "coverage": "proved",
+      "lean_declarations": [
+        "NonlinearMatchingParameters.midpointPrefix_posterior",
+        "NonlinearMatchingParameters.midpointPrefixOfPath_observations",
+        "HardMatching.SurvivorRecord.uniform_fiber_map_matching",
+        "HardMatching.SurvivorRecord.uniform_fiber_map_trigger"
+      ]
+    },
+    {
+      "environment": "lemma",
+      "title": "Equality-test disclosure",
+      "label": "app:lem:query-disclosure",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_invariant.tex",
+      "line": 1247,
+      "coverage": "proved",
+      "lean_declarations": [
+        "HardMatching.SurvivorRecord.uniformDisclosureEval_le",
+        "NonlinearMatchingParameters.midpointLedger_queryVertices_expectation_le",
+        "NonlinearMatchingParameters.midpointLedger_disclosure_le_eighth",
+        "HardMatching.SurvivorRecord.queryHits_commitState_eq_empty",
+        "HardMatching.SurvivorRecord.uniformDisclosureEval_freeMarginal_le",
+        "NonlinearMatchingParameters.midpointLedger_freeMarginal_queryVertices_expectation_le"
+      ],
+      "note": "The stronger free-current-marginal disclosure theorem explicitly covers ordinary commit-row feedback after observed compilation."
+    },
+    {
+      "environment": "lemma",
+      "title": "Pathwise edge-counting identity",
+      "label": "app:lem:pathwise-edge-counting",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_collisions.tex",
+      "line": 37,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Program.retirementLedger_initial_identity"
+      ]
+    },
+    {
+      "environment": "lemma",
+      "title": "Internal-edge Laplace transform",
+      "label": "app:lem:matching-collision-laplace",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_matching_laplace.tex",
+      "line": 22,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PerfectMatching.uniform_internalEdgeCount_laplace"
+      ]
+    },
+    {
+      "environment": "proposition",
+      "title": "Adaptive collision lower tail",
+      "label": "app:prop:collision-lower-tail",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_collision_tail.tex",
+      "line": 25,
+      "coverage": "proved",
+      "lean_declarations": [
+        "NonlinearMatchingParameters.midpointLedger_freeMarginal_collision_tail"
+      ],
+      "note": "Actual dynamic collision count under the instance-midpoint law with free commit-state reads; this covers full ordinary commit feedback via ObservedProgram.compile."
+    },
+    {
+      "environment": "lemma",
+      "title": "Affinity loss from unresolved collisions",
+      "label": "app:lem:collision-affinity",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_affinity.tex",
+      "line": 27,
+      "coverage": "proved",
+      "lean_declarations": [
+        "NonlinearMatchingParameters.prior_sqHellinger_ge_retirement_power_loss"
+      ]
+    },
+    {
+      "environment": "definition",
+      "title": "All-mask preprocessing",
+      "label": "app:def:preprocessing",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_algorithm.tex",
+      "line": 254,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Zero-query screen draft",
+      "label": "app:def:draft-generator",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_algorithm.tex",
+      "line": 378,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "definition",
+      "title": "Admissible public row selector",
+      "label": "app:def:row-selector",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_algorithm.tex",
+      "line": 573,
+      "coverage": "interface_correspondence_audited",
+      "translation_audit": "formalization/audit/INTERFACE_CORRESPONDENCE.md"
+    },
+    {
+      "environment": "theorem",
+      "title": "\\HellingerCaseTitle: finite randomized Hellinger-to-TV upper bound",
+      "label": "app:thm:finite-upper",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_upper_proofs.tex",
+      "line": 30,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PackedSampler.manuscript_finite_hellinger_upper",
+        "ThresholdGrid.grid_seedRisk_le",
+        "ThresholdGrid.grid_robustRisk_le",
+        "PackedSampler.manuscript_sampler_pathwiseOracleDepth"
+      ],
+      "note": "Actual finite randomized sampler, maximal feasible dyadic threshold, public caps, risk <= rho+eta, and genuine grouped-query pathwise depth. No successful-path or failure-probability premise remains."
+    },
+    {
+      "environment": "lemma",
+      "title": "Residual Markov property",
+      "label": "app:lem:residual-markov",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_screen.tex",
+      "line": 19,
+      "coverage": "proved",
+      "lean_declarations": [
+        "ForestModel.jointBatchLaw_factorizes_of_safe",
+        "ForestModel.exactRow_eq_of_neighbors_observed"
+      ]
+    },
+    {
+      "environment": "lemma",
+      "title": "Preprocessing certificates\\textcolor{red}{; \\AlgoBlockRef{preprocess}}",
+      "label": "app:lem:preprocessing-certificates",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_screen.tex",
+      "line": 142,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Screening.tokenBank_complement_nonempty",
+        "Screening.marginal_error_le",
+        "Screening.outside_bank_mem_tail",
+        "Screening.tokenBank_card_le_floor",
+        "ThresholdGrid.standard_selected_spec",
+        "ThresholdGrid.selected_bankMax_le"
+      ],
+      "note": "Actual buffered banks from the frozen all-mask reply and public selected threshold, with exact RF counting."
+    },
+    {
+      "environment": "lemma",
+      "title": "Fresh randomized screens succeed adaptively\\textcolor{red}{; \\AlgoBlockRef{draft}}",
+      "label": "app:lem:random-screen-success",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_screen.tex",
+      "line": 341,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PackedSampler.sampler_reached_screen_failure_le"
+      ],
+      "note": "Actual adaptive reached-call failure probability under independent finite color blocks, with arbitrary fixed batch kernel including oracle products and true joint reference. No adaptive-freshness premise remains."
+    },
+    {
+      "environment": "lemma",
+      "title": "Exact rows at a fixed draft boundary\\textcolor{red}{; \\AlgoBlockRef{chunks}, \\AlgoBlockRef{probes}}",
+      "label": "app:lem:fixed-draft-rows",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_screen.tex",
+      "line": 468,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Screening.probe_exactRow_eq_boundary"
+      ]
+    },
+    {
+      "environment": "lemma",
+      "title": "Low-degree screen contract\\textcolor{red}{; \\AlgoBlockRef{aggregate}}",
+      "label": "app:lem:low-degree-screen",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_screen.tex",
+      "line": 551,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Screening.returnedRow_eq_neighbors"
+      ]
+    },
+    {
+      "environment": "lemma",
+      "title": "Successful-path contraction and sound stopping\\textcolor{red}{; \\AlgoBlockRef{peel}, \\AlgoBlockRef{terminal}}",
+      "label": "app:lem:successful-path-structure",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_structure.tex",
+      "line": 25,
+      "coverage": "proved",
+      "lean_declarations": [
+        "ForestPeeling.next_high_contraction_lt",
+        "ForestIteration.DeletionSequence.peeling_contraction_public",
+        "ForestPeeling.rows_exact_of_peelSet_empty",
+        "PackedLoopStructure.rows_exact_at_cap",
+        "PackedStructure.residual_rowGraph_eq",
+        "PackedLoopStructure.samplerMarker_safeBeforeStop"
+      ],
+      "note": "Local strict contraction and both stopping cases feed the actual capped-loop safety induction, including reserved fuel and centroid termination."
+    },
+    {
+      "environment": "lemma",
+      "title": "Finite query and round counts\\textcolor{red}{; \\AlgoBlockRef{preprocess}--\\AlgoBlockRef{centroid}}",
+      "label": "app:lem:upper-resources",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_structure.tex",
+      "line": 254,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PackedSampler.manuscript_program_withinBudgets",
+        "PackedSampler.manuscript_roundBudget",
+        "PackedSampler.manuscript_sampler_pathwiseOracleDepth",
+        "SuccessfulPathResources.sampler_successful_rounds_lt"
+      ],
+      "note": "Both all-path caps and the stricter successful-path round bound are proved for actual retained paths; grouped depth includes preprocessing."
+    },
+    {
+      "environment": "lemma",
+      "title": "Exact hybrid equals the target law",
+      "label": "app:lem:exact-hybrid",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_error.tex",
+      "line": 69,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Sampler.exactCommitOutputLaw_eq_target_of_safe"
+      ]
+    },
+    {
+      "environment": "lemma",
+      "title": "Adaptive squared-Hellinger composition",
+      "label": "app:lem:adaptive-hellinger-upper",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_error.tex",
+      "line": 143,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Program.sqHellinger_evalWithCommitOracle_le",
+        "Sampler.sqHellinger_exactCommitOutputLaw_le",
+        "Sampler.tv_exactCommitOutputLaw_le"
+      ],
+      "note": "Actual dependent Program induction; this does not identify the exact-row hybrid with the target."
+    },
+    {
+      "environment": "lemma",
+      "title": "Safe decision rule and failed-screen coupling",
+      "label": "app:lem:safe-controller-comparison",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_error.tex",
+      "line": 395,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PackedSampler.safe_controller_comparison",
+        "Program.PrefixRepair.tv_eval_le_failureMass"
+      ],
+      "note": "Explicit safe replacement of the actual sampler, seedwise TV <= rho and finite-seed mean distance from the implemented sampler <= eta."
+    },
+    {
+      "environment": "definition",
+      "title": "Uniform forward-KL oracle and seed-averaged KL risk",
+      "label": "app:def:kl-oracle-risk",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_kl_extension.tex",
+      "line": 26,
+      "coverage": "formalized_definition",
+      "lean_declarations": [
+        "FrozenOracle.ForwardKLAccurate",
+        "Sampler.seedKLRisk",
+        "Sampler.KLRiskMeasurableAt"
+      ],
+      "note": "Forward direction and fixed-seed risk retained; KL oracle class inclusion is proved by FrozenOracle.ForwardKLAccurate.accurate."
+    },
+    {
+      "environment": "lemma",
+      "title": "Joint-reference chain rule and KL decomposition\n\\textcolor{red}{(cf.\\ {\\citealp[Eq.~(7) and Appendix~A.1",
+      "label": "app:lem:adaptive-joint-kl",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_kl_extension.tex",
+      "line": 123,
+      "coverage": "proved",
+      "lean_declarations": [
+        "Sampler.jointReferenceOutputLaw_eq_target",
+        "Sampler.output_klDivergence_eq_reference_expectation",
+        "Sampler.referenceRowKL_le",
+        "Sampler.referenceTotalCorrelation_le",
+        "Sampler.referenceTotalCorrelation_eq_zero_of_safe"
+      ],
+      "note": "Actual joint-reference chain, KL decomposition, all-path entropy/row budgets, and structural-safety-to-zero-TC implication are proved."
+    },
+    {
+      "environment": "theorem",
+      "title": "\\KLCaseTitle: finite randomized forward-KL upper bound",
+      "label": "app:thm:finite-kl-upper",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_kl_extension.tex",
+      "line": 291,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PackedSampler.manuscript_finite_kl_upper",
+        "ThresholdGrid.grid_seedKLRisk_le",
+        "PackedSampler.manuscript_sampler_pathwiseOracleDepth"
+      ],
+      "note": "Actual finite sampler under forward-KL oracle accuracy, with KL <= N*kappa + N*log|V|*eta and the same query/round/depth bounds. No abstract safety/failure premise remains."
+    },
+    {
+      "environment": "corollary",
+      "title": "\\KLCaseTitle\\ with output KL at most epsilon",
+      "label": "app:cor:kl-epsilon",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_kl_extension.tex",
+      "line": 459,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PackedSampler.klCalibration",
+        "PackedSampler.manuscript_kl_target_error"
+      ],
+      "note": "The concrete choices sqrt(epsilon/2), epsilon/(2N), and epsilon/(2N log V) give actual seed KL <= epsilon under the stated feasible preprocessing and signal conditions."
+    },
+    {
+      "environment": "lemma",
+      "title": "Public feasibility with a half-signal tail tolerance",
+      "label": "app:lem:benchmark-feasibility",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_benchmarks.tex",
+      "line": 38,
+      "coverage": "proved",
+      "lean_declarations": [
+        "UpperRates.benchmark_feasible",
+        "UpperRates.benchmark_selected_spec",
+        "UpperRates.benchmark_columns_le"
+      ],
+      "note": "The original clipped dyadic grid is used. Its selected threshold has the half-signal bracket and the actual bank-column bound; no continuous threshold surrogate is used."
+    },
+    {
+      "environment": "corollary",
+      "title": "Signal-calibrated finite query--round lower bound",
+      "label": "app:cor:signal-calibrated-finite-lower",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_benchmarks.tex",
+      "line": 109,
+      "coverage": "proved",
+      "lean_declarations": [
+        "signalCalibratedParameters_finiteIncluded",
+        "observed_signalCalibrated_alternative",
+        "benchmark_observed_public_class_lower_any_vocabulary",
+        "signalCalibrated_observed_public_class_lower_any_vocabulary",
+        "benchmark_observed_public_class_lower_floor_any_vocabulary"
+      ],
+      "note": "Arbitrary public signal and independent radius, actual finite calibrated family, full commit observations, and arbitrary-vocabulary public-class restriction. Both the exact printed integer floor/8 and finite minimum are retained; the benchmark floor specialization is explicit."
+    },
+    {
+      "environment": "corollary",
+      "title": "Fixed-accuracy main-text bounds",
+      "label": "app:cor:fixed-accuracy-main",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_benchmarks.tex",
+      "line": 310,
+      "coverage": "proved",
+      "lean_declarations": [
+        "GeneralUpperCurve.tv_curve_eventually",
+        "GeneralUpperCurve.kl_curve_eventually",
+        "benchmark_observed_public_class_lower_any_vocabulary_eventually",
+        "GeneralResourceTotals.balanced_tv_totalGuarantee_eventually",
+        "GeneralResourceTotals.balanced_kl_totalGuarantee_eventually",
+        "GeneralResourceTotals.appendix_tv_total_isLittleO",
+        "GeneralResourceTotals.appendix_kl_total_isLittleO",
+        "GeneralResourceTotals.balancedDepthCap_isLittleO"
+      ],
+      "note": "The actual appendix allocations TV eta=rho/2 and KL eta=rho^2/(N log V) have uniform all-cutoff error/resource envelopes and actual balanced total/depth o(N). The independent-radius full-feedback arbitrary-vocabulary public lower theorem is also proved."
+    },
+    {
+      "environment": "lemma",
+      "title": "Product affinity and TV comparison; \\textcolor{red}{{\\citealp[Eqs.~(7.22) and (7.26)",
+      "label": "app:lem:finite-hellinger-calculus",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_auxiliary.tex",
+      "line": 17,
+      "coverage": "proved",
+      "lean_declarations": [
+        "FinDist.affinity_piProduct",
+        "FinDist.sqHellinger_le_tv",
+        "FinDist.tv_le_sqrt_two_mul_sqHellinger"
+      ],
+      "note": "Finite Hellinger calculus, with the manuscript normalization."
+    },
+    {
+      "environment": "lemma",
+      "title": "KL-to-Hellinger comparison; \\textcolor{red}{{\\citealp[Eq.~(7.33)",
+      "label": "app:lem:kl-hellinger",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_auxiliary.tex",
+      "line": 85,
+      "coverage": "proved",
+      "lean_declarations": [
+        "FinDist.exp_neg_half_klDivergence_le_affinity",
+        "FinDist.sqHellinger_le_one_sub_exp_neg_half_klDivergence",
+        "FinDist.sqHellinger_le_half_klDivergence"
+      ],
+      "note": "Finite positive laws; both orientations follow by swapping arguments and Hellinger symmetry."
+    },
+    {
+      "environment": "lemma",
+      "title": "Forest degree sum and tree centroid",
+      "label": "app:lem:forest-basics",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_auxiliary.tex",
+      "line": 141,
+      "coverage": "proved",
+      "lean_declarations": [
+        "ForestBasics.edge_card_eq_vertices_sub_components",
+        "ForestBasics.forest_counts",
+        "ForestCentroid.exists_centroid"
+      ],
+      "note": "Finite forest edge/degree identities and tree centroid existence; empty graphs are handled in the identities."
+    },
+    {
+      "environment": "proposition",
+      "title": "Invariance under public row selection",
+      "label": "app:prop:row-selector-invariance",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/row_selector_invariance.tex",
+      "line": 10,
+      "coverage": "proved",
+      "lean_declarations": [
+        "SelectedPackedSampler.manuscript_finite_hellinger_upper",
+        "SelectedPackedSampler.manuscript_finite_kl_upper",
+        "SelectedPackedSampler.manuscript_sampler_pathwiseOracleDepth",
+        "SelectedPackedSampler.SuccessfulResources.selectedSampler_successful_rounds_lt"
+      ],
+      "note": "Actual sampler for any public-memory Policy; policy sees current history, colors, and completed state/reply table but no future colors. Same grid/risk/query/round/depth guarantees are proved; identical executions or errors across policies are not asserted."
+    },
+    {
+      "environment": "proposition",
+      "title": "A shared-class path with linear TC and DTC",
+      "label": "app:prop:path-in-class",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_comparison.tex",
+      "line": 104,
+      "coverage": "proved",
+      "lean_declarations": [
+        "PathClass.uniform_path_class_and_information",
+        "PathClass.Parameters.information_linear_bounds",
+        "PathClass.Parameters.model_edgeNondegenerate_of_le",
+        "FrozenOracle.exact_forwardKLAccurate",
+        "PathClass.benchmark_path_membership_eventually"
+      ],
+      "note": "Actual positive path with exact S0/C0, RF, RT, UEN and exact oracle; TC=(N-1)c and DTC=c+(N-2)c_prime with positive constants independent of vocabulary. Explicit two-sided linear bounds are proved. Both oracle accuracy conditions and eventual actual benchmark membership are explicit, uniformly in vocabulary."
+    },
+    {
+      "environment": "corollary",
+      "title": "Linear effective TC on the comparison path",
+      "label": "app:cor:path-effective-tc",
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_comparison.tex",
+      "line": 573,
+      "coverage": "proved",
+      "lean_declarations": [
+        "MaskedInformation.maskedPair_conditionalMutualInformation",
+        "MaskedInformation.informationCurve_aestronglyMeasurable",
+        "PathClass.Parameters.effectiveTC_le",
+        "PathClass.Parameters.effectiveTC_ge_adjacent",
+        "PathClass.uniform_effectiveTC_linear_bounds"
+      ],
+      "note": "Actual independently masked full target, exact conditional MI given the entire masked exterior, ordered pairs, and min(1,t) integral. Explicit positive linear constants are fixed before path length and vocabulary. Integrability is proved; no external TC/DTC comparison is an axiom."
+    }
+  ],
+  "compiled_tex_inputs": [
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/main_arxiv.tex",
+      "sha256": "5d1b7f1a4c7959833d396e2a0726f60b7226d71f516253d6d8ef6afcf7f5b9df"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/main.tex",
+      "sha256": "cfb3165ad763591c608342f885dde00a4f0767a9a4eb911d8263ceb65a28cfae"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/arxiv_preamble.tex",
+      "sha256": "acd09f875aaa563820c5797a9a3c17846f11eca85fc5ff924c2cb1c245219689"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/math_commands.tex",
+      "sha256": "90473c4d0542070db244cea73ef962d6cddc5b2a746757e6a40ddf5fdfb90ba9"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation.tex",
+      "sha256": "cfdf91501302d95e05c648b7daf14ffdbdaa3dfa4eab389b82353d9d58a31926"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/core.tex",
+      "sha256": "51af67e969c37b5e36008ae78ae03e0c805fd20d91c8a5807efe2b8d8031a810"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/target.tex",
+      "sha256": "8a4fbf1b91fb05d84a4d1283c5dfda4b18563f18a275ae486826a09589cb0866"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/oracle_resources.tex",
+      "sha256": "5d2c39f5fc599f937a4384b5ea3a2415259f1ef37794c629b64df56f146a1613"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/upper_algorithm.tex",
+      "sha256": "d2b63d2be494eed00f4b4d4e72904b34cb17639e648e99db7c7502c3492a598a"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/lower_family.tex",
+      "sha256": "ca7bd6055673ee1f5067fe85ce4787dca0f7d6f8930a45597090292242af3ab6"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/rates.tex",
+      "sha256": "e169e76392583eec0a79db2383f158e6500c7969d6e32338761f66d1d59efe56"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/kl_extension.tex",
+      "sha256": "a59cfde7e2da7e32935d0eb06cce306243053fb955df81b4acc51caf75daad8b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/benchmark.tex",
+      "sha256": "221cf984d365c9aef7453336e9e3498af7cef12da30928f11cd86f6442928840"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/notation/comparison.tex",
+      "sha256": "45254ee1212734ed09c9ffad5f715978e19b93b00194f5f62f4b131f532a8056"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/theorem_environments.tex",
+      "sha256": "d2965a72eef5e5b3c53a4a6ff546f02198b5f30777979a0cb3b49b69b60ee393"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/algorithm_environments.tex",
+      "sha256": "8cee090da7fde42cee211b6e0793162d8cffc5cf140ee40c38c5a7bc64423a7a"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/proposal_presentation.tex",
+      "sha256": "113aed9da12897c2da3d11008de1222c811d3405ab562c2f20d24886d2bb4dd7"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/algorithm_example_environments.tex",
+      "sha256": "ce83c5461dc9a817a7e1408e7a9a2ceb6628c8d8634ca7338c8e9c354f6e8f1b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/algorithm_blocks.tex",
+      "sha256": "4018ccaa0840d63074201a4df5b1dc671080b4587125123e0016316227efac21"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/black_text.tex",
+      "sha256": "0b3b2d7579e18489ec33c3a4d5eea66a8291e131bc0d1e118f8b0e973cfaee98"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/intro_counterfactual_2026-09-20/main_figure.tex",
+      "sha256": "48702709e1ad6b4690429ffcfb271dbbd91be2a00ec4e6823dca6de6ad8b3500"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_setup.tex",
+      "sha256": "4d8a7bde892678220e504bd145e0c582215081fbff53794396589e2cdfaa5600"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_upper.tex",
+      "sha256": "0ee89f5be71f73cbf9b996801b9cc0a64b801a4733c99e0de432ac7591768e29"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_resource_table.tex",
+      "sha256": "e389151c83bd07ff78b6839a72239197a58a8a3aca5b92111b10c63486e99394"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_lower.tex",
+      "sha256": "593dd3498e18e7cafc254de0294bd60fbc9b711f23c132bcbcf0afb60f3e1e92"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_algorithm.tex",
+      "sha256": "c7b255cd50b6e8364c10b8aa243e59cf118b35b9a520bf53300d2a594934eb93"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/fig2_votes_2026-09-26_002617_JST.tex",
+      "sha256": "b3f0fa4de8f6869911d13bb405ae7e1faa1a052dd79d10d677a88cdb4530cbdb"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_related_work.tex",
+      "sha256": "1294ff1e21c4dc905043a7a1c25a78d76e1bea1ac4d9c4854f718f7949ac8a61"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_experiments.tex",
+      "sha256": "8c2c336c81acabc659caf25ed27107975e87ee846f8090373aff16cce9d9be3b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/main_conclusion.tex",
+      "sha256": "baf74b7d2431600e87b4bb8585054e738b9b47c6c7cbade0199bbc6b5127e214"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/ai_use_statement.tex",
+      "sha256": "09062b1fd36227f6654e1d04785d454e8d5e7b7beb3ed8bed3cd32b0292c827c"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_setup.tex",
+      "sha256": "187e7ce34910fe5497eb7606560a5ac9397e7592b0bd1c12d6f5d10a458bf670"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_results.tex",
+      "sha256": "86b9bc00a697ce026a732b2175ae80e14d790ce9215cd809247ae33b7071f76e"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_lower_proofs.tex",
+      "sha256": "18b1532b7bc8431f8d6e148e385566e5802b9ce57def86f528e8181422dae62c"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_family.tex",
+      "sha256": "920d4f58a8c3490ed3fd6dc98961c2b5acf48f8afec6ce9e9e0123398ca6d506"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_midpoint.tex",
+      "sha256": "1b8fc98ad891c0eb78d4a479873e67a981b8a604eea6ce3d135cacace72ec9ba"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_invariant.tex",
+      "sha256": "e56351ab5cc6f02c2963df1631c0b8b6764eb7a88635583cb201212ec1f2294b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/figures/c4_matching_states.tex",
+      "sha256": "86f90c46de240bdb830c33ae35915556ebb6cb91a4ff054b263d96419fac0ae0"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_collisions.tex",
+      "sha256": "1c11e65c3cc567849cd7873ccd089ed5c8a652eca03d484b2b03a1ff449a2db3"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_matching_laplace.tex",
+      "sha256": "25406a25a1efe0e5d7afd8d0dca0827f041b807811bcc273f6c16286700c9bb0"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_collision_tail.tex",
+      "sha256": "4a40a039cf09a80495618e79798b12b8961112c29392841aafe8e3ac650b3372"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_affinity.tex",
+      "sha256": "b3893ee274e78d13f3b0a72e965e71fad48e7ffc935432fdd5c07ff63b0e95f5"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/lower_nonlinear.tex",
+      "sha256": "62054d4f8f81ba4b668dd8d56d77f2993c0466cb2c019fc881a3dab332482149"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_algorithm.tex",
+      "sha256": "59266b59099bbc6ac165559bedc99e8fb543b70e2c18c61cd4dcbf348b399228"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/bank_example.tex",
+      "sha256": "3625ee16faf3c65e1eb2b41ec9a4cb5fabbd8d9a7ee6d7f6247331aa57573a12"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/index_roles.tex",
+      "sha256": "0da5eb7bf1d433a50742abaab32c6c8788d063889fb5618f3f1423ce3c3e6f29"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/submission_example.tex",
+      "sha256": "67a1354e995be0d98ef9c4e659e61736d3e6b909da9f912f5c8d38e220a38b70"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_upper_proofs.tex",
+      "sha256": "bf39c0e50bfbba67e3b1181805b29af6483173d2e43098c2c7da7115d4559c4e"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_screen.tex",
+      "sha256": "275599df517ffc5b65a95c6b8241a0056c2282e5aa6d7ab86afaff79ead177e4"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/separation_example.tex",
+      "sha256": "47c0dfd1f8f48013d9d5c7cbdce1414fdc5fe7471eb03e393eb5f92d39d74d41"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_structure.tex",
+      "sha256": "7b0827e26bf76c74d543a151033025c6a8086612aab396000e46870af55e36dc"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/workflow_example.tex",
+      "sha256": "24813969f04c0b42609917cc2fe93eafe8cde9ebeca25d43c87b004d25c82bca"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/figures/algorithm_examples_2026-09-18/survivor_example.tex",
+      "sha256": "fd3ab7dc93f17412349c37c926a9633f8f190d50bcb02a112f959b4bb171fdbc"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/upper_error.tex",
+      "sha256": "9ba3e301183b0b57acfab670d8758e90981da87835017cba56c5b3437b14381f"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_kl_extension.tex",
+      "sha256": "1fe166f045664cf2f148592fd2eb26b1f7bed1467309b51bcd983170d9983c5b"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_benchmarks.tex",
+      "sha256": "a258e8e760337d2e06cd536dc17835cf9f1f437bb57c09d06df405516ab290d2"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_auxiliary.tex",
+      "sha256": "db616abc46986bfc1a22ebd2e2c9b3fe6eca0618a87dd89ca8cf460af0cb1d36"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/proofs/row_selector_invariance.tex",
+      "sha256": "f0d936e6e17f9468fb9f031aecb8019feff90ac2809cb5cfbb8bb695f5302f2a"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_comparison.tex",
+      "sha256": "10ab6db6ee3616dd3c57a319585adc9025c0a4b1428fd060bdad9190a883ad65"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_oracle_comparison.tex",
+      "sha256": "30d0f9f152379407c9af0d0135d3c5991bb2d4361c9db50c340fa3fa2ba12693"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/appendix_experiments.tex",
+      "sha256": "1b7c261e5dcad0da9de66fd926323908e158e528057cc68563f44b39390eacbb"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/acknowledgments.tex",
+      "sha256": "6f99fee2bcfa570b6e6e317762f0994f4714943663caa6dfff82f7a108c0a335"
+    },
+    {
+      "source": "manuscript_2026-09-17/proposals/2026-09-17_c4_terms_and_figures/src/sections/code_availability.tex",
+      "sha256": "4e24af24aff33afebf10b452e79ae64e0d3be14ca13dcd7cd200cf1ac2b5faf2"
+    }
+  ],
+  "coverage_convention": "proved refers only to the listed claim under its formalized hypotheses; partial_or_conditional does not certify the full paper result. Interfaces and prose need separate correspondence checks. Compile and run AuditAxioms.lean; inventory is not itself proof evidence.",
+  "mathematical_baseline_commit": "1507791fd7c1137c77ec139cc0b73b5765f1464b",
+  "original_manuscript_basis": "formalization/audit/manuscript_basis_2026-09-26.json",
+  "basis_update_audit": "formalization/audit/ARXIV_RELEASE_BASIS.md",
+  "manuscript_revision_note": "The recorded commit is the base before the September 29 Lean disclosure, reference-load-order fix, and public-code availability edits. Exact released sources are identified by the compiled-input hashes."
+}

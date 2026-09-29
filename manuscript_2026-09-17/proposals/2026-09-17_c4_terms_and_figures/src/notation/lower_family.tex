@@ -1,0 +1,92 @@
+% Lower-witness objects.  Please reserve L and C for the target envelope
+% constants, and K for conditional kernels.  Candidate counts use m.
+
+\newcommand{\HardFamily}{\mathfrak I^{\mathrm{hard}}}
+\newcommand{\HardMinimax}{\mathfrak R_{\mathrm{TV}}^{\mathrm{hard}}}
+\newcommand{\HardVocabSize}{\VocabSize}
+\newcommand{\HardBankSize}{m}
+\newcommand{\TriggerMass}{\rho}
+\newcommand{\EdgeCoupling}{\eta}
+% The rate witnesses choose these same finite parameters as public sequences.
+\newcommand{\HardBankSizeSequence}{\HardBankSize}
+\newcommand{\TriggerMassSequence}{\TriggerMass}
+\newcommand{\EdgeCouplingSequence}{\EdgeCoupling}
+
+\newcommand{\HardCandidate}[1]{a_{#1}}
+\newcommand{\HardBackground}{\mathcal B^{\mathrm{bg}}}
+\newcommand{\HardMarginal}{\pi}
+\newcommand{\HiddenMatching}{\mathcal M}
+\newcommand{\TriggerVector}{\Theta}
+\newcommand{\TriggerIndex}[1]{\Theta_{#1}}
+\newcommand{\TriggerFeature}[1]{\phi_{#1}}
+\newcommand{\TriggerVariance}{\sigma_\rho^2}
+\newcommand{\MateInMatching}[1]{\operatorname{mate}_{\HiddenMatching}(#1)}
+
+\newcommand{\HardEdgeLaw}[2]{P_{#1}^{#2}}
+\newcommand{\HardIndependentEdgeLaw}[1]{P_{#1}^{0}}
+\newcommand{\HardTargetLaw}[1]{P^{#1}}
+\newcommand{\HardKernel}[3]{K_{#1\to #2}^{#3}}
+\newcommand{\HardOracle}[1]{q^{#1}}
+\newcommand{\HardOracleRow}[3]{\InstanceOracleRow{#1}{#2}{#3}}
+\newcommand{\HardOracleRowMass}[4]{\InstanceOracleRowMass{#1}{#2}{#3}{#4}}
+\newcommand{\HardAlgorithmClass}[2]{\mathfrak A(#1,#2)}
+
+% Lower-proof probability spaces and adaptive bookkeeping.  The unresolved
+% set uses a calligraphic U to distinguish it from the ordinary uncommitted
+% set U_G in the sampling interface.
+\newcommand{\HardInstancePrior}{\Pi}
+\newcommand{\HardOutputLaw}[2]{\widehat P_{#2}^{#1}}
+\newcommand{\HardMidpointLaw}[2]{\mathbb M_{#2}^{#1}}
+\newcommand{\HardTerminalRoundCount}[3]{T_{#2}^{#1}(#3)}
+\newcommand{\HardExactBatchLaw}[2]{P_{#1}^{#2}}
+\newcommand{\HardProductBatchLaw}[2]{\widehat P_{#1}^{#2}}
+\newcommand{\HardLocalAffinity}[2]{a_{#1}(#2)}
+\newcommand{\HardMidpointKernel}[2]{m_{#1}^{#2}}
+\newcommand{\HardEdgeDistance}{d_{\mathrm{edge}}}
+\newcommand{\HardTest}[2]{\mathsf{Test}_{#2}(#1)}
+\newcommand{\HardHit}[2]{\mathsf{Hit}_{#2}(#1)}
+\newcommand{\UnresolvedVertices}[1]{\mathcal U_{#1}}
+\newcommand{\UnresolvedVertexCount}[1]{n_{#1}}
+\newcommand{\ActiveBatch}[1]{B_{#1}^{\circ}}
+\newcommand{\ActiveBatchSize}[1]{n_{#1}^{\circ}}
+\newcommand{\ActiveRoundCount}{R^{\circ}}
+\newcommand{\CollisionCount}[1]{Z_{#1}}
+\newcommand{\TotalCollisions}{Z}
+\newcommand{\InternalEdgeCount}[1]{Z_{#1}}
+\newcommand{\CollisionExponential}[1]{\mathsf M_{#1}}
+\newcommand{\GenieDeletions}{D_{\mathrm{gen}}}
+\newcommand{\RemainingTriggers}[2]{\mathcal C_{#1,#2}}
+\newcommand{\FailureSkeleton}[1]{\mathsf{Skel}(#1)}
+% Please use this historical macro name for the distinct candidate set;
+% operation order is retained in the stopped history, not in this set.
+\newcommand{\SkeletonCandidateList}[1]{\mathcal L_{#1}}
+\newcommand{\SkeletonListSize}[1]{q_{#1}^{\mathrm{sk}}}
+\newcommand{\AnalyticHistory}[1]{\mathcal H_{#1-}}
+\newcommand{\AnalyticField}[1]{\mathcal F_{#1-}}
+\newcommand{\SurvivorState}[1]{\mathsf S_{#1}}
+\newcommand{\RetiredRecord}{\mathsf{Ret}}
+\newcommand{\RetiredRecordValue}{\mathfrak r}
+\newcommand{\PostSurvivorState}{\mathsf S^{+}}
+\newcommand{\OperationObservation}{\mathsf{Obs}^{+}}
+\newcommand{\SurvivorConfigA}{\mathfrak z}
+\newcommand{\SurvivorConfigB}{\mathfrak z'}
+\newcommand{\SurvivorLikelihood}[3]{\ell_{#1}(#2\,;#3)}
+
+% Please distinguish operation boundaries from the pre-commit t notation.
+% Pass (s+1) to history/field macros when denoting the next left boundary.
+\newcommand{\OpAnalyticHistory}[1]{\mathcal H^{\mathrm{op}}_{#1-}}
+\newcommand{\OpAnalyticField}[1]{\mathcal F^{\mathrm{op}}_{#1-}}
+\newcommand{\OpUnresolvedMatching}[1]{\mathcal M_{#1}^{\mathrm{unres}}}
+\newcommand{\AuxUnresolvedMatching}[2]{\mathcal M_{#2}^{\mathrm{unres},(-#1)}}
+\newcommand{\OpUnresolvedVertices}[1]{\mathcal U^{\mathrm{op}}_{#1}}
+\newcommand{\OpRemainingTriggers}[2]{\mathcal C^{\mathrm{op}}_{#1,#2}}
+\newcommand{\OpSurvivorState}[1]{\mathsf S^{\mathrm{op}}_{#1}}
+\newcommand{\OpRetiredRecord}[1]{\mathsf{Ret}_{#1}}
+\newcommand{\OpObservation}[1]{\mathsf{Obs}_{#1}}
+\newcommand{\OpSurvivorLikelihood}[4]{\ell_{#1,#2}(#3\,;#4)}
+
+% Shared-class lower-rate objects.
+\newcommand{\ObstructionExponent}{\lambda_0(\OracleAccuracyExponent)}
+\newcommand{\LowerEnvelopeIndex}[1]{%
+  \Lambda_0(#1,\RankTailExponent,\OracleAccuracyExponent)}
+\newcommand{\QueryWitnessExponent}{\lambda_{\QueryGrowthExponent}}

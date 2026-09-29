@@ -1,0 +1,48 @@
+{
+  "status": "fail",
+  "reference": "random_per_run_threshold_search_k1em10L0",
+  "candidate": "strict_random",
+  "reference_design_sha256": "c6759396643e7c074a8c45929c66df915013d0630162b7ee8efc9530e5a0c00c",
+  "candidate_design_sha256": "92762917c55901fec78ab5a7a01f1d3417740440e027f246d4c6d9d2c6b3e9dc",
+  "relative_L0_factor": 1e-10,
+  "candidate_reused_budget_records": 0,
+  "threshold_match": true,
+  "source_hash_match": true,
+  "shared_input_hash_mismatches": [
+    "random_confirmation_records.json"
+  ],
+  "selection_identity_match": true,
+  "selection_count": 120,
+  "selection_mismatch_count": 0,
+  "selection_mismatch_examples": [],
+  "selected_kl_max_absolute_difference": {
+    "K": 1.5708159832381996e-21,
+    "K_upper": 1.5708159832381996e-21
+  },
+  "selected_kl_not_close": {
+    "K": 0,
+    "K_upper": 0
+  },
+  "summary_cell_count": 20,
+  "summary_mismatch_count": 0,
+  "summary_mismatch_examples": [],
+  "proposal_figure_data_exact_match": true,
+  "reference_record_count": 1936,
+  "candidate_record_count": 1566,
+  "shared_record_count": 1566,
+  "candidate_records_subset_of_reference": true,
+  "shared_record_success_mismatch_count": 0,
+  "shared_record_kl_max_absolute_difference": {
+    "K": 2.3305801732931286e-12,
+    "K_upper": 2.3305801732931286e-12
+  },
+  "shared_record_kl_not_close": {
+    "K": 0,
+    "K_upper": 0
+  },
+  "relative_tolerance": 1e-12,
+  "absolute_tolerance": 1e-18,
+  "errors": [
+    "shared input hashes differ"
+  ]
+}

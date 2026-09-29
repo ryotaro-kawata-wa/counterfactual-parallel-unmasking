@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "pid": 2004540,
+  "workers": 8,
+  "output": "/home/kawata/work/uen_forest_toy_robustness_20260919/experiments/forest_toy/results/ideal_capless_fixed_accuracy_scaling/random_per_run_threshold_search_k1em10L0_fresh",
+  "started_utc": "2026-09-21T17:09:14.102730+00:00",
+  "updated_utc": "2026-09-21T17:25:30.606688+00:00",
+  "stage_jobs": 23,
+  "stage_finished": 23,
+  "seconds": 976.5010244490113,
+  "per_run_searches": 120,
+  "reused_budget_records": 0
+}

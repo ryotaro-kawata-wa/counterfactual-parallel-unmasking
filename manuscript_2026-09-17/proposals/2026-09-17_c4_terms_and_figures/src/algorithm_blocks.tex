@@ -1,0 +1,38 @@
+% Please keep all algorithm-block names here; these are prose labels, not variables.
+% Please place each canonical target exactly once in the complete appendix algorithms.
+\newcommand{\DeclareAlgoBlock}[3]{%
+  \expandafter\newcommand\csname AlgoBlockCode@#1\endcsname{#2}%
+  \expandafter\newcommand\csname AlgoBlockName@#1\endcsname{#3}}
+\DeclareAlgoBlock{preprocess}{1}{Preprocess \& initialize}
+\DeclareAlgoBlock{draft}{2}{Draft \& color}
+\DeclareAlgoBlock{screen}{3}{Packed screen}
+\DeclareAlgoBlock{peel}{4}{Claim \& peel}
+\DeclareAlgoBlock{terminal}{5}{Terminal graph}
+\DeclareAlgoBlock{centroid}{6}{Centroid commits}
+\DeclareAlgoBlock{chunks}{3.1}{Readout chunks}
+\DeclareAlgoBlock{probes}{3.2}{Packed probes}
+\DeclareAlgoBlock{aggregate}{3.3}{Votes \& row selection}
+
+\newcommand{\AlgoStepPrefix}{Step}
+\newcommand{\AlgoBlockCode}[1]{\csname AlgoBlockCode@#1\endcsname}
+\newcommand{\AlgoBlockName}[1]{\csname AlgoBlockName@#1\endcsname}
+% Please close pending single-line State blocks before reading the nesting margin.
+% Real loops and conditionals stay open; line numbers and control flow are unchanged.
+\makeatletter
+\newcommand{\AlgoBlockHeading}[1]{%
+  \ALG@closeloops%
+  \hspace*{\ALG@tlm}%
+  \textbf{\AlgoStepPrefix~\AlgoBlockCode{#1}.\ \AlgoBlockName{#1}}}
+\makeatother
+\newcommand{\AlgoBlockTarget}[1]{%
+  \hypertarget{algo-block-#1}{\AlgoBlockHeading{#1}}}
+\DeclareRobustCommand{\AlgoBlockRef}[1]{%
+  \hyperlink{algo-block-#1}{\AlgoStepPrefix~\AlgoBlockCode{#1}}}
+\DeclareRobustCommand{\AlgoBlockNamedRef}[1]{%
+  \hyperlink{algo-block-#1}{\AlgoStepPrefix~\AlgoBlockCode{#1} (\AlgoBlockName{#1})}}
+
+% Please keep this cross-cutting safeguard separate from the chronological blocks.
+\newcommand{\AlgoGuardName}{Round-cap fallback}
+\DeclareRobustCommand{\AlgoGuardRef}{\hyperlink{algo-guard}{\textsc{Guard}}}
+\newcommand{\AlgoGuardTarget}{%
+  \hypertarget{algo-guard}{\emph{\textup{\textsc{Guard}}: \AlgoGuardName}}}

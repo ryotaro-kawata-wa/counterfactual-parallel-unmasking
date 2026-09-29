@@ -1,0 +1,187 @@
+\section{Finite matching lower-bound statements}
+\label{app:results}
+
+This section defines the hard matching family and states its finite TV
+query--round lower bound and target-error tradeoff.
+Appendix~\ref{app:lower-proof} proves these results and verifies class
+membership in \cref{app:prop:hard-family-inclusion}.
+Appendix~\ref{app:benchmark-specializations} then places the finite
+main-text calibration (\cref{app:cor:signal-calibrated-finite-lower})
+immediately before the fixed-accuracy derivation
+(\cref{app:cor:fixed-accuracy-main}) of the \HellingerCase\ lower bound
+in \cref{main:thm:lower-envelope}.
+The finite upper bounds for the two cases are
+\cref{app:thm:finite-upper,app:thm:finite-kl-upper}.
+
+\subsection{Finite matching lower bound}
+\label{app:results-lower}
+
+\begin{definition}[Finite hard matching family]
+\label{app:def:hard-matching-family}
+Let $N$ be even, let
+$1\le\HardBankSize<\HardVocabSize$ be integers, and suppose
+\begin{equation}
+ \HardBankSize\TriggerMass<1,
+ \qquad
+ 0<\EdgeCoupling\le\TriggerMass\le\frac12.
+ \label{app:eq:hard-basic-conditions}
+\end{equation}
+Use the public vocabulary and common marginal
+\begin{equation}
+ \Vocab=\{\HardCandidate{1},\ldots,\HardCandidate{\HardBankSize}\}
+        \sqcup\HardBackground,
+ \qquad |\HardBackground|=\HardVocabSize-\HardBankSize,
+ \qquad
+ \HardMarginal(\HardCandidate{c})=\TriggerMass,
+ \qquad
+ \HardMarginal(b)=
+ \frac{1-\HardBankSize\TriggerMass}
+      {\HardVocabSize-\HardBankSize}.
+ \label{app:eq:hard-common-marginal}
+\end{equation}
+The candidate bank
+$\{\HardCandidate{1},\ldots,\HardCandidate{\HardBankSize}\}$ and the
+background set are public.  An instance
+$I=(\HiddenMatching,\TriggerVector)$ consists of a hidden perfect matching
+$\HiddenMatching$ on $\PositionSet$ and hidden trigger indices
+$\TriggerVector=(\TriggerIndex{i})_{i=1}^N
+\in[\HardBankSize]^N$.  Put
+\begin{equation}
+ \TriggerFeature{i}(a)
+ :=\mathbf 1\{a=\HardCandidate{\TriggerIndex{i}}\}-\TriggerMass,
+ \qquad
+ \TriggerVariance:=\TriggerMass(1-\TriggerMass).
+ \label{app:eq:hard-features}
+\end{equation}
+For $e=\{i,j\}\in\HiddenMatching$, define
+\begin{align}
+ \HardIndependentEdgeLaw{e}(a,b)
+ &:=\HardMarginal(a)\HardMarginal(b),
+ \label{app:eq:hard-independent-edge-law}\\
+ \HardEdgeLaw{e}{I}(a,b)
+ &:=\HardMarginal(a)\HardMarginal(b)
+ \left[1+\EdgeCoupling
+ \frac{\TriggerFeature{i}(a)\TriggerFeature{j}(b)}{\TriggerVariance}\right],
+ \label{app:eq:hard-edge-law}\\
+ \HardTargetLaw{I}&:=\bigotimes_{e\in\HiddenMatching}\HardEdgeLaw{e}{I},
+ \qquad
+ \HardKernel{i}{j}{I}(b\mid a)
+ :=\HardMarginal(b)
+ \left[1+\EdgeCoupling
+ \frac{\TriggerFeature{i}(a)\TriggerFeature{j}(b)}{\TriggerVariance}\right].
+ \label{app:eq:hard-target-and-kernel}
+\end{align}
+The bounds in \eqref{app:eq:hard-basic-conditions} make these laws strictly
+positive: the three possible likelihood-ratio values are displayed in
+\eqref{app:eq:hard-likelihood-values} and checked in Step~1 of the proof of
+Lemma~\ref{app:lem:hard-local-facts}.
+If $\MateInMatching{j}$ denotes the mate of $j$, the selected
+frozen oracle is, for every masked readout $j$ and
+$i:=\MateInMatching{j}$,
+\begin{equation}
+ \HardOracleRow{I}{y}{j}
+ :=\begin{cases}
+ \HardMarginal,
+   &i\in\MaskSet{y},\\
+ \HardKernel{i}{j}{I}(\cdot\mid y_i),
+   &i\in\ObservedSet{y}\ \text{and}\
+     y_i=\HardCandidate{\TriggerIndex{i}},\\
+ \HardMarginal,
+   &i\in\ObservedSet{y}\ \text{and}\
+     y_i\ne\HardCandidate{\TriggerIndex{i}}.
+ \end{cases}
+ \label{app:eq:hard-oracle}
+\end{equation}
+Let
+$\HardFamily[\HardVocabSize,\HardBankSize,\TriggerMass,\EdgeCoupling]$ be the
+family obtained by ranging over all $\HiddenMatching$ and $\TriggerVector$.
+The public candidate labels are granted to the algorithm;
+the matching and trigger indices remain hidden.
+\end{definition}
+
+For integers $\QueryBudget{},\RoundBudget{}$, let $\HardAlgorithmClass{\QueryBudget{}}{\RoundBudget{}}$ be the admissible algorithms
+whose counterfactual-submission and nonempty-commit counters are at most $\QueryBudget{}$
+and $\RoundBudget{}$, respectively, on every instance, seed, transcript, and realized
+path.  Define
+\begin{equation}
+ \HardMinimax(\QueryBudget{},\RoundBudget{};\HardVocabSize,\HardBankSize,
+              \TriggerMass,\EdgeCoupling)
+ :=\inf_{\mathcal A\in\HardAlgorithmClass{\QueryBudget{}}{\RoundBudget{}}}
+   \sup_{I\in\HardFamily[\HardVocabSize,\HardBankSize,
+                           \TriggerMass,\EdgeCoupling]}
+   \SeedRisk(\mathcal A;\HardTargetLaw{I},\HardOracle{I}).
+ \label{app:eq:hard-minimax-risk}
+\end{equation}
+
+The theorem below uses only the finite hard-family conditions.
+\Cref{app:cor:signal-calibrated-finite-lower} later chooses these parameters
+to satisfy the \HellingerCase\ oracle condition for the main lower bound.
+
+\begin{theorem}[Nonlinear finite adaptive query--round lower bound]
+\label{app:thm:nonlinear-finite-lower}
+Assume only the basic hard-family conditions
+\eqref{app:eq:hard-basic-conditions}; in particular, no restriction on
+\(N\EdgeCoupling^2\) is imposed. Then
+\begin{equation}
+ \begin{aligned}
+ &0\le \QueryBudget{}\le\HardBankSize/8,
+ \qquad
+ 1\le \RoundBudget{}\le N/16384\\
+ &\quad\Longrightarrow\quad
+ \HardMinimax(\QueryBudget{},\RoundBudget{};\HardVocabSize,\HardBankSize,
+              \TriggerMass,\EdgeCoupling)\\
+ &\hspace{7em}\ge
+ \frac14\left[
+  1-\exp\left\{-\frac{N\EdgeCoupling^2}{98304\RoundBudget{}}\right\}
+ \right].
+ \end{aligned}
+ \label{app:eq:nonlinear-finite-lower}
+\end{equation}
+\end{theorem}
+
+\begin{corollary}[Nonlinear finite target-error tradeoff]
+\label{app:cor:nonlinear-finite-target-tradeoff}
+Assume \eqref{app:eq:hard-basic-conditions}, fix
+\(\varepsilon\in(0,1/8]\), and suppose an admissible algorithm has
+worst-case pathwise budgets $(\QueryBudget{},\RoundBudget{})$ and
+\begin{equation}
+ \sup_{I\in\HardFamily[\HardVocabSize,\HardBankSize,
+                         \TriggerMass,\EdgeCoupling]}
+ \SeedRisk(\mathcal A;\HardTargetLaw{I},\HardOracle{I})\le\varepsilon.
+ \label{app:eq:finite-target-risk}
+\end{equation}
+Then at least one of
+\begin{equation}
+ \QueryBudget{}>\HardBankSize/8,
+ \qquad
+ \RoundBudget{}>N/16384,
+ \qquad
+ \RoundBudget{}\ge\frac{N\EdgeCoupling^2}{786432\varepsilon}
+ \label{app:eq:nonlinear-finite-target-alternative}
+\end{equation}
+holds.
+\end{corollary}
+
+% Please keep the finite main-text calibration beside its fixed-accuracy
+% specialization in appendix_benchmarks.tex.
+
+\begin{remark}[Where the oracle slack enters]
+\label{app:rem:oracle-slack}
+The selected oracle \eqref{app:eq:hard-oracle} is exact except in its third
+case, where a revealed nontrigger source value $a$ at the mate $i$ of $j$
+produces the row $\HardMarginal$ instead of the exact row
+$\HardKernel{i}{j}{I}(\cdot\mid a)$.  The difference of these two rows is
+$\HardMarginal(b)\EdgeCoupling\TriggerFeature{i}(a)\TriggerFeature{j}(b)
+/\TriggerVariance$ with $\TriggerFeature{i}(a)=-\TriggerMass$, so by
+\eqref{app:eq:hard-feature-moments} they are at total-variation distance
+exactly $\EdgeCoupling\TriggerMass$, and the squared Hellinger bound
+\eqref{app:eq:hard-local-oracle-error} is the only place where
+Assumption~\ref{app:ass:oracle-accuracy} is consumed.  The resulting
+constraint $\EdgeCoupling^2\TriggerMass\le(\OracleRadius)^2/(2N)$ in
+\eqref{app:eq:finite-hard-inclusion} yields the cubic signal calibration
+when $\EdgeCoupling=\TriggerMass=\EdgeSignal$.
+\end{remark}
+
+% Please keep the finite upper statement at the start of appendix_upper_proofs.tex.
+
+% Please keep hard-family inclusion with its proof in proofs/lower_family.tex.

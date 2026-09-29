@@ -1,0 +1,141 @@
+{
+  "run_id": "20260925T114740Z__git-3eda55e59630",
+  "status": "completed_with_difference",
+  "canonical": false,
+  "node": "newton03",
+  "workers": 8,
+  "source_git_commit": "3eda55e596301a179d9a55471032cd28b84c3366",
+  "source_archive_sha256": "540028feea661aab15c127eed7752fc558fe30f43fddb31c760d1057c5f1f97b",
+  "precursor_archive_sha256": "0ae138a50a4930c7ae3301a16efbb1eda295744f59c0fba6a3088fbb4b0041dd",
+  "orchestrator_sha256": "2171ddc3a853e607a599e294ae40b427de5b6faa0a3b651e12b31490c93444c0",
+  "postprocess_watcher_sha256": "3a38e2b38ebfd39d4e79afbed289f01173b163ac1348b9c92bfe29e847e7f3ab",
+  "recovery_finalizer_sha256": "5a044d06779d02c59dc11d28b6b9847492907943b2bca4a731e03f76a1b0aaf6",
+  "postprocessor_live_sha256": "eff049058e7c102b70bd6386abcbcfe6a14487f502a21aef320dad55118b1c41",
+  "source_manifest_sha256": "5c1e1f10902e609b0d4c95caa71705a75f6d83a3397fa031dcf05a0d0ae53443",
+  "parent_design_sha256": "bfe7c08c5bd0cdcea39cbc58ce8ecac3535249692993d8bb3ae001d3bc078e74",
+  "strict_design_sha256": "92762917c55901fec78ab5a7a01f1d3417740440e027f246d4c6d9d2c6b3e9dc",
+  "figure_data_sha256": "3c624a2e620fc68adb259f36d3f4fab347f7eab69fce9363c4cb05c49b964e33",
+  "started_utc": "2026-09-25T11:50:47.812377+00:00",
+  "pipeline_completed_utc": "2026-09-25T14:04:05Z",
+  "parent_seconds": 6016.134568359004,
+  "strict_random_seconds": 753.484642789932,
+  "freshness": {
+    "proposal_observations_recomputed": true,
+    "proposal_tuning_recomputed": true,
+    "proposal_confirmation_recomputed": true,
+    "random_observations_recomputed": true,
+    "strict_random_seed_records": null,
+    "strict_random_reused_budget_records": 0,
+    "fixed_precursors_are_hashed_design_inputs": true
+  },
+  "parent_audit_status": "pass",
+  "strict_audit_status": "pass",
+  "reference_comparison": {
+    "status": "fail",
+    "reference": "random_per_run_threshold_search_k1em10L0",
+    "candidate": "strict_random",
+    "reference_design_sha256": "c6759396643e7c074a8c45929c66df915013d0630162b7ee8efc9530e5a0c00c",
+    "candidate_design_sha256": "92762917c55901fec78ab5a7a01f1d3417740440e027f246d4c6d9d2c6b3e9dc",
+    "relative_L0_factor": 1e-10,
+    "candidate_reused_budget_records": 0,
+    "threshold_match": true,
+    "source_hash_match": true,
+    "shared_input_hash_mismatches": [
+      "random_confirmation_records.json"
+    ],
+    "selection_identity_match": true,
+    "selection_count": 120,
+    "selection_mismatch_count": 0,
+    "selection_mismatch_examples": [],
+    "selected_kl_max_absolute_difference": {
+      "K": 1.5708159832381996e-21,
+      "K_upper": 1.5708159832381996e-21
+    },
+    "selected_kl_not_close": {
+      "K": 0,
+      "K_upper": 0
+    },
+    "summary_cell_count": 20,
+    "summary_mismatch_count": 0,
+    "summary_mismatch_examples": [],
+    "proposal_figure_data_exact_match": true,
+    "reference_record_count": 1936,
+    "candidate_record_count": 1566,
+    "shared_record_count": 1566,
+    "candidate_records_subset_of_reference": true,
+    "shared_record_success_mismatch_count": 0,
+    "shared_record_kl_max_absolute_difference": {
+      "K": 2.3305801732931286e-12,
+      "K_upper": 2.3305801732931286e-12
+    },
+    "shared_record_kl_not_close": {
+      "K": 0,
+      "K_upper": 0
+    },
+    "relative_tolerance": 1e-12,
+    "absolute_tolerance": 1e-18,
+    "errors": [
+      "shared input hashes differ"
+    ]
+  },
+  "reference_verifier_exit_code": 1,
+  "render_recovery": {
+    "needed": true,
+    "reason": "The frozen renderer wrote PNG/PDF but rejected an external result path while creating relative-path metadata.",
+    "numerical_outputs_modified": false,
+    "method": "Copy the completed strict output into a bundle-local render workspace, render there without changing source, then copy only the six standard/large-text figure artifacts back."
+  },
+  "reference_figure_data_sha256": "91fd1cc349e75404198667bff0def65d98c1e5c03c0d584e44fced0a41f5ebd1",
+  "presentation_amendment": {
+    "date": "2026-09-26",
+    "change": "Shorten the dotted reference-line legend to Q_tot = N.",
+    "renderer_sha256": "419f3bce0b4e8864064e270fbd340bade93c5d901a1871b5f559000ae4d6d089",
+    "numerical_data_modified": false
+  },
+  "artifacts": [
+    {
+      "path": "named_figures/ideal_strict_fixed_accuracy_linear_errorbars_1x4__20260925T114740Z__git-3eda55e59630__data-3c624a2e620f.png",
+      "sha256": "09b447b0ee30045301226c09f37732f76989571a696a2fba9c5973422f612574",
+      "bytes": 112254
+    },
+    {
+      "path": "named_figures/ideal_strict_fixed_accuracy_linear_errorbars_1x4__20260925T114740Z__git-3eda55e59630__data-3c624a2e620f.pdf",
+      "sha256": "a8acd76eb68f011be1a5fb1e603e09a72cf59902e036a9e7f0e0d886edafc689",
+      "bytes": 24492
+    },
+    {
+      "path": "named_figures/ideal_strict_fixed_accuracy_linear_errorbars_1x4__20260925T114740Z__git-3eda55e59630__data-3c624a2e620f.json",
+      "sha256": "bc3d7d451c5e22b207a915eab8b5e8a54af149abf91889d1c04b4138e5553042",
+      "bytes": 1739
+    },
+    {
+      "path": "named_figures/ideal_strict_fixed_accuracy_linear_errorbars_1x4_large_text__20260925T114740Z__git-3eda55e59630__data-3c624a2e620f.png",
+      "sha256": "b91b7903d67d820242c058ad4d16dc1854f65f484aabaf57f0668352ad9731a4",
+      "bytes": 118793
+    },
+    {
+      "path": "named_figures/ideal_strict_fixed_accuracy_linear_errorbars_1x4_large_text__20260925T114740Z__git-3eda55e59630__data-3c624a2e620f.pdf",
+      "sha256": "d08e69cb32db296ff09d748c66d1b5f0a5c60ccd2a198ed4a4eb27571357ec8d",
+      "bytes": 24475
+    },
+    {
+      "path": "named_figures/ideal_strict_fixed_accuracy_linear_errorbars_1x4_large_text__20260925T114740Z__git-3eda55e59630__data-3c624a2e620f.json",
+      "sha256": "dcf389b55cd8806934ff7652c46917dcc80d7f30fe339d875de91b703f1b8991",
+      "bytes": 1763
+    }
+  ],
+  "excluded_from_share": [
+    "regenerable per-job artifacts/ directories",
+    "runner.lock files",
+    "Python and Matplotlib caches"
+  ],
+  "comparison_interpretation": {
+    "paper_facing_quantities_match": true,
+    "selection_budgets_match": true,
+    "random_cell_summaries_match": true,
+    "proposal_figure_data_match": true,
+    "only_difference_is_recomputed_parent_input_hash": true,
+    "differing_shared_input": "random_confirmation_records.json",
+    "note": "The strict rerun intentionally consumed a newly recomputed full-parent random confirmation file.  Its input hash therefore differs from the incremental reference, while every paper-facing selection and summary matches and all numerical tolerances pass."
+  }
+}

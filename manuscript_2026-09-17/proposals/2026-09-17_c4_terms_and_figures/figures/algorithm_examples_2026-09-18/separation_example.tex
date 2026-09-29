@@ -1,0 +1,21 @@
+\begin{example}[Checking which colors separate a pair]
+\label{ex:algorithm-separation-20260918}
+Use the coloring drawn in \AlgoBlockRef{draft} from
+\cref{ex:algorithm-submissions-20260918} and the forest in
+\cref{ex:algorithm-peel-centroids-20260918}.  For the tested pair
+$(i,j)=(1,10)$, the readout has neighbors
+$\mathcal N_{\ResidualForest}(10)=\{1,11\}$.  The two tests in
+\eqref{app:eq:pairwise-local-isolation} are therefore
+\[
+ \{1,11\}\cap\ColorClass{\tau}{2}=\emptyset,\qquad
+ \{1,11\}\cap\ColorClass{\tau}{1}=\{1\}\subseteq\{i\}.
+\]
+Both hold: $h_\tau(1)=1$, $h_\tau(10)=2$, and $h_\tau(11)=3$.
+If instead $h_\tau(11)=2$, then neighbor $11$ shares the readout color
+and the first intersection contains $11$.  If instead $h_\tau(11)=1$,
+then an additional neighbor shares the source color and the second
+intersection is $\{1,11\}\not\subseteq\{1\}$.
+This checks one pair and one coloring.  It does not assert the
+simultaneous strict-majority event \eqref{app:eq:screen-success-event},
+which requires the full family of $\ColoringCount$ colorings.
+\end{example}

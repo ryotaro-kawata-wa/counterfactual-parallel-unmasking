@@ -1,0 +1,1456 @@
+{
+  "proposal": [
+    {
+      "target": "binary",
+      "n": 8192,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 8982.833333333334,
+      "Q_min": 8965.0,
+      "Q_max": 9013.0,
+      "Q_values": [
+        8971.0,
+        9013.0,
+        8984.0,
+        8982.0,
+        8982.0,
+        8965.0
+      ],
+      "Q_se": 6.759766596891084,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        10,
+        33,
+        36,
+        0.026666666666666665
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "binary",
+      "n": 10240,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 9926.5,
+      "Q_min": 9904.0,
+      "Q_max": 9950.0,
+      "Q_values": [
+        9925.0,
+        9950.0,
+        9925.0,
+        9918.0,
+        9937.0,
+        9904.0
+      ],
+      "Q_se": 6.4433428177202146,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        10,
+        39,
+        36,
+        0.03333333333333333
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "binary",
+      "n": 12288,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 10900.5,
+      "Q_min": 10860.0,
+      "Q_max": 10938.0,
+      "Q_values": [
+        10938.0,
+        10901.0,
+        10889.0,
+        10860.0,
+        10909.0,
+        10906.0
+      ],
+      "Q_se": 10.458648733623926,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        10,
+        51,
+        36,
+        0.026666666666666665
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "binary",
+      "n": 14336,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 11390.5,
+      "Q_min": 11367.0,
+      "Q_max": 11426.0,
+      "Q_values": [
+        11380.0,
+        11390.0,
+        11426.0,
+        11367.0,
+        11402.0,
+        11378.0
+      ],
+      "Q_se": 8.585841057617284,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        10,
+        53,
+        18,
+        0.019999999999999997
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "binary",
+      "n": 16384,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 11718.833333333334,
+      "Q_min": 11681.0,
+      "Q_max": 11742.0,
+      "Q_values": [
+        11728.0,
+        11681.0,
+        11742.0,
+        11728.0,
+        11718.0,
+        11716.0
+      ],
+      "Q_se": 8.455438749375721,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        10,
+        53,
+        18,
+        0.019999999999999997
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "matching",
+      "n": 8192,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 2378.0,
+      "Q_min": 2360.0,
+      "Q_max": 2400.0,
+      "Q_values": [
+        2365.0,
+        2360.0,
+        2371.0,
+        2400.0,
+        2385.0,
+        2387.0
+      ],
+      "Q_se": 6.2075223183918835,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        8,
+        19,
+        9,
+        0.01
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "matching",
+      "n": 10240,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 1711.8333333333333,
+      "Q_min": 1711.0,
+      "Q_max": 1712.0,
+      "Q_values": [
+        1712.0,
+        1712.0,
+        1712.0,
+        1712.0,
+        1712.0,
+        1711.0
+      ],
+      "Q_se": 0.16666666666666669,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        61,
+        9,
+        0.03
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "matching",
+      "n": 12288,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 1823.1666666666667,
+      "Q_min": 1823.0,
+      "Q_max": 1824.0,
+      "Q_values": [
+        1823.0,
+        1823.0,
+        1823.0,
+        1823.0,
+        1823.0,
+        1824.0
+      ],
+      "Q_se": 0.16666666666666669,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        65,
+        9,
+        0.01
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "matching",
+      "n": 14336,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 1600.0,
+      "Q_min": 1600.0,
+      "Q_max": 1600.0,
+      "Q_values": [
+        1600.0,
+        1600.0,
+        1600.0,
+        1600.0,
+        1600.0,
+        1600.0
+      ],
+      "Q_se": 0.0,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        57,
+        9,
+        0.03
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "matching",
+      "n": 16384,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 2439.0,
+      "Q_min": 2439.0,
+      "Q_max": 2439.0,
+      "Q_values": [
+        2439.0,
+        2439.0,
+        2439.0,
+        2439.0,
+        2439.0,
+        2439.0
+      ],
+      "Q_se": 0.0,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        87,
+        9,
+        0.01
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "path",
+      "n": 8192,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 5736.833333333333,
+      "Q_min": 5713.0,
+      "Q_max": 5756.0,
+      "Q_values": [
+        5713.0,
+        5756.0,
+        5734.0,
+        5738.0,
+        5728.0,
+        5752.0
+      ],
+      "Q_se": 6.4622837380535305,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        7,
+        57,
+        18,
+        0.03
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "path",
+      "n": 10240,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 6010.166666666667,
+      "Q_min": 5975.0,
+      "Q_max": 6041.0,
+      "Q_values": [
+        6011.0,
+        6041.0,
+        6016.0,
+        5975.0,
+        6007.0,
+        6011.0
+      ],
+      "Q_se": 8.627153515370974,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        7,
+        59,
+        18,
+        0.03
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "path",
+      "n": 12288,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 5966.0,
+      "Q_min": 5938.0,
+      "Q_max": 6011.0,
+      "Q_values": [
+        6011.0,
+        5943.0,
+        5984.0,
+        5949.0,
+        5971.0,
+        5938.0
+      ],
+      "Q_se": 11.512312249645305,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        8,
+        39,
+        18,
+        0.04
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "path",
+      "n": 14336,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 6053.666666666667,
+      "Q_min": 6023.0,
+      "Q_max": 6074.0,
+      "Q_values": [
+        6066.0,
+        6023.0,
+        6074.0,
+        6055.0,
+        6065.0,
+        6039.0
+      ],
+      "Q_se": 7.855641992295162,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        8,
+        47,
+        18,
+        0.04
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "path",
+      "n": 16384,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 6523.166666666667,
+      "Q_min": 6513.0,
+      "Q_max": 6544.0,
+      "Q_values": [
+        6516.0,
+        6525.0,
+        6513.0,
+        6516.0,
+        6544.0,
+        6525.0
+      ],
+      "Q_se": 4.643394352315029,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        8,
+        53,
+        18,
+        0.04
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "stars_original",
+      "n": 8192,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 1844.0,
+      "Q_min": 1839.0,
+      "Q_max": 1846.0,
+      "Q_values": [
+        1846.0,
+        1844.0,
+        1839.0,
+        1846.0,
+        1844.0,
+        1845.0
+      ],
+      "Q_se": 1.0645812948447542,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        31,
+        36,
+        0.0006593406593406593
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "stars_original",
+      "n": 10240,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 1868.1666666666667,
+      "Q_min": 1862.0,
+      "Q_max": 1875.0,
+      "Q_values": [
+        1862.0,
+        1867.0,
+        1873.0,
+        1868.0,
+        1864.0,
+        1875.0
+      ],
+      "Q_se": 2.0561560684388183,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        31,
+        36,
+        0.000588235294117647
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "stars_original",
+      "n": 12288,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 1986.1666666666667,
+      "Q_min": 1977.0,
+      "Q_max": 1995.0,
+      "Q_values": [
+        1984.0,
+        1985.0,
+        1990.0,
+        1986.0,
+        1977.0,
+        1995.0
+      ],
+      "Q_se": 2.4686928615047368,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        33,
+        36,
+        0.0005405405405405405
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "stars_original",
+      "n": 14336,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 2004.5,
+      "Q_min": 1995.0,
+      "Q_max": 2010.0,
+      "Q_values": [
+        1995.0,
+        2010.0,
+        2006.0,
+        2006.0,
+        2006.0,
+        2004.0
+      ],
+      "Q_se": 2.0615528128088303,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        33,
+        36,
+        0.0005
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    },
+    {
+      "target": "stars_original",
+      "n": 16384,
+      "method": "proposal",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 2028.0,
+      "Q_min": 2017.0,
+      "Q_max": 2036.0,
+      "Q_values": [
+        2022.0,
+        2026.0,
+        2036.0,
+        2031.0,
+        2036.0,
+        2017.0
+      ],
+      "Q_se": 3.1517191076194173,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        292,
+        293
+      ],
+      "setting": [
+        4,
+        33,
+        36,
+        0.00046875
+      ],
+      "development_eligible": true,
+      "threshold_rescored_without_rerun": true
+    }
+  ],
+  "random": [
+    {
+      "target": "binary",
+      "n": 8192,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 8021.333333333333,
+      "Q_min": 7680.0,
+      "Q_max": 8192.0,
+      "Q_values": [
+        8192.0,
+        8192.0,
+        7680.0,
+        7936.0,
+        7936.0,
+        8192.0
+      ],
+      "Q_se": 85.33333333333334,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 3.595549359206802e-10,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "binary",
+      "n": 10240,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 9866.666666666666,
+      "Q_min": 8960.0,
+      "Q_max": 10240.0,
+      "Q_values": [
+        10240.0,
+        9920.0,
+        10240.0,
+        8960.0,
+        10240.0,
+        9600.0
+      ],
+      "Q_se": 209.29511328371822,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 1.7156632974772585e-12,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "binary",
+      "n": 12288,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 11840.0,
+      "Q_min": 10368.0,
+      "Q_max": 12288.0,
+      "Q_values": [
+        11520.0,
+        12288.0,
+        12288.0,
+        12288.0,
+        10368.0,
+        12288.0
+      ],
+      "Q_se": 320.0,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 2.57312299632365e-10,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "binary",
+      "n": 14336,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 11424.0,
+      "Q_min": 7168.0,
+      "Q_max": 13888.0,
+      "Q_values": [
+        13440.0,
+        13888.0,
+        10752.0,
+        11200.0,
+        7168.0,
+        12096.0
+      ],
+      "Q_se": 986.6176564404269,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 1.33641038147831e-10,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "binary",
+      "n": 16384,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 15616.0,
+      "Q_min": 14848.0,
+      "Q_max": 16384.0,
+      "Q_values": [
+        15360.0,
+        15360.0,
+        15872.0,
+        15872.0,
+        16384.0,
+        14848.0
+      ],
+      "Q_se": 219.2253026758849,
+      "K_threshold": 1.2261620882060043e-09,
+      "maximum_K_upper": 1.3718996441886712e-10,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "matching",
+      "n": 8192,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 4224.0,
+      "Q_min": 1536.0,
+      "Q_max": 7936.0,
+      "Q_values": [
+        5120.0,
+        2816.0,
+        3072.0,
+        4864.0,
+        1536.0,
+        7936.0
+      ],
+      "Q_se": 922.4292565467194,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "matching",
+      "n": 10240,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 4960.0,
+      "Q_min": 1600.0,
+      "Q_max": 8960.0,
+      "Q_values": [
+        3520.0,
+        3520.0,
+        8960.0,
+        3520.0,
+        1600.0,
+        8640.0
+      ],
+      "Q_se": 1252.3684228958614,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "matching",
+      "n": 12288,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 3904.0,
+      "Q_min": 2688.0,
+      "Q_max": 5760.0,
+      "Q_values": [
+        4992.0,
+        3072.0,
+        5760.0,
+        2688.0,
+        3840.0,
+        3072.0
+      ],
+      "Q_se": 499.85597925802597,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "matching",
+      "n": 14336,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 6421.333333333333,
+      "Q_min": 3584.0,
+      "Q_max": 12096.0,
+      "Q_values": [
+        6272.0,
+        4480.0,
+        3584.0,
+        7168.0,
+        12096.0,
+        4928.0
+      ],
+      "Q_se": 1249.4123062908864,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "matching",
+      "n": 16384,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 8789.333333333334,
+      "Q_min": 4608.0,
+      "Q_max": 15872.0,
+      "Q_values": [
+        14848.0,
+        5632.0,
+        4608.0,
+        15872.0,
+        6144.0,
+        5632.0
+      ],
+      "Q_se": 2091.972381377069,
+      "K_threshold": 6.375289453416719e-09,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "path",
+      "n": 8192,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 6613.333333333333,
+      "Q_min": 3584.0,
+      "Q_max": 8192.0,
+      "Q_values": [
+        7936.0,
+        8192.0,
+        3584.0,
+        7936.0,
+        8192.0,
+        3840.0
+      ],
+      "Q_se": 919.2661807719846,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 3.1798001342621464e-12,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "path",
+      "n": 10240,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 9280.0,
+      "Q_min": 8000.0,
+      "Q_max": 10240.0,
+      "Q_values": [
+        8960.0,
+        8000.0,
+        10240.0,
+        9280.0,
+        8960.0,
+        10240.0
+      ],
+      "Q_se": 350.5424368033064,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 8.815475712172249e-14,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "path",
+      "n": 12288,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 10816.0,
+      "Q_min": 6144.0,
+      "Q_max": 12288.0,
+      "Q_values": [
+        11520.0,
+        12288.0,
+        6144.0,
+        11520.0,
+        11136.0,
+        12288.0
+      ],
+      "Q_se": 953.148886585931,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 4.498721683772166e-11,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "path",
+      "n": 14336,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 13066.666666666666,
+      "Q_min": 11648.0,
+      "Q_max": 14336.0,
+      "Q_values": [
+        12544.0,
+        11648.0,
+        13440.0,
+        13440.0,
+        14336.0,
+        12992.0
+      ],
+      "Q_se": 373.33333333333337,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 2.1111456078775752e-13,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "path",
+      "n": 16384,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 15274.666666666666,
+      "Q_min": 14336.0,
+      "Q_max": 16384.0,
+      "Q_values": [
+        14848.0,
+        14336.0,
+        16384.0,
+        14336.0,
+        16384.0,
+        15360.0
+      ],
+      "Q_se": 383.5256329257683,
+      "K_threshold": 2.8019621594196242e-09,
+      "maximum_K_upper": 1.9522629204866396e-21,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "stars_original",
+      "n": 8192,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 8192.0,
+      "Q_min": 8192.0,
+      "Q_max": 8192.0,
+      "Q_values": [
+        8192.0,
+        8192.0,
+        8192.0,
+        8192.0,
+        8192.0,
+        8192.0
+      ],
+      "Q_se": 0.0,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "stars_original",
+      "n": 10240,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 10240.0,
+      "Q_min": 10240.0,
+      "Q_max": 10240.0,
+      "Q_values": [
+        10240.0,
+        10240.0,
+        10240.0,
+        10240.0,
+        10240.0,
+        10240.0
+      ],
+      "Q_se": 0.0,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "stars_original",
+      "n": 12288,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 12288.0,
+      "Q_min": 12288.0,
+      "Q_max": 12288.0,
+      "Q_values": [
+        12288.0,
+        12288.0,
+        12288.0,
+        12288.0,
+        12288.0,
+        12288.0
+      ],
+      "Q_se": 0.0,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "stars_original",
+      "n": 14336,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 14336.0,
+      "Q_min": 14336.0,
+      "Q_max": 14336.0,
+      "Q_values": [
+        14336.0,
+        14336.0,
+        14336.0,
+        14336.0,
+        14336.0,
+        14336.0
+      ],
+      "Q_se": 0.0,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    },
+    {
+      "target": "stars_original",
+      "n": 16384,
+      "method": "random",
+      "runs": 6,
+      "successes": 6,
+      "confirmed": true,
+      "Q": 16384.0,
+      "Q_min": 16384.0,
+      "Q_max": 16384.0,
+      "Q_values": [
+        16384.0,
+        16384.0,
+        16384.0,
+        16384.0,
+        16384.0,
+        16384.0
+      ],
+      "Q_se": 0.0,
+      "K_threshold": 5.138930221031766e-12,
+      "maximum_K_upper": 0.0,
+      "fresh_target_draws": [
+        196,
+        197,
+        198
+      ],
+      "fresh_sampler_streams": [
+        294,
+        295
+      ],
+      "selection_source": "per-run fixed-accuracy threshold search",
+      "maximum_bracket_width_over_N": 0.03125
+    }
+  ],
+  "random_estimand": "Mean and range of six per-run empirical minimum-safe B values; not holdout success of one frozen B.",
+  "axes": "linear-linear",
+  "n_grid": [
+    8192,
+    10240,
+    12288,
+    14336,
+    16384
+  ],
+  "display_x_offset_fraction": 0.006
+}

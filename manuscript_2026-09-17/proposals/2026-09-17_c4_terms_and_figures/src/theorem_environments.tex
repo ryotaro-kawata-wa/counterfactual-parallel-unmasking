@@ -1,0 +1,34 @@
+% Shared theorem-like environments.  Keep presentation rules separate from
+% paper-specific notation so that either file can be audited independently.
+\usepackage{amsthm}
+% Please reserve local statement space before creating its hyperlink destination.
+\usepackage{needspace}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+% Please reuse the original lemma number without advancing any theorem counter.
+% The two arguments are the original label and the original descriptive title.
+\newtheorem*{restatedlemmabase}{Lemma~\restatedlemmanumber}
+\newenvironment{lemmarestatement}[2]{%
+  \def\restatedlemmanumber{\ref{#1}}%
+  \begin{restatedlemmabase}[#2; restated]%
+}{%
+  \end{restatedlemmabase}%
+}
+\newtheorem{proposition}[theorem]{Proposition}
+% Please link all recalls to the formal appendix lemma; the main text retains
+% its recovery equation without a separate theorem-like environment.
+\newcommand{\AppLowDegreeScreenRef}{%
+  \cref{app:lem:low-degree-screen}%
+}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+% Please use this for local definitions without renumbering existing results.
+\newtheorem*{definition*}{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
